@@ -1,6 +1,7 @@
 package com.fantasy.dbmanager.config;
 
 import org.bson.codecs.Codec;
+import org.bson.codecs.IntegerCodec;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
@@ -28,7 +29,7 @@ public class DatabaseBeanConfig {
 	@Bean
 	public CodecRegistry getCodecRegistry() {
 		return CodecRegistries.fromCodecs(CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), 
-				CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Player.class));
+				CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Player.class), new IntegerCodec());
 	}
 	
 	@Bean(name="playerDBCollection")

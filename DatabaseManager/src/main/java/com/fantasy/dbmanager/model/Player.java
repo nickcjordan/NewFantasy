@@ -10,6 +10,18 @@ public class Player {
 	String positionRank;
 	String byeWeek;
 	
+	public Player(int id, Position position, String playerName, String teamName, String playerRank, String positionRank, String byeWeek) {
+		this.id = id;
+		this.position = position;
+		this.playerName = playerName;
+		this.teamName = teamName;
+		this.playerRank = playerRank;
+		this.positionRank = positionRank;
+		this.byeWeek = byeWeek;
+	}
+	
+	public Player() {}
+	
 	public int getId() {
 		return id;
 	}
