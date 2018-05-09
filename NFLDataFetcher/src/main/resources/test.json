@@ -1,0 +1,58 @@
+{
+	"statType": "seasonStats",
+	"season": "2017",
+	"week": "1",
+	"players": [
+		{
+			"id": "2552374",
+			"esbid": "ABD647726",
+			"gsisPlayerId": "00-0032104",
+			"name": "Ameer Abdullah",
+			"position": "RB",
+			"teamAbbr": "DET",
+			"stats": {
+				"1": "14",
+				"13": "165",
+				"14": "552",
+				"15": "4",
+				"20": "25",
+				"21": "162",
+				"22": "1",
+				"27": "179",
+				"30": "1",
+				"31": "2",
+				"70": "1"
+			},
+			"seasonPts": 99.4,
+			"seasonProjectedPts": 0,
+			"weekPts": 4.1,
+			"weekProjectedPts": 0
+		},
+		{
+			"id": "2552582",
+			"esbid": "AJA771256",
+			"gsisPlayerId": "00-0031590",
+			"name": "Jay Ajayi",
+			"position": "RB",
+			"teamAbbr": "PHI",
+			"stats": {
+				"1": "14",
+				"13": "208",
+				"14": "873",
+				"15": "1",
+				"16": "1",
+				"18": "2",
+				"20": "24",
+				"21": "158",
+				"22": "1",
+				"30": "2",
+				"31": "3",
+				"70": "1"
+			},
+			"seasonPts": 111.1,
+			"seasonProjectedPts": 0,
+			"weekPts": 0,
+			"weekProjectedPts": 0
+		}
+	]
+}

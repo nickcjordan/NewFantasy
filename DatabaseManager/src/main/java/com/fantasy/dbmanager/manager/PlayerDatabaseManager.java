@@ -4,6 +4,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.bson.conversions.Bson;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dbmanager.dao.PlayerDao;
+import com.fantasy.dbmanager.fetcher.StatsFetcherDelegate;
+import com.fantasy.dbmanager.fetcher.model.NFLPlayerSeasonStats;
 import com.fantasy.dbmanager.model.Player;
 import com.mongodb.client.result.DeleteResult;
 
@@ -21,6 +24,9 @@ public class PlayerDatabaseManager {
 	
 	@Autowired
 	private PlayerDao playerDao;
+	
+	@Autowired
+	private StatsFetcherDelegate statsFetcher;
 
 	public void putPlayersInDB(List<Player> players) {
 		playerDao.put(players);
@@ -37,23 +43,20 @@ public class PlayerDatabaseManager {
 		}
 		return players;
 	}
-
-//	public boolean removeAllPlayersFromDB() {
-//		boolean allSuccess = true;
-//		for (Player p : players) {
-//			boolean success = playerDao.remove(p);
-//			allSuccess &= success;
-//			if (success) {
-//				log.info("DatabaseManager :: PlayerDatabaseManager :: success :: removed player " + p.getPlayerName() + " from database");
-//			} else {
-//				log.error("DatabaseManager :: PlayerDatabaseManager :: failed to remove player " + p.getPlayerName() + " from database");
-//			}
-//		}
-//		return allSuccess;
-//	}
 	
 	public boolean removeAllPlayersFromDB() {
 		return playerDao.removeAll();
+	}
+
+	public boolean updateAllPlayers() {
+		Map<String, NFLPlayerSeasonStats> seasonStatsMap = statsFetcher.getUpdatedStats();
+		try {
+			playerDao.updatePlayerData(seasonStatsMap.entrySet());
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			return false;
+		}
+		return true;
 	}
 
 }

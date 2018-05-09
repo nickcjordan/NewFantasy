@@ -1,30 +1,34 @@
 package com.fantasy.dbmanager.dao;
 
-import java.util.List;
+import static com.mongodb.client.model.Filters.eq;
 
-import org.apache.log4j.Logger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dbmanager.controller.DatabaseController;
+import com.fantasy.dbmanager.fetcher.model.NFLPlayerSeasonStats;
 import com.fantasy.dbmanager.model.Player;
-import com.google.gson.Gson;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.DeleteResult;
 
-import static com.mongodb.client.model.Filters.*;
-
 @Component
 public class PlayerDao {
-	
-	
 	
 	@Autowired
 	@Qualifier("playerDBCollection")
 	MongoCollection<Player> playerDBCollection;
+	
+	@Autowired
+	@Qualifier("playerSeasonStatsDBCollection")
+	MongoCollection<Entry<String, NFLPlayerSeasonStats>> playerSeasonStatsDBCollection;
 	
 	public void put(List<Player> players) {
 		playerDBCollection.insertMany(players);
@@ -47,6 +51,12 @@ public class PlayerDao {
 	public boolean removeAll() {
 		playerDBCollection.deleteMany(eq("id", null));
 		return true;
+	}
+
+	public void updatePlayerData(Set<Entry<String, NFLPlayerSeasonStats>> entrySet) {
+//		for (Entry<String, NFLPlayerSeasonStats> entry : entrySet) {
+		playerSeasonStatsDBCollection.insertMany(new ArrayList<Entry<String, NFLPlayerSeasonStats>>(entrySet));
+//		}
 	}
 
 }
