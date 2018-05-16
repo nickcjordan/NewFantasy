@@ -65,11 +65,11 @@ public class CommonDatabaseBeanConfig {
 		return mongoClient.getCollection("users", User.class).withCodecRegistry(codecRegistry);
 	}
 	
-	@Bean(name="playerSeasonStatsDBCollection")
-	public MongoCollection<HashMap<String, NFLPlayerSeasonStats>> getPlayerStatsDBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
-		TypeReference<HashMap<String, NFLPlayerSeasonStats>> typeRef = new TypeReference<HashMap<String, NFLPlayerSeasonStats>>() {};
-		return mongoClient.getCollection("playerStats", ).withCodecRegistry(codecRegistry);
-	}
+//	@Bean(name="playerSeasonStatsDBCollection")
+//	public MongoCollection<HashMap<String, NFLPlayerSeasonStats>> getPlayerStatsDBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
+//		TypeReference<HashMap<String, NFLPlayerSeasonStats>> typeRef = new TypeReference<HashMap<String, NFLPlayerSeasonStats>>() {};
+//		return mongoClient.getCollection("playerStats", typeRef.getClass()).withCodecRegistry(codecRegistry);
+//	}
 	
 //	Map<String, List<String>> inMap =  new HashMap<>();
 //	  List<Document> documents = new ArrayList<>();
@@ -84,5 +84,5 @@ public class CommonDatabaseBeanConfig {
 //	collection.insertMany(documents);
 	
 }
-")
-MongoCollection<Entry<String, NFLPlayerSeasonStats>> playerSeasonStatsDBCollection;
+//")
+//MongoCollection<Entry<String, NFLPlayerSeasonStats>> playerSeasonStatsDBCollection;
