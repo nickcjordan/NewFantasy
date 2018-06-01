@@ -6,7 +6,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.bson.Document;
+import org.bson.codecs.DocumentCodec;
 import org.bson.codecs.IntegerCodec;
+import org.bson.codecs.MapCodec;
+import org.bson.codecs.MapCodecProvider;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
@@ -65,24 +69,9 @@ public class CommonDatabaseBeanConfig {
 		return mongoClient.getCollection("users", User.class).withCodecRegistry(codecRegistry);
 	}
 	
-//	@Bean(name="playerSeasonStatsDBCollection")
-//	public MongoCollection<HashMap<String, NFLPlayerSeasonStats>> getPlayerStatsDBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
-//		TypeReference<HashMap<String, NFLPlayerSeasonStats>> typeRef = new TypeReference<HashMap<String, NFLPlayerSeasonStats>>() {};
-//		return mongoClient.getCollection("playerStats", typeRef.getClass()).withCodecRegistry(codecRegistry);
-//	}
-	
-//	Map<String, List<String>> inMap =  new HashMap<>();
-//	  List<Document> documents = new ArrayList<>();
-//	  for(Map.Entry<String, List<String>> kv :inMap.entrySet()) {
-//	     Document doc = new Document();
-//	     doc.put("_id", kv.getKey());
-//	     List<String> values = kv.getValue();
-//	     doc.put("query", values.get(0));
-//	            ... rest of values
-//	     documents.add(doc);
-//	  }
-//	collection.insertMany(documents);
+	@Bean(name="playerSeasonStatsDBCollection")
+	public MongoCollection<NFLPlayerSeasonStats> getPlayerStatsDBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
+		return mongoClient.getCollection("playerStats", NFLPlayerSeasonStats.class).withCodecRegistry(codecRegistry);
+	}
 	
 }
-//")
-//MongoCollection<Entry<String, NFLPlayerSeasonStats>> playerSeasonStatsDBCollection;

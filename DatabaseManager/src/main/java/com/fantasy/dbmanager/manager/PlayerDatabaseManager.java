@@ -24,9 +24,6 @@ public class PlayerDatabaseManager {
 	
 	@Autowired
 	private PlayerDao playerDao;
-	
-	@Autowired
-	private StatsFetcherDelegate statsFetcher;
 
 	public void putPlayersInDB(List<Player> players) {
 		playerDao.put(players);
@@ -48,15 +45,6 @@ public class PlayerDatabaseManager {
 		return playerDao.removeAll();
 	}
 
-	public boolean updateAllPlayers() {
-		Map<String, NFLPlayerSeasonStats> seasonStatsMap = statsFetcher.getUpdatedStats();
-		try {
-			playerDao.updatePlayerData(seasonStatsMap.entrySet());
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			return false;
-		}
-		return true;
-	}
+	
 
 }

@@ -14,9 +14,11 @@ import com.jaunt.UserAgent;
 
 @Component
 public class StatsFetcherDelegate {
+	
 
 	public Map<String, NFLPlayerSeasonStats> getUpdatedStats() {
-		String json = getJson("/nfl/getAllPlayerData");
+		String json = getJson("http://localhost:8081/nfl/getAllPlayerData");
+		
 		Map<String, NFLPlayerSeasonStats> map = null;
 		TypeReference<HashMap<String, NFLPlayerSeasonStats>> typeRef = new TypeReference<HashMap<String, NFLPlayerSeasonStats>>() {};
 		try {

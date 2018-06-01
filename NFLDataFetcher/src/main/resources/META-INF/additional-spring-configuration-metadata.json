@@ -1,0 +1,7 @@
+{"properties": [
+  {
+    "name": "data.useCache",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'data.useCache'"
+  }
+]}

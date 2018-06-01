@@ -10,11 +10,11 @@ public class NFLPlayerSeasonStats {
 	private String name;
 	private String position;
 	private String teamAbbr;
-	private Map<Integer, NFLPlayerWeeklyStats> weeklyStats;
+	private Map<String, NFLPlayerWeeklyStats> weeklyStats;
 	private double seasonTotalPoints;
 	
 	public NFLPlayerSeasonStats() {
-		this.weeklyStats = new HashMap<Integer, NFLPlayerWeeklyStats>();
+		this.weeklyStats = new HashMap<String, NFLPlayerWeeklyStats>();
 	}
 	
 	public NFLPlayerSeasonStats(String id, String name, String position, String teamAbbr) {
@@ -22,17 +22,17 @@ public class NFLPlayerSeasonStats {
 		this.name = name;
 		this.position = position;
 		this.teamAbbr = teamAbbr;
-		this.weeklyStats = new HashMap<Integer, NFLPlayerWeeklyStats>();
+		this.weeklyStats = new HashMap<String, NFLPlayerWeeklyStats>();
 	}
 	
-	public Map<Integer, NFLPlayerWeeklyStats> getWeeklyStats() {
+	public Map<String, NFLPlayerWeeklyStats> getWeeklyStats() {
 		return weeklyStats;
 	}
-	public void setWeeklyStats(Map<Integer, NFLPlayerWeeklyStats> weeklyStats) {
+	public void setWeeklyStats(Map<String, NFLPlayerWeeklyStats> weeklyStats) {
 		this.weeklyStats = weeklyStats;
 	}
 	public void addWeeklyStats(NFLPlayerWeeklyStats stat) {
-		weeklyStats.put(stat.getWeekNumber(), stat);
+		weeklyStats.put(Integer.toString(stat.getWeekNumber()), stat);
 	}
 	public String getId() {
 		return id;

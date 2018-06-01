@@ -26,10 +26,6 @@ public class PlayerDao {
 	@Qualifier("playerDBCollection")
 	MongoCollection<Player> playerDBCollection;
 	
-	@Autowired
-	@Qualifier("playerSeasonStatsDBCollection")
-	MongoCollection<Entry<String, NFLPlayerSeasonStats>> playerSeasonStatsDBCollection;
-	
 	public void put(List<Player> players) {
 		playerDBCollection.insertMany(players);
 	}
@@ -51,12 +47,6 @@ public class PlayerDao {
 	public boolean removeAll() {
 		playerDBCollection.deleteMany(eq("id", null));
 		return true;
-	}
-
-	public void updatePlayerData(Set<Entry<String, NFLPlayerSeasonStats>> entrySet) {
-//		for (Entry<String, NFLPlayerSeasonStats> entry : entrySet) {
-		playerSeasonStatsDBCollection.insertMany(new ArrayList<Entry<String, NFLPlayerSeasonStats>>(entrySet));
-//		}
 	}
 
 }

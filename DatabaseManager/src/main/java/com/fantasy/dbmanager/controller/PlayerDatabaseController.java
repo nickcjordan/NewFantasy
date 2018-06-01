@@ -57,12 +57,4 @@ public class PlayerDatabaseController  {
     	return success;
     }
     
-    @RequestMapping("/update")
-    public boolean updateAllPlayers() {
-    	log.info("DatabaseManager :: updating all players in database...");
-    	boolean success = playerManager.updateAllPlayers();
-    	log.info("DatabaseManager :: success = " + success);
-    	return success;
-    }
-
 }
