@@ -3,16 +3,12 @@ package com.fantasy.nfldatafetcher.threadrunner;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
 
 import org.apache.log4j.Logger;
 
 import com.fantasy.nfldatafetcher.delegate.NFLAdvancedStatsDelegate;
-import com.fantasy.nfldatafetcher.model.NFLPlayerSeasonStats;
-import com.fantasy.nfldatafetcher.model.NFLPlayerWeeklyStats;
-import com.fantasy.nfldatafetcher.model.advancedstats.APIAdvancedStatsResponse;
 import com.fantasy.nfldatafetcher.model.advancedstats.APIAdvancedStats;
-import com.fantasy.nfldatafetcher.model.basicstats.APIBasicStats;
+import com.fantasy.nfldatafetcher.model.advancedstats.APIAdvancedStatsResponse;
 
 public class AdvancedStatsThread implements Runnable {
 	
@@ -41,20 +37,6 @@ public class AdvancedStatsThread implements Runnable {
 		}
 	}
 	
-	
-	
-//	private void populateBasicStatsMapWithPlayer(int week, APIBasicStats playerData) {
-//		List<APIBasicStats> basicStatsList = null;
-//		if (basicWeeklyStatsMap.containsKey(playerData.getId())) {
-//			basicStatsList = basicWeeklyStatsMap.get(playerData.getId());
-//		} else {
-//			basicStatsList = new ArrayList<APIBasicStats>();
-//			basicWeeklyStatsMap.put(playerData.getId(), basicStatsList);
-//		}
-//		basicStatsList.add(week-1, playerData);
-//	}
-	
-
 	private void populateAdvancedStatsMapWithPlayer(int week, APIAdvancedStats playerData) {
 		List<APIAdvancedStats> advancedStatsList = null;
 		if (advancedWeeklyStatsMap.containsKey(playerData.getId())) {
@@ -65,22 +47,5 @@ public class AdvancedStatsThread implements Runnable {
 		}
 		advancedStatsList.add(playerData);
 	}
-
-//	private void populatePlayerAdvancedStats(APIAdvancedStats playerData, NFLPlayerWeeklyStats weeklyStat) {
-//		weeklyStat.setCarries(playerData.getStats().getCarries());
-//		weeklyStat.setFanPtsAgainstOpponentPts(playerData.getStats().getFanPtsAgainstOpponentPts());
-//		weeklyStat.setFanPtsAgainstOpponentRank(playerData.getStats().getFanPtsAgainstOpponentRank());
-//		weeklyStat.setOpponentTeamAbbrev(playerData.getOpponentTeamAbbr());
-//		weeklyStat.setReceptions(playerData.getStats().getReceptions());
-//		weeklyStat.setTargets(playerData.getStats().getTargets());
-//		weeklyStat.setTouches(playerData.getStats().getTouches());
-//	}
-	
-//	private NFLPlayerSeasonStats buildNewPlayerSeasonStats(APIAdvancedStats playerData) {
-//		NFLPlayerSeasonStats playerSeasonStats = new NFLPlayerSeasonStats();
-//		playerSeasonStats.setId(playerData.getId());
-//		playerMap.put(playerSeasonStats.getId(), playerSeasonStats);
-//		return playerSeasonStats;
-//	}
 
 }

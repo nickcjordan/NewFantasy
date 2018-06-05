@@ -25,6 +25,6 @@ public class APIAdvancedStatsResponse {
 		this.players = players;
 	}
 	
-	//TODO refactor to go by position name for list -- 5 lists -- in the advanced response json that is returnedgdjtu
+	//TODO refactor to go by position name for list -- 5 lists -- in the advanced response json that is returned
 
 }

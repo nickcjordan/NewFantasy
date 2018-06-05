@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.NumberUtils;
 
 import com.fantasy.dbmanager.dao.PlayerDao;
 import com.fantasy.dbmanager.fetcher.StatsFetcherDelegate;
@@ -43,6 +44,19 @@ public class PlayerDatabaseManager {
 	
 	public boolean removeAllPlayersFromDB() {
 		return playerDao.removeAll();
+	}
+
+	public Player get(String val) {
+		Player player = null;
+		try {
+			int id = NumberUtils.parseNumber(val, Integer.class);
+			log.info("getting player with id=" + val);
+			player = playerDao.getPlayer(id);
+		} catch (IllegalArgumentException e) {
+			log.info("getting player with name=" + val);
+			player = playerDao.getPlayer(val);
+		}
+		return player;
 	}
 
 	

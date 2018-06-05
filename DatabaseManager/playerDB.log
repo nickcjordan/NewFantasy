@@ -219,3 +219,497 @@
 2018-06-01 15:22:27 INFO  StatsDatabaseController:36 - DatabaseManager :: success :: got stats for [219] players
 2018-06-01 15:23:19 INFO  StatsDatabaseController:34 - DatabaseManager :: getting all players...
 2018-06-01 15:23:19 INFO  StatsDatabaseController:36 - DatabaseManager :: success :: got stats for [219] players
+2018-06-04 17:11:18 INFO  StatsDatabaseController:34 - DatabaseManager :: getting all players...
+2018-06-04 17:11:18 INFO  StatsDatabaseController:36 - DatabaseManager :: success :: got stats for [219] players
+2018-06-04 17:17:26 INFO  StatsDatabaseController:26 - DatabaseManager :: getting all players...
+2018-06-04 17:17:26 INFO  StatsDatabaseController:28 - DatabaseManager :: success :: got stats for [219] players
+2018-06-04 17:17:48 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 17:17:53 ERROR StatsDatabaseManager:32 - Bulk write operation error on server 127.0.0.1:27017. Write errors: [BulkWriteError{index=1, code=11000, message='E11000 duplicate key error collection: fantasyDB.playerStats index: _id_ dup key: { : "2557960" }', details={ }}]. 
+2018-06-04 17:17:53 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 17:27:24 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 17:27:28 ERROR StatsDatabaseManager:32 - Can't find a codec for class java.lang.String.
+2018-06-04 17:27:28 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 17:29:31 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 17:29:38 ERROR StatsDatabaseManager:32 - Can't find a codec for class java.lang.String.
+2018-06-04 17:29:38 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 18:08:08 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 18:08:08 ERROR StatsDatabaseManager:32 - Can't find a codec for class java.lang.String.
+2018-06-04 18:08:08 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 18:08:48 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 18:10:44 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 18:10:48 ERROR StatsDatabaseManager:32 - Can't find a codec for class java.lang.String.
+2018-06-04 18:10:48 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 18:21:35 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 18:21:40 ERROR StatsDatabaseManager:32 - Can't find a codec for class java.lang.String.
+2018-06-04 18:21:40 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 18:54:55 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 18:54:59 ERROR StatsFetcherDelegate:31 - message: UserAgent.sendGET; response error
+requestUrl: http://localhost:8081/nfl/getAllPlayerData
+response: 
+  requestURL: http://localhost:8081/nfl/getAllPlayerData
+  status: 500
+  message: {"timestamp":"2018-06-04T23:54:59.870+0000","status":500,"error":"Internal Server Error","message":"No message available","path":"/nfl/getAllPlayerData"}
+  responseHeaders:
+    content-type: application/json;charset=UTF-8
+    transfer-encoding: chunked
+    date: Mon, 04 Jun 2018 23:54:59 GMT
+    connection: close
+
+2018-06-04 18:54:59 ERROR StatsDatabaseManager:32 - 
+2018-06-04 18:54:59 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 18:57:55 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 18:58:00 ERROR StatsDatabaseManager:32 - Can't find a codec for class java.lang.String.
+2018-06-04 18:58:00 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 19:07:36 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 19:07:37 ERROR StatsDatabaseManager:32 - Can't find a codec for class java.lang.String.
+2018-06-04 19:07:37 INFO  StatsDatabaseController:44 - DatabaseManager :: success = false
+2018-06-04 19:11:01 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 19:11:01 INFO  StatsDatabaseController:44 - DatabaseManager :: success = true
+2018-06-04 19:13:13 INFO  StatsDatabaseController:26 - DatabaseManager :: getting all players...
+2018-06-04 19:13:13 INFO  StatsDatabaseController:28 - DatabaseManager :: success :: got stats for [220] players
+2018-06-04 19:13:32 INFO  StatsDatabaseController:26 - DatabaseManager :: getting all players...
+2018-06-04 19:13:32 INFO  StatsDatabaseController:28 - DatabaseManager :: success :: got stats for [220] players
+2018-06-04 19:13:42 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 19:13:42 INFO  StatsDatabaseController:44 - DatabaseManager :: success = true
+2018-06-04 19:25:15 INFO  StatsDatabaseController:26 - DatabaseManager :: getting all players...
+2018-06-04 19:25:15 INFO  StatsDatabaseController:28 - DatabaseManager :: success :: got stats for [220] players
+2018-06-04 19:26:19 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 19:26:20 INFO  StatsDatabaseController:44 - DatabaseManager :: players successfully updated = [205]
+2018-06-04 19:26:28 INFO  StatsDatabaseController:26 - DatabaseManager :: getting all players...
+2018-06-04 19:26:28 INFO  StatsDatabaseController:28 - DatabaseManager :: success :: got stats for [220] players
+2018-06-04 19:26:35 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 19:26:36 INFO  StatsDatabaseController:44 - DatabaseManager :: players successfully updated = [205]
+2018-06-04 19:29:11 INFO  StatsDatabaseController:42 - DatabaseManager :: updating all stats in database...
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540168, name=Eddie Lacy]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540160, name=Jordan Reed]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552399, name=Jeff Heuerman]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555427, name=Nate Sudfeld]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552033, name=Jameis Winston]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552396, name=Ben Koyack]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555306, name=David Morgan]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552397, name=Clive Walford]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506121, name=Philip Rivers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506363, name=Aaron Rodgers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2535943, name=Sean McGrath]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552382, name=Malcolm Brown]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540175, name=Le'Veon Bell]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506122, name=Benjamin Watson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543565, name=Andre Williams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543683, name=Austin Seferian-Jenkins]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555418, name=Jordan Howard]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540173, name=Tyler Bray]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556508, name=Alan Cross]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558929, name=Cethan Carter]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555415, name=Austin Hooper]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553112, name=Jason Myers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555417, name=C.J. Prosise]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=925, name=Jamaal Charles]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557952, name=Wayne Gallman]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495143, name=Andy Dalton]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532797, name=Brandon Bolden]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=497095, name=Sam Bradford]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543773, name=James White]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540148, name=Tyler Eifert]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540269, name=C.J. Anderson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543770, name=Charles Sims]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540020, name=Theo Riddick]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539275, name=Mike Glennon]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495139, name=Charles Clay]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495259, name=Dan Bailey]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558918, name=Matt Breida]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532888, name=Case Keenum]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552374, name=Ameer Abdullah]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552375, name=Cameron Artis-Payne]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2534820, name=Garrett Celek]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2507232, name=Mason Crosby]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506264, name=Robbie Gould]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540156, name=Giovani Bernard]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540158, name=Zach Ertz]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540037, name=Fozzy Whittaker]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2505299, name=Antonio Gates]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532899, name=Doug Martin]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557934, name=Elijah McGuire]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539287, name=Landry Jones]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553454, name=Geoff Swaim]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556603, name=Tre Madden]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552369, name=Bryce Petty]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550189, name=Isaiah Crowell]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553457, name=Trevor Siemian]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=949, name=Jonathan Stewart]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556601, name=Wil Lutz]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495240, name=Tyrod Taylor]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495470, name=Stevan Ridley]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555461, name=Wendell Smallwood]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555341, name=Hunter Henry]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555220, name=Derek Watt]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555464, name=DeAndre Washington]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100020, name=Minnesota Vikings]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100021, name=New England Patriots]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100022, name=New Orleans Saints]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555460, name=Paul Perkins]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543477, name=Blake Bortles]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100012, name=Tennessee Titans]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100013, name=Houston Texans]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557889, name=Gerald Everett]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100014, name=Indianapolis Colts]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495234, name=Luke Stocker]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100015, name=Jacksonville Jaguars]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2533436, name=Brock Osweiler]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100016, name=Kansas City Chiefs]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557886, name=Jeremy Sprinkle]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495353, name=Julius Thomas]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555223, name=Devontae Booker]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100017, name=Los Angeles Rams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555224, name=Ezekiel Elliott]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495473, name=Shane Vereen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100018, name=Oakland Raiders]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100019, name=Miami Dolphins]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495471, name=Jacquizz Rodgers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2507374, name=Stephen Hauschka]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2508101, name=James Develin]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557991, name=Dalvin Cook]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2505076, name=Josh McCown]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557994, name=D'Onta Foreman]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100030, name=Seattle Seahawks]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100031, name=Tampa Bay Buccaneers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100032, name=Washington Redskins]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2541187, name=Demetrius Harris]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495469, name=Dion Lewis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495347, name=Lee Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100023, name=New York Giants]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495467, name=Taiwan Jones]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100024, name=New York Jets]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495466, name=Mark Ingram]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100025, name=Philadelphia Eagles]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555218, name=Danny Vitale]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100026, name=Arizona Cardinals]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555219, name=Daniel Lasco]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100027, name=Pittsburgh Steelers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100028, name=Los Angeles Chargers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555334, name=Jared Goff]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2533444, name=Randy Bullock]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100029, name=San Francisco 49ers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495340, name=Anthony Sherman]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557997, name=Christian McCaffrey]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556771, name=Aldrick Rosas]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557983, name=DeShone Kizer]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2507164, name=Adrian Peterson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543695, name=Jay Prosch]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2554357, name=Bronson Hill]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556415, name=Joe Kerridge]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495455, name=Cam Newton]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558956, name=Jacob Hollister]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495211, name=Niles Paul]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558837, name=Devante Mays]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558953, name=Cole Hikutini]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556411, name=Josh Ferguson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557987, name=Matt Dayes]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558954, name=Taysom Hill]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557986, name=David Njoku]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558833, name=Alex Armah]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556414, name=Rob Kelley]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555430, name=Alex Collins]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557850, name=De'Angelo Henderson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556762, name=Elijhaa Penny]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100010, name=Detroit Lions]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100011, name=Green Bay Packers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543465, name=Teddy Bridgewater]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543466, name=Eric Ebron]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100009, name=Denver Broncos]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2541161, name=Latavius Murray]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543583, name=Devonta Freeman]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495207, name=DeMarco Murray]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495328, name=Bilal Powell]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100001, name=Atlanta Falcons]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557978, name=James Conner]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100002, name=Baltimore Ravens]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555316, name=Paxton Lynch]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557856, name=O.J. Howard]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557977, name=Jeremy McNichols]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100003, name=Buffalo Bills]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100004, name=Carolina Panthers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557858, name=Evan Engram]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556521, name=Ka'imi Fairbairn]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100005, name=Chicago Bears]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495441, name=Blaine Gabbert]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555311, name=Jerell Adams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555432, name=Andy Janovich]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100006, name=Cincinnati Bengals]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557973, name=Leonard Fournette]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556885, name=Jalen Richard]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100007, name=Cleveland Browns]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557976, name=Joe Mixon]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=100008, name=Dallas Cowboys]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555263, name=Kevin Hogan]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556232, name=Jake Rudock]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555387, name=Cody Kessler]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555260, name=Dak Prescott]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555261, name=Jacoby Brissett]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556118, name=Dwayne Washington]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2535890, name=Travaris Cadet]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=497149, name=LeGarrette Blount]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556478, name=Ben Braunecker]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2535535, name=Phillip Supernaw]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557430, name=Sam Ficken]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556463, name=Stephen Anderson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556580, name=Henry Krieger-Coble]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556466, name=Peyton Barber]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558886, name=Darrell Daniels]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555259, name=Carson Wentz]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555364, name=Tyler Higbee]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556450, name=Nick Rose]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543497, name=AJ McCarron]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2541199, name=Luke Willson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543499, name=Derek Carr]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=497246, name=Michael Hoomanawanui]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2533457, name=Alfred Morris]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556577, name=Marshall Koehn]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558998, name=De'Veon Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555230, name=Kenyan Drake]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558860, name=Marquez Williams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=497240, name=Rob Gronkowski]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2533460, name=Robert Turbin]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2533349, name=Austin Davis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=497236, name=Jimmy Graham]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558865, name=Chris Carson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555234, name=Tyler Ervin]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=497238, name=Jermaine Gresham]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2534797, name=Greg Zuerlein]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2533034, name=Lamar Miller]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2534241, name=Derek Carrier]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2500351, name=Phil Dawson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=310, name=Matt Ryan]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550738, name=Fitzgerald Toussaint]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=497224, name=Ed Dickson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2533046, name=Dwayne Allen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=79607, name=LeSean McCoy]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540928, name=Darren Fells]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495187, name=Lance Kendricks]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558204, name=Jamaal Williams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558207, name=Jonnu Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556492, name=Joe Callahan]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2555289, name=Nick Vannett]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558786, name=Brandon Wilson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=79860, name=Matthew Stafford]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495288, name=Virgil Green]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2535686, name=Giorgio Tavecchio]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556075, name=Derrick Henry]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559100, name=Emanuel Byrd]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558250, name=Tarik Cohen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550656, name=Cameron Brate]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=81294, name=Brian Hoyer]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2536340, name=Justin Tucker]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558138, name=Samaje Perine]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558019, name=Alvin Kamara]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558245, name=Harrison Butker]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558123, name=Marlon Mack]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558125, name=Patrick Mahomes]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557033, name=Garrett Griffin]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495826, name=Vernon Davis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495824, name=Jay Cutler]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506922, name=Stephen Gostkowski]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495700, name=Greg Olsen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=81284, name=Chase Daniel]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539980, name=Kerwynn Williams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558008, name=Mitchell Trubisky]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550521, name=Xavier Grimble]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550400, name=Keith Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558112, name=Brian Hill]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559325, name=Trey Edmunds]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=71265, name=Jared Cook]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2504775, name=Drew Brees]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=252, name=Chad Henne]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550633, name=Senorise Perry]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550512, name=Damien Williams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550636, name=Cairo Santos]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553900, name=Daniel Brown]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559205, name=Younghoe Koo]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558116, name=Aaron Jones]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=382, name=Joe Flacco]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558178, name=Zane Gonzalez]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2504797, name=Matt Bryant]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558172, name=Jake Elliott]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2507828, name=Logan Paulsen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552636, name=Michael Burton]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553728, name=Raheem Mostert]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552633, name=Jesse James]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552631, name=Javorius Allen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558049, name=Michael Roberts]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559254, name=Shane Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543801, name=Jimmy Garoppolo]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2505996, name=Eli Manning]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550325, name=Chandler Catanzaro]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=1037347, name=Joe Webb]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550206, name=Ryan Hewitt]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=89802, name=Ryan Succop]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539663, name=Mike Gillislee]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553833, name=Josh Lambo]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552622, name=Chris Manhertz]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539303, name=Zach Line]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553830, name=Will Tye]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539637, name=Caleb Sturgis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559242, name=Cooper Rush]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2541834, name=Josh Hill]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2504211, name=Tom Brady]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550313, name=Richard Rodgers]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558266, name=George Kittle]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558023, name=Eric Saubert]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558144, name=Adam Shaheen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2503471, name=Adam Vinatieri]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550545, name=Chris Boswell]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550542, name=Kapri Bibbs]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543715, name=Jerick McKinnon]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540200, name=Dion Sims]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540203, name=Levine Toilolo]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559180, name=Tion Green]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552559, name=C.J. Uzomah]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495438, name=Kyle Rudolph]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2530763, name=Patrick DiMarco]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553762, name=Terron Ward]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532820, name=Kirk Cousins]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539335, name=Geno Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539217, name=Andre Ellington]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550481, name=Orleans Darkwa]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543600, name=Alfred Blue]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2541544, name=Benny Cunningham]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506404, name=Frank Gore]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543603, name=Jeremy Hill]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540215, name=Vance McDonald]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532838, name=Coby Fleener]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532835, name=Rhett Ellison]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553631, name=Zach Zenner]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556900, name=Austin Traylor]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552660, name=Randall Telfer]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495663, name=Marshawn Lynch]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539228, name=EJ Manuel]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539227, name=Dustin Hopkins]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559169, name=Austin Ekeler]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559044, name=Antony Auclair]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559163, name=Justin Davis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506677, name=Matt Prater]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558191, name=Nathan Peterman]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553867, name=Mack Brown]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2536044, name=Jamize Olawale]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553744, name=Eric Tomlinson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553743, name=Rod Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550235, name=Roosevelt Nix]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=71435, name=John Phillips]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2559150, name=Corey Clement]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2507999, name=Chris Ivory]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2558063, name=Deshaun Watson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552647, name=Marcus Murphy]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495888, name=Marcedes Lewis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=71309, name=Graham Gano]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552402, name=Nick Boyle]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552403, name=Nick O'Leary]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553733, name=Thomas Rawls]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543638, name=De'Anthony Thomas]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552471, name=T.J. Yeldon]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543751, name=David Fales]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2507428, name=Mike Tolbert]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552475, name=Todd Gurley]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557922, name=C.J. Beathard]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552477, name=Aaron Ripkowski]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552478, name=Blake Bell]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552582, name=Jay Ajayi]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552461, name=Duke Johnson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552580, name=A.J. Derby]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540011, name=Chris Thompson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543767, name=Logan Thomas]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540259, name=MarQueis Gray]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543640, name=Tom Savage]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540258, name=Travis Kelce]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506562, name=Matt Cassel]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495748, name=Drew Stanton]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553318, name=James O'Shaughnessy]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553439, name=Mike Davis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2557917, name=Kareem Hunt]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552464, name=Jalston Fowler]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550284, name=Trey Burton]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495620, name=Clark Harris]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552586, name=Tyler Kroft]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2539265, name=Rex Burkhead]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552468, name=Maxx Williams]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550289, name=David Fluellen]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552469, name=Melvin Gordon]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552466, name=Marcus Mariota]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553435, name=David Johnson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552588, name=Brett Hundley]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2541316, name=Ryan Griffin]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553660, name=Akeem Hunt]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2541556, name=Brandon McManus]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540225, name=Tommy Bohanon]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532968, name=Blair Walsh]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552453, name=Tevin Coleman]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532842, name=Nick Foles]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2554630, name=Ross Travis]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553667, name=Matt LaCosse]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2552576, name=Sean Mannion]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506340, name=Alex Smith]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506581, name=Ryan Fitzpatrick]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550380, name=Cody Parkey]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543628, name=Troy Niklas]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540232, name=Jack Doyle]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2543743, name=Carlos Hyde]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506467, name=Darren Sproles]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2540230, name=Kyle Juszczyk]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553658, name=Gabe Holmes]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2495966, name=Delanie Walker]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2506109, name=Ben Roethlisberger]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2532975, name=Russell Wilson]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553650, name=Corey Grant]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2556803, name=C.J. Ham]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2553656, name=Taylor Heinicke]
+2018-06-04 19:29:12 ERROR StatsDao:34 - Could not find data for [id=2550268, name=Charcandrick West]
+2018-06-04 19:29:12 INFO  StatsDatabaseController:44 - DatabaseManager :: players successfully updated = [205]
+2018-06-04 19:48:50 INFO  PlayerDatabaseController:47 - DatabaseManager :: getting all players...
+2018-06-04 19:48:50 INFO  PlayerDatabaseController:49 - DatabaseManager :: success :: got [7] players
+2018-06-04 19:49:27 INFO  PlayerDatabaseController:47 - DatabaseManager :: getting all players...
+2018-06-04 19:49:27 INFO  PlayerDatabaseController:49 - DatabaseManager :: success :: got [7] players
+2018-06-04 19:51:42 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [Tom Brady]...
+2018-06-04 19:51:42 INFO  PlayerDatabaseController:57 - DatabaseManager :: success :: got player [Tom Brady]
+2018-06-04 19:52:33 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [Tom Brady]...
+2018-06-04 19:52:33 INFO  PlayerDatabaseController:57 - DatabaseManager :: success :: got player [Tom Brady]
+2018-06-04 19:53:30 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [Tom Brady]...
+2018-06-04 19:53:30 INFO  PlayerDatabaseController:57 - DatabaseManager :: success :: got player [Tom Brady]
+2018-06-04 19:54:24 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [Tom Brady]...
+2018-06-04 19:55:49 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [dan]...
+2018-06-04 19:55:49 INFO  PlayerDatabaseController:57 - DatabaseManager :: success :: got player [dan]
+2018-06-04 19:55:58 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 19:56:25 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [dan]...
+2018-06-04 19:56:25 INFO  PlayerDatabaseController:57 - DatabaseManager :: success :: got player [dan]
+2018-06-04 19:59:05 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [dan]...
+2018-06-04 19:59:05 INFO  PlayerDatabaseManager:55 - getting player with name=dan
+2018-06-04 19:59:05 INFO  PlayerDatabaseController:57 - DatabaseManager :: success :: got player [dan]
+2018-06-04 19:59:12 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 19:59:12 INFO  PlayerDatabaseManager:52 - getting player with id=0
+2018-06-04 20:00:08 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 20:00:08 INFO  PlayerDatabaseManager:52 - getting player with id=0
+2018-06-04 20:02:46 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 20:02:46 INFO  PlayerDatabaseManager:52 - getting player with id=0
+2018-06-04 20:05:06 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 20:05:06 INFO  PlayerDatabaseManager:52 - getting player with id=0
+2018-06-04 20:05:14 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [dan]...
+2018-06-04 20:05:14 INFO  PlayerDatabaseManager:55 - getting player with name=dan
+2018-06-04 20:05:14 INFO  PlayerDatabaseController:57 - DatabaseManager :: success :: got player [dan]
+2018-06-04 20:05:26 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 20:05:26 INFO  PlayerDatabaseManager:52 - getting player with id=0
+2018-06-04 20:08:35 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 20:08:35 INFO  PlayerDatabaseManager:53 - getting player with id=0
+2018-06-04 20:09:41 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 20:09:41 INFO  PlayerDatabaseManager:53 - getting player with id=0
+2018-06-04 20:11:48 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [0]...
+2018-06-04 20:11:48 INFO  PlayerDatabaseManager:53 - getting player with id=0
+2018-06-04 20:11:48 ERROR PlayerDatabaseController:60 - DatabaseManager :: failure :: could not find player "0"
+2018-06-04 20:14:02 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [1]...
+2018-06-04 20:14:02 INFO  PlayerDatabaseManager:53 - getting player with id=1
+2018-06-04 20:14:02 ERROR PlayerDatabaseController:60 - DatabaseManager :: failure :: could not find player "1"
+2018-06-04 20:14:09 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [nick]...
+2018-06-04 20:14:09 INFO  PlayerDatabaseManager:56 - getting player with name=nick
+2018-06-04 20:14:09 ERROR PlayerDatabaseController:60 - DatabaseManager :: failure :: could not find player "nick"
+2018-06-04 20:14:22 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [player1]...
+2018-06-04 20:14:22 INFO  PlayerDatabaseManager:56 - getting player with name=player1
+2018-06-04 20:14:22 INFO  PlayerDatabaseController:58 - DatabaseManager :: success :: got player [player1]
+2018-06-04 20:14:29 INFO  PlayerDatabaseController:55 - DatabaseManager :: getting player [1]...
+2018-06-04 20:14:29 INFO  PlayerDatabaseManager:53 - getting player with id=1
+2018-06-04 20:14:29 ERROR PlayerDatabaseController:60 - DatabaseManager :: failure :: could not find player "1"

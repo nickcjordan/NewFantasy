@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class APIAdvancedStats {
 
 	private String id;
+	private String firstName;
+	private String lastName;
 	private String opponentTeamAbbr;
 	private APIAdvancedStatsDetails stats;
 	
@@ -31,5 +33,21 @@ public class APIAdvancedStats {
 	public void setStats(APIAdvancedStatsDetails stats) {
 		this.stats = stats;
 	}
+	public String getFirstName() {
+		return firstName;
+	}
+	@JsonProperty("firstName")
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	@JsonProperty("lastName")
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	
 	
 }

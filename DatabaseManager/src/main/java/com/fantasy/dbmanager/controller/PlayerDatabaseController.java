@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,13 +42,27 @@ public class PlayerDatabaseController  {
     	return true;
     }
     
-    @RequestMapping("/get")
+    @RequestMapping("/getAll")
     public List<Player> getAll() {
     	log.info("DatabaseManager :: getting all players...");
     	List<Player> players = playerManager.getAll();
     	log.info("DatabaseManager :: success :: got [" + players.size() + "] players");
     	return players;
     }
+    
+    @RequestMapping("/get/{val}")
+    public Player get(@PathVariable String val) {
+    	log.info("DatabaseManager :: getting player [" + val + "]...");
+    	Player player = playerManager.get(val);
+    	if (player != null) {
+    		log.info("DatabaseManager :: success :: got player [" + player.getPlayerName() + "]");
+    	} else {
+    		log.error("DatabaseManager :: failure :: could not find player \"" + val + "\"");
+    	}
+    	return player;
+    }
+    
+    
     
     @RequestMapping("/clear")
     public boolean removeAllPlayers() {

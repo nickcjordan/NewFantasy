@@ -49,4 +49,12 @@ public class PlayerDao {
 		return true;
 	}
 
+	public Player getPlayer(String name) {
+		return playerDBCollection.find(eq("playerName", name)).first();
+	}
+
+	public Player getPlayer(int id) {
+		return playerDBCollection.find(eq("_id", id)).first();
+	}
+
 }

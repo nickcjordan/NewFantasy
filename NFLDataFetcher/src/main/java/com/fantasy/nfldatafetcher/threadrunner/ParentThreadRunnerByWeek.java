@@ -4,11 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
-
-import com.fantasy.nfldatafetcher.model.NFLPlayerSeasonStats;
 import com.fantasy.nfldatafetcher.model.Position;
 import com.fantasy.nfldatafetcher.model.advancedstats.APIAdvancedStats;
 import com.fantasy.nfldatafetcher.model.basicstats.APIBasicStats;

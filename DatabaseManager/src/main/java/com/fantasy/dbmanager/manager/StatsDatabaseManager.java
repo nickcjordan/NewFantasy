@@ -24,15 +24,14 @@ public class StatsDatabaseManager {
 	@Autowired
 	private StatsDao statsDao;
 	
-	public boolean updateAllPlayers() {
+	public int updateAllPlayers() {
 		Map<String, NFLPlayerSeasonStats> seasonStatsMap = statsFetcher.getUpdatedStats();
 		try {
-			statsDao.updatePlayerData(seasonStatsMap.values());
+			return statsDao.updatePlayerData(seasonStatsMap.values());
 		} catch (Exception e) {
 			log.error(e.getMessage());
-			return false;
+			return 0;
 		}
-		return true;
 	}
 
 	public Map<String, NFLPlayerSeasonStats> getAll() {

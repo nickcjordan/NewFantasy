@@ -50,7 +50,8 @@ public class CommonDatabaseBeanConfig {
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(User.class),
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(NFLPlayerSeasonStats.class),
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(NFLPlayerWeeklyStats.class),
-				new IntegerCodec()
+				new IntegerCodec(),
+				MongoClient.getDefaultCodecRegistry().get(String.class)
 		);
 	}
 	
