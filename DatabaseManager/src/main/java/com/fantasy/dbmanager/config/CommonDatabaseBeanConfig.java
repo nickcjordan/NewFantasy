@@ -21,6 +21,7 @@ import com.fantasy.dbmanager.fetcher.model.NFLPlayerSeasonStats;
 import com.fantasy.dbmanager.fetcher.model.NFLPlayerWeeklyStats;
 import com.fantasy.dbmanager.model.PerkTree;
 import com.fantasy.dbmanager.model.Player;
+import com.fantasy.dbmanager.model.Position;
 import com.fantasy.dbmanager.model.Team;
 import com.fantasy.dbmanager.model.User;
 import com.fasterxml.jackson.core.type.TypeReference;

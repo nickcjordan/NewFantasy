@@ -20,6 +20,7 @@
 		
 		<module>DatabaseManager</module>
 		<module>NFLDataFetcher</module>
+		
 	</modules>
 	
 	<properties>

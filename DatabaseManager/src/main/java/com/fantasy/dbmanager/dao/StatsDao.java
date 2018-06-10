@@ -27,14 +27,16 @@ public class StatsDao {
 		int successUpdates = 0;
 		for (NFLPlayerSeasonStats stat : stats) {
 			if (stat != null && stat.getId() != null) {
-				Bson filter = eq(stat.getId());
-				if (playerSeasonStatsDBCollection.findOneAndReplace(filter, stat) != null) {
+				if (playerSeasonStatsDBCollection.findOneAndReplace(eq(stat.getId()), stat) != null) {
 					successUpdates++;
 				} else {
-					log.error("Could not find data for [id=" + stat.getId() + ", name=" + stat.getName() + "]");
+					log.info("Could not find PlayerSeasonStat for [id=" + stat.getId() + ", name=" + stat.getName() + "], inserting new record...");
+					playerSeasonStatsDBCollection.insertOne(stat);
+					log.info("Successfully insterted new PlayerSeasonStat record for [id=" + stat.getId() + ", name=" + stat.getName() + "]");
+					successUpdates++;
 				}
 			} else {
-				log.error("NFLPlayerSeasonStat is null");
+				log.error("NFLPlayerSeasonStat is null. skipping...");
 			}
 		}
 		return successUpdates;

@@ -31,12 +31,7 @@ public class SeasonStatsMapConsolidator {
 
 	private void populateSeasonStatsWithBasicStats(Map<String, NFLPlayerSeasonStats> playerSeasonStatsMap, Map<String, List<APIBasicStats>> basicWeeklyStatsMap) {
 		for (List<APIBasicStats> playerData : basicWeeklyStatsMap.values()) {
-			NFLPlayerSeasonStats playerSeasonStats = null;
-			try {
-				playerSeasonStats = statsBuilder.buildNewPlayerSeasonStats(playerData.get(0));
-			} catch (Exception e) {
-				log.error(e);
-			}
+			NFLPlayerSeasonStats playerSeasonStats = statsBuilder.buildNewPlayerSeasonStats(playerData.get(0));
 			for (APIBasicStats basicWeekStats : playerData) {
 				NFLPlayerWeeklyStats weeklyStats = statsBuilder.buildNewWeeklyStat(basicWeekStats, (playerData.indexOf(basicWeekStats) + 1));
 				playerSeasonStats.addWeeklyStats(weeklyStats);

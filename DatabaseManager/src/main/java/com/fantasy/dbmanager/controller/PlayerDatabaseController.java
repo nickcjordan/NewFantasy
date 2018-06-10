@@ -50,6 +50,14 @@ public class PlayerDatabaseController  {
     	return players;
     }
     
+    @RequestMapping("/getAll/{position}")
+    public List<Player> getAll(@PathVariable String position) {
+    	log.info("DatabaseManager :: getting all players of position [" + position + "]");
+    	List<Player> players = playerManager.getAll(position);
+    	log.info("DatabaseManager :: success :: got [" + players.size() + "] players of position [" + position + "]");
+    	return players;
+    }
+    
     @RequestMapping("/get/{val}")
     public Player get(@PathVariable String val) {
     	log.info("DatabaseManager :: getting player [" + val + "]...");
@@ -62,7 +70,13 @@ public class PlayerDatabaseController  {
     	return player;
     }
     
-    
+    @RequestMapping("/update")
+    public int update() {
+    	log.info("DatabaseManager :: updating all players from current PlayerSeasonStats records...");
+    	int updatedCount = playerManager.updateAll();
+		log.info("DatabaseManager :: updated [" + updatedCount + "] players");
+    	return updatedCount;
+    }
     
     @RequestMapping("/clear")
     public boolean removeAllPlayers() {

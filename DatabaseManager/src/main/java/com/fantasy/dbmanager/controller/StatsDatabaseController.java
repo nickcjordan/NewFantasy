@@ -20,6 +20,8 @@ public class StatsDatabaseController  {
 	
 	@Autowired
 	private StatsDatabaseManager statsManager;
+	
+	//TODO add get call for specific players, positions, weeks, etc
     
     @RequestMapping("/get")
     public Map<String, NFLPlayerSeasonStats> getAll() {

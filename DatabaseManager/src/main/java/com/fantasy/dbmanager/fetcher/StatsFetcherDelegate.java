@@ -7,11 +7,9 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dbmanager.dao.StatsDao;
 import com.fantasy.dbmanager.fetcher.model.NFLPlayerSeasonStats;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jaunt.JauntException;
 import com.jaunt.ResponseException;
 import com.jaunt.UserAgent;
 

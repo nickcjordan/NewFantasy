@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dbmanager.fetcher.model.NFLPlayerSeasonStats;
 import com.fantasy.dbmanager.model.Player;
+import com.fantasy.dbmanager.model.Position;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.DeleteResult;
@@ -26,8 +27,12 @@ public class PlayerDao {
 	@Qualifier("playerDBCollection")
 	MongoCollection<Player> playerDBCollection;
 	
-	public void put(List<Player> players) {
+	public void putAll(List<Player> players) {
 		playerDBCollection.insertMany(players);
+	}
+	
+	public void put(Player player) {
+		playerDBCollection.insertOne(player);
 	}
 
 	public long getPlayerCount() {
@@ -39,8 +44,7 @@ public class PlayerDao {
 	}
 
 	public boolean remove(Player player) {
-		Bson filter = eq("id", player.getId());
-		DeleteResult results = playerDBCollection.deleteOne(filter);
+		DeleteResult results = playerDBCollection.deleteOne(eq("identifier", player.getIdentifier()));
 		return results.getDeletedCount() > 0;
 	}
 
@@ -49,12 +53,20 @@ public class PlayerDao {
 		return true;
 	}
 
-	public Player getPlayer(String name) {
+	public Player getPlayerByName(String name) {
 		return playerDBCollection.find(eq("playerName", name)).first();
 	}
 
-	public Player getPlayer(int id) {
-		return playerDBCollection.find(eq("_id", id)).first();
+	public Player getPlayerByID(String id) {
+		return playerDBCollection.find(eq("identifier", id)).first();
+	}
+	
+	public Player updatePlayer(Player player) {
+		return playerDBCollection.findOneAndReplace(eq("playerName", player.getPlayerName()), player);
+	}
+
+	public FindIterable<Player> getAllPlayersByPosition(String position) {
+		return playerDBCollection.find(eq("position", position), Player.class);
 	}
 
 }
