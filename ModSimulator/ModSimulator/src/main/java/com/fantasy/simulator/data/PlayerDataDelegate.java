@@ -1,13 +1,13 @@
 package com.fantasy.simulator.data;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.simulator.data.model.NFLPlayerSeasonStats;
+import com.fantasy.simulator.model.Player;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jaunt.ResponseException;
@@ -18,17 +18,17 @@ public class PlayerDataDelegate {
 	
 	private static Logger log = Logger.getLogger(PlayerDataDelegate.class);
 	
-	private static final String PLAYER_DATA_API_PATH = "http://localhost:8080/player/getAll";
-
-	public Map<String, NFLPlayerSeasonStats> getUpdatedStats() {
-		Map<String, NFLPlayerSeasonStats> map = null;
-		String json = getJson(PLAYER_DATA_API_PATH);
+	private static final String PLAYER_DATA_API_PATH = "http://localhost:8080/player/getAll/";
+	
+	public List<Player> getPlayersByPosition(String pos) {
+		List<Player> players = null;
+		String json = getJson(PLAYER_DATA_API_PATH + pos);
 		try {
-			map = new ObjectMapper().readValue(json, new TypeReference<HashMap<String, NFLPlayerSeasonStats>>() {});
+			players = new ObjectMapper().readValue(json, new TypeReference<List<Player>>() {});
 		} catch (IOException e) {
-			log.error("ERROR mapping seasonStatsMap from rest call response", e);
+			log.error("ERROR mapping seasonStatsMap from rest call response for position [" + pos + "]", e);
 		}
-		return map;
+		return players;
 	}
 	
 	private String getJson(String url) {

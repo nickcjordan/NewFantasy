@@ -1,4 +1,4 @@
-package com.fantasy.simulator.data.model;
+package com.fantasy.simulator.model;
 
 public enum Position {
 

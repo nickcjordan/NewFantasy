@@ -1,4 +1,4 @@
-package com.fantasy.simulator.runner;
+package com.fantasy.simulator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,7 +10,7 @@ public class SimulationRunner {
 	private static SimulationManager simulator;
 	
 	public static void main(String[] args) {
-//		simulator.
+		simulator.runSimulation();
 	}
 
 }

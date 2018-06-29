@@ -1,4 +1,4 @@
-package com.fantasy.simulator.data.model;
+package com.fantasy.simulator.model;
 
 import java.util.HashMap;
 import java.util.Map;
