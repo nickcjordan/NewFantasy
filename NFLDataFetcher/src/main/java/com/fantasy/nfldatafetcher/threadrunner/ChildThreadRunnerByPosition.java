@@ -14,13 +14,13 @@ public class ChildThreadRunnerByPosition extends ThreadRunner implements Runnabl
 	
 	private static Logger log = Logger.getLogger(ChildThreadRunnerByPosition.class);
 	
-	private Map<String, List<APIBasicStats>> basicWeeklyStatsMap;
-	private Map<String, List<APIAdvancedStats>> advancedWeeklyStatsMap;
+	private Map<String, Map<String, APIBasicStats>> basicWeeklyStatsMap;
+	private Map<String, Map<String, APIAdvancedStats>> advancedWeeklyStatsMap;
 	private String pos;
 	private int week;
 	private ExecutorService executor;
 
-	public ChildThreadRunnerByPosition(Map<String, List<APIBasicStats>> basicWeeklyStatsMap, Map<String, List<APIAdvancedStats>> advancedWeeklyStatsMap, int week, String pos) {
+	public ChildThreadRunnerByPosition(Map<String, Map<String, APIBasicStats>> basicWeeklyStatsMap, Map<String, Map<String, APIAdvancedStats>> advancedWeeklyStatsMap, int week, String pos) {
 		this.basicWeeklyStatsMap = basicWeeklyStatsMap;
 		this.advancedWeeklyStatsMap = advancedWeeklyStatsMap;
 		this.week = week;

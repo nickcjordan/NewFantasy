@@ -1,6 +1,7 @@
 package com.fantasy.nfldatafetcher.threadrunner;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,11 +17,11 @@ public class AdvancedStatsThread implements Runnable {
 	
 	private NFLAdvancedStatsDelegate delegate;
 
-	private Map<String, List<APIAdvancedStats>> advancedWeeklyStatsMap;
+	private Map<String, Map<String, APIAdvancedStats>> advancedWeeklyStatsMap;
 	private int week;
 	private String pos;
 
-	public AdvancedStatsThread(Map<String, List<APIAdvancedStats>> advancedWeeklyStatsMap, int week, String pos) {
+	public AdvancedStatsThread(Map<String, Map<String, APIAdvancedStats>> advancedWeeklyStatsMap, int week, String pos) {
 		this.delegate = new NFLAdvancedStatsDelegate();
 		this.advancedWeeklyStatsMap = advancedWeeklyStatsMap;
 		this.week = week;
@@ -38,14 +39,14 @@ public class AdvancedStatsThread implements Runnable {
 	}
 	
 	private void populateAdvancedStatsMapWithPlayer(int week, APIAdvancedStats playerData) {
-		List<APIAdvancedStats> advancedStatsList = null;
+		Map<String, APIAdvancedStats> advancedStatsList = null;
 		if (advancedWeeklyStatsMap.containsKey(playerData.getId())) {
 			advancedStatsList = advancedWeeklyStatsMap.get(playerData.getId());
 		} else {
-			advancedStatsList = new ArrayList<APIAdvancedStats>();
+			advancedStatsList = new HashMap<String, APIAdvancedStats>();
 			advancedWeeklyStatsMap.put(playerData.getId(), advancedStatsList);
 		}
-		advancedStatsList.add(playerData);
+		advancedStatsList.put(Integer.toString(week), playerData);
 	}
 
 }

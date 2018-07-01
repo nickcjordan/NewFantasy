@@ -10,10 +10,10 @@ import com.fantasy.nfldatafetcher.model.basicstats.APIBasicStats;
 @Component
 public class PlayerStatsBuilder {
 	
-	public NFLPlayerWeeklyStats buildNewWeeklyStat(APIBasicStats basicWeekStats, int weekNumber) {
+	public NFLPlayerWeeklyStats buildNewWeeklyStat(APIBasicStats basicWeekStats, String week) {
 		NFLPlayerWeeklyStats weeklyStats = new NFLPlayerWeeklyStats();
 		weeklyStats.setWeeklyPoints(basicWeekStats.getWeekPts());
-		weeklyStats.setWeekNumber(weekNumber);
+		weeklyStats.setWeekNumber(Integer.valueOf(week));
 		return weeklyStats;
 	}
 

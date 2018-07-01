@@ -25,8 +25,8 @@ public class DataRetriever extends ThreadRunner {
 	
 	private static Logger log = Logger.getLogger(NFLDataAdapter.class);
 	
-	private Map<String, List<APIAdvancedStats>> advancedWeeklyStatsMap;
-	private Map<String, List<APIBasicStats>> basicWeeklyStatsMap;
+	private Map<String, Map<String, APIAdvancedStats>> advancedWeeklyStatsMap;
+	private Map<String, Map<String, APIBasicStats>> basicWeeklyStatsMap;
 	private ExecutorService executor;
 	
 	@Value("${data.season.numberOfGames}")
@@ -36,8 +36,8 @@ public class DataRetriever extends ThreadRunner {
 	private SeasonStatsMapConsolidator consolidator;
 	
 	public DataRetriever() {
-		this.advancedWeeklyStatsMap = Collections.synchronizedMap(new HashMap<String, List<APIAdvancedStats>>());
-		this.basicWeeklyStatsMap = Collections.synchronizedMap(new HashMap<String, List<APIBasicStats>>());
+		this.advancedWeeklyStatsMap = Collections.synchronizedMap(new HashMap<String, Map<String, APIAdvancedStats>>());
+		this.basicWeeklyStatsMap = Collections.synchronizedMap(new HashMap<String, Map<String, APIBasicStats>>());
 	}
 
 	public Map<String, NFLPlayerSeasonStats> retrieveCurrentData() {

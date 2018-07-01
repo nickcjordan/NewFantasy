@@ -11,12 +11,12 @@ import com.fantasy.nfldatafetcher.model.basicstats.APIBasicStats;
 
 public class ParentThreadRunnerByWeek extends ThreadRunner implements Runnable {
 	
-	private Map<String, List<APIBasicStats>> basicWeeklyStatsMap;
-	private Map<String, List<APIAdvancedStats>> advancedWeeklyStatsMap;
+	private Map<String, Map<String, APIBasicStats>> basicWeeklyStatsMap;
+	private Map<String, Map<String, APIAdvancedStats>> advancedWeeklyStatsMap;
 	private int week;
 	private ExecutorService executor;
 
-	public ParentThreadRunnerByWeek(Map<String, List<APIBasicStats>> basicWeeklyStatsMap, Map<String, List<APIAdvancedStats>> advancedWeeklyStatsMap, int week) {
+	public ParentThreadRunnerByWeek(Map<String, Map<String, APIBasicStats>> basicWeeklyStatsMap, Map<String, Map<String, APIAdvancedStats>> advancedWeeklyStatsMap, int week) {
 		this.basicWeeklyStatsMap = basicWeeklyStatsMap;
 		this.advancedWeeklyStatsMap = advancedWeeklyStatsMap;
 		this.week = week;

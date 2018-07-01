@@ -1,6 +1,7 @@
 package com.fantasy.nfldatafetcher.threadrunner;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,11 +17,11 @@ public class BasicStatsThread implements Runnable {
 	
 	private NFLBasicStatsDelegate delegate;
 
-	private Map<String, List<APIBasicStats>> basicWeeklyStatsMap;
+	private Map<String, Map<String, APIBasicStats>> basicWeeklyStatsMap;
 	private String pos;
 	private int week;
 
-	public BasicStatsThread(Map<String, List<APIBasicStats>> basicWeeklyStatsMap, int week, String pos) {
+	public BasicStatsThread(Map<String, Map<String, APIBasicStats>> basicWeeklyStatsMap, int week, String pos) {
 		this.basicWeeklyStatsMap = basicWeeklyStatsMap;
 		this.week = week;
 		this.pos = pos;
@@ -38,14 +39,14 @@ public class BasicStatsThread implements Runnable {
 	}
 
 	private void populateBasicStatsMapWithPlayer(int week, APIBasicStats playerData) {
-		List<APIBasicStats> basicStatsList = null;
+		Map<String, APIBasicStats> basicStatsList = null;
 		if (basicWeeklyStatsMap.containsKey(playerData.getId())) {
 			basicStatsList = basicWeeklyStatsMap.get(playerData.getId());
 		} else {
-			basicStatsList = new ArrayList<APIBasicStats>();
+			basicStatsList = new HashMap<String, APIBasicStats>();
 			basicWeeklyStatsMap.put(playerData.getId(), basicStatsList);
 		}
-		basicStatsList.add(playerData);
+		basicStatsList.put(Integer.toString(week), playerData);
 	}
 	
 }

@@ -18,9 +18,15 @@
 		
 		
 		
-		<module>DatabaseManager</module>
-		<module>NFLDataFetcher</module>
 		
+		<module>NFLDataFetcher</module>
+
+		
+		
+		<module>ModSimulator</module>
+		
+		<module>DatabaseManager</module>
+		<module>ModApplicator</module>
 	</modules>
 	
 	<properties>

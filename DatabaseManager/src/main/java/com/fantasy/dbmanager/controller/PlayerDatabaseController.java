@@ -23,6 +23,8 @@ public class PlayerDatabaseController  {
 	
 	private static Logger log = Logger.getLogger(PlayerDatabaseController.class);
 	
+	// server.port = 8080
+	
 	@Autowired
 	private PlayerDatabaseManager playerManager;
 
