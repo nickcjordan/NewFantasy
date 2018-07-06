@@ -2,16 +2,14 @@ package com.fantasy.dbmanager.controller;
 
 
 
-import java.util.ArrayList;
-import org.apache.log4j.Logger;
-
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
@@ -22,8 +20,6 @@ import com.fantasy.dbmanager.model.Player;
 public class PlayerDatabaseController  {
 	
 	private static Logger log = Logger.getLogger(PlayerDatabaseController.class);
-	
-	// server.port = 8080
 	
 	@Autowired
 	private PlayerDatabaseManager playerManager;
@@ -72,9 +68,9 @@ public class PlayerDatabaseController  {
     	return player;
     }
     
-    @RequestMapping("/update")
+    @RequestMapping("/updateAll")
     public int update() {
-    	log.info("DatabaseManager :: updating all players from current PlayerSeasonStats records...");
+    	log.info("DatabaseManager :: updating all players...");
     	int updatedCount = playerManager.updateAll();
 		log.info("DatabaseManager :: updated [" + updatedCount + "] players");
     	return updatedCount;

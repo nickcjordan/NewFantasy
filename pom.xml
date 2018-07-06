@@ -19,7 +19,7 @@
 		
 		
 		
-		<module>NFLDataFetcher</module>
+		
 
 		
 		
@@ -27,6 +27,8 @@
 		
 		<module>DatabaseManager</module>
 		<module>ModApplicator</module>
+		
+		<module>PlayerStatsAPI</module>
 	</modules>
 	
 	<properties>

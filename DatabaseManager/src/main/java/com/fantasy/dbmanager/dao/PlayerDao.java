@@ -2,20 +2,13 @@ package com.fantasy.dbmanager.dao;
 
 import static com.mongodb.client.model.Filters.eq;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
 
-import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dbmanager.fetcher.model.NFLPlayerSeasonStats;
 import com.fantasy.dbmanager.model.Player;
-import com.fantasy.dbmanager.model.Position;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.DeleteResult;
@@ -44,12 +37,12 @@ public class PlayerDao {
 	}
 
 	public boolean remove(Player player) {
-		DeleteResult results = playerDBCollection.deleteOne(eq("identifier", player.getIdentifier()));
+		DeleteResult results = playerDBCollection.deleteOne(eq("playerId", player.getPlayerId()));
 		return results.getDeletedCount() > 0;
 	}
 
 	public boolean removeAll() {
-		playerDBCollection.deleteMany(eq("id", null));
+		playerDBCollection.deleteMany(eq("playerId", null));
 		return true;
 	}
 
@@ -58,7 +51,7 @@ public class PlayerDao {
 	}
 
 	public Player getPlayerByID(String id) {
-		return playerDBCollection.find(eq("identifier", id)).first();
+		return playerDBCollection.find(eq("playerId", id)).first();
 	}
 	
 	public Player updatePlayer(Player player) {

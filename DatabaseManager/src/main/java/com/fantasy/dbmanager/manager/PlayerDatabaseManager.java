@@ -2,18 +2,16 @@ package com.fantasy.dbmanager.manager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.NumberUtils;
 
-import com.fantasy.dbmanager.builder.PlayerBuilder;
 import com.fantasy.dbmanager.dao.PlayerDao;
-import com.fantasy.dbmanager.fetcher.model.NFLPlayerSeasonStats;
+import com.fantasy.dbmanager.fetcher.PlayerStatsAPIDelegate;
 import com.fantasy.dbmanager.model.Player;
-import com.fantasy.dbmanager.model.Position;
+import com.fantasy.dbmanager.model.PlayerStatsAPIResponse;
 import com.mongodb.client.FindIterable;
 
 @Component
@@ -25,11 +23,8 @@ public class PlayerDatabaseManager {
 	private PlayerDao playerDao;
 	
 	@Autowired
-	private StatsDatabaseManager statsManager;
+	private PlayerStatsAPIDelegate statsDelegate;
 	
-	@Autowired
-	private PlayerBuilder playerBuilder;
-
 	public void putPlayersInDB(List<Player> players) {
 		playerDao.putAll(players);
 	}
@@ -73,38 +68,12 @@ public class PlayerDatabaseManager {
 
 	public int updateAll() {
 		int count = 0;
-		Map<String, NFLPlayerSeasonStats> stats = statsManager.getAll();
-		for (NFLPlayerSeasonStats stat : stats.values()) {
-			Player player = playerDao.getPlayerByID(stat.getId());
-			if (player == null) {
-				if (buildAndInsertNewPlayer(stat)) { count++; }
-			} else {
-				if (updateAndReplacePlayer(player, stat)) { count++; }
-			}
+		PlayerStatsAPIResponse response = statsDelegate.getUpdatedStats();
+		for (Player player : response.getPlayers().values()) {
+			playerDao.updatePlayer(player);
+			count++;
 		}
 		return count;
-	}
-
-	private boolean updateAndReplacePlayer(Player player, NFLPlayerSeasonStats stat) {
-		Player result = playerDao.updatePlayer(playerBuilder.updatePlayerWithNewStats(player, stat));
-		if (result == null) {
-			log.error("ERROR :: found player on GET but query found no results trying to UPDATE: " + player.getPlayerName());
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-	private boolean buildAndInsertNewPlayer(NFLPlayerSeasonStats stat) {
-		Player player = playerBuilder.buildNewPlayer(stat);
-		try {
-			playerDao.put(player);
-			log.info("New Player built from updated PlayerSeasonStats list when updating Player database: [" + player.getPlayerName() + " : " + player.getIdentifier() + "]");
-			return true;
-		} catch (Exception e) {
-			log.error("ERROR :: failure to insert new Player when trying to UPDATE: [" + player.getPlayerName() + " : " + Integer.valueOf(player.getIdentifier()) + "]");
-			return false;
-		}
-	}
+	}	
 
 }

@@ -1,4 +1,4 @@
-package com.fantasy.dbmanager.model;
+package com.fantasy.playerstatsapi.model;
 
 import java.util.HashMap;
 import java.util.Map;
