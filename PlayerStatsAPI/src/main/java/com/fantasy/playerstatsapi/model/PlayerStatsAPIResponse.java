@@ -2,6 +2,8 @@ package com.fantasy.playerstatsapi.model;
 
 import java.util.Map;
 
+import com.fantasy.dataaccessutility.model.Player;
+
 public class PlayerStatsAPIResponse {
 	
 	private Map<String, Player> players;

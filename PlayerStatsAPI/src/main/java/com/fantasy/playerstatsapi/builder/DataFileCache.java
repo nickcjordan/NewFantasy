@@ -7,7 +7,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.playerstatsapi.model.Player;
+import com.fantasy.dataaccessutility.model.Player;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

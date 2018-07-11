@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.playerstatsapi.model.PositionStatsDetails;
+import com.fantasy.dataaccessutility.model.PositionStatsDetails;
 import com.fantasy.playerstatsapi.model.api.RawPlayerStats;
 
 @Component

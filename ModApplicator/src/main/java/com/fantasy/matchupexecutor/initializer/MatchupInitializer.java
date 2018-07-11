@@ -1,39 +1,43 @@
 package com.fantasy.matchupexecutor.initializer;
 
-import java.util.List;
-
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.fantasy.matchupexecutor.model.NFLPlayerWeeklyStats;
-import com.fantasy.matchupexecutor.model.NewFantasyWeeklyStats;
-import com.fantasy.matchupexecutor.model.Player;
-import com.fantasy.matchupexecutor.model.User;
-import com.fantasy.matchupexecutor.model.matchup.Matchup;
-import com.fantasy.matchupexecutor.model.modifier.Modifier;
+import com.fantasy.dataaccessutility.DataAccessUtility;
+import com.fantasy.dataaccessutility.model.ModifiedStats;
+import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.matchup.Matchup;
+import com.fantasy.matchupexecutor.controller.MatchupExecutorController;
+import com.fantasy.matchupexecutor.model.MatchupRequest;
 
 @Component
 public class MatchupInitializer {
 	
+	private static Logger log = Logger.getLogger(MatchupExecutorController.class);
+	
 	@Autowired
-	private DatabaseManagerDelegate updater;
+	private DataAccessUtility data;
 
-	public void populateMatchupWithInitialStats(Matchup matchup) {
-		//  grab stats from nfl and populate players with those stats
-		for (User user : matchup.getUsers()) {
+	public Matchup initializeMatchup(MatchupRequest request) {
+		Matchup matchup =  new Matchup(request.getWeekNumber());
+		String weekNumber = Integer.toString(request.getWeekNumber());
+		
+		for (String userId : request.getUserIds()) {
+			User user = data.getUserById(userId);
+			matchup.addUser(user);
 			for (Player player : user.getTeam().getListOfPlayers()) {
-				Player newPlayer = updater.getUpdatedPlayer(player); //TODO this would work, right? because its pass by reference?
-				player.setWeeklyStats(newPlayer.getWeeklyStats());
-				buildAndSetNewFantasyStats(Integer.toString(matchup.getWeekNumber()), player);
+				double initialPointTotal = 0;
+				try {
+					initialPointTotal = player.getStatsByWeek().get(weekNumber).getTotalPointsScored();
+				} catch (Exception e) {
+					log.error("ERROR getting initialPointTotal for player " + player);
+				}
+				player.getModifiedStats().put(weekNumber,  new ModifiedStats(weekNumber, initialPointTotal, initialPointTotal)); // setting end to start, getting updated later
 			}
 		}
-	}
-	
-	private void buildAndSetNewFantasyStats(String weekNumber, Player player) {
-		NFLPlayerWeeklyStats nflStats = player.getWeeklyStats().get(weekNumber);
-		double initialPointTotal = nflStats.getWeeklyPoints();
-		player.getNewFantasyWeeklyStats().put(weekNumber, new NewFantasyWeeklyStats(weekNumber, initialPointTotal, initialPointTotal));
+		return matchup;
 	}
 	
 }

@@ -16,10 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.playerstatsapi.api.PlayerStatsAPIDelegate;
 import com.fantasy.playerstatsapi.api.ThreadRunner;
-import com.fantasy.playerstatsapi.model.Player;
-import com.fantasy.playerstatsapi.model.api.PlayerMetaData;
 import com.fantasy.playerstatsapi.model.api.RawPlayerStats;
 import com.fantasy.playerstatsapi.model.api.WeekStatsResponse;
 

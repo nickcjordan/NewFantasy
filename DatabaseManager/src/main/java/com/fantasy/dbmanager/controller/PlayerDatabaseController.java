@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
-import com.fantasy.dbmanager.model.Player;
 
 @RestController
 @RequestMapping("/player")

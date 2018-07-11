@@ -29,6 +29,7 @@
 		<module>ModApplicator</module>
 		
 		<module>PlayerStatsAPI</module>
+		<module>DataAccessUtility</module>
 	</modules>
 	
 	<properties>
@@ -37,6 +38,11 @@
 	</properties>
 	
 	<dependencies>
+	
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpasyncclient</artifactId>
+	</dependency>
 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

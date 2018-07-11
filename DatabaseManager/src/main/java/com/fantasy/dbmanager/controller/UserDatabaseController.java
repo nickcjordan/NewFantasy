@@ -6,13 +6,15 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
-import com.fantasy.dbmanager.model.User;
+import com.fantasy.dbmanager.populator.DatabasePopulator;
 
 @RestController
 @RequestMapping("/user")
@@ -22,7 +24,10 @@ public class UserDatabaseController  {
 	
 	@Autowired
 	private UserDatabaseManager userManager;
-
+	
+	@Autowired
+	private DatabasePopulator populator;
+	
     @RequestMapping("/count")
     public long count() {
     	log.info("DatabaseManager :: getting user count...");
@@ -39,12 +44,24 @@ public class UserDatabaseController  {
     	return true;
     }
     
-    @RequestMapping("/get")
+    @RequestMapping("/getAll")
     public List<User> getAll() {
     	log.info("DatabaseManager :: getting all users...");
     	List<User> users = userManager.get();
     	log.info("DatabaseManager :: success :: got [" + users.size() + "] users");
     	return users;
+    }
+    
+    @RequestMapping("/get/{val}")
+    public User get(@PathVariable String val) {
+    	log.info("DatabaseManager :: getting user [" + val + "]...");
+    	User user = userManager.get(val);
+    	if (user != null) {
+    		log.info("DatabaseManager :: success :: got user [" + user.getUserName() + "]");
+    	} else {
+    		log.error("DatabaseManager :: failure :: could not find user \"" + val + "\"");
+    	}
+    	return user;
     }
     
     @RequestMapping("/clear")
@@ -54,5 +71,10 @@ public class UserDatabaseController  {
     	log.info("DatabaseManager :: success = " + success);
     	return success;
     }
+    
+	@RequestMapping(value = "/populate", method = RequestMethod.GET)
+	public void populate() {
+		populator.populate();
+	}
 
 }

@@ -1,19 +1,6 @@
 package com.fantasy.utility;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
-
-import com.fantasy.dbmanager.controller.PlayerDatabaseController;
-import com.fantasy.dbmanager.controller.TeamDatabaseController;
-import com.fantasy.dbmanager.model.PerkTree;
-import com.fantasy.dbmanager.model.Player;
-import com.fantasy.dbmanager.model.Position;
-import com.fantasy.dbmanager.model.Team;
-import com.fantasy.dbmanager.model.User;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class TestUtility {
 	

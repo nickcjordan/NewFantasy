@@ -2,7 +2,7 @@ package com.fantasy.playerstatsapi.api;
 
 import java.util.List;
 
-import com.fantasy.playerstatsapi.model.Player;
+import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.playerstatsapi.model.api.PlayerMetaData;
 
 public class ThreadRunner implements Runnable {

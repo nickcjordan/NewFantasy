@@ -7,10 +7,10 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.fantasy.dbmanager.model.PerkTree;
-import com.fantasy.dbmanager.model.Player;
-import com.fantasy.dbmanager.model.Team;
-import com.fantasy.dbmanager.model.User;
+import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.modifier.PerkTree;
+import com.fantasy.dbmanager.model.TeamTO;
+import com.fantasy.dbmanager.model.UserTO;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -32,9 +32,8 @@ public class CommonDatabaseBeanConfig {
 	public CodecRegistry getCodecRegistry() {
 		return CodecRegistries.fromCodecs(
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Player.class), 
-				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Team.class), 
-				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(PerkTree.class),
-				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(User.class),
+				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(TeamTO.class), 
+				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(UserTO.class),
 				new IntegerCodec(),
 				MongoClient.getDefaultCodecRegistry().get(String.class)
 		);
@@ -46,13 +45,13 @@ public class CommonDatabaseBeanConfig {
 	}
 	
 	@Bean(name="teamDBCollection")
-	public MongoCollection<Team> getTeamDBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
-		return mongoClient.getCollection("teams", Team.class).withCodecRegistry(codecRegistry);
+	public MongoCollection<TeamTO> getTeamTODBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
+		return mongoClient.getCollection("teams", TeamTO.class).withCodecRegistry(codecRegistry);
 	}
 	
 	@Bean(name="userDBCollection")
-	public MongoCollection<User> getUserDBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
-		return mongoClient.getCollection("users", User.class).withCodecRegistry(codecRegistry);
+	public MongoCollection<UserTO> getUserTODBConnection(MongoDatabase mongoClient, CodecRegistry codecRegistry) {
+		return mongoClient.getCollection("users", UserTO.class).withCodecRegistry(codecRegistry);
 	}
 	
 }

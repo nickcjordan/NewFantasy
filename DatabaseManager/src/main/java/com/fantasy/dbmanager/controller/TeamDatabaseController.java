@@ -2,21 +2,17 @@ package com.fantasy.dbmanager.controller;
 
 
 
-import java.util.ArrayList;
-import org.apache.log4j.Logger;
-
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
+import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dbmanager.manager.TeamDatabaseManager;
-import com.fantasy.dbmanager.model.Player;
-import com.fantasy.dbmanager.model.Team;
 
 @RestController
 @RequestMapping("/team")

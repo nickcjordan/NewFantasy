@@ -5,12 +5,12 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.matchupexecutor.model.NewFantasyWeeklyStats;
-import com.fantasy.matchupexecutor.model.Player;
-import com.fantasy.matchupexecutor.model.User;
-import com.fantasy.matchupexecutor.model.matchup.Matchup;
-import com.fantasy.matchupexecutor.model.matchup.MatchupResults;
-import com.fantasy.matchupexecutor.model.matchup.MatchupUserResult;
+import com.fantasy.dataaccessutility.model.ModifiedStats;
+import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.matchup.Matchup;
+import com.fantasy.dataaccessutility.model.matchup.MatchupResults;
+import com.fantasy.dataaccessutility.model.matchup.MatchupUserResult;
 
 @Component
 public class MatchupResultsProcessor {
@@ -18,9 +18,9 @@ public class MatchupResultsProcessor {
 	private static Logger log = Logger.getLogger(MatchupResultsProcessor.class);
 
 	public MatchupResults processMatchupResults(Matchup matchup) {
+		MatchupResults results = new MatchupResults(matchup.getWeekNumber());
 		User u1 = matchup.getUsers().get(0);
 		User u2 = matchup.getUsers().get(1);
-		MatchupResults results = new MatchupResults(matchup.getWeekNumber());
 		MatchupUserResult user1Result = buildMatchupUserResult(matchup.getWeekNumber(), u1, u2);
 		MatchupUserResult user2Result = buildMatchupUserResult(matchup.getWeekNumber(), u2, u1);
 		processWinnerAndSetResults(results, u1, user1Result, u2, user2Result);
@@ -34,7 +34,9 @@ public class MatchupResultsProcessor {
 		result.setModifiersApplied(user.getModifiers());
 		result.setTotalPointsScored(calculateTotalPointsScored(week, user));
 		result.setCoinsEarned((int)Math.floor(result.getTotalPointsScored()));
+		result.setMatchupUserResultId(user.getId() + week);
 		user.getMatchupResults().put(Integer.toString(week), result);
+		user.addCoins(result.getCoinsEarned());
 		return result;
 	}
 
@@ -42,8 +44,8 @@ public class MatchupResultsProcessor {
 		double sum = 0;
 		for (Player player : user.getTeam().getListOfPlayers()) {
 			try {
-				Map<String, NewFantasyWeeklyStats> stats = player.getNewFantasyWeeklyStats();
-				NewFantasyWeeklyStats stat = stats.get(Integer.toString(week));
+				Map<String, ModifiedStats> stats = player.getModifiedStats();
+				ModifiedStats stat = stats.get(Integer.toString(week));
 				sum += stat.getNewFantasyPointTotal();
 			} catch(Exception e) {
 				log.error("ERROR :: week=" + week + " :: getting " + player);

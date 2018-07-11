@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dbmanager.model.User;
+import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dbmanager.model.UserTO;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 
@@ -17,9 +18,9 @@ public class UserDao {
 	
 	@Autowired
 	@Qualifier("userDBCollection")
-	MongoCollection<User> userDBCollection;
+	MongoCollection<UserTO> userDBCollection;
 	
-	public void put(List<User> users) {
+	public void put(List<UserTO> users) {
 		userDBCollection.insertMany(users);
 	}
 
@@ -27,7 +28,7 @@ public class UserDao {
 		return userDBCollection.count();
 	}
 	
-	public FindIterable<User> getAll() {
+	public FindIterable<UserTO> getAll() {
 		return userDBCollection.find();
 	}
 
@@ -40,6 +41,10 @@ public class UserDao {
 	public boolean removeAll() {
 		userDBCollection.deleteMany(eq("id", null));
 		return true;
+	}
+
+	public UserTO getUserById(String id) {
+		return userDBCollection.find(eq("userId", id)).first();
 	}
 
 }

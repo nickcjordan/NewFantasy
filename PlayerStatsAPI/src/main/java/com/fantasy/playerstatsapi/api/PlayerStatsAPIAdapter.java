@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.playerstatsapi.builder.DataFileCache;
 import com.fantasy.playerstatsapi.builder.PlayerMapBuilder;
-import com.fantasy.playerstatsapi.model.Player;
 import com.fantasy.playerstatsapi.model.PlayerStatsAPIResponse;
 
 @Component

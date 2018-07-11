@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.NumberUtils;
 
+import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dbmanager.dao.PlayerDao;
 import com.fantasy.dbmanager.fetcher.PlayerStatsAPIDelegate;
-import com.fantasy.dbmanager.model.Player;
 import com.fantasy.dbmanager.model.PlayerStatsAPIResponse;
 import com.mongodb.client.FindIterable;
 

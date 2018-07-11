@@ -2,19 +2,21 @@ package com.fantasy.matchupexecutor.modapplicator;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.matchupexecutor.model.NFLPlayerWeeklyStats;
-import com.fantasy.matchupexecutor.model.NewFantasyWeeklyStats;
-import com.fantasy.matchupexecutor.model.Player;
-import com.fantasy.matchupexecutor.model.Team;
-import com.fantasy.matchupexecutor.model.User;
-import com.fantasy.matchupexecutor.model.matchup.Matchup;
-import com.fantasy.matchupexecutor.model.modifier.Modifier;
-import com.fantasy.matchupexecutor.model.modifier.PositionGroup;
+import com.fantasy.dataaccessutility.model.ModifiedStats;
+import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.Team;
+import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.matchup.Matchup;
+import com.fantasy.dataaccessutility.model.modifier.Modifier;
 
 @Component
 public class ModifierApplicator {
+	
+	@Autowired
+	private TargetDeterminator determinator;
 	
 	private String weekNumber;
 	
@@ -29,40 +31,48 @@ public class ModifierApplicator {
 	private void applyModifiersFromUser(User user, User opponent) {
 		for (Modifier mod : user.getModifiers()) {
 			switch(mod.getTargetType()) {
-				case PLAYER : applyModifierOnPlayer(mod); break;
-				case TEAM: applyModifierOnOpponent(mod); break;
-				case POSITION: applyModifierOnPositionGroup(mod); break;
+				case PLAYER : 
+					Player player = determinator.determineTargetPlayer(mod.getTargetId(), user, opponent);
+					applyModifierOnPlayer(mod, player);
+					break;
+				case TEAM: 
+					Team team = determinator.determineTargetTeam(mod.getTargetId(), user, opponent);
+					applyModifierOnTeam(mod, team); 
+					break;
+				case POSITION: 
+					List<Player> players = determinator.determineTargetPositionGroup(mod, user, opponent);
+					applyModifierOnPositionGroup(mod, players); 
+					break;
 			}
+			
 		}
 	}
 
-	private void applyModifierOnOpponent(Modifier mod) {
-		Team opponentTeam = (Team) mod.getTarget();
-		for (List<Player> positionGroup : opponentTeam.getListOfPlayersByPosition()) {
+	private void applyModifierOnTeam(Modifier mod, Team team) {
+		for (List<Player> positionGroup : team.getListOfPlayersByPosition()) {
 			for (Player player : positionGroup) {
-				player.getNewFantasyWeeklyStats().get(weekNumber).setNewFantasyPointTotal(calculatePointTotal(player, mod));
+				ModifiedStats stats = player.getModifiedStats().get(weekNumber);
+				stats.setNewFantasyPointTotal(calculatePointTotal(player, mod));
 			}
 		}
+		System.out.println();
 	}
 
 	private double calculatePointTotal(Player player, Modifier mod) {
-		double newTotal = player.getNewFantasyWeeklyStats().get(weekNumber).getNewFantasyPointTotal();
-		double originalTotal = player.getWeeklyStats().get(weekNumber).getWeeklyPoints();
-		double initialPointTotal = (newTotal != 0) ? newTotal : (originalTotal != 0) ? originalTotal : 0;
-		double adjustedPointTotal = initialPointTotal + (initialPointTotal * mod.getChangePercentage());
+		double newTotal = player.getModifiedStats().get(weekNumber).getNewFantasyPointTotal();
+		double initialPointTotal = (newTotal != 0) ? newTotal : player.getStatsByWeek().get(weekNumber).getTotalPointsScored();
+		double adjustedPointTotal = initialPointTotal + (initialPointTotal * ((mod.getChangePercentage())/100.00));
 		return adjustedPointTotal;
 	}
 
-	private void applyModifierOnPositionGroup(Modifier mod) {
-		PositionGroup positionGroup = (PositionGroup) mod.getTarget();
-		for (Player player : positionGroup.getPlayers()) {
-			player.getNewFantasyWeeklyStats().get(weekNumber).setNewFantasyPointTotal(calculatePointTotal(player, mod));
+	private void applyModifierOnPositionGroup(Modifier mod, List<Player> players) {
+		for (Player player : players) {
+			player.getModifiedStats().get(weekNumber).setNewFantasyPointTotal(calculatePointTotal(player, mod));
 		}
 	}
 
-	private void applyModifierOnPlayer(Modifier mod) {
-		Player player = (Player) mod.getTarget();
-		player.getNewFantasyWeeklyStats().get(weekNumber).setNewFantasyPointTotal(calculatePointTotal(player, mod));
+	private void applyModifierOnPlayer(Modifier mod, Player player) {
+		player.getModifiedStats().get(weekNumber).setNewFantasyPointTotal(calculatePointTotal(player, mod));
 	}
 	
 }

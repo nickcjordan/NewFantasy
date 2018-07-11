@@ -15363,3 +15363,618 @@ org.springframework.web.client.HttpClientErrorException: 400 Bad Request
 2018-07-06 10:38:15 INFO  PlayerMapBuilder:121 - All threads have returned
 2018-07-06 10:38:15 INFO  DataFileCache:32 - updating data in cache...
 2018-07-06 10:38:16 INFO  PlayerStatsAPIController:26 - PlayerStatsAPI :: success :: got data for [534] players
+2018-07-06 10:58:43 INFO  PlayerStatsAPIController:24 - PlayerStatsAPI :: getting player stats...
+2018-07-06 10:58:43 INFO  PlayerStatsAPIAdapter:35 - Making calls to get updated data...
+2018-07-06 10:58:43 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 1
+2018-07-06 10:58:43 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 2
+2018-07-06 10:58:44 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 3
+2018-07-06 10:58:44 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 4
+2018-07-06 10:58:44 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 5
+2018-07-06 10:58:45 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 6
+2018-07-06 10:58:45 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 7
+2018-07-06 10:58:46 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 8
+2018-07-06 10:58:46 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 9
+2018-07-06 10:58:46 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 10
+2018-07-06 10:58:47 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 11
+2018-07-06 10:58:47 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 12
+2018-07-06 10:58:47 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 13
+2018-07-06 10:58:48 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 14
+2018-07-06 10:58:48 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 15
+2018-07-06 10:58:48 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 16
+2018-07-06 10:58:49 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 17
+2018-07-06 10:58:49 INFO  PlayerMapBuilder:72 - Retrieved all weeklyStats
+2018-07-06 10:58:49 INFO  PlayerMapBuilder:44 - Initiating iterative threads...
+2018-07-06 10:58:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543676
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540147
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543688
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543680
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556517
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540152
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495491
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532794
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553455
+2018-07-06 10:58:50 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495486
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534761
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495472
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 81879
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507373
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2554138
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495229
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543486
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2558957
+2018-07-06 10:58:50 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495210
+2018-07-06 10:58:51 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543469
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532331
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540190
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79583
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495443
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2541096
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533005
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534571
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507187
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535892
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533451
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508043
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1062
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 4327
+2018-07-06 10:58:52 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2531049
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508063
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 222
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508088
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 234
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495712
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533028
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506908
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495717
+2018-07-06 10:58:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506816
+2018-07-06 10:58:52 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494254
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539960
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 262
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2499275
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496865
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539304
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71193
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 284
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71197
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506899
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550551
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550308
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495311
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543830
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1974
+2018-07-06 10:58:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506895
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532940
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552318
+2018-07-06 10:58:54 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553885
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532952
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495300
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506883
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553617
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540138
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539320
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539325
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496825
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495762
+2018-07-06 10:58:54 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507783
+2018-07-06 10:58:55 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532964
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2541688
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1330
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550147
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543860
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2530794
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507463
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79897
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507225
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543792
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79899
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539293
+2018-07-06 10:58:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555303
+2018-07-06 10:58:55 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507218
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1344
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535708
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238466
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552268
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 80421
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540291
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543533
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507488
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543774
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506386
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540279
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495136
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238457
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506147
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534834
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539289
+2018-07-06 10:58:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556843
+2018-07-06 10:58:56 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495356
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495597
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535988
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507029
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507010
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238227
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555569
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543571
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507282
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506194
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 81306
+2018-07-06 10:58:57 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508123
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535966
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508126
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2531177
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 306
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535514
+2018-07-06 10:58:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495561
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 786
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556443
+2018-07-06 10:58:58 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539937
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539938
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79611
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79852
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79844
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 497204
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2504844
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2514414
+2018-07-06 10:58:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495835
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550647
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71249
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555394
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505629
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550658
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533052
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495832
+2018-07-06 10:58:59 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496794
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496782
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2559020
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550628
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552635
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494323
+2018-07-06 10:58:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539645
+2018-07-06 10:59:00 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494317
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540219
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543721
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495425
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496963
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507883
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550246
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506546
+2018-07-06 10:59:00 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505245
+2018-07-06 10:59:01 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495621
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539262
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532878
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552463
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506112
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1681
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2530660
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495613
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505016
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556811
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506345
+2018-07-06 10:59:01 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506108
+2018-07-06 10:59:01 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:59:02 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 10:59:02 INFO  DataFileCache:32 - updating data in cache...
+2018-07-06 10:59:02 INFO  PlayerStatsAPIController:26 - PlayerStatsAPI :: success :: got data for [534] players
+2018-07-06 11:13:24 INFO  PlayerStatsAPIController:24 - PlayerStatsAPI :: getting player stats...
+2018-07-06 11:13:24 INFO  PlayerStatsAPIAdapter:35 - Making calls to get updated data...
+2018-07-06 11:13:24 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 1
+2018-07-06 11:13:25 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 2
+2018-07-06 11:13:25 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 3
+2018-07-06 11:13:25 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 4
+2018-07-06 11:13:26 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 5
+2018-07-06 11:13:26 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 6
+2018-07-06 11:13:26 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 7
+2018-07-06 11:13:27 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 8
+2018-07-06 11:13:27 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 9
+2018-07-06 11:13:27 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 10
+2018-07-06 11:13:28 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 11
+2018-07-06 11:13:28 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 12
+2018-07-06 11:13:28 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 13
+2018-07-06 11:13:29 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 14
+2018-07-06 11:13:29 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 15
+2018-07-06 11:13:30 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 16
+2018-07-06 11:13:30 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 17
+2018-07-06 11:13:30 INFO  PlayerMapBuilder:72 - Retrieved all weeklyStats
+2018-07-06 11:13:30 INFO  PlayerMapBuilder:44 - Initiating iterative threads...
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543676
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556517
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543688
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532794
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540147
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540152
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553455
+2018-07-06 11:13:31 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495491
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543680
+2018-07-06 11:13:32 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495229
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 81879
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495472
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2554138
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507373
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543486
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2558957
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495210
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534761
+2018-07-06 11:13:32 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495486
+2018-07-06 11:13:32 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532331
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543469
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495443
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507187
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79583
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2541096
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540190
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1062
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 4327
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535892
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534571
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533005
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533451
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508043
+2018-07-06 11:13:33 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2531049
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508063
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508088
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506908
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 222
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533028
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 234
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495717
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495712
+2018-07-06 11:13:33 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506816
+2018-07-06 11:13:35 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494254
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2499275
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539304
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550308
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 262
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71193
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539960
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1974
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 284
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495311
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543830
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550551
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496865
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71197
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552318
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506895
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532940
+2018-07-06 11:13:35 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506899
+2018-07-06 11:13:35 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532952
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506883
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495762
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553617
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539320
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539325
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507783
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496825
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553885
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495300
+2018-07-06 11:13:36 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540138
+2018-07-06 11:13:36 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532964
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2541688
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1330
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507463
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79899
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543860
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539293
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2530794
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507225
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543792
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555303
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79897
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550147
+2018-07-06 11:13:37 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507218
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507488
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535708
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552268
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 80421
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238466
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540291
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495136
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1344
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506386
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539289
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238457
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543774
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556843
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540279
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534834
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543533
+2018-07-06 11:13:37 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506147
+2018-07-06 11:13:38 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507029
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495356
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495597
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535988
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507010
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238227
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507282
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506194
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555569
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543571
+2018-07-06 11:13:38 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 81306
+2018-07-06 11:13:39 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508123
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535966
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508126
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495561
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 306
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 786
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535514
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556443
+2018-07-06 11:13:39 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2531177
+2018-07-06 11:13:40 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539938
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539937
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79844
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79852
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79611
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2514414
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71249
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2504844
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 497204
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555394
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550647
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550658
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495832
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505629
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495835
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533052
+2018-07-06 11:13:41 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496794
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496782
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550628
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2559020
+2018-07-06 11:13:41 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494323
+2018-07-06 11:13:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552635
+2018-07-06 11:13:43 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539645
+2018-07-06 11:13:43 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494317
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540219
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496963
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543721
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550246
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495425
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507883
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505245
+2018-07-06 11:13:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506546
+2018-07-06 11:13:45 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495621
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1681
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552463
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539262
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506112
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532878
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495613
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556811
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505016
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2530660
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506345
+2018-07-06 11:13:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506108
+2018-07-06 11:13:46 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:46 INFO  PlayerMapBuilder:88 - All threads have returned
+2018-07-06 11:13:46 INFO  DataFileCache:32 - updating data in cache...
+2018-07-06 11:13:46 INFO  PlayerStatsAPIController:26 - PlayerStatsAPI :: success :: got data for [534] players
+2018-07-09 17:49:30 INFO  PlayerStatsAPIController:21 - PlayerStatsAPI :: getting player stats...
+2018-07-09 17:49:30 INFO  PlayerStatsAPIAdapter:35 - Making calls to get updated data...
+2018-07-09 17:49:30 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 1
+2018-07-09 17:49:33 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 2
+2018-07-09 17:49:34 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 3
+2018-07-09 17:49:34 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 4
+2018-07-09 17:49:35 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 5
+2018-07-09 17:49:35 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 6
+2018-07-09 17:49:36 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 7
+2018-07-09 17:49:36 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 8
+2018-07-09 17:49:37 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 9
+2018-07-09 17:49:37 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 10
+2018-07-09 17:49:38 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 11
+2018-07-09 17:49:38 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 12
+2018-07-09 17:49:39 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 13
+2018-07-09 17:49:39 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 14
+2018-07-09 17:49:40 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 15
+2018-07-09 17:49:41 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 16
+2018-07-09 17:49:41 INFO  PlayerStatsAPIDelegate:24 - Calling weeklyStats for week 17
+2018-07-09 17:49:42 INFO  PlayerMapBuilder:71 - Retrieved all weeklyStats
+2018-07-09 17:49:42 INFO  PlayerMapBuilder:43 - Initiating iterative threads...
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556517
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543676
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532794
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543680
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543688
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540147
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495491
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540152
+2018-07-09 17:49:42 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553455
+2018-07-09 17:49:44 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495486
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534761
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507373
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495229
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 81879
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543486
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495472
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2554138
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495210
+2018-07-09 17:49:44 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2558957
+2018-07-09 17:49:46 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532331
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543469
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79583
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540190
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 4327
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2541096
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534571
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507187
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495443
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535892
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1062
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533005
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508043
+2018-07-09 17:49:46 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533451
+2018-07-09 17:49:46 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2531049
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508063
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 222
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533028
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495712
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495717
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506908
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 234
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506816
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508088
+2018-07-09 17:49:47 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 262
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494254
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2499275
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550551
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71197
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532940
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539960
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506899
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552318
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1974
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550308
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543830
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496865
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 284
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506895
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71193
+2018-07-09 17:49:47 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495311
+2018-07-09 17:49:48 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539304
+2018-07-09 17:49:49 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553885
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506883
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495300
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532952
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539325
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496825
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2553617
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507783
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539320
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495762
+2018-07-09 17:49:49 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540138
+2018-07-09 17:49:50 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2541688
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532964
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507463
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1330
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543860
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2530794
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79897
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550147
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79899
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543792
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539293
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555303
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507225
+2018-07-09 17:49:51 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507218
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1344
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535708
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540291
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238466
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543533
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552268
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507488
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543774
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506147
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506386
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495136
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539289
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2534834
+2018-07-09 17:49:51 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238457
+2018-07-09 17:49:52 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540279
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556843
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 80421
+2018-07-09 17:49:53 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507029
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495356
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495597
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543571
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507282
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 81306
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506194
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555569
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 238227
+2018-07-09 17:49:53 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507010
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535988
+2018-07-09 17:49:55 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508123
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495561
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535966
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2508126
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2535514
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 786
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556443
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 306
+2018-07-09 17:49:55 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2531177
+2018-07-09 17:49:56 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539937
+2018-07-09 17:49:56 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539938
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79611
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79844
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 79852
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2504844
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2514414
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2555394
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550658
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495835
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550647
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 497204
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 71249
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2533052
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495832
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505629
+2018-07-09 17:49:57 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496794
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496782
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550628
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2559020
+2018-07-09 17:49:57 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552635
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539645
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494323
+2018-07-09 17:49:58 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 494317
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495425
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2540219
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 496963
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2543721
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2550246
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2507883
+2018-07-09 17:49:58 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506546
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505245
+2018-07-09 17:49:59 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495621
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2495613
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 1681
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2556811
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2505016
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506345
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506108
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2506112
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2532878
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2552463
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2539262
+2018-07-09 17:49:59 ERROR PlayerStatsAPIDelegate:34 - ERROR :: Failed to get data for player 2530660
+2018-07-09 17:49:59 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:50:00 INFO  PlayerMapBuilder:87 - All threads have returned
+2018-07-09 17:50:00 INFO  DataFileCache:32 - updating data in cache...
+2018-07-09 17:50:00 INFO  PlayerStatsAPIController:23 - PlayerStatsAPI :: success :: got data for [534] players
