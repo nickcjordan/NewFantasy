@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Team {
 
@@ -20,7 +21,6 @@ public class Team {
 	private String city;
 	private String fullName;
 	private String abbrev;
-	private Map<String, Player> allPlayers;
 	
 	public Team() { 
 		qb = new ArrayList<Player>();
@@ -29,7 +29,6 @@ public class Team {
 		te = new ArrayList<Player>();
 		k = new ArrayList<Player>();
 		d = new ArrayList<Player>();
-		allPlayers = new HashMap<String, Player>();
 	}
 	
 	public Team(String name, String city, String id, String abbrev) {
@@ -44,7 +43,6 @@ public class Team {
 		this.id = id;
 		this.city = city;
 		this.fullName = city + " " + name;
-		allPlayers = new HashMap<String, Player>();
 	}
 
 	public Team(String id, String userName) {
@@ -56,7 +54,6 @@ public class Team {
 		this.te = new ArrayList<Player>();
 		this.k = new ArrayList<Player>();
 		this.d = new ArrayList<Player>();
-		allPlayers = new HashMap<String, Player>();
 	}
 
 	public String getAbbrev() {
@@ -183,7 +180,7 @@ public class Team {
 	public String getFullName() {
 		return fullName;
 	}
-
+	@JsonIgnore
 	public List<List<Player>> getListOfPlayersByPosition() {
 		List<List<Player>> positions = new ArrayList<List<Player>>();
 		positions.add(qb);
@@ -194,7 +191,7 @@ public class Team {
 		positions.add(d);
 		return positions;
 	}
-
+	@JsonIgnore
 	public List<Player> getListOfPlayers() {
 		List<Player> players = new ArrayList<Player>();
 		for (List<Player> positionGroup : getListOfPlayersByPosition()) {
@@ -204,9 +201,9 @@ public class Team {
 		}
 		return players;
 	}
-	
+	@JsonIgnore
 	public Map<String, Player> getPlayerMap() {
-		allPlayers = new HashMap<String, Player>();
+		HashMap<String, Player> allPlayers = new HashMap<String, Player>();
 		for (Player p : getListOfPlayers()) {
 			allPlayers.put(p.getPlayerId(), p);
 		}

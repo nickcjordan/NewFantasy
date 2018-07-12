@@ -4,13 +4,13 @@ import java.util.List;
 
 public class MatchupRequest {
 	
-	private int weekNumber;
+	private String weekNumber;
 	private List<String> userIds;
 	
-	public int getWeekNumber() {
+	public String getWeekNumber() {
 		return weekNumber;
 	}
-	public void setWeekNumber(int weekNumber) {
+	public void setWeekNumber(String weekNumber) {
 		this.weekNumber = weekNumber;
 	}
 	public List<String> getUserIds() {

@@ -18,6 +18,7 @@ public class TeamTO {
 	private String city;
 	private String fullName;
 	private String abbrev;
+	
 	public String getId() {
 		return id;
 	}

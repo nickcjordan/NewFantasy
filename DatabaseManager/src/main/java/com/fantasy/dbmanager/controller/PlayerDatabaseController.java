@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.PlayerListResponse;
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
 
 @RestController
@@ -49,11 +50,11 @@ public class PlayerDatabaseController  {
     }
     
     @RequestMapping("/getAll/{position}")
-    public List<Player> getAll(@PathVariable String position) {
+    public PlayerListResponse getAll(@PathVariable String position) {
     	log.info("DatabaseManager :: getting all players of position [" + position + "]");
     	List<Player> players = playerManager.getAll(position);
     	log.info("DatabaseManager :: success :: got [" + players.size() + "] players of position [" + position + "]");
-    	return players;
+    	return new PlayerListResponse(players);
     }
     
     @RequestMapping("/get/{val}")

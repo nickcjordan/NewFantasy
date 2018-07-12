@@ -25,8 +25,6 @@ public class TestMatchupExecutor {
 	private static final String DATABASE_MANAGER_API_PATH = "http://localhost:8080/player/get/";
 
 	
-	// TODO everything is working, but the matchup doesnt seem to be applying mods correctly
-	
 	@Test
 	public void test() {
 		MatchupRequest request = new MatchupRequest();
@@ -34,7 +32,7 @@ public class TestMatchupExecutor {
 		list.add("0");
 		list.add("1");
 		request.setUserIds(list);
-		request.setWeekNumber(1);
+		request.setWeekNumber("1");
 		Matchup m = sendMatchupPost(request);
 		System.out.println("winner: " + m.getResults().getWinner().getUserName());
 	}

@@ -1,5 +1,12 @@
 package com.fantasy.dbmanager.populator;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -7,8 +14,6 @@ import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
-import com.fantasy.dataaccessutility.model.modifier.Modifier;
-import com.fantasy.dataaccessutility.model.modifier.TargetType;
 
 @Component
 public class DatabasePopulator {
@@ -16,42 +21,84 @@ public class DatabasePopulator {
 	@Autowired
 	private DataAccessUtility data;
 	
+	private Map<String, List<Player>> positionMap;
+	
 	public void populate() {
+		positionMap = new HashMap<String, List<Player>>();
+		positionMap.put("QB", data.getAllPlayersByPosition("QB"));
+		positionMap.put("RB", data.getAllPlayersByPosition("RB"));
+		positionMap.put("WR", data.getAllPlayersByPosition("WR"));
+		positionMap.put("TE", data.getAllPlayersByPosition("TE"));
 		
-		User a = new User("0", "team brady");
-		a.setTeam(buildTestTeam1());
-		a.setId("0");
-		
-		User b = new User("1", "team rodgers");
-		b.setTeam(buildTestTeam2());
-		b.setId("1");
-		
-		Modifier mod = new Modifier();
-		mod.setChangePercentage(50.0);
-		mod.setTargetId(b.getTeam().getId());
-		mod.setTargetType(TargetType.TEAM);
-		a.addMod(mod);
-		
-		data.updateUser(a);
-		data.updateUser(b);
+		data.updateUsers(buildLeagueList());
 	}
 	
-	private Team buildTestTeam1() {
-		Team team =  new Team();
-		team.setId("0");
-		team.addQb(data.getPlayerById("Tom Brady"));
-		team.addRb(data.getPlayerById("Dalvin Cook"));
-		team.addWr(data.getPlayerById("Antonio Brown"));
+	private List<User> buildLeagueList() {
+		List<User> users = new ArrayList<User>();
+		for (int id = 1; id <= 12; id++) {
+			users.add(buildNewUser(Integer.toString(id)));
+		}
+		return users;
+	}
+
+	private User buildNewUser(String id) {
+		User user = new User(id, "user_" + id);
+		user.setTeam(buildNewTeam(id));
+		return user;
+	}
+
+	private Team buildNewTeam(String id) {
+		Team team = new Team(id, "team_" + id);
+		team.setQb(buildQbs());
+		team.setRb(buildRbs());
+		team.setWr(buildWrs());
+		team.setTe(buildTes());
 		return team;
 	}
 	
-	private Team buildTestTeam2() {
-		Team team =  new Team();
-		team.setId("1");
-		team.addQb(data.getPlayerById("Aaron Rodgers"));
-		team.addRb(data.getPlayerById("Todd Gurley"));
-		team.addWr(data.getPlayerById("Julio Jones"));
-		return team;
+	private int getRandomNumber(int i) {
+		return  (((int)Math.random())%(i + 1)) + 1;
 	}
 	
+	private List<Player> buildQbs() {
+		List<Player> players = new ArrayList<Player>();
+		for (int i = 0; i < getRandomNumber(2); i++) {
+			players.add(getRandomPlayerByPosition("QB"));
+		}
+		return players;
+	}
+
+	private List<Player> buildRbs() {
+		List<Player> players = new ArrayList<Player>();
+		for (int i = 0; i < getRandomNumber(3); i++) {
+			players.add(getRandomPlayerByPosition("RB"));
+		}
+		return players;
+	}
+
+	private List<Player> buildWrs() {
+		List<Player> players = new ArrayList<Player>();
+		for (int i = 0; i < getRandomNumber(3); i++) {
+			players.add(getRandomPlayerByPosition("WR"));
+		}
+		return players;
+	}
+
+	private List<Player> buildTes() {
+		List<Player> players = new ArrayList<Player>();
+		for (int i = 0; i < getRandomNumber(2); i++) {
+			players.add(getRandomPlayerByPosition("TE"));
+		}
+		return players;
+	}
+	
+	private Player getRandomPlayerByPosition(String position) {
+		List<Player> list = positionMap.get(position);
+		Collections.shuffle(list);
+		Player p = list.get(0);
+		list.remove(p);
+		positionMap.put(position, list);
+		return p;
+	}
+
 }

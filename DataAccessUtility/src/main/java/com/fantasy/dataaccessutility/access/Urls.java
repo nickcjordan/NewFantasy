@@ -1,5 +1,7 @@
 package com.fantasy.dataaccessutility.access;
 
+import java.net.URI;
+
 public class Urls {
 	
 	private static final String MANAGER = "http://localhost:8080";
@@ -9,6 +11,7 @@ public class Urls {
 	private static final String TEAM = "/team";
 
 	private static final String GET = "/get/";
+	private static final String GET_ALL = "/getAll/";
 	private static final String PUT = "/put/";
 	
 	public static String getPlayer(String playerId) {
@@ -33,5 +36,9 @@ public class Urls {
 
 	public static String putTeam() {
 		return MANAGER + TEAM + PUT;
+	}
+
+	public static String getAllPosition(String position) {
+		return MANAGER + PLAYER + GET_ALL + position;
 	}
 }

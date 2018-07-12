@@ -5,13 +5,13 @@ public class ModifiedStats {
 	private String weekNumber;
 	private double oldFantasyPointTotal;
 	private double newFantasyPointTotal;
+	private double finalPointTotal;
 	
 	public ModifiedStats() {}
 	
-	public ModifiedStats(String weekNumber, double oldFantasyPointTotal, double newFantasyPointTotal) {
+	public ModifiedStats(String weekNumber, double oldFantasyPointTotal) {
 		this.weekNumber = weekNumber;
 		this.oldFantasyPointTotal = oldFantasyPointTotal;
-		this.newFantasyPointTotal = newFantasyPointTotal;
 	}
 	
 	public String getWeekNumber() {
@@ -31,6 +31,12 @@ public class ModifiedStats {
 	}
 	public void setNewFantasyPointTotal(double newFantasyPointTotal) {
 		this.newFantasyPointTotal = newFantasyPointTotal;
+	}
+	public double getFinalPointTotal() {
+		return finalPointTotal;
+	}
+	public void setFinalPointTotal(double finalPointTotal) {
+		this.finalPointTotal = finalPointTotal;
 	}
 	
 }

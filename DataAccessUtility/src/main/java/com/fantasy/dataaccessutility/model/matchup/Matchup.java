@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Matchup {
 	
 	@JsonProperty
-	private int weekNumber;
+	private String weekNumber;
 	@JsonProperty
 	private List<User> users;
 	@JsonProperty
@@ -17,12 +17,12 @@ public class Matchup {
 	
 	public Matchup() {}
 	
-	public Matchup(int weekNumber) {
+	public Matchup(String weekNumber) {
 		this.weekNumber = weekNumber;
 		this.users = new ArrayList<User>();
 	}
 	
-	public Matchup(int weekNumber, List<User> users, MatchupResults results) {
+	public Matchup(String weekNumber, List<User> users, MatchupResults results) {
 		super();
 		this.weekNumber = weekNumber;
 		this.users = users;
@@ -41,14 +41,14 @@ public class Matchup {
 		this.users = users;
 	}
 	
-	public int getWeekNumber() {
+	public String getWeekNumber() {
 		return weekNumber;
 	}
-	
-	public void setWeekNumber(int weekNumber) {
+
+	public void setWeekNumber(String weekNumber) {
 		this.weekNumber = weekNumber;
 	}
-	
+
 	public MatchupResults getResults() {
 		return results;
 	}

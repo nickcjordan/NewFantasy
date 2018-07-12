@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-import org.springframework.http.client.HttpComponentsAsyncClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.PlayerListResponse;
 import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
 
@@ -20,10 +19,7 @@ public class DatabaseManagerDelegate {
 	
 	public DatabaseManagerDelegate() {
 		rest = new RestTemplate();
-		rest.setRequestFactory(new HttpComponentsAsyncClientHttpRequestFactory());
 	}
-	
-	private static Logger log = Logger.getLogger(DatabaseManagerDelegate.class);
 	
 	public Player getUpdatedPlayer(String playerId) {
 		return rest.getForObject(Urls.getPlayer(playerId), Player.class);
@@ -49,6 +45,10 @@ public class DatabaseManagerDelegate {
 
 	public boolean updateTeam(Team team) {
 		return rest.postForObject(Urls.putTeam(), Arrays.asList(team), boolean.class);
+	}
+
+	public List<Player> getUpdatedPositionGroup(String position) {
+		return rest.getForObject(Urls.getAllPosition(position), PlayerListResponse.class).getPlayers();
 	}
 	
 }

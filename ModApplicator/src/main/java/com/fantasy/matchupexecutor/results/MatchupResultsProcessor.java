@@ -18,7 +18,7 @@ public class MatchupResultsProcessor {
 	private static Logger log = Logger.getLogger(MatchupResultsProcessor.class);
 
 	public MatchupResults processMatchupResults(Matchup matchup) {
-		MatchupResults results = new MatchupResults(matchup.getWeekNumber());
+		MatchupResults results = new MatchupResults(Integer.valueOf(matchup.getWeekNumber()));
 		User u1 = matchup.getUsers().get(0);
 		User u2 = matchup.getUsers().get(1);
 		MatchupUserResult user1Result = buildMatchupUserResult(matchup.getWeekNumber(), u1, u2);
@@ -27,15 +27,15 @@ public class MatchupResultsProcessor {
 		return results;
 	}
 
-	private MatchupUserResult buildMatchupUserResult(int week, User user, User opponent) {
-		MatchupUserResult result = new MatchupUserResult(week);
+	private MatchupUserResult buildMatchupUserResult(String week, User user, User opponent) {
+		MatchupUserResult result = new MatchupUserResult(Integer.valueOf(week));
 		result.setOpponentId(opponent.getId());
-		result.setWeek(week);
+		result.setWeek(Integer.valueOf(week));
 		result.setModifiersApplied(user.getModifiers());
-		result.setTotalPointsScored(calculateTotalPointsScored(week, user));
+		result.setTotalPointsScored(calculateTotalPointsScored(Integer.valueOf(week), user));
 		result.setCoinsEarned((int)Math.floor(result.getTotalPointsScored()));
 		result.setMatchupUserResultId(user.getId() + week);
-		user.getMatchupResults().put(Integer.toString(week), result);
+		user.getMatchupResults().put(week, result);
 		user.addCoins(result.getCoinsEarned());
 		return result;
 	}
