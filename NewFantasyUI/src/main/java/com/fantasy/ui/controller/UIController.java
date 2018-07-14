@@ -3,24 +3,36 @@ package com.fantasy.ui.controller;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.apache.log4j.Logger;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UIController {
 	
+	private static Logger log = Logger.getLogger(UIController.class);
+	
 	@RequestMapping("/resource")
-	  public Map<String,Object> home() {
+	  public Map<String,Object> home(UsernamePasswordAuthenticationToken auth) {
+		log.info("entering GET /resource");
 	    Map<String,Object> model = new HashMap<String,Object>();
-	    model.put("id", UUID.randomUUID().toString());
-	    model.put("content", "Hello World");
+	    
+	    User u = (User) auth.getPrincipal();
+	    
+	    model.put("user", u);
+	    
+	    
+	    log.info("details: " + auth.getDetails());
+	    
+	    
+//	    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//	    String username = auth.getName();
+//	    Object credentials = auth.getCredentials();
+	    
+	    
 	    return model;
 	  }
 	
@@ -29,18 +41,4 @@ public class UIController {
 	    return user;
 	  }
 	
-	@Configuration
-	  @Order(SecurityProperties.IGNORED_ORDER)
-	  protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	    @Override
-	    protected void configure(HttpSecurity http) throws Exception {
-	      http
-	        .httpBasic()
-	      .and()
-	        .authorizeRequests()
-	          .antMatchers("/index.html", "/", "/home", "/login").permitAll()
-	          .anyRequest().authenticated();
-	    }
-	  }
-
 }
