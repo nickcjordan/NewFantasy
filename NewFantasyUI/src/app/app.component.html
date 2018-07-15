@@ -1,11 +1,10 @@
-<div style="text-align:center"class="container">
-  <div class="container">
-    <p>login: <span>{{data.user.username}}</span></p>
-    
-    
-  </div>
-  
-  <app-users></app-users>
-  <app-messages></app-messages>
-  
+<div style="text-align: center" class="container">
+	<h1>League Users</h1>
+	<nav>
+		<a routerLink="/dashboard">Dashboard</a>
+		<a routerLink="/users">Users</a>
+	</nav>
+	<router-outlet></router-outlet>
+	<app-messages></app-messages>
+
 </div>
