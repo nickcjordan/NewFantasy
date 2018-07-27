@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.PositionStatsDetails;
 import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
 
@@ -22,6 +23,8 @@ public class DatabasePopulator {
 	private DataAccessUtility data;
 	
 	private Map<String, List<Player>> positionMap;
+
+	private String[] names = {"nick", "dan", "ryan", "will"};
 	
 	public void populate() {
 		positionMap = new HashMap<String, List<Player>>();
@@ -29,21 +32,23 @@ public class DatabasePopulator {
 		positionMap.put("RB", data.getAllPlayersByPosition("RB"));
 		positionMap.put("WR", data.getAllPlayersByPosition("WR"));
 		positionMap.put("TE", data.getAllPlayersByPosition("TE"));
+		positionMap.put("K", data.getAllPlayersByPosition("K"));
 		
 		data.updateUsers(buildLeagueList());
 	}
 	
 	private List<User> buildLeagueList() {
 		List<User> users = new ArrayList<User>();
-		for (int id = 1; id <= 12; id++) {
+		for (int id = 0; id < names.length; id++) {
 			users.add(buildNewUser(Integer.toString(id)));
 		}
 		return users;
 	}
 
 	private User buildNewUser(String id) {
-		User user = new User(id, "user_" + id);
+		User user = new User(id, names[Integer.valueOf(id)]);
 		user.setTeam(buildNewTeam(id));
+		user.setCoins(Integer.valueOf(id));
 		return user;
 	}
 
@@ -53,16 +58,13 @@ public class DatabasePopulator {
 		team.setRb(buildRbs());
 		team.setWr(buildWrs());
 		team.setTe(buildTes());
+		team.setK(buildKs());
 		return team;
-	}
-	
-	private int getRandomNumber(int i) {
-		return  (((int)Math.random())%(i + 1)) + 1;
 	}
 	
 	private List<Player> buildQbs() {
 		List<Player> players = new ArrayList<Player>();
-		for (int i = 0; i < getRandomNumber(2); i++) {
+		for (int i = 0; i < 2; i++) {
 			players.add(getRandomPlayerByPosition("QB"));
 		}
 		return players;
@@ -70,7 +72,7 @@ public class DatabasePopulator {
 
 	private List<Player> buildRbs() {
 		List<Player> players = new ArrayList<Player>();
-		for (int i = 0; i < getRandomNumber(3); i++) {
+		for (int i = 0; i < 3; i++) {
 			players.add(getRandomPlayerByPosition("RB"));
 		}
 		return players;
@@ -78,7 +80,7 @@ public class DatabasePopulator {
 
 	private List<Player> buildWrs() {
 		List<Player> players = new ArrayList<Player>();
-		for (int i = 0; i < getRandomNumber(3); i++) {
+		for (int i = 0; i < 3; i++) {
 			players.add(getRandomPlayerByPosition("WR"));
 		}
 		return players;
@@ -86,8 +88,16 @@ public class DatabasePopulator {
 
 	private List<Player> buildTes() {
 		List<Player> players = new ArrayList<Player>();
-		for (int i = 0; i < getRandomNumber(2); i++) {
+		for (int i = 0; i < 2; i++) {
 			players.add(getRandomPlayerByPosition("TE"));
+		}
+		return players;
+	}
+	
+	private List<Player> buildKs() {
+		List<Player> players = new ArrayList<Player>();
+		for (int i = 0; i < 1; i++) {
+			players.add(getRandomPlayerByPosition("K"));
 		}
 		return players;
 	}
@@ -95,10 +105,32 @@ public class DatabasePopulator {
 	private Player getRandomPlayerByPosition(String position) {
 		List<Player> list = positionMap.get(position);
 		Collections.shuffle(list);
-		Player p = list.get(0);
+		
+		int i = 0;
+		Player p = null;
+		boolean goodPlayer = false;
+		try {
+			while (!goodPlayer) {
+				p = list.get(i++);
+				if (hasHighEnoughTotalPoints(p)) {
+					goodPlayer = true;
+				}
+			}
+		} catch (Exception e) {
+			p = list.get(0);
+		}
+		
 		list.remove(p);
 		positionMap.put(position, list);
 		return p;
+	}
+
+	private boolean hasHighEnoughTotalPoints(Player p) {
+		double sum = 0;
+		for (PositionStatsDetails stat : p.getStatsByWeek().values()) {
+			sum += stat.getTotalPointsScored();
+		}
+		return (sum > 80);
 	}
 
 }

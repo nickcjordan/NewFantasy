@@ -44,6 +44,14 @@ public class UserDatabaseController  {
     	return true;
     }
     
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public boolean updateUser(@RequestBody User user) {
+    	log.info("DatabaseManager :: updating user " + user.getUserName() + " in database...");
+    	userManager.update(user);
+    	log.info("DatabaseManager :: success :: updated " + user.getUserName());
+    	return true;
+    }
+    
     @RequestMapping("/getAll")
     public List<User> getAll() {
     	log.info("DatabaseManager :: getting all users...");

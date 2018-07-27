@@ -1,0 +1,62 @@
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    border: 1px solid transparent;
+}
+
+/*   navbar link text   */
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    font-size: 16pt;
+}
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #9ddbbd;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+/* style of navbar Round number header */
+.navbar-inverse .navbar-nav > li {
+    position: relative;
+    display: block;
+    margin-left: 55px;
+    background-color: transparent;
+}
+
+/*  navbar brand  */
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:focus {
+    color: #fff;
+    font-style: italic;
+    font-size: 18pt;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #999999;
+    background-color: transparent;
+}
+
+
+/* navbar color */
+
+.navbar-inverse {
+    background-color: #494949;
+}
+
+/* dropdown text in navbar dropdown */
+.user-dropdown-text {
+	text-align: center;
+	font-size: 14pt;
+}
+
+

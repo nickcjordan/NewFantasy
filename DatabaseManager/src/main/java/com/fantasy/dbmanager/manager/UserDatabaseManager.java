@@ -51,4 +51,8 @@ public class UserDatabaseManager {
 		return userTransformer.getUser(userDao.getUserById(id));
 	}
 
+	public void update(User user) {
+		
+	}
+
 }
