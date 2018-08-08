@@ -4,49 +4,55 @@
 <h2>Lineup:</h2>
 
 <div class="lineupContainer">
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col"></th>
-				<th scope="col">id</th>
-				<th scope="col">Name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<h4><b>Quarterbacks:</b></h4>
-			<tr *ngFor="let player of user.team.qb">
-				<th></th>
-				<th>{{player.playerId}}</th>
-				<td>{{player.playerName}}</td>
-			</tr>
-			
-			<h4><b>Runningbacks:</b></h4>
-			<tr *ngFor="let player of user.team.rb">
-				<th></th>
-				<th>{{player.playerId}}</th>
-				<td>{{player.playerName}}</td>
-			</tr>
-			
-			<h4><b>Wide Receivers:</b></h4>
-			<tr *ngFor="let player of user.team.wr">
-				<th></th>
-				<th>{{player.playerId}}</th>
-				<td>{{player.playerName}}</td>
-			</tr>
-			
-			<h4><b>Tight Ends:</b></h4>
-			<tr *ngFor="let player of user.team.te">
-				<th></th>
-				<th>{{player.playerId}}</th>
-				<td>{{player.playerName}}</td>
-			</tr>
-			
-			<h4><b>Kickers:</b></h4>
-			<tr *ngFor="let player of user.team.k">
-				<th></th>
-				<th>{{player.playerId}}</th>
-				<td>{{player.playerName}}</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th class="dark-row" scope="col">Player Id:</th>
+						<th class="dark-row" scope="col">Name:</th>
+						<th class="dark-row" scope="col">Team:</th>
+					</tr>
+				</thead>
+			<tbody>
+				<tr class="position-title-row"><td class="no-border"><strong>Quarterbacks:</strong></td></tr>
+				<tr *ngFor="let player of user.team.qb">
+					<td>{{player.playerId}}</td>
+					<td>{{player.playerName}}</td>
+					<td>{{player.teamName}}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr class="position-title-row"><td class="no-border"><strong>Runningbacks:</strong></td></tr>
+				<tr *ngFor="let player of user.team.rb">
+					<td>{{player.playerId}}</td>
+					<td>{{player.playerName}}</td>
+					<td>{{player.teamName}}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr class="position-title-row"><td class="no-border"><strong>Wide Receivers:</strong></td></tr>
+				<tr *ngFor="let player of user.team.wr">
+					<td>{{player.playerId}}</td>
+					<td>{{player.playerName}}</td>
+					<td>{{player.teamName}}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr class="position-title-row"><td class="no-border"><strong>Tight Ends:</strong></td></tr>
+				<tr *ngFor="let player of user.team.te">
+					<td>{{player.playerId}}</td>
+					<td>{{player.playerName}}</td>
+					<td>{{player.teamName}}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr class="position-title-row"><td class="no-border"><strong>Kickers:</strong></td></tr>
+				<tr *ngFor="let player of user.team.k">
+					<td>{{player.playerId}}</td>
+					<td>{{player.playerName}}</td>
+					<td>{{player.teamName}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

@@ -3,13 +3,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {UserDetailComponent} from './user-detail/user-detail.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {UserPreviewComponent} from './users/user-preview/user-preview.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 //	{path: 'detail/:id', component: UserDetailComponent},
 	{path: 'dashboard', component: DashboardComponent},
 //	{path: 'users/:id', component: UsersComponent},
-	{path: 'userPreview/:id', component: UserPreviewComponent}
+	{path: 'userPreview/:id', component: UserPreviewComponent},
+	{ path: 'login', component: LoginComponent}
 ];
 
 

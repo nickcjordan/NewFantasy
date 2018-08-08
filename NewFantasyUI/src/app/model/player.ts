@@ -1,13 +1,13 @@
 export class Player {
 	playerId: string;
 	playerName: string;
+	position: string;
+	teamName: string;
 }
 
 //private String playerId;
-//	private String position;
 //	private boolean isOnUserTeam;
 //	private String playerName;
-//	private String teamName;
 //	private String playerRank;
 //	private String positionRank;
 //	private String byeWeek;

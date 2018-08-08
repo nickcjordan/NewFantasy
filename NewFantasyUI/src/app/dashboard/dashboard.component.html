@@ -1,1 +1,9 @@
+<h1>Greeting</h1>
+<div [hidden]="!authenticated()">
+	<p>authenticated with user {{user}}</p>
+</div>
+<div [hidden]="authenticated()">
+	<p>not authenticated</p>
+</div>
+
 <app-user-edit></app-user-edit>

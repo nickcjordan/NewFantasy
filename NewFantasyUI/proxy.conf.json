@@ -4,5 +4,11 @@
 		"secure": false,
 		"logLevel": "debug",
 		"pathRewrite": {"^/api/" : ""}
+	},
+	"/ui/": {
+		"target": "http://localhost:8085/",
+		"secure": false,
+		"logLevel": "debug",
+		"pathRewrite": {"^/ui/" : ""}
 	}
 }

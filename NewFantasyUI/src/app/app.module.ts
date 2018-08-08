@@ -15,6 +15,8 @@ import { NavComponent } from './common/nav/nav.component';
 import { UserPreviewComponent } from './users/user-preview/user-preview.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
 	declarations: [
@@ -25,7 +27,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 		UserSearchComponent,
 		NavComponent,
 		UserPreviewComponent,
-		UserEditComponent
+		UserEditComponent,
+		HomeComponent,
+		LoginComponent
 	],
 	imports: [
 		BrowserModule,

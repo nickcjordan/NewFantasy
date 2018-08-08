@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-edit',
@@ -13,7 +14,8 @@ export class UserEditComponent implements OnInit {
 	userId: number;
 	
 	constructor(
-		private userService: UserService
+		private userService: UserService,
+		private http: HttpClient
 	) {}
 
 	ngOnInit() {

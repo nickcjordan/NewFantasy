@@ -1,5 +1,5 @@
-h4 {
-	text-align: left;
+.lineupContainer {
+	width: 50%;
 }
 
 tr {
@@ -23,7 +23,8 @@ tbody {
     border-top: none !important;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
-    padding-left: 100px;
+    margin-left: 1000px;
+	padding-left: 1000px;
 }
 
 .position-title-row {
@@ -39,8 +40,11 @@ tbody {
     border-right: none !important;
 }
 
-.player-row {
-	margin-left: 1000px;
-	padding-left: 1000px;
-	
+.indented-text {
+	padding-left: 5%;
+}
+
+.dark-row {
+	background: #494949;
+	color: white;
 }
