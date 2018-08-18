@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {User} from '../../model/user';
+import { AuthService } from "../../service/auth.service";
 import {UserService} from '../../service/user.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class UserPreviewComponent implements OnInit {
   constructor(
 	  private userService: UserService,
 	  private route: ActivatedRoute,
+	  private auth: AuthService
   ) {}
 
 	ngOnInit() {
@@ -26,6 +28,11 @@ export class UserPreviewComponent implements OnInit {
 	setUser(): void {
 		this.userId = +this.route.snapshot.paramMap.get('id');
 		this.userService.getUser(this.userId).subscribe(user => this.user = user);
+	}
+	
+	authenticated() { 
+		console.log('UserPreviewComponent: checking authenticated --> ' + this.auth.authenticated);
+		return this.auth.authenticated; 
 	}
 
 }

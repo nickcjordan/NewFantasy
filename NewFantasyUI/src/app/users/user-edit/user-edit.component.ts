@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import {User} from '../../model/user';
+import { AuthService } from "../../service/auth.service";
 import {UserService} from '../../service/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -15,7 +16,8 @@ export class UserEditComponent implements OnInit {
 	
 	constructor(
 		private userService: UserService,
-		private http: HttpClient
+		private http: HttpClient,
+		private auth: AuthService
 	) {}
 
 	ngOnInit() {
@@ -29,5 +31,10 @@ export class UserEditComponent implements OnInit {
 	
 	save(): void {
 		this.userService.updateUser(this.user).subscribe();
+	}
+	
+	authenticated() { 
+		console.log('UserEditComponent: checking authenticated --> ' + this.auth.authenticated);
+		return this.auth.authenticated; 
 	}
 }

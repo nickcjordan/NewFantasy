@@ -20,7 +20,8 @@ export class UserService {
 
 	constructor(
 		private http: HttpClient,
-		private messageService: MessageService) {}
+		private messageService: MessageService
+	) {}
 
 	/** Log a UserService message with the MessageService */
 	private log(message: string) {

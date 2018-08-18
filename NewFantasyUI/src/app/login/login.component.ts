@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from './../service/auth.service';
@@ -12,13 +12,16 @@ export class LoginComponent implements OnInit {
 	
 	credentials = {username: '', password: ''};
 
-	constructor(private auth: AuthService, private http: HttpClient, private router: Router) {
-   	}
+	constructor(
+		private auth: AuthService, 
+		private http: HttpClient, 
+		private router: Router
+	) {}
 
-  login() {
-    this.auth.authenticate(this.credentials, () => { this.router.navigateByUrl('/');});
-    return false;
-  }
+	  login() {
+	    this.auth.authenticate(this.credentials, () => { this.router.navigateByUrl('/');});
+	    return false;
+	  }
 
 	ngOnInit() {
 	}

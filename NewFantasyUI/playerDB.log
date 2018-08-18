@@ -337,3 +337,524 @@
 2018-08-06 17:24:03 INFO  UIController:28 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
 2018-08-06 17:24:06 INFO  UIController:20 - entering GET /resource
 2018-08-06 17:24:06 INFO  UIController:28 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 16:49:16 INFO  UIController:39 - username: user
+2018-08-13 16:49:16 INFO  UIController:39 - username: user
+2018-08-13 16:49:16 INFO  UIController:40 - authenticated: true
+2018-08-13 16:49:16 INFO  UIController:40 - authenticated: true
+2018-08-13 16:49:16 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 16:49:16 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 16:54:27 INFO  UIController:39 - username: user
+2018-08-13 16:54:27 INFO  UIController:40 - authenticated: true
+2018-08-13 16:54:27 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:03:29 INFO  UIController:39 - username: user
+2018-08-13 17:03:29 INFO  UIController:39 - username: user
+2018-08-13 17:03:29 INFO  UIController:40 - authenticated: true
+2018-08-13 17:03:29 INFO  UIController:40 - authenticated: true
+2018-08-13 17:03:29 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:03:29 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:05:49 INFO  UIController:39 - username: user
+2018-08-13 17:05:49 INFO  UIController:39 - username: user
+2018-08-13 17:05:49 INFO  UIController:40 - authenticated: true
+2018-08-13 17:05:49 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:05:49 INFO  UIController:40 - authenticated: true
+2018-08-13 17:05:49 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:07:33 INFO  UIController:39 - username: user
+2018-08-13 17:07:33 INFO  UIController:39 - username: user
+2018-08-13 17:07:33 INFO  UIController:40 - authenticated: true
+2018-08-13 17:07:33 INFO  UIController:40 - authenticated: true
+2018-08-13 17:07:33 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:07:33 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:07:58 INFO  UIController:39 - username: user
+2018-08-13 17:07:58 INFO  UIController:39 - username: user
+2018-08-13 17:07:58 INFO  UIController:40 - authenticated: true
+2018-08-13 17:07:58 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:07:58 INFO  UIController:40 - authenticated: true
+2018-08-13 17:07:58 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:08:02 INFO  UIController:39 - username: user
+2018-08-13 17:08:02 INFO  UIController:40 - authenticated: true
+2018-08-13 17:08:02 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:08:10 INFO  UIController:39 - username: user
+2018-08-13 17:08:10 INFO  UIController:39 - username: user
+2018-08-13 17:08:10 INFO  UIController:40 - authenticated: true
+2018-08-13 17:08:10 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:08:10 INFO  UIController:40 - authenticated: true
+2018-08-13 17:08:10 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:08:50 INFO  UIController:39 - username: user
+2018-08-13 17:08:50 INFO  UIController:40 - authenticated: true
+2018-08-13 17:08:50 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:08:57 INFO  UIController:39 - username: user
+2018-08-13 17:08:57 INFO  UIController:40 - authenticated: true
+2018-08-13 17:08:57 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:09:27 INFO  UIController:39 - username: user
+2018-08-13 17:09:27 INFO  UIController:39 - username: user
+2018-08-13 17:09:27 INFO  UIController:40 - authenticated: true
+2018-08-13 17:09:27 INFO  UIController:40 - authenticated: true
+2018-08-13 17:09:27 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:09:27 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:10:47 INFO  UIController:39 - username: user
+2018-08-13 17:10:47 INFO  UIController:40 - authenticated: true
+2018-08-13 17:10:47 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:12:41 INFO  UIController:39 - username: user
+2018-08-13 17:12:41 INFO  UIController:39 - username: user
+2018-08-13 17:12:41 INFO  UIController:40 - authenticated: true
+2018-08-13 17:12:41 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:12:41 INFO  UIController:40 - authenticated: true
+2018-08-13 17:12:41 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:16:37 INFO  UIController:39 - username: user
+2018-08-13 17:16:37 INFO  UIController:40 - authenticated: true
+2018-08-13 17:16:37 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:18:05 INFO  UIController:39 - username: user
+2018-08-13 17:18:05 INFO  UIController:40 - authenticated: true
+2018-08-13 17:18:05 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:18:05 INFO  UIController:39 - username: user
+2018-08-13 17:18:05 INFO  UIController:40 - authenticated: true
+2018-08-13 17:18:05 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:19:47 INFO  UIController:39 - username: user
+2018-08-13 17:19:47 INFO  UIController:40 - authenticated: true
+2018-08-13 17:19:47 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:21:49 INFO  UIController:39 - username: user
+2018-08-13 17:21:49 INFO  UIController:39 - username: user
+2018-08-13 17:21:49 INFO  UIController:40 - authenticated: true
+2018-08-13 17:21:49 INFO  UIController:40 - authenticated: true
+2018-08-13 17:21:49 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:21:49 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:22:31 INFO  UIController:39 - username: user
+2018-08-13 17:22:31 INFO  UIController:40 - authenticated: true
+2018-08-13 17:22:31 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:26:58 INFO  UIController:39 - username: user
+2018-08-13 17:26:58 INFO  UIController:40 - authenticated: true
+2018-08-13 17:26:58 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:27:02 INFO  UIController:39 - username: user
+2018-08-13 17:27:02 INFO  UIController:39 - username: user
+2018-08-13 17:27:02 INFO  UIController:40 - authenticated: true
+2018-08-13 17:27:02 INFO  UIController:40 - authenticated: true
+2018-08-13 17:27:02 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:27:02 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:27:16 INFO  UIController:39 - username: user
+2018-08-13 17:27:16 INFO  UIController:39 - username: user
+2018-08-13 17:27:16 INFO  UIController:40 - authenticated: true
+2018-08-13 17:27:16 INFO  UIController:40 - authenticated: true
+2018-08-13 17:27:16 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:27:16 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:27:26 INFO  UIController:39 - username: user
+2018-08-13 17:27:26 INFO  UIController:39 - username: user
+2018-08-13 17:27:26 INFO  UIController:40 - authenticated: true
+2018-08-13 17:27:26 INFO  UIController:40 - authenticated: true
+2018-08-13 17:27:26 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:27:26 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:29:57 INFO  UIController:39 - username: user
+2018-08-13 17:29:57 INFO  UIController:40 - authenticated: true
+2018-08-13 17:29:57 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:29:58 INFO  UIController:39 - username: user
+2018-08-13 17:29:58 INFO  UIController:40 - authenticated: true
+2018-08-13 17:29:58 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:30:47 INFO  UIController:39 - username: user
+2018-08-13 17:30:47 INFO  UIController:40 - authenticated: true
+2018-08-13 17:30:47 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:31:26 INFO  UIController:39 - username: user
+2018-08-13 17:31:26 INFO  UIController:40 - authenticated: true
+2018-08-13 17:31:26 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:31:45 INFO  UIController:39 - username: user
+2018-08-13 17:31:45 INFO  UIController:40 - authenticated: true
+2018-08-13 17:31:45 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:36:18 INFO  UIController:39 - username: user
+2018-08-13 17:36:18 INFO  UIController:40 - authenticated: true
+2018-08-13 17:36:18 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:36:19 INFO  UIController:39 - username: user
+2018-08-13 17:36:19 INFO  UIController:40 - authenticated: true
+2018-08-13 17:36:19 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:36:44 INFO  UIController:39 - username: user
+2018-08-13 17:36:44 INFO  UIController:40 - authenticated: true
+2018-08-13 17:36:44 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:37:27 INFO  UIController:39 - username: user
+2018-08-13 17:37:27 INFO  UIController:40 - authenticated: true
+2018-08-13 17:37:27 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:38:15 INFO  UIController:39 - username: user
+2018-08-13 17:38:15 INFO  UIController:40 - authenticated: true
+2018-08-13 17:38:15 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:38:39 INFO  UIController:39 - username: user
+2018-08-13 17:38:39 INFO  UIController:40 - authenticated: true
+2018-08-13 17:38:39 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:38:52 INFO  UIController:39 - username: user
+2018-08-13 17:38:52 INFO  UIController:40 - authenticated: true
+2018-08-13 17:38:52 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:38:57 INFO  UIController:39 - username: user
+2018-08-13 17:38:57 INFO  UIController:40 - authenticated: true
+2018-08-13 17:38:57 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:39:47 INFO  UIController:39 - username: user
+2018-08-13 17:39:47 INFO  UIController:40 - authenticated: true
+2018-08-13 17:39:47 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:18 INFO  UIController:39 - username: user
+2018-08-13 17:41:18 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:18 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:18 INFO  UIController:39 - username: user
+2018-08-13 17:41:18 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:18 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:19 INFO  UIController:39 - username: user
+2018-08-13 17:41:19 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:19 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:23 INFO  UIController:39 - username: user
+2018-08-13 17:41:23 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:23 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:49 INFO  UIController:39 - username: user
+2018-08-13 17:41:49 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:49 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:49 INFO  UIController:39 - username: user
+2018-08-13 17:41:49 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:49 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:50 INFO  UIController:39 - username: user
+2018-08-13 17:41:50 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:50 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:52 INFO  UIController:39 - username: user
+2018-08-13 17:41:52 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:52 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:54 INFO  UIController:39 - username: user
+2018-08-13 17:41:54 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:54 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:41:59 INFO  UIController:39 - username: user
+2018-08-13 17:41:59 INFO  UIController:40 - authenticated: true
+2018-08-13 17:41:59 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:45:53 INFO  UIController:39 - username: user
+2018-08-13 17:45:53 INFO  UIController:40 - authenticated: true
+2018-08-13 17:45:53 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:46:36 INFO  UIController:39 - username: user
+2018-08-13 17:46:36 INFO  UIController:40 - authenticated: true
+2018-08-13 17:46:36 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:46:41 INFO  UIController:39 - username: user
+2018-08-13 17:46:41 INFO  UIController:40 - authenticated: true
+2018-08-13 17:46:41 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:46:44 INFO  UIController:39 - username: user
+2018-08-13 17:46:44 INFO  UIController:40 - authenticated: true
+2018-08-13 17:46:44 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:47:12 INFO  UIController:39 - username: user
+2018-08-13 17:47:12 INFO  UIController:40 - authenticated: true
+2018-08-13 17:47:12 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:47:24 INFO  UIController:39 - username: user
+2018-08-13 17:47:24 INFO  UIController:40 - authenticated: true
+2018-08-13 17:47:24 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:47:29 INFO  UIController:39 - username: user
+2018-08-13 17:47:29 INFO  UIController:40 - authenticated: true
+2018-08-13 17:47:29 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:47:34 INFO  UIController:39 - username: user
+2018-08-13 17:47:34 INFO  UIController:40 - authenticated: true
+2018-08-13 17:47:34 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:47:45 INFO  UIController:39 - username: user
+2018-08-13 17:47:45 INFO  UIController:40 - authenticated: true
+2018-08-13 17:47:45 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:47:58 INFO  UIController:39 - username: user
+2018-08-13 17:47:58 INFO  UIController:40 - authenticated: true
+2018-08-13 17:47:58 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:48:03 INFO  UIController:39 - username: user
+2018-08-13 17:48:03 INFO  UIController:40 - authenticated: true
+2018-08-13 17:48:03 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:52:16 INFO  UIController:39 - username: user
+2018-08-13 17:52:16 INFO  UIController:40 - authenticated: true
+2018-08-13 17:52:16 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:52:22 INFO  UIController:39 - username: user
+2018-08-13 17:52:22 INFO  UIController:40 - authenticated: true
+2018-08-13 17:52:22 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:56:57 INFO  UIController:39 - username: user
+2018-08-13 17:56:57 INFO  UIController:40 - authenticated: true
+2018-08-13 17:56:57 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:56:59 INFO  UIController:39 - username: user
+2018-08-13 17:56:59 INFO  UIController:40 - authenticated: true
+2018-08-13 17:56:59 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-13 17:57:03 INFO  UIController:39 - username: user
+2018-08-13 17:57:03 INFO  UIController:40 - authenticated: true
+2018-08-13 17:57:03 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:41:02 INFO  UIController:39 - username: user
+2018-08-15 16:41:02 INFO  UIController:40 - authenticated: true
+2018-08-15 16:41:02 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:41:09 INFO  UIController:39 - username: user
+2018-08-15 16:41:09 INFO  UIController:40 - authenticated: true
+2018-08-15 16:41:09 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:42:22 INFO  UIController:39 - username: user
+2018-08-15 16:42:22 INFO  UIController:40 - authenticated: true
+2018-08-15 16:42:22 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:42:25 INFO  UIController:39 - username: user
+2018-08-15 16:42:25 INFO  UIController:40 - authenticated: true
+2018-08-15 16:42:25 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:42:30 INFO  UIController:39 - username: user
+2018-08-15 16:42:30 INFO  UIController:40 - authenticated: true
+2018-08-15 16:42:30 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:49:51 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:49:51 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:50:19 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:50:19 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:50:36 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:50:36 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:50:52 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:50:52 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:51:13 INFO  UIController:39 - username: user
+2018-08-15 16:51:13 INFO  UIController:40 - authenticated: true
+2018-08-15 16:51:13 INFO  UIController:41 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:51:18 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:51:18 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:51:46 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:51:46 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:56:53 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:56:53 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:56:54 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:56:54 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:56:54 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:56:54 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:57:42 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:57:42 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 16:57:42 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:57:42 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 16:57:43 INFO  UIController:52 - entering GET /auth
+2018-08-15 16:57:43 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 17:00:30 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:00:30 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:00:30 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:00:30 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null
+2018-08-15 17:01:03 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:01:03 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:01:38 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:01:38 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:01:45 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:01:45 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:01:59 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:01:59 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:03:41 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:03:41 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:03:44 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:03:44 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:03:50 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:03:50 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:05:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:05:32 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:07:34 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:07:34 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:08:49 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:08:49 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:17:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:17:32 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:17:40 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:17:40 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:17:40 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:17:40 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:30:24 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:30:24 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:30:51 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:30:51 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:31:00 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:31:00 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:31:46 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:31:46 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:35:43 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:35:43 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:47:41 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:47:41 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:47:44 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:47:44 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:47:52 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:47:52 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:48:09 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:48:09 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:49:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:49:32 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:49:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:49:32 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:51:26 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:51:26 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:51:27 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:51:27 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:51:29 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:51:29 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:51:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:51:32 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:53:07 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:53:07 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:53:11 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:53:11 INFO  UIController:61 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:56:24 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:56:24 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:56:24 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:56:24 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:57:04 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:57:04 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:57:05 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:57:05 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:57:07 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:57:07 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:57:10 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:57:10 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:58:59 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:58:59 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:58:59 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:58:59 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:59:45 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:59:45 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:59:46 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:59:46 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:59:57 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:59:57 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 17:59:58 INFO  UIController:52 - entering GET /auth
+2018-08-15 17:59:58 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:01:35 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:01:35 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:01:36 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:01:36 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:01:48 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:01:48 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:01:49 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:01:49 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:03:27 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:03:27 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:03:28 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:03:28 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:05:36 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:05:36 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:05:37 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:05:37 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:05:52 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:05:52 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:05:53 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:05:53 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:06:56 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:06:56 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:06:57 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:06:57 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:07:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:07:32 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:07:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:07:32 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:08:04 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:08:04 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:08:05 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:08:05 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:08:41 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:08:41 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:08:42 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:08:42 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:08:59 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:08:59 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:09:00 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:09:00 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:18:19 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:18:19 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:23:16 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:23:16 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:26:01 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:26:01 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:26:12 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:26:12 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:26:44 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:26:44 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:30:19 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:30:19 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:45:37 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:45:37 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:46:42 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:46:42 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:47:05 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:47:05 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:48:47 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:48:47 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:54:38 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:54:38 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:55:05 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:55:05 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 18:55:36 INFO  UIController:52 - entering GET /auth
+2018-08-15 18:55:36 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:29:09 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:29:09 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:37:59 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:37:59 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:44:33 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:44:33 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:45:10 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:45:10 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:48:25 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:48:25 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:49:29 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:49:29 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:49:51 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:49:51 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 19:58:36 INFO  UIController:52 - entering GET /auth
+2018-08-15 19:58:36 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:00:23 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:00:23 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:02:52 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:02:52 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:03:37 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:03:37 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:04:04 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:04:04 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:04:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:04:32 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:12:29 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:12:29 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:16:12 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:16:12 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:16:26 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:16:26 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:16:45 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:16:45 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:17:47 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:17:47 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:27:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:27:32 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:28:16 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:28:16 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:28:25 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:28:25 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:32:19 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:32:19 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-15 20:32:32 INFO  UIController:52 - entering GET /auth
+2018-08-15 20:32:32 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@957e: RemoteIpAddress: 127.0.0.1; SessionId: null
+2018-08-18 11:33:21 INFO  UIController:52 - entering GET /auth
+2018-08-18 11:33:21 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 11:34:42 INFO  UIController:52 - entering GET /auth
+2018-08-18 11:34:42 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 11:37:02 INFO  UIController:52 - entering GET /auth
+2018-08-18 11:37:02 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 11:37:16 INFO  UIController:52 - entering GET /auth
+2018-08-18 11:37:16 INFO  UIController:62 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 11:42:25 INFO  UIController:58 - entering GET /auth
+2018-08-18 11:42:25 INFO  UIController:70 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:02:04 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:02:04 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:06:43 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:06:43 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:07:09 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:07:09 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:07:23 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:07:23 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:14:19 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:14:19 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:14:29 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:14:29 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:21:25 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:21:25 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:24:09 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:24:09 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:25:46 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:25:46 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:25:56 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:25:56 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:31:24 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:31:24 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:34:27 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:34:27 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:34:32 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:34:32 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:34:35 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:34:35 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:34:42 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:34:42 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: EB3270D9F571B1D394A1B9ECC7E46C59
+2018-08-18 12:41:52 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:41:52 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@380f4: RemoteIpAddress: 127.0.0.1; SessionId: 8BF4F5EB1D3CF74910C50101E4035058
+2018-08-18 12:43:54 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:43:54 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@fffd148a: RemoteIpAddress: 127.0.0.1; SessionId: 1D9D3647741154C999BA7786FB8DFADD
+2018-08-18 12:49:44 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:49:44 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: 4AD2C4F8A06F16DE0BCF624C1CD8A2A3
+2018-08-18 12:49:48 INFO  UIController:59 - entering GET /auth
+2018-08-18 12:49:48 INFO  UIController:71 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@1c07a: RemoteIpAddress: 127.0.0.1; SessionId: 1E13225872424687AF136DF3CBF4E62D
+2018-08-18 13:03:32 INFO  UIController:61 - entering GET /auth
+2018-08-18 13:03:32 INFO  UIController:73 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@380f4: RemoteIpAddress: 127.0.0.1; SessionId: 00E5AC1A4A1A4EEC61556D07712F28AD
+2018-08-18 13:04:18 INFO  UIController:61 - entering GET /auth
+2018-08-18 13:04:18 INFO  UIController:73 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@fffc7f0c: RemoteIpAddress: 127.0.0.1; SessionId: 991300E69BD05DA3E29E0098EC1BC1F2
+2018-08-18 13:13:57 INFO  UIController:61 - entering GET /auth
+2018-08-18 13:13:57 INFO  UIController:73 - details: org.springframework.security.web.authentication.WebAuthenticationDetails@12afc: RemoteIpAddress: 127.0.0.1; SessionId: 2393C7ACDC3464BAA54F3D69A117292B

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { AuthService } from './service/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -10,21 +10,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    model = {};
+	
 
-	constructor(private http: HttpClient, private router: Router, private auth:AuthService) {
-		http.get('/ui/user').subscribe(model => this.model = model);
-//		this.auth.authenticate(undefined, undefined);
-		if(!this.auth.authenticated) {
-			this.router.navigateByUrl('/login');
-		}
+	constructor(
+		private http: HttpClient, 
+		private router: Router, 
+		private auth: AuthService
+	) { 
+		this.auth.authenticateDefault();
+		if (!this.auth.authenticated) { 
+			this.router.navigateByUrl('/login'); 
+			console.log('AppComponent: in constructor :: not authenticated');
+		} //route to login if not authenticated
 	}
 	
-    logout() {
-      this.http.post('logout', {});
-      this.auth.authenticated = false;
-      this.router.navigateByUrl('/login');
-    }
-	
-	authenticated() { return this.auth.authenticated; }
+	authenticated() {
+		if (!this.auth.authenticated) { 
+			this.router.navigateByUrl('/login'); 
+			console.log('AppComponent: in init :: not authenticated');
+		} //route to login if not authenticated
+		console.log('AppComponent: checking authenticated --> ' + this.auth.authenticated);
+		return this.auth.authenticated; 
+	}
 }

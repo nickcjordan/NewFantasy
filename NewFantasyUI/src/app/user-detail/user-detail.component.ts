@@ -2,6 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {User} from '../model/user';
+import { AuthService } from "../service/auth.service";
 import {UserService} from '../service/user.service';
 
 
@@ -17,6 +18,7 @@ export class UserDetailComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private userService: UserService,
+		private auth: AuthService, 
 		private location: Location
 	) {}
 
@@ -35,6 +37,11 @@ export class UserDetailComponent implements OnInit {
 
 	save(): void {
 		this.userService.updateUser(this.user).subscribe(() => this.goBack());
+	}
+	
+	authenticated() { 
+		console.log('dashboard: checking authenticated --> ' + this.auth.authenticated);
+		return this.auth.authenticated; 
 	}
 
 }

@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, Injectable} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {HttpClientModule} from '@angular/common/http';
@@ -15,8 +15,19 @@ import { NavComponent } from './common/nav/nav.component';
 import { UserPreviewComponent } from './users/user-preview/user-preview.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from "./service/auth.service";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpHandler } from "@angular/common/http";
+import { HttpRequest } from "@angular/common/http";
+import { HttpInterceptor } from "@angular/common/http";
+
+@Injectable()
+export class XhrInterceptor implements HttpInterceptor {
+	intercept(req: HttpRequest<any>, next: HttpHandler) {
+		return next.handle(req.clone({ headers: req.headers.set('X-Requested-With', 'XMLHttpRequest') }));
+	}
+}
 
 @NgModule({
 	declarations: [
@@ -28,7 +39,6 @@ import { LoginComponent } from './login/login.component';
 		NavComponent,
 		UserPreviewComponent,
 		UserEditComponent,
-		HomeComponent,
 		LoginComponent
 	],
 	imports: [
@@ -39,7 +49,8 @@ import { LoginComponent } from './login/login.component';
 		AppRoutingModule,
 		NgbModule.forRoot()
 	],
-	providers: [],
+	providers: [AuthService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
+

@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, Injectable} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {UserDetailComponent} from './user-detail/user-detail.component';
 import {DashboardComponent} from './dashboard/dashboard.component';

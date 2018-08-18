@@ -3,6 +3,7 @@ import { User} from '../model/user';
 import { UserService } from '../service/user.service';
 import { AuthService } from '../service/auth.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,12 @@ export class DashboardComponent implements OnInit {
 	private user: User;
 //    users: User[] = [];
 
-  constructor(private userService: UserService, private auth: AuthService, private http: HttpClient) { }
+  constructor(
+	  private userService: UserService, 
+	  private auth: AuthService,
+	  private router: Router, 
+	  private http: HttpClient
+  ) {}
 
   ngOnInit() {
 //      this.getUsers();
@@ -30,5 +36,11 @@ export class DashboardComponent implements OnInit {
 		this.userService.getUser(this.userId).subscribe(user => this.user = user);
 	}
 	
-	authenticated() { return this.auth.authenticated; }
+	authenticated() { 
+		console.log('dashboard: checking authenticated --> ' + this.auth.authenticated);
+		if (!this.auth.authenticated) {
+			this.router.navigateByUrl('/login');
+		}
+		return this.auth.authenticated; 
+	}
 }
