@@ -13,6 +13,10 @@
 	
 }
 
+.form-label {
+	text-align: left;
+}
+
 .form-title {
 	text-align: center;
 	font-size: 4em;

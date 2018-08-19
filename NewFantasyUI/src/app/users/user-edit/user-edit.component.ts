@@ -1,3 +1,4 @@
+import { UserCredential } from "../../_models/user-credential";
 import { Component, OnInit, Injectable } from '@angular/core';
 import {User} from '../../model/user';
 import { AuthService } from "../../service/auth.service";
@@ -10,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
-
+	currentUser: UserCredential;
 	user: User;
 	userId: number;
 	
@@ -24,17 +25,12 @@ export class UserEditComponent implements OnInit {
 		this.setUser();
 	}
 	
-	setUser(): void {
-		this.userId = 0; // TODO grab user session id
-		this.userService.getUser(this.userId).subscribe(user => this.user = user);
-	}
-	
 	save(): void {
 		this.userService.updateUser(this.user).subscribe();
 	}
 	
-	authenticated() { 
-		console.log('UserEditComponent: checking authenticated --> ' + this.auth.authenticated);
-		return this.auth.authenticated; 
+	setUser(): void {
+		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+		this.userService.getUser(this.currentUser.id).subscribe(user => this.user = user);
 	}
 }
