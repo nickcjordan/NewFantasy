@@ -7,7 +7,7 @@ public enum Position {
 	WIDERECEIVER("WR", "Wide Receivers"),
 	TIGHTEND("TE", "Tight Ends"),
 	KICKER("K", "Kickers"),
-	DEFENSE("DEF", "Defenses/Special Teams");
+	DEFENSE("DST", "Defenses/Special Teams");
 	
 	private String abbrev;
 	private String name;

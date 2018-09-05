@@ -4,14 +4,17 @@ import static com.mongodb.client.model.Filters.eq;
 
 import java.util.List;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dbmanager.model.UserTO;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.result.UpdateResult;
 
 @Component
 public class UserDao {
@@ -45,6 +48,21 @@ public class UserDao {
 
 	public UserTO getUserById(String id) {
 		return userDBCollection.find(eq("userId", id)).first();
+	}
+
+	public boolean update(UserTO userTO) {
+//		coll.updateOne(eq("name", "frank"), new Document("$set", new Document("age", 33)));
+//		coll.updateMany(eq("name", "frank"), new Document("$set", new Document("age", 33)));
+		String json = null;
+		try {
+			json = new ObjectMapper().writeValueAsString(userTO.getTeam());
+		} catch (JsonProcessingException e) {
+			e.printStackTrace(); // TODO
+		}
+		System.out.println(json);
+		
+		 UpdateResult result = userDBCollection.updateOne(eq("userId", userTO.getUserId()), new Document("$set", new Document("team", Document.parse(json))));
+		 return (result.getModifiedCount() == 1);
 	}
 
 }

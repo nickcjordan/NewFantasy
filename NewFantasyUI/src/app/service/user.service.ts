@@ -1,3 +1,4 @@
+import { EditLineupRequest } from "../model/edit-lineup-request";
 import {Injectable} from '@angular/core';
 import {User} from '../model/user';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
@@ -13,6 +14,7 @@ export class UserService {
 	private getAllUsersUrl = '/api/user/getAll';  // URL to web api
 	private getUserUrl = '/api/user/get';  // URL to web api
 	private updateUserUrl = '/api/user/update';  // URL to web api
+	private editUserLineupUrl = '/api/user/lineup/edit';  // URL to web api
 	
 	
 //	private usersUrl = '/api';  // URL to web api
@@ -93,6 +95,13 @@ export class UserService {
 			catchError(this.handleError<User[]>('searchUsers', []))
 		);
 	}
+	
+	/** POST: edit user's lineup */
+	editLineup(req: EditLineupRequest): Observable<EditLineupRequest> {
+		return this.http.post<EditLineupRequest>(this.editUserLineupUrl, req, this.httpOptions);
+	}
+	
+	
 
 	/**
  * Handle Http operation that failed. Let the app continue.

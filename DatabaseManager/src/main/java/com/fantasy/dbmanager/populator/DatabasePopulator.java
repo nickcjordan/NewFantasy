@@ -6,27 +6,48 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.assertj.core.util.Lists;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.PositionStatsDetails;
-import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.team.BenchPlayers;
+import com.fantasy.dataaccessutility.model.team.PlayerList;
+import com.fantasy.dataaccessutility.model.team.Roster;
+import com.fantasy.dataaccessutility.model.team.StartingLineup;
+import com.fantasy.dataaccessutility.model.team.Team;
 
 @Component
 public class DatabasePopulator {
+	
+	private static final Logger log = LoggerFactory.getLogger(DatabasePopulator.class);
 	
 	@Autowired
 	private DataAccessUtility data;
 	
 	private Map<String, List<Player>> positionMap;
 
-	private String[] names = {"nick", "dan", "ryan", "will"};
+	private String[] names = new String[]{
+			"Chris T",
+			"Chris R",
+			"Will",
+			"Matt",
+			"Nick J",
+			"Ryan",
+			"Josh",
+			"Mason",
+			"Nick W",
+			"Austin",
+			"Dan",
+			"Scott"
+	};
 	
 	public void populate() {
+		log.info("START :: Populating database...");
 		positionMap = new HashMap<String, List<Player>>();
 		positionMap.put("QB", data.getAllPlayersByPosition("QB"));
 		positionMap.put("RB", data.getAllPlayersByPosition("RB"));
@@ -35,6 +56,7 @@ public class DatabasePopulator {
 		positionMap.put("K", data.getAllPlayersByPosition("K"));
 		
 		data.updateUsers(buildLeagueList());
+		log.info("END :: SUCCESS :: Populated database");
 	}
 	
 	private List<User> buildLeagueList() {
@@ -42,11 +64,13 @@ public class DatabasePopulator {
 		for (int id = 0; id < names.length; id++) {
 			users.add(buildNewUser(Integer.toString(id)));
 		}
+		log.info("All users and teams built, sending to update users in database...");
 		return users;
 	}
 
 	private User buildNewUser(String id) {
 		User user = new User(id, names[Integer.valueOf(id)]);
+		log.info("\n\nBUILDING NEW USER :: " + id + " : " + user.getUserName() + "\n");
 		user.setTeam(buildNewTeam(id));
 		user.setCoins(Integer.valueOf(id));
 		return user;
@@ -54,14 +78,31 @@ public class DatabasePopulator {
 
 	private Team buildNewTeam(String id) {
 		Team team = new Team(id, "team_" + id);
-		team.setQb(buildQbs());
-		team.setRb(buildRbs());
-		team.setWr(buildWrs());
-		team.setTe(buildTes());
-		team.setK(buildKs());
+		team.setRoster(buildNewRoster());
 		return team;
 	}
 	
+	private Roster buildNewRoster() {
+		Roster roster = new Roster();
+		roster.addFlexPlayerToLineupAndMoveReplacedPlayerToBench(getRandomPlayerByPosition("RB")); //add flex
+		addPositionToBenchOrLineup(buildQbs(), roster);
+		addPositionToBenchOrLineup(buildRbs(), roster);
+		addPositionToBenchOrLineup(buildWrs(), roster);
+		addPositionToBenchOrLineup(buildTes(), roster);
+		addPositionToBenchOrLineup(buildKs(), roster);
+		return roster;
+	}
+
+	private void addPositionToBenchOrLineup(List<Player> players, Roster roster) {
+		 for (Player p : players) {
+			 try {
+				roster.addPlayerToLineupAndMoveReplacedPlayerToBench(p);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		 }
+	}
+
 	private List<Player> buildQbs() {
 		List<Player> players = new ArrayList<Player>();
 		for (int i = 0; i < 2; i++) {
@@ -72,7 +113,7 @@ public class DatabasePopulator {
 
 	private List<Player> buildRbs() {
 		List<Player> players = new ArrayList<Player>();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 5; i++) {
 			players.add(getRandomPlayerByPosition("RB"));
 		}
 		return players;
@@ -80,7 +121,7 @@ public class DatabasePopulator {
 
 	private List<Player> buildWrs() {
 		List<Player> players = new ArrayList<Player>();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 5; i++) {
 			players.add(getRandomPlayerByPosition("WR"));
 		}
 		return players;
@@ -106,7 +147,7 @@ public class DatabasePopulator {
 		List<Player> list = positionMap.get(position);
 		Collections.shuffle(list);
 		
-		int i = 0;
+		int i =11;
 		Player p = null;
 		boolean goodPlayer = false;
 		try {

@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
 import com.fantasy.dbmanager.populator.DatabasePopulator;
+import com.fantasy.dbmanager.processor.EditLineupRequestProcessor;
 
 @RestController
 @RequestMapping("/user")
@@ -28,11 +30,14 @@ public class UserDatabaseController  {
 	@Autowired
 	private DatabasePopulator populator;
 	
+	@Autowired
+	private EditLineupRequestProcessor processor;
+	
     @RequestMapping("/count")
     public long count() {
     	log.info("DatabaseManager :: getting user count...");
     	long count = userManager.count();
-    	log.info("DatabaseManager :: success :: count was [" + count + "]");
+    	log.info("DatabaseManager :: SUCCESS :: count was [" + count + "]");
     	return count;
     }
     
@@ -40,7 +45,7 @@ public class UserDatabaseController  {
     public boolean putUser(@RequestBody List<User> users) {
     	log.info("DatabaseManager :: putting " + users.size() + " users in database...");
     	userManager.put(users);
-    	log.info("DatabaseManager :: success :: put " + users.size() + " users in database");
+    	log.info("DatabaseManager :: SUCCESS :: put " + users.size() + " users in database");
     	return true;
     }
     
@@ -48,7 +53,7 @@ public class UserDatabaseController  {
     public boolean updateUser(@RequestBody User user) {
     	log.info("DatabaseManager :: updating user " + user.getUserName() + " in database...");
     	userManager.update(user);
-    	log.info("DatabaseManager :: success :: updated " + user.getUserName());
+    	log.info("DatabaseManager :: SUCCESS :: updated " + user.getUserName());
     	return true;
     }
     
@@ -56,7 +61,7 @@ public class UserDatabaseController  {
     public List<User> getAll() {
     	log.info("DatabaseManager :: getting all users...");
     	List<User> users = userManager.get();
-    	log.info("DatabaseManager :: success :: got [" + users.size() + "] users");
+    	log.info("DatabaseManager :: SUCCESS :: got [" + users.size() + "] users");
     	return users;
     }
     
@@ -65,9 +70,9 @@ public class UserDatabaseController  {
     	log.info("DatabaseManager :: getting user [" + val + "]...");
     	User user = userManager.get(val);
     	if (user != null) {
-    		log.info("DatabaseManager :: success :: got user [" + user.getUserName() + "]");
+    		log.info("DatabaseManager :: SUCCESS :: got user [" + user.getUserName() + "]");
     	} else {
-    		log.error("DatabaseManager :: failure :: could not find user \"" + val + "\"");
+    		log.error("DatabaseManager :: ERROR :: could not find user \"" + val + "\"");
     	}
     	return user;
     }
@@ -76,13 +81,16 @@ public class UserDatabaseController  {
     public boolean removeAllUsers() {
     	log.info("DatabaseManager :: removing all users from database...");
     	boolean success = userManager.clear();
-    	log.info("DatabaseManager :: success = " + success);
+    	log.info("DatabaseManager :: SUCCESS = " + success);
     	return success;
     }
-    
-	@RequestMapping(value = "/populate", method = RequestMethod.GET)
-	public void populate() {
-		populator.populate();
-	}
+	
+	@RequestMapping(value = "/lineup/edit", method = RequestMethod.POST)
+    public boolean editLineup(@RequestBody EditLineupRequest editRequest) {
+    	log.info("DatabaseManager :: Proccessing edit lineup request :: user: " + editRequest.getUserId() + ", player: " + editRequest.getPlayerId() + ", action: " + editRequest.getAction());
+    	processor.editLineup(editRequest);
+    	log.info("DatabaseManager :: SUCCESS :: edited lineup :: user: " + editRequest.getUserId() + ", player: " + editRequest.getPlayerId() + ", action: " + editRequest.getAction());
+    	return true;
+    }
 
 }

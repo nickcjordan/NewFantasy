@@ -1013,3 +1013,63 @@
 2018-08-19 15:54:08 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
 2018-08-19 15:54:08 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
 2018-08-19 15:54:08 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo
+2018-08-19 15:55:46 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-08-19 15:55:46 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-08-19 15:55:46 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-08-19 15:55:46 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-08-19 15:55:46 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
+2018-08-19 15:55:46 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo
+2018-08-19 15:56:04 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-08-19 15:56:04 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-08-19 15:56:04 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-08-19 15:56:04 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-08-19 15:56:04 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: dmo
+2018-08-19 15:56:04 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: dmo
+2018-08-19 15:56:41 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-08-19 15:56:41 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-08-19 15:56:41 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-08-19 15:56:41 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-08-19 15:56:41 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
+2018-08-19 15:56:41 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo
+2018-08-19 16:18:09 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-08-19 16:18:09 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-08-19 16:18:09 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-08-19 16:18:09 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-08-19 16:18:09 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
+2018-08-19 16:18:09 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo
+2018-08-19 17:05:23 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-08-19 17:05:23 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-08-19 17:05:23 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-08-19 17:05:23 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-08-19 17:05:23 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: dmo
+2018-08-19 17:05:23 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: dmo
+2018-08-29 17:16:56 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-08-29 17:16:56 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-08-29 17:16:56 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-08-29 17:16:56 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-08-29 17:16:56 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
+2018-08-29 17:16:56 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo
+2018-09-04 16:59:09 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-09-04 16:59:09 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-09-04 16:59:09 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-09-04 16:59:09 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-09-04 16:59:09 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
+2018-09-04 16:59:09 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo
+2018-09-04 16:59:40 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-09-04 16:59:40 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-09-04 16:59:40 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-09-04 16:59:40 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-09-04 16:59:40 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: user
+2018-09-04 16:59:40 INFO  AuthenticationController:38 - END /auth/authenticate :: FAILURE :: user could not be authenticated: user
+2018-09-04 16:59:45 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-09-04 16:59:45 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-09-04 16:59:45 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-09-04 16:59:45 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-09-04 16:59:45 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
+2018-09-04 16:59:45 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo
+2018-09-04 19:19:12 ERROR UserCredentialDeserializer:31 - Null value for field id in incoming request
+2018-09-04 19:19:12 ERROR UserCredentialDeserializer:31 - Null value for field firstName in incoming request
+2018-09-04 19:19:12 ERROR UserCredentialDeserializer:31 - Null value for field lastName in incoming request
+2018-09-04 19:19:12 ERROR UserCredentialDeserializer:31 - Null value for field token in incoming request
+2018-09-04 19:19:12 INFO  AuthenticationController:33 - START /auth/authenticate :: POST :: authenticating user: njo
+2018-09-04 19:19:12 INFO  AuthenticationController:35 - END /auth/authenticate :: SUCCESS :: user has been authenticated: njo

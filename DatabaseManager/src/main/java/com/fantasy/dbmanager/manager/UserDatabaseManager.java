@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
 import com.fantasy.dbmanager.dao.UserDao;
 import com.fantasy.dbmanager.model.UserTO;
 import com.fantasy.dbmanager.transformer.UserTransformer;
@@ -52,7 +53,11 @@ public class UserDatabaseManager {
 	}
 
 	public void update(User user) {
-		
+		if (userDao.update(userTransformer.getTO(user))) {
+			log.info("SUCCESS :: User data updated in database :: " + user.getUserName());
+		} else {
+			log.info("ERROR :: User data could not be updated in database :: " + user.getUserName());
+		}
 	}
 
 }

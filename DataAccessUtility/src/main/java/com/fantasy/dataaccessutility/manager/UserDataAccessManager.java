@@ -45,8 +45,9 @@ public class UserDataAccessManager {
 		log.info("Updating stats for user " + user.getId());
 		delegate.updateUser(user);
 	}
+	
 	public void updateUsers(List<User> users) {
-		for (User user : users) { updateUser(user); }
+		delegate.updateUsers(users);
 	}
 	
 

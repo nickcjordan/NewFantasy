@@ -42,7 +42,7 @@ public class MatchupResultsProcessor {
 
 	private double calculateTotalPointsScored(int week, User user) {
 		double sum = 0;
-		for (Player player : user.getTeam().getListOfPlayers()) {
+		for (Player player : user.getTeam().getRoster().getAllPlayers()) {
 			try {
 				Map<String, ModifiedStats> stats = player.getModifiedStats();
 				ModifiedStats stat = stats.get(Integer.toString(week));

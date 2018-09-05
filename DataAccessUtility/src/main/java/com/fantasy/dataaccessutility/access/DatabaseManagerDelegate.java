@@ -9,8 +9,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.PlayerListResponse;
-import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.team.Team;
 
 @Component
 public class DatabaseManagerDelegate {
@@ -40,6 +40,10 @@ public class DatabaseManagerDelegate {
 	public boolean updateUser(User user) {
 		List<User> users = new ArrayList<User>();
 		users.add(user);
+		return rest.postForObject(Urls.putUser(), users, boolean.class);
+	}
+	
+	public boolean updateUsers(List<User> users) {
 		return rest.postForObject(Urls.putUser(), users, boolean.class);
 	}
 

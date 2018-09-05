@@ -27,7 +27,7 @@ public class MatchupInitializer {
 		for (String userId : request.getUserIds()) {
 			User user = data.getUserById(userId);
 			matchup.addUser(user);
-			for (Player player : user.getTeam().getListOfPlayers()) {
+			for (Player player : user.getTeam().getRoster().getAllPlayers()) {
 				double initialPointTotal = 0;
 				try {
 					initialPointTotal = player.getStatsByWeek().get(weekNumber).getTotalPointsScored();
