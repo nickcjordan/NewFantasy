@@ -1,7 +1,7 @@
 import {Team} from './team';
 
 export class User {
-	id: string;
+	userId: string;
 	userName: string;
 	coins: number;
 	team: Team;

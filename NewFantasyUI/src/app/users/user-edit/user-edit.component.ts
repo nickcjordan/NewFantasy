@@ -41,7 +41,7 @@ export class UserEditComponent implements OnInit {
 	}
 	
 	movePlayerToBench(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.id, "MOVE_TO_BENCH");
+		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "MOVE_TO_BENCH");
 		this.userService.editLineup(editLineupRequest).subscribe(
 			data => { this.router.navigate(['/']); },
 			error => { this.alertService.error(error); }
@@ -49,7 +49,7 @@ export class UserEditComponent implements OnInit {
 	}
 	
 	movePlayerToLineupAtPosition(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.id, "START_AT_POSITION");
+		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_POSITION");
 		this.userService.editLineup(editLineupRequest).subscribe(
 			data => { this.router.navigate(['/']); },
 			error => { this.alertService.error(error); }
@@ -57,7 +57,7 @@ export class UserEditComponent implements OnInit {
 	}
 	
 	movePlayerToLineupAtFlex(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.id, "START_AT_FLEX");
+		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_FLEX");
 		this.userService.editLineup(editLineupRequest).subscribe(
 			data => { this.router.navigate(['/']); },
 			error => { this.alertService.error(error); }
