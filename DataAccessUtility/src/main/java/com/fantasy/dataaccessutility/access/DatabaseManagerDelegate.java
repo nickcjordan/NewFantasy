@@ -40,11 +40,11 @@ public class DatabaseManagerDelegate {
 	public boolean updateUser(User user) {
 		List<User> users = new ArrayList<User>();
 		users.add(user);
-		return rest.postForObject(Urls.putUser(), users, boolean.class);
+		return rest.postForObject(Urls.updateUser(), users, boolean.class);
 	}
 	
 	public boolean updateUsers(List<User> users) {
-		return rest.postForObject(Urls.putUser(), users, boolean.class);
+		return rest.postForObject(Urls.updateUsers(), users, boolean.class);
 	}
 
 	public boolean updateTeam(Team team) {

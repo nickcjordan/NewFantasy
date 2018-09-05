@@ -44,7 +44,7 @@ public class UserDatabaseController  {
     @RequestMapping(value = "/put", method = RequestMethod.POST)
     public boolean putUser(@RequestBody List<User> users) {
     	log.info("DatabaseManager :: putting " + users.size() + " users in database...");
-    	userManager.put(users);
+    	userManager.putAll(users);
     	log.info("DatabaseManager :: SUCCESS :: put " + users.size() + " users in database");
     	return true;
     }
@@ -54,6 +54,14 @@ public class UserDatabaseController  {
     	log.info("DatabaseManager :: updating user " + user.getUserName() + " in database...");
     	userManager.update(user);
     	log.info("DatabaseManager :: SUCCESS :: updated " + user.getUserName());
+    	return true;
+    }
+    
+    @RequestMapping(value = "/updateAll", method = RequestMethod.POST)
+    public boolean updateUsers(@RequestBody List<User> users) {
+    	log.info("DatabaseManager :: updating " + users.size() + " users in database...");
+    	userManager.updateAll(users);
+    	log.info("DatabaseManager :: SUCCESS :: updated " + users.size() + " users");
     	return true;
     }
     

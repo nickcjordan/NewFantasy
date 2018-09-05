@@ -23,8 +23,12 @@ public class UserDao {
 	@Qualifier("userDBCollection")
 	MongoCollection<UserTO> userDBCollection;
 	
-	public void put(List<UserTO> users) {
+	public void putAll(List<UserTO> users) {
 		userDBCollection.insertMany(users);
+	}
+
+	public void put(UserTO to) {
+		userDBCollection.insertOne(to);
 	}
 
 	public long getUserCount() {
@@ -51,18 +55,17 @@ public class UserDao {
 	}
 
 	public boolean update(UserTO userTO) {
-//		coll.updateOne(eq("name", "frank"), new Document("$set", new Document("age", 33)));
-//		coll.updateMany(eq("name", "frank"), new Document("$set", new Document("age", 33)));
 		String json = null;
 		try {
 			json = new ObjectMapper().writeValueAsString(userTO.getTeam());
 		} catch (JsonProcessingException e) {
 			e.printStackTrace(); // TODO
 		}
-		System.out.println(json);
+//		System.out.println(json);
 		
 		 UpdateResult result = userDBCollection.updateOne(eq("userId", userTO.getUserId()), new Document("$set", new Document("team", Document.parse(json))));
 		 return (result.getModifiedCount() == 1);
 	}
+
 
 }

@@ -24,12 +24,16 @@ public class UserDatabaseManager {
 	@Autowired
 	private UserTransformer userTransformer;
 
-	public void put(List<User> users) {
+	public void putAll(List<User> users) {
 		List<UserTO> userTos = new ArrayList<UserTO>();
 		for (User u : users) {
 			userTos.add(userTransformer.getTO(u));
 		}
-		userDao.put(userTos);
+		userDao.putAll(userTos);
+	}
+	
+	public void put(User user) {
+		userDao.put(userTransformer.getTO(user));
 	}
 	
 	public long count() {
@@ -57,6 +61,18 @@ public class UserDatabaseManager {
 			log.info("SUCCESS :: User data updated in database :: " + user.getUserName());
 		} else {
 			log.info("ERROR :: User data could not be updated in database :: " + user.getUserName());
+			throw new RuntimeException();
+		}
+	}
+	
+	public void updateAll(List<User> users) {
+		for (User user : users) {
+			try {
+				update(user);
+			} catch (Exception e) {
+				log.info("update did not work for " + user.getUserName() + ", trying put...");
+				put(user);
+			}
 		}
 	}
 

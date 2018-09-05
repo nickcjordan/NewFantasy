@@ -13,6 +13,8 @@ public class Urls {
 	private static final String GET = "/get/";
 	private static final String GET_ALL = "/getAll/";
 	private static final String PUT = "/put/";
+	private static final String UPDATE = "/update";
+	private static final String UPDATE_ALL = "/updateAll";
 	
 	public static String getPlayer(String playerId) {
 		return MANAGER + PLAYER + GET + playerId;
@@ -32,6 +34,14 @@ public class Urls {
 
 	public static String putUser() {
 		return MANAGER + USER + PUT;
+	}
+	
+	public static String updateUser() {
+		return MANAGER + USER + UPDATE;
+	}
+	
+	public static String updateUsers() {
+		return MANAGER + USER + UPDATE_ALL;
 	}
 
 	public static String putTeam() {

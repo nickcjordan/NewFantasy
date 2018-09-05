@@ -13724,3 +13724,181 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-09-04 19:34:14 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
 2018-09-04 19:34:14 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
 2018-09-04 19:34:14 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: got [12] users
+2018-09-04 20:42:36 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-04 20:42:36 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: got [12] users
+2018-09-04 20:42:42 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-04 20:42:42 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-04 20:42:42 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-04 20:42:42 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
+2018-09-04 20:42:42 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
+2018-09-04 20:42:42 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: got [12] users
+2018-09-04 20:42:59 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-04 20:42:59 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-04 20:42:59 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-04 20:42:59 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
+2018-09-04 20:42:59 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
+2018-09-04 20:42:59 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: got [12] users
+2018-09-04 20:43:05 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [5]...
+2018-09-04 20:43:05 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Ryan]
+2018-09-04 20:43:12 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-04 20:43:12 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-04 20:43:12 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
+2018-09-04 20:43:12 INFO  UserDatabaseController:73 - DatabaseManager :: SUCCESS :: got user [Chris T]
+2018-09-04 20:45:51 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-04 20:45:51 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: got [12] users
+2018-09-05 16:07:27 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-05 16:07:27 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-05 16:07:27 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [0]...
+2018-09-05 16:07:39 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:07:39 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:08:54 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-05 16:08:54 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:08:54 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:08:57 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-05 16:08:57 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:08:57 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:09:08 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:09:08 INFO  UserDatabaseController:70 - DatabaseManager :: getting user [4]...
+2018-09-05 16:10:26 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-05 16:10:28 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-05 16:10:39 INFO  UserDatabaseController:82 - DatabaseManager :: removing all users from database...
+2018-09-05 16:10:39 INFO  UserDatabaseController:84 - DatabaseManager :: SUCCESS = true
+2018-09-05 16:10:45 INFO  UserDatabaseController:62 - DatabaseManager :: getting all users...
+2018-09-05 16:10:45 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: got [0] users
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:11:06 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:11:06 INFO  UserDatabaseController:46 - DatabaseManager :: putting 12 users in database...
+2018-09-05 16:23:59 INFO  UserDatabaseController:70 - DatabaseManager :: getting all users...
+2018-09-05 16:23:59 INFO  UserDatabaseController:72 - DatabaseManager :: SUCCESS :: got [0] users
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:24:03 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:24:03 INFO  UserDatabaseController:62 - DatabaseManager :: updating 12 users in database...
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Chris T
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Chris R
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Will
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Matt
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Nick J
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Ryan
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Josh
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Mason
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Nick W
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Austin
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Dan
+2018-09-05 16:24:03 INFO  UserDatabaseManager:59 - ERROR :: User data could not be updated in database :: Scott
+2018-09-05 16:24:03 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: updated 12 users
+2018-09-05 16:31:36 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:31:37 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:31:47 INFO  UserDatabaseController:62 - DatabaseManager :: updating 12 users in database...
+2018-09-05 16:31:47 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: updated 12 users
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:32:43 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:32:43 INFO  UserDatabaseController:62 - DatabaseManager :: updating 12 users in database...
+2018-09-05 16:32:43 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: updated 12 users
+2018-09-05 16:32:59 INFO  UserDatabaseController:90 - DatabaseManager :: removing all users from database...
+2018-09-05 16:32:59 INFO  UserDatabaseController:92 - DatabaseManager :: SUCCESS = true
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:33:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:33:07 INFO  UserDatabaseController:62 - DatabaseManager :: updating 12 users in database...
+2018-09-05 16:33:07 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: updated 12 users
+2018-09-05 16:33:18 INFO  UserDatabaseController:70 - DatabaseManager :: getting all users...
+2018-09-05 16:33:44 INFO  UserDatabaseController:72 - DatabaseManager :: SUCCESS :: got [12] users
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:34:07 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:34:07 INFO  UserDatabaseController:62 - DatabaseManager :: updating 12 users in database...
+2018-09-05 16:34:07 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: updated 12 users
+2018-09-05 16:34:23 INFO  UserDatabaseController:70 - DatabaseManager :: getting all users...
+2018-09-05 16:34:23 INFO  UserDatabaseController:72 - DatabaseManager :: SUCCESS :: got [24] users
+2018-09-05 16:38:36 INFO  UserDatabaseController:90 - DatabaseManager :: removing all users from database...
+2018-09-05 16:38:36 INFO  UserDatabaseController:92 - DatabaseManager :: SUCCESS = true
+2018-09-05 16:38:48 INFO  UserDatabaseController:70 - DatabaseManager :: getting all users...
+2018-09-05 16:38:48 INFO  UserDatabaseController:72 - DatabaseManager :: SUCCESS :: got [0] users
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:38:52 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:38:52 INFO  UserDatabaseController:62 - DatabaseManager :: updating 12 users in database...
+2018-09-05 16:38:52 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: updated 12 users
+2018-09-05 16:39:57 INFO  UserDatabaseController:90 - DatabaseManager :: removing all users from database...
+2018-09-05 16:39:57 INFO  UserDatabaseController:92 - DatabaseManager :: SUCCESS = true
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [QB]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [66] players of position [QB]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [RB]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [138] players of position [RB]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [WR]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [194] players of position [WR]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [TE]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [95] players of position [TE]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:54 - DatabaseManager :: getting all players of position [K]
+2018-09-05 16:40:00 INFO  PlayerDatabaseController:56 - DatabaseManager :: success :: got [35] players of position [K]
+2018-09-05 16:40:00 INFO  UserDatabaseController:62 - DatabaseManager :: updating 12 users in database...
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Chris T
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Chris R
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Will
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Matt
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Nick J
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Ryan
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Josh
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Mason
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Nick W
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Austin
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Dan
+2018-09-05 16:40:00 INFO  UserDatabaseManager:63 - ERROR :: User data could not be updated in database :: Scott
+2018-09-05 16:40:00 INFO  UserDatabaseController:64 - DatabaseManager :: SUCCESS :: updated 12 users
+2018-09-05 16:41:17 INFO  UserDatabaseController:70 - DatabaseManager :: getting all users...
+2018-09-05 16:41:17 INFO  UserDatabaseController:78 - DatabaseManager :: getting user [4]...
+2018-09-05 16:41:17 INFO  UserDatabaseController:78 - DatabaseManager :: getting user [4]...
+2018-09-05 16:41:17 INFO  UserDatabaseController:72 - DatabaseManager :: SUCCESS :: got [0] users

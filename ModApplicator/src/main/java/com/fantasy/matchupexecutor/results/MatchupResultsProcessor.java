@@ -29,12 +29,12 @@ public class MatchupResultsProcessor {
 
 	private MatchupUserResult buildMatchupUserResult(String week, User user, User opponent) {
 		MatchupUserResult result = new MatchupUserResult(Integer.valueOf(week));
-		result.setOpponentId(opponent.getId());
+		result.setOpponentId(opponent.getUserId());
 		result.setWeek(Integer.valueOf(week));
 		result.setModifiersApplied(user.getModifiers());
 		result.setTotalPointsScored(calculateTotalPointsScored(Integer.valueOf(week), user));
 		result.setCoinsEarned((int)Math.floor(result.getTotalPointsScored()));
-		result.setMatchupUserResultId(user.getId() + week);
+		result.setMatchupUserResultId(user.getUserId() + week);
 		user.getMatchupResults().put(week, result);
 		user.addCoins(result.getCoinsEarned());
 		return result;

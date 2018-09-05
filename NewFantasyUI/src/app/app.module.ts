@@ -32,8 +32,6 @@ import { ReactiveFormsModule }    from '@angular/forms';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
-import { PlayerTableRowComponent } from './users/user-edit/player-table-row/player-table-row.component';
-import { PlayerTableRowBenchComponent } from './users/user-edit/player-table-row-bench/player-table-row-bench.component';
 
 
 @Injectable()
@@ -57,9 +55,7 @@ export class XhrInterceptor implements HttpInterceptor {
 		AppComponent,
         AlertComponent,
         HomeComponent,
-        RegisterComponent,
-        PlayerTableRowComponent,
-        PlayerTableRowBenchComponent
+        RegisterComponent
 	],
 	imports: [
 		BrowserModule,

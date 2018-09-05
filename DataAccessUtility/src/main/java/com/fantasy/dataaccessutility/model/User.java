@@ -57,11 +57,11 @@ public class User {
 		this.modifiers = modifiers;
 	}
 
-	public String getId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setId(String id) {
+	public void setUserId(String id) {
 		this.userId = id;
 	}
 

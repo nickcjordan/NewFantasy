@@ -24,7 +24,7 @@ public class UserDataAccessManager {
 		return delegate.getUpdatedUser(userId);
 	}
 	public User getUserFromUser(User user) {
-		return getUserById(user.getId());
+		return getUserById(user.getUserId());
 	}
 	public List<User> getUsersByIdList(List<String> userIds) {
 		List<User> users = new ArrayList<User>();
@@ -36,13 +36,13 @@ public class UserDataAccessManager {
 	public List<User> getUsersFromUserList(List<User> usersRequest) {
 		List<User> users = new ArrayList<User>();
 		for (User p : usersRequest) {
-			users.add(getUserById(p.getId()));
+			users.add(getUserById(p.getUserId()));
 		}
 		return users;
 	}
 	
 	public void updateUser(User user) {
-		log.info("Updating stats for user " + user.getId());
+		log.info("Updating stats for user " + user.getUserId());
 		delegate.updateUser(user);
 	}
 	
