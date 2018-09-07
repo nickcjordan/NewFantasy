@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.ui.EditLineupQuery;
 import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
 import com.fantasy.dbmanager.populator.DatabasePopulator;
@@ -99,6 +101,18 @@ public class UserDatabaseController  {
     	processor.editLineup(editRequest);
     	log.info("DatabaseManager :: SUCCESS :: edited lineup :: user: " + editRequest.getUserId() + ", player: " + editRequest.getPlayerId() + ", action: " + editRequest.getAction());
     	return true;
+    }
+	
+	@RequestMapping(value = "/lineup/swappable", method = RequestMethod.POST)
+    public List<Player> build(@RequestBody EditLineupQuery query) {
+    	log.info("DatabaseManager :: Getting players eligible for swap :: user: " + query.getUserId() + ", player: " + query.getPlayerId());
+    	List<Player> swappables = processor.getLineupOptions(query);
+    	StringBuilder b = new StringBuilder("Swappable players found: ");
+    	for (Player p : swappables) {
+    		b.append(p.getPlayerName() + "  ");
+    	}
+    	log.info(b.toString());
+    	return swappables;
     }
 
 }

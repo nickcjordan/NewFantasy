@@ -1,36 +1,35 @@
-<nav class="navbar navbar-inverse">
-	<!-- Brand and toggle -->
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed"
-			data-toggle="collapse" data-target="#navvy" aria-expanded="false">
-			<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
-				class="icon-bar"></span><span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="/">New Fantasy</a>
-	</div>
 
-	<!--nav links, forms -->
-	<div class="collapse navbar-collapse" id="navvy">
+<nav class="navbar navbar-expand-lg navbar-light dark-nav">
+	<a class="navbar-brand" href="/">New Fantasy</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+		
+			<li class="nav-item">
+				<!-- <a class="nav-link" [routerLink]="['/dashboard']">Home</a> -->
+				<a class="nav-link nav-spaced" href="/dashboard">Home</a>
+			</li>
+			
+			<li class="nav-item nav-spaced dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Teams </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<span *ngFor="let user of users"> <a class="dropdown-item" href="/userPreview/{{user.userId}}">{{user.userName}}</a></span>
+				</div>
+			</li>
 
-		<ul class="nav navbar-nav navTop">
-			<li><a [routerLink]="['/dashboard']">Home</a></li>
-
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> League Users </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<div class="user-dropdown-text" *ngFor="let user of users">
-						<a class="dropdown-item" routerLink="/userPreview/{{user.userId}}">{{user.userName}}</a>
-					</div>
-				</div></li>
-
-			<li><a [routerLink]="['/login']">Login</a></li>
-			<li><a (click)="logout()">Logout</a></li>
-			<li><a [routerLink]="['/register']">Register</a></li>
-
-
+			<li class="nav-item nav-spaced">
+				<a class="nav-link" [routerLink]="['/login']">Login</a>
+			</li>
+			
+			<li class="nav-item nav-spaced">
+				<a class="nav-link" (click)="logout()">Logout</a>
+			</li>
+			
+			<li class="nav-item nav-spaced">
+				<a class="nav-link" [routerLink]="['/register']">Register</a>
+			</li>
+			
 		</ul>
-
 	</div>
 </nav>

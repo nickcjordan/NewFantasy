@@ -1,0 +1,20 @@
+
+
+<!-- <ng-template #popTitle>{{title}}</ng-template> -->
+
+<ng-template #popContent>
+
+	<a href="/dashboard"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtFlex(player)">Flex</button></a>
+	<a href="/dashboard"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtPosition(player)">{{player.position}}</button></a>
+	
+	<span *ngFor="let swappable of swappables">
+		<button type="button" class="btn btn-default" (click)="swapStarterAndBenchPlayer(player.playerId, swappable.playerId)">{{swappable.playerName}}</button>
+	</span>
+</ng-template>
+
+
+
+<button type="button" class="btn btn-default" [ngbPopover]="popContent" popoverTitle="Replace?" [placement]="'left'">
+  	<fa-icon [icon]="faExchangeAlt"></fa-icon>
+</button>
+

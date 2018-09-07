@@ -47,7 +47,15 @@ public class StartingLineup {
 
 	// Tries to remove from position group :: tries  to remove from flex if first remove fails
 	public boolean removePlayerFromFromLineup(Player player) {
-		return (getListFromPlayerPosition(player.getPosition()).removePlayer(player) || flex.removePlayer(player));
+		return removePlayerFromFromFlex(player) || removePlayerFromFromPosition(player);
+	}
+	
+	public boolean removePlayerFromFromFlex(Player player) {
+		return (flex.removePlayer(player));
+	}
+	
+	public boolean removePlayerFromFromPosition(Player player) {
+		return (getListFromPlayerPosition(player.getPosition()).removePlayer(player));
 	}
 	
 	private PlayerList getListFromPlayerPosition(String position) {

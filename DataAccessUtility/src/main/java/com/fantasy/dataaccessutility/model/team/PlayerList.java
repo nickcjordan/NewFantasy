@@ -1,5 +1,6 @@
 package com.fantasy.dataaccessutility.model.team;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -48,6 +49,16 @@ public class PlayerList {
 
 	public void setPlayers(LinkedList<Player> players) {
 		this.players = players;
+	}
+	
+	public boolean containsPlayer(Player p) {
+		Iterator<Player> i = players.iterator();
+		while (i.hasNext()) {
+			if (i.next().getPlayerId().equals(p.getPlayerId())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

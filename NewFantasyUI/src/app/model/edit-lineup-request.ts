@@ -1,4 +1,3 @@
-import { User } from "./user";
 export class EditLineupRequest {
 	
 	playerId: string;

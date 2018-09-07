@@ -1,60 +1,82 @@
-<p>name: {{user.userName}}</p>
-<p>coins: {{user.coins}}</p>
-
-<h2>Lineup:</h2>
-
-<div class="lineupContainer">
-	<div class="row">
-			<table class="table">
-				<thead>
-					<tr>
-						<th class="dark-row" scope="col">Player Id:</th>
-						<th class="dark-row" scope="col">Edit Position</th>
-						<th class="dark-row" scope="col">Name:</th>
-						<th class="dark-row" scope="col">Team:</th>
-					</tr>
-				</thead>
+<div class="col-xs-3">
+	<div class="lineupContainer">
+		<h2>Lineup:</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="dark-row" scope="col">Edit Position</th>
+					<th class="dark-row" scope="col">Name:</th>
+					<th class="dark-row" scope="col">Team:</th>
+				</tr>
+			</thead>
 			<tbody>
-				<tr class="position-title-row"><td class="no-border"><strong>Quarterbacks:</strong></td></tr>
+				<tr class="position-title-row">
+					<td class="no-border"><strong>Quarterbacks:</strong></td>
+				</tr>
 				<tr *ngFor="let player of user.team.roster.startingLineup.qb.players">
-					<td>{{player.playerId}}</td>
-					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)"><span class="glyphicon glyphicon-sort" aria-hidden="true"></span></button></a></td>
+					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
+								<fa-icon [icon]="faReply"></fa-icon>
+							</button></a></td>
 					<td>{{player.playerName}}</td>
 					<td>{{player.teamName}}</td>
 				</tr>
 			</tbody>
 			<tbody>
-				<tr class="position-title-row"><td class="no-border"><strong>Runningbacks:</strong></td></tr>
+				<tr class="position-title-row">
+					<td class="no-border"><strong>Runningbacks:</strong></td>
+				</tr>
 				<tr *ngFor="let player of user.team.roster.startingLineup.rb.players">
-					<td>{{player.playerId}}</td>
-					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)"><span class="glyphicon glyphicon-sort" aria-hidden="true"></span></button></a></td>
+					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
+								<fa-icon [icon]="faReply"></fa-icon>
+							</button></a></td>
 					<td>{{player.playerName}}</td>
 					<td>{{player.teamName}}</td>
 				</tr>
 			</tbody>
 			<tbody>
-				<tr class="position-title-row"><td class="no-border"><strong>Wide Receivers:</strong></td></tr>
+				<tr class="position-title-row">
+					<td class="no-border"><strong>Wide Receivers:</strong></td>
+				</tr>
 				<tr *ngFor="let player of user.team.roster.startingLineup.wr.players">
-					<td>{{player.playerId}}</td>
-					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)"><span class="glyphicon glyphicon-sort" aria-hidden="true"></span></button></a></td>
+					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
+								<fa-icon [icon]="faReply"></fa-icon>
+							</button></a></td>
 					<td>{{player.playerName}}</td>
 					<td>{{player.teamName}}</td>
 				</tr>
 			</tbody>
 			<tbody>
-				<tr class="position-title-row"><td class="no-border"><strong>Tight Ends:</strong></td></tr>
+				<tr class="position-title-row">
+					<td class="no-border"><strong>Tight Ends:</strong></td>
+				</tr>
 				<tr *ngFor="let player of user.team.roster.startingLineup.te.players">
-					<td>{{player.playerId}}</td>
-					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)"><span class="glyphicon glyphicon-sort" aria-hidden="true"></span></button></a></td>
+					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
+								<fa-icon [icon]="faReply"></fa-icon>
+							</button></a></td>
 					<td>{{player.playerName}}</td>
 					<td>{{player.teamName}}</td>
 				</tr>
 			</tbody>
 			<tbody>
-				<tr class="position-title-row"><td class="no-border"><strong>Kickers:</strong></td></tr>
+				<tr class="position-title-row">
+					<td class="no-border"><strong>Flex:</strong></td>
+				</tr>
+				<tr *ngFor="let player of user.team.roster.startingLineup.flex.players">
+					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
+								<fa-icon [icon]="faReply"></fa-icon>
+							</button></a></td>
+					<td>{{player.playerName}}</td>
+					<td>{{player.teamName}}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr class="position-title-row">
+					<td class="no-border"><strong>Kickers:</strong></td>
+				</tr>
 				<tr *ngFor="let player of user.team.roster.startingLineup.k.players">
-					<td>{{player.playerId}}</td>
-					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)"><span class="glyphicon glyphicon-sort" aria-hidden="true"></span></button></a></td>
+					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
+								<fa-icon [icon]="faReply"></fa-icon>
+							</button></a></td>
 					<td>{{player.playerName}}</td>
 					<td>{{player.teamName}}</td>
 				</tr>
@@ -62,24 +84,21 @@
 		</table>
 	</div>
 </div>
-
-<h2>Bench:</h2>
-
-<div class="lineupContainer">
-	<div class="row">
-			<table class="table">
-				<thead>
-					<tr>
-						<th class="dark-row" scope="col">Player Id:</th>
-						<th class="dark-row" scope="col">Edit Position</th>
-						<th class="dark-row" scope="col">Name:</th>
-						<th class="dark-row" scope="col">Team:</th>
-					</tr>
-				</thead>
+<div class="col-xs-3">
+	<div class="lineupContainer">
+		<h2>Bench:</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="dark-row" scope="col">Edit Position</th>
+					<th class="dark-row" scope="col">Name:</th>
+					<th class="dark-row" scope="col">Team:</th>
+				</tr>
+			</thead>
 			<tbody>
 				<tr *ngFor="let player of user.team.roster.benchPlayers.players">
-					<td>{{player.playerId}}</td>
-					<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtPosition(player)"><span class="glyphicon glyphicon-sort" aria-hidden="true"></span></button></a></td>
+					<!-- <td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtPosition(player)"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></button></a></td> -->
+					<td><app-player-edit-popover [player]="player"></app-player-edit-popover></td>
 					<td>{{player.playerName}}</td>
 					<td>{{player.teamName}}</td>
 				</tr>

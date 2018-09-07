@@ -96,5 +96,26 @@ public class Roster {
 	public void setBenchPlayers(BenchPlayers benchPlayers) {
 		this.benchPlayers = benchPlayers;
 	}
+
+	public void swapBenchAndLineupPlayers(Player player, Player playerToSwapWith) {
+		log.info("Swapping bench player " + player.getPlayerName() + " with lineup player: " + playerToSwapWith.getPlayerName());
+		boolean success = true;
+		success &= benchPlayers.addPlayerToBench(playerToSwapWith);
+		success &= benchPlayers.removePlayerFromBench(player);
+		
+		if (startingLineup.getFlex().containsPlayer(playerToSwapWith)) {
+			success &= startingLineup.removePlayerFromFromFlex(playerToSwapWith);
+			success &= (startingLineup.addPlayerToFlexSlot(player) != null);
+		} else {
+			success &= startingLineup.removePlayerFromFromPosition(playerToSwapWith);
+			success &= (startingLineup.addPlayerToPositionSlot(player) != null);
+		}
+		
+		if (success) {
+			log.info("SUCCESS :: Swapped bench player " + player.getPlayerName() + " with lineup player: " + playerToSwapWith.getPlayerName());
+		} else {
+			log.info("ERROR :: Could not swap bench player " + player.getPlayerName() + " with lineup player: " + playerToSwapWith.getPlayerName());
+		}
+	}
 	
 }

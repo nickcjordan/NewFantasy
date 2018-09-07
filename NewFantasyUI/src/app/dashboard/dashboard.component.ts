@@ -4,6 +4,8 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../model/user';
 import {UserService} from '../service/user.service';
 import {AuthService} from '../service/auth.service';
+import { faCoins } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
 	selector: 'app-dashboard',
@@ -11,6 +13,10 @@ import {AuthService} from '../service/auth.service';
 	styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+	
+	faCoins = faCoins;
+
+	
 	currentUser: UserCredential;
 	userId: number;
 	private user: User;

@@ -1,10 +1,12 @@
 import { EditLineupRequest } from "../model/edit-lineup-request";
 import {Injectable} from '@angular/core';
 import {User} from '../model/user';
+import {Player} from '../model/player';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
 import {catchError, map, tap} from 'rxjs/operators';
+import { EditLineupQuery } from "../model/edit-lineup-query";
 
 @Injectable({
 	providedIn: 'root'
@@ -15,6 +17,7 @@ export class UserService {
 	private getUserUrl = '/api/user/get';  // URL to web api
 	private updateUserUrl = '/api/user/update';  // URL to web api
 	private editUserLineupUrl = '/api/user/lineup/edit';  // URL to web api
+	private getEligibleSwapPlayersUrl = '/api/user/lineup/swappable';  // URL to web api
 	
 	
 //	private usersUrl = '/api';  // URL to web api
@@ -98,7 +101,12 @@ export class UserService {
 	
 	/** POST: edit user's lineup */
 	editLineup(req: EditLineupRequest): Observable<EditLineupRequest> {
+//	editLineup(req: EditLineupRequest): {
 		return this.http.post<EditLineupRequest>(this.editUserLineupUrl, req, this.httpOptions);
+	}
+	
+	getListOfPlayersToSwapFor(query: EditLineupQuery): Observable<Player[]> {
+		return this.http.post<Player[]>(this.getEligibleSwapPlayersUrl, query, this.httpOptions);
 	}
 	
 	

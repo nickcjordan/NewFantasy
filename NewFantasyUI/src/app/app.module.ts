@@ -29,9 +29,12 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { ReactiveFormsModule }    from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
+import { PlayerEditPopoverComponent } from './users/user-edit/player-edit-popover/player-edit-popover.component';
 
 
 @Injectable()
@@ -55,15 +58,18 @@ export class XhrInterceptor implements HttpInterceptor {
 		AppComponent,
         AlertComponent,
         HomeComponent,
-        RegisterComponent
+        RegisterComponent,
+        PlayerEditPopoverComponent
 	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
 		//HttpClientInMemoryWebApiModule.forRoot( InMemoryDataService, {dataEncapsulation: false} ),
 		ReactiveFormsModule,
-		AppRoutingModule
-//		NgbModule.forRoot()
+		AppRoutingModule,
+		NgbModule,
+		NgbModule.forRoot(),
+		FontAwesomeModule
 	],
 	providers: [
 //		AuthService 

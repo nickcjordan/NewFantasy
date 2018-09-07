@@ -1,15 +1,15 @@
 .lineupContainer {
-	width: 50%;
+	/* width: 50%; */
 }
 
 tr {
 	text-align: left;
 }
 
-tbody {
+/* tbody {
 	margin-left: 1000px;
 	padding-left: 1000px;
-}
+} */
 
 /* .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     padding: 8px;
@@ -23,8 +23,8 @@ tbody {
     border-top: none !important;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
-    margin-left: 1000px;
-	padding-left: 1000px;
+/*     margin-left: 1000px;
+	padding-left: 1000px; */
 }
 
 .position-title-row {
