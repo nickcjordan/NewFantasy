@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
 	
 	faCoins = faCoins;
 
-	
 	currentUser: UserCredential;
 	userId: number;
 	private user: User;

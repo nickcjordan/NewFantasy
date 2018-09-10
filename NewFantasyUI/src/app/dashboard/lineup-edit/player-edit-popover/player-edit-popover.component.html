@@ -1,20 +1,33 @@
 
-
-<!-- <ng-template #popTitle>{{title}}</ng-template> -->
-
 <ng-template #popContent>
 
-	<a href="/dashboard"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtFlex(player)">Flex</button></a>
-	<a href="/dashboard"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtPosition(player)">{{player.position}}</button></a>
+	<a href="/dashboard"><button type="button" class="btn edit-lineup-btn badge-{{player.position}}" (click)="movePlayerToLineupAtPosition(player)">{{player.position}}</button></a>
+
+	<span *ngIf='this.canBeFlex'>
+		<a href="/dashboard"><button type="button" class="btn edit-lineup-btn badge-FLEX" (click)="movePlayerToLineupAtFlex(player)">Flex</button></a>
+	</span>
 	
-	<span *ngFor="let swappable of swappables">
+	<span *ngFor="let swappable of this.swappables">
 		<button type="button" class="btn btn-default" (click)="swapStarterAndBenchPlayer(player.playerId, swappable.playerId)">{{swappable.playerName}}</button>
 	</span>
 </ng-template>
 
 
 
-<button type="button" class="btn btn-default" [ngbPopover]="popContent" popoverTitle="Replace?" [placement]="'left'">
+<button type="button" class="btn btn-default" [ngbPopover]="popContent" popoverTitle="Where to?" [placement]="'left'" >
   	<fa-icon [icon]="faExchangeAlt"></fa-icon>
 </button>
 
+
+<!-- USE FOR EDIT BUTTON -->
+ <!-- <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+    show = {{show}}
+    <br>
+    <div *ngIf="show">Text to show</div> -->
+    
+    
+    <!-- ANOTHER OPTION -->
+    <!-- <div *ngIf="show; then thenBlock; else elseBlock">this is ignored</div>
+    <ng-template #primaryBlock>Primary text to show</ng-template>
+    <ng-template #secondaryBlock>Secondary text to show</ng-template>
+    <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template> -->

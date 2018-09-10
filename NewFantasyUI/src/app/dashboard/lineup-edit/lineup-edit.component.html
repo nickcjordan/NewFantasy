@@ -1,10 +1,10 @@
 
-<div class="lineupContainer">
-	<h2>Lineup:</h2>
-	<table class="table">
+<div class="player-table-container">
+	<h2 class="player-table-header">Starting Lineup:</h2>
+	<table class="table player-table">
 		<thead>
 			<tr>
-				<th class="dark-row" scope="col">Edit Position</th>
+				<th class="dark-row" scope="col"></th>
 				<th class="dark-row" scope="col">Name:</th>
 				<th class="dark-row" scope="col">Team:</th>
 			</tr>
@@ -15,7 +15,7 @@
 			</tr>
 			<tr *ngFor="let player of user.team.roster.startingLineup.qb.players">
 				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply"></fa-icon>
+							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -27,7 +27,7 @@
 			</tr>
 			<tr *ngFor="let player of user.team.roster.startingLineup.rb.players">
 				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply"></fa-icon>
+							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -39,7 +39,7 @@
 			</tr>
 			<tr *ngFor="let player of user.team.roster.startingLineup.wr.players">
 				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply"></fa-icon>
+							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -51,7 +51,7 @@
 			</tr>
 			<tr *ngFor="let player of user.team.roster.startingLineup.te.players">
 				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply"></fa-icon>
+							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -63,7 +63,7 @@
 			</tr>
 			<tr *ngFor="let player of user.team.roster.startingLineup.flex.players">
 				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply"></fa-icon>
+							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -75,7 +75,7 @@
 			</tr>
 			<tr *ngFor="let player of user.team.roster.startingLineup.k.players">
 				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply"></fa-icon>
+							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>

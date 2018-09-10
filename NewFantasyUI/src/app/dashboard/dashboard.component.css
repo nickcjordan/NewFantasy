@@ -1,3 +1,56 @@
 .coin-icon {
 	color: #e2d638;
 }
+
+tr {
+	text-align: left;
+}
+
+
+.position-title-row {
+	border-bottom: 1px solid #ddd !important;
+	border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.no-border {
+	border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.indented-text {
+	padding-left: 5%;
+}
+
+.dark-row {
+	background: #494949;
+	color: white;
+}
+
+.player-table > tbody > tr {
+    border-bottom: 1px solid #ddd !important;
+    border-top: none !important;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    
+}
+
+.player-table > tbody > tr > td {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.player-table-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.player-table-header {
+	margin-bottom: 10px;
+}
+
+.user-details-container {
+	margin-top: 20px;
+}

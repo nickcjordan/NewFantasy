@@ -26,6 +26,7 @@ export class PlayerEditPopoverComponent implements OnInit {
 	user: User;
 	userId: number;
 	swappables: Player[];
+	canBeFlex: boolean;
 	
 	@Input() player: Player;
 
@@ -37,7 +38,15 @@ export class PlayerEditPopoverComponent implements OnInit {
 
 	ngOnInit() {
 		this.setUser();
-		this.setStartingPlayersToSwapFor();
+//		this.setStartingPlayersToSwapFor();
+		this.setIfCanBeFlex();
+	}
+	
+	setIfCanBeFlex(): void {
+		this.canBeFlex = false;
+		if (this.player.position == "RB" || this.player.position == "WR" || this.player.position == "TE") {
+			this.canBeFlex = true;
+		}
 	}
 	
 	setUser(): void {

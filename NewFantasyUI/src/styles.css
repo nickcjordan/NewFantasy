@@ -2,7 +2,44 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-/* .lineupContainer {
-	margin:1em auto;
-	max-width: 80%;
-} */
+.badge-QB {
+	background-color: #c76d6b;
+	color: white;
+}
+
+.badge-RB {
+	background-color: #3a87ad;
+	color: white;
+}
+
+.badge-WR {
+	background-color: #57b559;
+	color: white;
+}
+
+.badge-TE {
+	background-color: #f89406;
+	color: white;
+}
+
+.badge-FLEX {
+	background-color: #3c3c3c;
+	color: white;
+}
+
+.badge-K {
+	background-color: #3a2de1;
+	color: white;
+}
+
+.badge-DST {
+	background-color: #1c4f47;
+	color: white;
+}
+
+.badge-player-position {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
