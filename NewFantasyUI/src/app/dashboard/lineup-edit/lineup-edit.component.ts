@@ -12,11 +12,11 @@ import { faReply } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  selector: 'app-user-edit',
-  templateUrl: './user-edit.component.html',
-  styleUrls: ['./user-edit.component.css']
+  selector: 'app-lineup-edit',
+  templateUrl: './lineup-edit.component.html',
+  styleUrls: ['./lineup-edit.component.css']
 })
-export class UserEditComponent implements OnInit {
+export class LineupEditComponent implements OnInit {
 	
 	faReply = faReply;
 	
@@ -34,10 +34,6 @@ export class UserEditComponent implements OnInit {
 
 	ngOnInit() {
 		this.setUser();
-	}
-	
-	save(): void {
-		this.userService.updateUser(this.user).subscribe();
 	}
 	
 	setUser(): void {

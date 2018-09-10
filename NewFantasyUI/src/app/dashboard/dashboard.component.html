@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-2">
+		<div class="col-lg-2">
 			<h1>{{user.userName}}'s Home</h1>
 			<div>
 				<p>authenticated with user {{currentUser.username}}</p>
@@ -10,6 +10,14 @@
 			</div>
 		</div>
 		
-		<app-user-edit></app-user-edit>
+		
+		<div class="col-lg">
+			<app-lineup-edit></app-lineup-edit>
+		</div>
+		
+		<div class="col-lg">
+			<app-bench-edit></app-bench-edit>
+		</div>
+		
 	</div>
 </div>

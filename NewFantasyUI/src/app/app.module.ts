@@ -9,11 +9,12 @@ import {AppComponent} from './app.component';
 import {UserDetailComponent} from './user-detail/user-detail.component';
 import {MessagesComponent} from './messages/messages.component';
 import {AppRoutingModule} from './/app-routing.module';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { NavComponent } from './common/nav/nav.component';
-import { UserPreviewComponent } from './users/user-preview/user-preview.component';
-import { UserEditComponent } from './users/user-edit/user-edit.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import { LineupEditComponent } from './dashboard/lineup-edit/lineup-edit.component';
+import { PlayerEditPopoverComponent } from './dashboard/lineup-edit/player-edit-popover/player-edit-popover.component';
+import { UserPreviewComponent } from './user-preview/user-preview.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from "./service/auth.service";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -34,7 +35,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
-import { PlayerEditPopoverComponent } from './users/user-edit/player-edit-popover/player-edit-popover.component';
+import { BenchEditComponent } from './dashboard/bench-edit/bench-edit.component';
 
 
 @Injectable()
@@ -53,13 +54,14 @@ export class XhrInterceptor implements HttpInterceptor {
 		UserSearchComponent,
 		NavComponent,
 		UserPreviewComponent,
-		UserEditComponent,
+		LineupEditComponent,
 		LoginComponent,
 		AppComponent,
         AlertComponent,
         HomeComponent,
         RegisterComponent,
-        PlayerEditPopoverComponent
+        PlayerEditPopoverComponent,
+        BenchEditComponent
 	],
 	imports: [
 		BrowserModule,

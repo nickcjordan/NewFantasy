@@ -1,0 +1,22 @@
+<div class="col-lg">
+	<div class="lineupContainer">
+		<h2>Bench:</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="dark-row" scope="col">Edit Position</th>
+					<th class="dark-row" scope="col">Name:</th>
+					<th class="dark-row" scope="col">Team:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let player of user.team.roster.benchPlayers.players">
+					<!-- <td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtPosition(player)"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></button></a></td> -->
+					<td><app-player-edit-popover [player]="player"></app-player-edit-popover></td>
+					<td>{{player.playerName}}</td>
+					<td>{{player.teamName}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

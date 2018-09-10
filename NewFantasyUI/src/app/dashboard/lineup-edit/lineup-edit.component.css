@@ -1,0 +1,32 @@
+tr {
+	text-align: left;
+}
+
+.table > tbody > tr {
+    border-bottom: 1px solid #ddd !important;
+    border-top: none !important;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.position-title-row {
+	border-bottom: 1px solid #ddd !important;
+	border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.no-border {
+	border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.indented-text {
+	padding-left: 5%;
+}
+
+.dark-row {
+	background: #494949;
+	color: white;
+}
