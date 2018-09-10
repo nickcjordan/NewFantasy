@@ -1,0 +1,19 @@
+.input-panel-centered {
+	width: 50%;
+	text-align: left;
+	margin: auto;
+	margin-top: 5%;
+	vertical-align: middle;
+	height: auto;
+}
+
+.cenetered-panel-wrapper {
+	text-align: center;
+	height: auto;
+	
+}
+
+.form-title {
+	text-align: center;
+	font-size: 4em;
+}

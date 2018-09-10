@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
 import com.fantasy.dbmanager.dao.UserDao;
 import com.fantasy.dbmanager.model.UserTO;
 import com.fantasy.dbmanager.transformer.UserTransformer;
@@ -23,12 +24,16 @@ public class UserDatabaseManager {
 	@Autowired
 	private UserTransformer userTransformer;
 
-	public void put(List<User> users) {
+	public void putAll(List<User> users) {
 		List<UserTO> userTos = new ArrayList<UserTO>();
 		for (User u : users) {
 			userTos.add(userTransformer.getTO(u));
 		}
-		userDao.put(userTos);
+		userDao.putAll(userTos);
+	}
+	
+	public void put(User user) {
+		userDao.put(userTransformer.getTO(user));
 	}
 	
 	public long count() {
@@ -52,7 +57,23 @@ public class UserDatabaseManager {
 	}
 
 	public void update(User user) {
-		
+		if (userDao.update(userTransformer.getTO(user))) {
+			log.info("SUCCESS :: User data updated in database :: " + user.getUserName());
+		} else {
+			log.info("ERROR :: User data could not be updated in database :: " + user.getUserName());
+			throw new RuntimeException();
+		}
+	}
+	
+	public void updateAll(List<User> users) {
+		for (User user : users) {
+			try {
+				update(user);
+			} catch (Exception e) {
+				log.info("update did not work for " + user.getUserName() + ", trying put...");
+				put(user);
+			}
+		}
 	}
 
 }

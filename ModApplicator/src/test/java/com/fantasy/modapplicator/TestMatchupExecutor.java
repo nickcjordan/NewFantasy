@@ -8,11 +8,11 @@ import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
 import com.fantasy.dataaccessutility.model.Player;
-import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.matchup.Matchup;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.TargetType;
+import com.fantasy.dataaccessutility.model.team.Team;
 import com.fantasy.matchupexecutor.model.MatchupRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

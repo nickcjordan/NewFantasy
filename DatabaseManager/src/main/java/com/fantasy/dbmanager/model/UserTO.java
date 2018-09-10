@@ -3,14 +3,14 @@ package com.fantasy.dbmanager.model;
 import java.util.List;
 import java.util.Map;
 
-import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.matchup.MatchupUserResult;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.Perk;
+import com.fantasy.dataaccessutility.model.team.Team;
 
 public class UserTO {
 	
-	String userId;
+	private String userId;
 	private String userName;
 	private Map<String, Perk> perkTree;
 	private List<Modifier> modifiers;

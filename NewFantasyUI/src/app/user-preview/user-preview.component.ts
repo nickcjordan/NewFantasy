@@ -1,8 +1,8 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {User} from '../../model/user';
-import { AuthService } from "../../service/auth.service";
-import {UserService} from '../../service/user.service';
+import {User} from '../model/user';
+import { AuthService } from "../service/auth.service";
+import {UserService} from '../service/user.service';
 
 @Component({
   selector: 'app-user-preview',

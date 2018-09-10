@@ -1,11 +1,10 @@
-import {Player} from './player';
+import {Roster} from './roster';
 
 export class Team {
+	
 	id: string;
 	name: string;
-	qb: Player[];
-	rb: Player[];
-	wr: Player[];
-	te: Player[];
-	k: Player[];
+	
+	roster: Roster;
+	
 }

@@ -1,9 +1,23 @@
-<h1>Greeting</h1>
-<div [hidden]="!authenticated()">
-	<p>authenticated with user {{user}}</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-2">
+			<h1>{{user.userName}}'s Home</h1>
+			<div>
+				<p>authenticated with user {{currentUser.username}}</p>
+			</div>
+			<div>
+				<h1><fa-icon class="coin-icon" [icon]="faCoins" size=""></fa-icon>{{user.coins}}</h1>
+			</div>
+		</div>
+		
+		
+		<div class="col-lg">
+			<app-lineup-edit></app-lineup-edit>
+		</div>
+		
+		<div class="col-lg">
+			<app-bench-edit></app-bench-edit>
+		</div>
+		
+	</div>
 </div>
-<div [hidden]="authenticated()">
-	<p>not authenticated</p>
-</div>
-
-<app-user-edit></app-user-edit>

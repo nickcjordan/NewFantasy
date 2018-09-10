@@ -1,9 +1,12 @@
+import { EditLineupRequest } from "../model/edit-lineup-request";
 import {Injectable} from '@angular/core';
 import {User} from '../model/user';
+import {Player} from '../model/player';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
 import {catchError, map, tap} from 'rxjs/operators';
+import { EditLineupQuery } from "../model/edit-lineup-query";
 
 @Injectable({
 	providedIn: 'root'
@@ -13,6 +16,8 @@ export class UserService {
 	private getAllUsersUrl = '/api/user/getAll';  // URL to web api
 	private getUserUrl = '/api/user/get';  // URL to web api
 	private updateUserUrl = '/api/user/update';  // URL to web api
+	private editUserLineupUrl = '/api/user/lineup/edit';  // URL to web api
+	private getEligibleSwapPlayersUrl = '/api/user/lineup/swappable';  // URL to web api
 	
 	
 //	private usersUrl = '/api';  // URL to web api
@@ -32,7 +37,7 @@ export class UserService {
 	/** Log list of users */
 	private logUsers(users: User[]) {
 		users.forEach(function (user) {
-			console.log("User: " + user.id + ", " + user.userName);
+			console.log("User: " + user.userId + ", " + user.userName);
 		});
 	}
 
@@ -47,37 +52,37 @@ export class UserService {
 	}
 
 	/** GET user by id. Will 404 if id not found */
-	getUser(id: number): Observable<User> {
-		const url = `${this.getUserUrl}/${id}`;
+	getUser(userId: number): Observable<User> {
+		const url = `${this.getUserUrl}/${userId}`;
 		return this.http.get<User>(url).pipe(
-			tap(_ => this.log(`fetched user id=${id}`)),
-			catchError(this.handleError<User>(`getUser id=${id}`))
+			tap(_ => this.log(`fetched user userId=${userId}`)),
+			catchError(this.handleError<User>(`getUser userId=${userId}`))
 		);
 	}
 
 	/** POST: update the user on the server */
 	updateUser(user: User): Observable<User> {
 		return this.http.post<User>(this.updateUserUrl, user, this.httpOptions).pipe(
-			tap(_ => this.log(`updated user id=${user.id}`)),
-			catchError(this.handleError<User>('updateUser id=${id}'))
+			tap(_ => this.log(`updated user userId=${user.userId}`)),
+			catchError(this.handleError<User>('updateUser userId=${userId}'))
 		);
 	}
 
 	/** POST: add a new user to the server */
 	addUser(user: User): Observable<User> {
 		return this.http.post<User>(this.getAllUsersUrl, user, this.httpOptions).pipe(
-			tap((user: User) => this.log(`added user w/ id=${user.id}`)),
+			tap((user: User) => this.log(`added user w/ userId=${user.userId}`)),
 			catchError(this.handleError<User>('addUser'))
 		);
 	}
 
 	/** DELETE: delete the user from the server */
 	deleteUser(u: User | number): Observable<User> {
-		var id = (typeof u === 'number') ? u : u.id;
-		const url = `${this.getAllUsersUrl}/${id}`;
+		var userId = (typeof u === 'number') ? u : u.userId;
+		const url = `${this.getAllUsersUrl}/${userId}`;
 
 		return this.http.delete<User>(url, this.httpOptions).pipe(
-			tap(_ => this.log(`deleted user id=${id}`)),
+			tap(_ => this.log(`deleted user userId=${userId}`)),
 			catchError(this.handleError<User>('deleteUser'))
 		);
 	}
@@ -93,6 +98,18 @@ export class UserService {
 			catchError(this.handleError<User[]>('searchUsers', []))
 		);
 	}
+	
+	/** POST: edit user's lineup */
+	editLineup(req: EditLineupRequest): Observable<EditLineupRequest> {
+//	editLineup(req: EditLineupRequest): {
+		return this.http.post<EditLineupRequest>(this.editUserLineupUrl, req, this.httpOptions);
+	}
+	
+	getListOfPlayersToSwapFor(query: EditLineupQuery): Observable<Player[]> {
+		return this.http.post<Player[]>(this.getEligibleSwapPlayersUrl, query, this.httpOptions);
+	}
+	
+	
 
 	/**
  * Handle Http operation that failed. Let the app continue.

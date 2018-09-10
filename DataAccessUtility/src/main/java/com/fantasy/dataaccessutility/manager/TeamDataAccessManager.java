@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.access.DatabaseManagerDelegate;
-import com.fantasy.dataaccessutility.model.Team;
+import com.fantasy.dataaccessutility.model.team.Team;
 
 @Component
 public class TeamDataAccessManager {

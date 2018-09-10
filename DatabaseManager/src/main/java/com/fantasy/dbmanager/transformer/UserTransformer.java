@@ -15,7 +15,7 @@ public class UserTransformer {
 	public UserTO getTO(User user) {
 		UserTO userTo = new UserTO();
 		userTo.setCoins(user.getCoins());
-		userTo.setUserId(user.getId());
+		userTo.setUserId(user.getUserId());
 		userTo.setMatchupResults(user.getMatchupResults());
 		userTo.setModifiers(user.getModifiers());
 		userTo.setPerkTree(user.getPerkTree());
@@ -27,7 +27,7 @@ public class UserTransformer {
 	public User getUser(UserTO userTo) {
 		User user = new User();
 		user.setCoins(userTo.getCoins());
-		user.setId(userTo.getUserId());
+		user.setUserId(userTo.getUserId());
 		user.setMatchupResults(userTo.getMatchupResults());
 		user.setModifiers(userTo.getModifiers());
 		user.setPerkTree(userTo.getPerkTree());

@@ -1,29 +1,61 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { AuthService } from './../service/auth.service';
+﻿import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+
+import { AlertService, AuthenticationService } from '../_services';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+	templateUrl: 'login.component.html',
+	styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	
-	credentials = {username: '', password: ''};
+    loginForm: FormGroup;
+    loading = false;
+    submitted = false;
+    returnUrl: string;
 
-	constructor(
-		private auth: AuthService, 
-		private http: HttpClient, 
-		private router: Router
-	) {}
+    constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService) {}
 
-	  login() {
-	    this.auth.authenticate(this.credentials, () => { this.router.navigateByUrl('/');});
-	    return false;
-	  }
+    ngOnInit() {
+        this.loginForm = this.formBuilder.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required]
+        });
 
-	ngOnInit() {
-	}
+        // reset login status
+        this.authenticationService.logout();
 
+        // get return url from route parameters or default to '/'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    }
+
+    // convenience getter for easy access to form fields
+    get f() { return this.loginForm.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.loginForm.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        this.authenticationService.login(this.f.username.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading = false;
+                });
+    }
 }

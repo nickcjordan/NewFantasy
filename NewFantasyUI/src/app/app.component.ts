@@ -17,11 +17,11 @@ export class AppComponent {
 		private router: Router, 
 		private auth: AuthService
 	) { 
-		this.auth.authenticateDefault();
-		if (!this.auth.authenticated) { 
-			this.router.navigateByUrl('/login'); 
-			console.log('AppComponent: in constructor :: not authenticated');
-		} //route to login if not authenticated
+//		this.auth.authenticateDefault();
+//		if (!this.auth.authenticated) { 
+//			this.router.navigateByUrl('/login'); 
+//			console.log('AppComponent: in constructor :: not authenticated');
+//		} //route to login if not authenticated
 	}
 	
 	authenticated() {

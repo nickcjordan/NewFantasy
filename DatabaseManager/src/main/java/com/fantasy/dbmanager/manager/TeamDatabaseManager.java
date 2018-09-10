@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.model.Team;
+import com.fantasy.dataaccessutility.model.team.Team;
 import com.fantasy.dbmanager.dao.TeamDao;
 import com.fantasy.dbmanager.model.TeamTO;
 import com.fantasy.dbmanager.transformer.TeamTransformer;

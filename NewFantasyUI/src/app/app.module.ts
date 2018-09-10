@@ -9,18 +9,34 @@ import {AppComponent} from './app.component';
 import {UserDetailComponent} from './user-detail/user-detail.component';
 import {MessagesComponent} from './messages/messages.component';
 import {AppRoutingModule} from './/app-routing.module';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { NavComponent } from './common/nav/nav.component';
-import { UserPreviewComponent } from './users/user-preview/user-preview.component';
-import { UserEditComponent } from './users/user-edit/user-edit.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import { LineupEditComponent } from './dashboard/lineup-edit/lineup-edit.component';
+import { PlayerEditPopoverComponent } from './dashboard/lineup-edit/player-edit-popover/player-edit-popover.component';
+import { UserPreviewComponent } from './user-preview/user-preview.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from './login/login.component';
 import { AuthService } from "./service/auth.service";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HttpHandler } from "@angular/common/http";
 import { HttpRequest } from "@angular/common/http";
 import { HttpInterceptor } from "@angular/common/http";
+
+import { AlertComponent } from './_directives';
+import { AuthGuard } from './_guards';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { AlertService, AuthenticationService, UserCredentialService } from './_services';
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
+import { ReactiveFormsModule }    from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
+// used to create fake backend
+import { fakeBackendProvider } from './_helpers';
+import { BenchEditComponent } from './dashboard/bench-edit/bench-edit.component';
+
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -38,18 +54,38 @@ export class XhrInterceptor implements HttpInterceptor {
 		UserSearchComponent,
 		NavComponent,
 		UserPreviewComponent,
-		UserEditComponent,
-		LoginComponent
+		LineupEditComponent,
+		LoginComponent,
+		AppComponent,
+        AlertComponent,
+        HomeComponent,
+        RegisterComponent,
+        PlayerEditPopoverComponent,
+        BenchEditComponent
 	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
 		//HttpClientInMemoryWebApiModule.forRoot( InMemoryDataService, {dataEncapsulation: false} ),
-		FormsModule,
+		ReactiveFormsModule,
 		AppRoutingModule,
-		NgbModule.forRoot()
+		NgbModule,
+		NgbModule.forRoot(),
+		FontAwesomeModule
 	],
-	providers: [AuthService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
+	providers: [
+//		AuthService 
+		{ provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
+		AuthGuard,
+        AlertService,
+        AuthenticationService,
+        UserCredentialService,
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        fakeBackendProvider
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

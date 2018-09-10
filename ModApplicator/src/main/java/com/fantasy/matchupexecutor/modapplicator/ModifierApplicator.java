@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.ModifiedStats;
 import com.fantasy.dataaccessutility.model.Player;
-import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.matchup.Matchup;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
+import com.fantasy.dataaccessutility.model.team.Team;
 
 @Component
 public class ModifierApplicator {
@@ -33,16 +33,14 @@ public class ModifierApplicator {
 			switch(mod.getTargetType()) {
 				case PLAYER : 	  applyModifierOnPlayer(mod, determinator.determineTargetPlayer(mod.getTargetId(), user, opponent)); break;
 				case TEAM: 		  applyModifierOnTeam(mod, determinator.determineTargetTeam(mod.getTargetId(), user, opponent)); break;
-				case POSITION:	  applyModifierOnPositionGroup(mod, determinator.determineTargetPositionGroup(mod, user, opponent)); break;
+				case POSITION:	  applyModifierOnPositionGroup(mod, determinator.determineTargetPositionGroup(mod, user, opponent).getPlayers()); break;
 			}
 		}
 	}
 
 	private void applyModifierOnTeam(Modifier mod, Team team) {
-		for (List<Player> positionGroup : team.getListOfPlayersByPosition()) {
-			for (Player player : positionGroup) {
-				player.getModifiedStats().get(weekNumber).setNewFantasyPointTotal(calculateNewFantasyPointTotalAddition(player, mod));
-			}
+		for (Player player : team.getRoster().getAllPlayers()) {
+			player.getModifiedStats().get(weekNumber).setNewFantasyPointTotal(calculateNewFantasyPointTotalAddition(player, mod));
 		}
 	}
 

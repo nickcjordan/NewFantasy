@@ -9,8 +9,8 @@ import com.fantasy.dataaccessutility.manager.PlayerDataAccessManager;
 import com.fantasy.dataaccessutility.manager.TeamDataAccessManager;
 import com.fantasy.dataaccessutility.manager.UserDataAccessManager;
 import com.fantasy.dataaccessutility.model.Player;
-import com.fantasy.dataaccessutility.model.Team;
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.team.Team;
 
 @Component
 public class DataAccessUtility {

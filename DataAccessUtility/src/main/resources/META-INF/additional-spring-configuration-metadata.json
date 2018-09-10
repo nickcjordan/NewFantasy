@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "roster.lineup.qb.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.lineup.qb.max.size'"
+  },
+  {
+    "name": "roster.lineup.rb.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.lineup.rb.max.size'"
+  },
+  {
+    "name": "roster.lineup.wr.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.lineup.wr.max.size'"
+  },
+  {
+    "name": "roster.lineup.te.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.lineup.te.max.size'"
+  },
+  {
+    "name": "roster.lineup.flex.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.lineup.flex.max.size'"
+  },
+  {
+    "name": "roster.lineup.k.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.lineup.k.max.size'"
+  },
+  {
+    "name": "roster.lineup.dst.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.lineup.dst.max.size'"
+  },
+  {
+    "name": "roster.bench.max.size",
+    "type": "java.lang.String",
+    "description": "A description for 'roster.bench.max.size'"
+  }
+]}

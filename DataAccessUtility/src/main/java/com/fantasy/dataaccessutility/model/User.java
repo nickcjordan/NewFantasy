@@ -8,10 +8,11 @@ import java.util.Map;
 import com.fantasy.dataaccessutility.model.matchup.MatchupUserResult;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.Perk;
+import com.fantasy.dataaccessutility.model.team.Team;
 
 public class User {
 
-	String id;
+	private String userId;
 	private String userName;
 	private Map<String, Perk> perkTree;
 	private List<Modifier> modifiers;
@@ -25,7 +26,7 @@ public class User {
 	}
 	
 	public User(String id, String userName, Map<String, Perk> perkTree, Team team, int coins) {
-		this.id = id;
+		this.userId = id;
 		this.userName = userName;
 		this.perkTree = perkTree;
 		this.team = team;
@@ -35,7 +36,7 @@ public class User {
 	}
 	
 	public User(String id, String userName) {
-		this.id = id;
+		this.userId = id;
 		this.userName = userName;
 		this.perkTree = new HashMap<String, Perk>();
 		this.team = new Team(id, userName);
@@ -56,12 +57,12 @@ public class User {
 		this.modifiers = modifiers;
 	}
 
-	public String getId() {
-		return id;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUserId(String id) {
+		this.userId = id;
 	}
 
 	public String getUserName() {
