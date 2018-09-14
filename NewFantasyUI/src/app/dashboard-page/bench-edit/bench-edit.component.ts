@@ -10,7 +10,7 @@ import { Player } from "../../model/player";
 @Component({
   selector: 'app-bench-edit',
   templateUrl: './bench-edit.component.html',
-  styleUrls: ['./bench-edit.component.css']
+  styleUrls: ['./bench-edit.component.scss']
 })
 export class BenchEditComponent implements OnInit {
 	

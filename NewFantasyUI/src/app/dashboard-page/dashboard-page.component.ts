@@ -9,10 +9,10 @@ import { faCoins } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
 	selector: 'app-dashboard',
-	templateUrl: './dashboard.component.html',
-	styleUrls: ['./dashboard.component.css']
+	templateUrl: './dashboard-page.component.html',
+	styleUrls: ['./dashboard-page.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardPageComponent implements OnInit {
 	
 	faCoins = faCoins;
 

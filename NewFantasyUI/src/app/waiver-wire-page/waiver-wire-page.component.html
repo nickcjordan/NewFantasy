@@ -1,0 +1,41 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-2">
+			
+			<div class="waiver-buttons-container">
+		
+				<h1>Show/Hide:</h1>
+				
+				<!-- <input name="options" [(ngModel)]="options" type="radio" [value]="true" [checked]="options" />
+				<label class="custom-control-label" for="options">Options</label> -->
+				
+				<div class="custom-control custom-radio">
+					<input type="radio" class="custom-control-input" id="showAvailableRadio" name="showAvailableRadio" [value]="true" [checked]="options" checked> 
+					<label class="custom-control-label" for="showAvailableRadio">Show Available</label>
+				</div>
+				<div class="custom-control custom-radio">
+					<input type="radio" class="custom-control-input" id="showTakenRadio" name="defaultExampleRadios">
+					<label class="custom-control-label" for="showTakenRadio">Show Taken</label>
+				</div>
+				
+				
+				<!-- <input name="options" [(ngModel)]="options" type="radio" [value]="true" [checked]="options" /> Yes 
+				<input name="options" [(ngModel)]="options" type="radio" [value]="false" [checked]="!options" /> No
+				<h2 *ngIf="options">Supply</h2>
+				<h2 *ngIf="!options">Demand</h2> -->
+				
+			</div>
+			
+			
+		</div>
+		
+		<div class="col-lg">
+			<player-table [players]="players" [user]="user"
+						[showAvailablePlayers]="showAvailablePlayers"
+						[showTakenPlayers]="showTakenPlayers"
+			
+			></player-table>
+		</div>
+		
+	</div>
+</div>

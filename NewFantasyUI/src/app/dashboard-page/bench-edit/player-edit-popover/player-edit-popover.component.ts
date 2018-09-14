@@ -15,7 +15,7 @@ import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-player-edit-popover',
   templateUrl: './player-edit-popover.component.html',
-  styleUrls: ['./player-edit-popover.component.css']
+  styleUrls: ['./player-edit-popover.component.scss']
 })
 export class PlayerEditPopoverComponent implements OnInit {
 	

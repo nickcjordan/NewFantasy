@@ -1,0 +1,4 @@
+* only show edit mode if user selects edit
+* only show logout if logged in, only show login if logged out
+* fix the pages so there is only one setUser() called per page
+* restrict size of bench, dont let person add player if bench is full

@@ -3,4 +3,5 @@ export class Player {
 	playerName: string;
 	position: string;
 	teamName: string;
+	isOnUserTeam: boolean;
 }

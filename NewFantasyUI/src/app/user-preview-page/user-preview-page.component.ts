@@ -6,10 +6,10 @@ import {UserService} from '../service/user.service';
 
 @Component({
   selector: 'app-user-preview',
-  templateUrl: './user-preview.component.html',
-  styleUrls: ['./user-preview.component.css']
+  templateUrl: './user-preview-page.component.html',
+  styleUrls: ['./user-preview-page.component.scss']
 })
-export class UserPreviewComponent implements OnInit {
+export class UserPreviewPageComponent implements OnInit {
 	
 	user: User;
 	userId: number;

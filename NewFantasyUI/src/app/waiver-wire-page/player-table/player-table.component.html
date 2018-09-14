@@ -1,0 +1,26 @@
+<div class="waiver-players-container">
+	<table class="table table-striped player-table">
+		<thead>
+			<tr>
+				<th class="dark-row" scope="col"></th>
+				<th class="dark-row" scope="col">Position:</th>
+				<th class="dark-row" scope="col">Name:</th>
+				<th class="dark-row" scope="col">Team:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let player of players" >
+				<td>
+					<a href="/players">
+						<button type="button" class="btn btn-default" (click)="addPlayerToBench(player)">
+							<fa-icon [icon]="faUserPlus" size="sm"></fa-icon>
+						</button>
+					</a>
+				</td>
+				<td><span class="badge badge-player-position badge-{{player.position}}">{{player.position}}</span></td>
+				<td>{{player.playerName}}</td>
+				<td>{{player.teamName}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
