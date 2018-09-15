@@ -30,11 +30,15 @@ import { RegisterComponent } from './register';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { fakeBackendProvider } from './_helpers'; // used to create fake backend
 import { BenchEditComponent } from './dashboard-page/bench-edit/bench-edit.component';
 import { WaiverWirePageComponent } from './waiver-wire-page/waiver-wire-page.component';
 import { PlayerTableComponent } from './waiver-wire-page/player-table/player-table.component';
+
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+
+import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
+
 
 
 @Injectable()
@@ -73,7 +77,8 @@ export class XhrInterceptor implements HttpInterceptor {
 		NgbModule,
 		NgbModule.forRoot(),
 		FontAwesomeModule,
-		MDBBootstrapModule.forRoot()
+		MDBBootstrapModulesPro.forRoot(),
+		FormsModule
 	],
 	schemas: [ NO_ERRORS_SCHEMA ],
 	providers: [
@@ -85,6 +90,7 @@ export class XhrInterceptor implements HttpInterceptor {
         UserCredentialService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+		MDBSpinningPreloader,
 
         // provider used to create fake backend
         fakeBackendProvider

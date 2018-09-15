@@ -12,11 +12,21 @@
 				<a class="nav-link nav-spaced" href="/dashboard">Home</a>
 			</li>
 			
-			<li class="nav-item nav-spaced dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Teams </a>
+			<!-- <li class="nav-item nav-spaced dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Teams </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<span *ngFor="let user of users"> <a class="dropdown-item" href="/userPreview/{{user.userId}}">{{user.userName}}</a></span>
 				</div>
-			</li>
+			</li> -->
+			
+			<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fantasy Teams</a>
+                <div class="dropdown-menu dropdown-primary team-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                    <span *ngFor="let user of users"> 
+                    	<a class="dropdown-item" href="/userPreview/{{user.userId}}">{{user.userName}}</a>
+                    </span>
+                </div>
+            </li>
 
 			<li class="nav-item nav-spaced">
 				<a class="nav-link" [routerLink]="['/players']">Players</a>
@@ -37,3 +47,5 @@
 		</ul>
 	</div>
 </nav>
+
+

@@ -1,22 +1,30 @@
 <div class="waiver-players-container">
-	<table class="table table-striped player-table">
+
+	<div class="row">
+      <div class="col-md-12">
+        <div class="md-form">
+          <input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
+          <label for="search">Filter Players</label>
+        </div>
+      </div>
+    </div>
+
+	<table class="table table-striped  player-table" cellspacing="0" width="100%">
 		<thead>
 			<tr>
 				<th class="dark-row" scope="col"></th>
-				<th class="dark-row" scope="col">Position:</th>
-				<th class="dark-row" scope="col">Name:</th>
-				<th class="dark-row" scope="col">Team:</th>
+				<th class="dark-row" scope="col">Position 	<mdb-icon icon="sort" (click)="sortBy('position')"></mdb-icon></th>
+				<th class="dark-row" scope="col">Name 		<mdb-icon icon="sort" (click)="sortBy('playerName')"></mdb-icon></th>
+				<th class="dark-row" scope="col">Team 		<mdb-icon icon="sort" (click)="sortBy('teamName')"></mdb-icon></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let player of players" >
-				<td>
-					<a href="/players">
+			<tr *ngFor="let player of search()">
+				<td><a href="/players">
 						<button type="button" class="btn btn-default" (click)="addPlayerToBench(player)">
 							<fa-icon [icon]="faUserPlus" size="sm"></fa-icon>
 						</button>
-					</a>
-				</td>
+				</a></td>
 				<td><span class="badge badge-player-position badge-{{player.position}}">{{player.position}}</span></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -24,3 +32,37 @@
 		</tbody>
 	</table>
 </div>
+
+
+<!-- <div class="card">
+  <div class="card-body">
+  
+    <div class="row">
+      <div class="col-md-12">
+        <div class="md-form">
+          <input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
+          <label for="search">Search Player Data</label>
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of search()">
+          <th scope="row">{{data.id}}</th>
+          <td>{{data.firstName}}</td>
+          <td>{{data.lastName}}</td>
+          <td>{{data.username}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
