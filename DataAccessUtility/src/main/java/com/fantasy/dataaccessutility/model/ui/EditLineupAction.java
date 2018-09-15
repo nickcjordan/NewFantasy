@@ -8,6 +8,7 @@ public enum EditLineupAction {
 	START_PLAYER_AT_POSITION("START_AT_POSITION"),
 	START_PLAYER_AT_FLEX("START_AT_FLEX"),
 	DROP_PLAYER("DROP"),
+	ADD_PLAYER_TO_BENCH("ADD_TO_BENCH"),
 	SWAP("SWAP");
 	
 	private String actionText;

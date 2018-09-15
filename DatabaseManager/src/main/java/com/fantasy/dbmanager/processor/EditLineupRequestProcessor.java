@@ -61,11 +61,18 @@ public class EditLineupRequestProcessor {
 				break;
 			case SWAP: log.info("ERROR :: got SWAP from edit lineup request after place where SWAP should have happened");
 				break;
+			case ADD_PLAYER_TO_BENCH: addPlayerToBench(player, roster);
+				break;
 		default:
 			break;
 		}
 	}
 	
+	private void addPlayerToBench(Player player, Roster roster) {
+		log.info("Adding player " + player.getPlayerName() + " to the bench from waivers");
+		roster.addPlayerToBench(player);
+	}
+
 	private void movePlayerFromBenchToLineupAtPosition(Player player, Roster roster) {
 		log.info("Adding player " + player.getPlayerName() + " to lineup at position: " + player.getPosition() + "  :: and removing from bench");
 		roster.removePlayerFromBench(player);
