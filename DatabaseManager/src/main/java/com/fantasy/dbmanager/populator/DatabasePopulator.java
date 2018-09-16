@@ -55,7 +55,18 @@ public class DatabasePopulator {
 		positionMap.put("TE", data.getAllPlayersByPosition("TE"));
 		positionMap.put("K", data.getAllPlayersByPosition("K"));
 		
+		for (List<Player> list : positionMap.values()) {
+			for (Player p : list) {
+				p.setOnUserTeam(false);
+			}
+		}
+		
 		data.updateUsers(buildLeagueList());
+		
+		for (List<Player> list : positionMap.values()) {
+			data.updatePlayers(list);
+		}
+		
 		log.info("END :: SUCCESS :: Populated database");
 	}
 	
@@ -160,7 +171,8 @@ public class DatabasePopulator {
 		} catch (Exception e) {
 			p = list.get(0);
 		}
-		
+		p.setOnUserTeam(true);
+		data.updatePlayer(p);
 		list.remove(p);
 		positionMap.put(position, list);
 		return p;

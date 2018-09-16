@@ -46,7 +46,10 @@ public class PlayerDataAccessManager {
 	
 	public void updatePlayer(Player player) {
 		log.info("Updating stats for player " + player.getPlayerId());
-		delegate.updatePlayer(player);
+		if (!delegate.updatePlayer(player)) {
+			log.error("Update player didnt work... trying put");
+			delegate.addPlayer(player);
+		}
 	}
 	public void updatePlayers(List<Player> players) {
 		for (Player p : players) { updatePlayer(p); }

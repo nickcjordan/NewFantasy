@@ -32,6 +32,10 @@ public class Urls {
 		return MANAGER + PLAYER + PUT;
 	}
 
+	public static String updatePlayer() {
+		return MANAGER + PLAYER + UPDATE;
+	}
+
 	public static String putUser() {
 		return MANAGER + USER + PUT;
 	}
@@ -51,4 +55,5 @@ public class Urls {
 	public static String getAllPosition(String position) {
 		return MANAGER + PLAYER + GET_ALL + position;
 	}
+
 }

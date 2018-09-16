@@ -33,8 +33,12 @@ public class DatabaseManagerDelegate {
 		return rest.getForObject(Urls.getTeam(teamId), Team.class);
 	}
 
-	public boolean updatePlayer(Player player) {
+	public boolean addPlayer(Player player) {
 		return rest.postForObject(Urls.putPlayer(), Arrays.asList(player), boolean.class);
+	}
+	
+	public boolean updatePlayer(Player player) {
+		return rest.postForObject(Urls.updatePlayer(), player, boolean.class);
 	}
 
 	public boolean updateUser(User user) {

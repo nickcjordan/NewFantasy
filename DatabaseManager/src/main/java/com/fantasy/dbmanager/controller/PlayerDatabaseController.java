@@ -34,7 +34,7 @@ public class PlayerDatabaseController  {
     }
     
     @RequestMapping(value = "/put", method = RequestMethod.POST)
-    public boolean putPlayer(@RequestBody List<Player> players) {
+    public boolean putPlayers(@RequestBody List<Player> players) {
     	log.info("DatabaseManager :: putting " + players.size() + " players in database...");
     	playerManager.putPlayersInDB(players);
     	log.info("DatabaseManager :: success :: put " + players.size() + " players in database");
@@ -70,11 +70,19 @@ public class PlayerDatabaseController  {
     }
     
     @RequestMapping("/updateAll")
-    public int update() {
+    public int updateAll() {
     	log.info("DatabaseManager :: updating all players...");
     	int updatedCount = playerManager.updateAll();
 		log.info("DatabaseManager :: updated [" + updatedCount + "] players");
     	return updatedCount;
+    }
+    
+    @RequestMapping("/update")
+    public boolean update(Player p) {
+    	log.info("DatabaseManager :: updating player: " + p.getPlayerName());
+    	boolean success = playerManager.updatePlayer(p);
+		log.info("DatabaseManager :: updated: " + p.getPlayerName() + " :: result: " + success);
+    	return success;
     }
     
     @RequestMapping("/clear")

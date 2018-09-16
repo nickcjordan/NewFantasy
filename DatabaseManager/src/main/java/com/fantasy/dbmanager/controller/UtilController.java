@@ -36,8 +36,9 @@ public class UtilController  {
 	private DatabasePopulator populator;
 	
 	@RequestMapping(value = "/populate", method = RequestMethod.GET)
-	public void populate() {
+	public boolean populate() {
 		populator.populate();
+		return true;
 	}
 	
     @RequestMapping("/printStat")

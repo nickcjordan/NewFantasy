@@ -50,6 +50,7 @@ public class Roster {
 	public void addPlayerToBench(Player player) {
 		if (benchPlayers.addPlayerToBench(player)) {
 			log.info("Added player " + player.getPlayerName() + " to bench :: Bench count = " + benchPlayers.getPlayers().size());
+			player.setOnUserTeam(true);
 		} else {
 			throw new RuntimeException("ERROR :: could not add player to bench :: bench is full");
 		}
@@ -64,8 +65,12 @@ public class Roster {
 	}
 
 	public void dropPlayerFromRoster(Player player) {
-		// TODO Auto-generated method stub
-		
+		if (benchPlayers.removePlayerFromBench(player)) {
+			log.info("Removed player " + player.getPlayerName() + " from bench");
+			player.setOnUserTeam(false);
+		} else {
+			log.info("ERROR :: trying to remove player from bench :: player not found on bench: " + player.getPlayerName());
+		}
 	}
 	
 	@JsonIgnore

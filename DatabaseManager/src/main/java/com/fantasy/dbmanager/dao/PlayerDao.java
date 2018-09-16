@@ -42,7 +42,7 @@ public class PlayerDao {
 	}
 
 	public boolean removeAll() {
-		playerDBCollection.deleteMany(eq("playerId", null));
+		playerDBCollection.deleteMany(eq("blank", null));
 		return true;
 	}
 
@@ -55,7 +55,8 @@ public class PlayerDao {
 	}
 	
 	public Player updatePlayer(Player player) {
-		return playerDBCollection.findOneAndReplace(eq("playerName", player.getPlayerName()), player);
+//		return playerDBCollection.findOneAndReplace(eq("playerName", player.getPlayerName()), player);
+		return playerDBCollection.findOneAndReplace(eq("playerId", player.getPlayerId()), player);
 	}
 
 	public FindIterable<Player> getAllPlayersByPosition(String position) {
