@@ -6,6 +6,10 @@ import { EditLineupRequest } from "../../model/edit-lineup-request";
 import { Router } from "@angular/router";
 
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'player-table',
@@ -21,12 +25,18 @@ export class PlayerTableComponent implements OnInit {
 	searchText: string;
 	
 	faUserPlus = faUserPlus;
+	faTimesCircle = faTimesCircle;
+	faCheck = faCheck;
+	faSearch = faSearch;
 	
 	@Input() players: Player[];
 	@Input() user: User;
 	
-	@Input() showAvailablePlayers: boolean;
-	@Input() showTakenPlayers: boolean;
+	availablePlayers: Player[];
+	unavailablePlayers: Player[];
+	
+	showAvailablePlayers: boolean;
+	showTakenPlayers: boolean;
 	
 	constructor(
 		private userService: UserService,
@@ -34,6 +44,22 @@ export class PlayerTableComponent implements OnInit {
 	) { }
 	
 	ngOnInit() {
+		this.showAvailablePlayers = true;
+		this.showTakenPlayers = true;
+		this.setPlayerStatus();
+	}
+	
+	setPlayerStatus() {
+		this.availablePlayers = new Array();
+		this.unavailablePlayers = new Array();
+		for (let p of this.players) {
+			if (p.onUserTeam) {
+				this.unavailablePlayers.push(p);
+			}
+			if (!p.onUserTeam) {
+				this.availablePlayers.push(p);
+			}
+		}
 	}
 	
 	addPlayerToBench(player: Player) {
@@ -52,7 +78,7 @@ export class PlayerTableComponent implements OnInit {
 		this.sorted = !this.sorted;
 	}
 		
-	filterIt(arr: Player[], searchKey: string) {
+	filterPlayersBySearch(arr: Player[], searchKey: string) {
 		return arr.filter((obj: Player) => {
 			return Object.keys(obj).some((key) => {
 //			return this.keysToMatchOn.some((key) => {
@@ -68,9 +94,33 @@ export class PlayerTableComponent implements OnInit {
 		});
 	}
 	
+	filterPlayersByFlags(arr: Player[]) {
+		return arr.filter((p: Player) => {
+				if (p.onUserTeam) {
+					console.log(p.playerName + " is taken");
+					return this.showTakenPlayers;
+				}
+				if (!p.onUserTeam) {
+//					console.log(p.playerName + " is available");
+					return this.showAvailablePlayers;
+				}
+				return false;
+			});
+	}
+	
 	search() {
-		if (!this.searchText) { return this.players; }
-		if (this.searchText) { return this.filterIt(this.players, this.searchText); }
+		if (!this.searchText) { return this.filterPlayersByFlags(this.players); }
+		if (this.searchText) { return this.filterPlayersBySearch(this.filterPlayersByFlags(this.players), this.searchText); }
+	}
+	
+	toggleAvailable() {
+		console.log("available: " + this.showAvailablePlayers + " --> " + !this.showAvailablePlayers);
+		this.showAvailablePlayers = !this.showAvailablePlayers;
+	}
+	
+	toggleUnavailable() {
+		console.log("taken: " + this.showTakenPlayers + " --> " + !this.showTakenPlayers);
+		this.showTakenPlayers = !this.showTakenPlayers;
 	}
 
 }

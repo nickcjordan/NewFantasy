@@ -1,33 +1,53 @@
 
-<ng-template #popContent>
+<ng-template #popContent> 
 
-	<a href="/dashboard"><button type="button" class="btn edit-lineup-btn badge-{{player.position}}" (click)="movePlayerToLineupAtPosition(player)">{{player.position}}</button></a>
 
-	<span *ngIf='this.canBeFlex'>
-		<a href="/dashboard"><button type="button" class="btn edit-lineup-btn badge-FLEX" (click)="movePlayerToLineupAtFlex(player)">Flex</button></a>
-	</span>
+	<ul class="list-group swap-options">
 	
-	<span *ngFor="let swappable of this.swappables">
-		<button type="button" class="btn btn-default" (click)="swapStarterAndBenchPlayer(player.playerId, swappable.playerId)">{{swappable.playerName}}</button>
-	</span>
+		<li class="list-group-item swap-button-group" *ngFor="let p of this.swappables">
+			<a href="/dashboard">
+				<button type="button" class="btn swap-button" (click)="swapStarterAndBenchPlayer(player, p)">
+					<div class="row">
+						<div class="col-2 centered"><span class="badge-{{p.position}} badge edit-lineup-pos-badge">{{p.position}}</span></div>
+						<div class="col-10 centered"><span class="edit-lineup-name-text">{{p.playerName}}</span></div>
+					</div>
+				</button>
+			</a>
+		</li>
+		
+		</ul>
+	
+		<ul class="list-group swap-options">
+		
+		
+		
+		
+		<li class="list-group-item swap-button-group">
+			<div class="row no-side-margin">
+				<div class="col centered action-button-spacing">
+					<a href="/dashboard"><button type="button" class="btn swap-pos-button badge-{{player.position}}" (click)="movePlayerToLineupAtPosition(player)">{{player.position}} Slot</button></a>
+				</div>
+				<div *ngIf='this.canBeFlex' class="col centered action-button-spacing">
+					<a href="/dashboard"><button type="button" class="btn swap-pos-button badge-FLEX" (click)="movePlayerToLineupAtFlex(player)">Flex Slot</button></a>
+				</div>
+			</div>
+		</li>
+		
+		<li class="list-group-item swap-button-group">
+			<div class="row no-side-margin">
+				<div class="col centered action-button-spacing">
+					<a href="/dashboard"><button type="button" class="btn swap-pos-button badge-DROP" (click)="dropPlayer(player)">Drop Player</button></a>
+				</div>
+			</div>
+		</li>
+
+		
+	</ul>
+
 </ng-template>
 
 
-
-<button type="button" class="btn btn-default" [ngbPopover]="popContent" popoverTitle="Where to?" [placement]="'left'" >
-  	<fa-icon [icon]="faExchangeAlt"></fa-icon>
+<button type="button" class="btn edit-player-button" [ngbPopover]="popContent" popoverTitle="Replace or Move Player" [placement]="'left'">
+	<fa-icon [icon]="faExchangeAlt" size="xs"></fa-icon>
 </button>
 
-
-<!-- USE FOR EDIT BUTTON -->
- <!-- <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
-    show = {{show}}
-    <br>
-    <div *ngIf="show">Text to show</div> -->
-    
-    
-    <!-- ANOTHER OPTION -->
-    <!-- <div *ngIf="show; then thenBlock; else elseBlock">this is ignored</div>
-    <ng-template #primaryBlock>Primary text to show</ng-template>
-    <ng-template #secondaryBlock>Secondary text to show</ng-template>
-    <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template> -->

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from "@angular/router";
 import {UserService} from '../../service/user.service';
 import {User} from '../../model/user';
@@ -14,9 +14,7 @@ import { Player } from "../../model/player";
 })
 export class BenchEditComponent implements OnInit {
 	
-	currentUser: UserCredential;
-	user: User;
-	userId: number;
+	@Input() user: User;
 
   constructor(
 		private userService: UserService,
@@ -25,11 +23,6 @@ export class BenchEditComponent implements OnInit {
   ) { }
 
 	ngOnInit() {
-		this.setUser();
 	}
 	
-	setUser(): void {
-		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-		this.userService.getUser(this.currentUser.id).subscribe(user => this.user = user);
-	}
 }

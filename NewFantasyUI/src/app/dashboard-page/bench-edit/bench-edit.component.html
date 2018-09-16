@@ -12,8 +12,7 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let player of user.team.roster.benchPlayers.players">
-				<!-- <td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToLineupAtPosition(player)"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></button></a></td> -->
-				<td><app-player-edit-popover [player]="player"></app-player-edit-popover></td>
+				<td><app-player-edit-popover [player]="player" [user]="user"></app-player-edit-popover></td>
 				<td><span class="badge badge-player-position badge-{{player.position}}">{{player.position}}</span></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>

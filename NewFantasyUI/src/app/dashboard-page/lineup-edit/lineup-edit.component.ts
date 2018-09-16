@@ -20,9 +20,7 @@ export class LineupEditComponent implements OnInit {
 	
 	faReply = faReply;
 	
-	currentUser: UserCredential;
-	user: User;
-	userId: number;
+	@Input() user: User;
 	
 	constructor(
 		private userService: UserService,
@@ -33,12 +31,6 @@ export class LineupEditComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this.setUser();
-	}
-	
-	setUser(): void {
-		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-		this.userService.getUser(this.currentUser.id).subscribe(user => this.user = user);
 	}
 	
 	movePlayerToBench(player: Player) {

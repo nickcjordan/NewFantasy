@@ -22,12 +22,10 @@ export class PlayerEditPopoverComponent implements OnInit {
 	faExchangeAlt = faExchangeAlt;
 	title = "Replace?";
 	
-	currentUser: UserCredential;
-	user: User;
-	userId: number;
 	swappables: Player[];
 	canBeFlex: boolean;
 	
+	@Input() user: User;
 	@Input() player: Player;
 
 	constructor(
@@ -37,23 +35,34 @@ export class PlayerEditPopoverComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.setUser();
-//		this.setStartingPlayersToSwapFor();
-		this.setIfCanBeFlex();
+		this.setStartingPlayersToSwapFor();
 	}
 	
-	setIfCanBeFlex(): void {
-		this.canBeFlex = false;
-		if (this.player.position == "RB" || this.player.position == "WR" || this.player.position == "TE") {
-			this.canBeFlex = true;
-		}
+	setStartingPlayersToSwapFor() {
+		let pos = this.player.position;
+		this.swappables= new Array();
+		this.canBeFlex=false;
+		if (pos == "QB") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.qb.players); }
+		if (pos == "RB") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.rb.players); }
+		if (pos == "WR") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.wr.players); }
+		if (pos == "TE") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.te.players); }
+		if (pos == "K") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.k.players); }
+		if (pos == "DST") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.dst.players); }
+		if (pos == "RB" || pos == "WR" || pos == "TE") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.flex.players); this.canBeFlex=true;}
 	}
 	
-	setUser(): void {
-		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-		this.userService.getUser(this.currentUser.id).subscribe(user => this.user = user);
+	addPlayersToSwappables(playerList: Player[]) {
+		for (let p of playerList) { this.swappables.push(p); }
 	}
-	
+
+	movePlayerToLineupAtPosition(player: Player) {
+		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_POSITION");
+		this.userService.editLineup(editLineupRequest).subscribe(
+			data => { this.router.navigate(['/']); },
+			error => { this.alertService.error(error); }
+		);
+	}
+		
 	swapStarterAndBenchPlayer(toLineup: Player, toBench: Player) {
 		console.log(`swapping starter and bench player :: ${toLineup.playerName} :: ${toBench.playerName}`);
 		let editLineupRequest = new EditLineupRequest(toLineup.playerId, this.user.userId, toBench.playerId);
@@ -63,28 +72,16 @@ export class PlayerEditPopoverComponent implements OnInit {
 		);
 	}
 	
-	setStartingPlayersToSwapFor() {
-		console.log(`getting starting players to swap for :: ${this.player.playerName} :: ${this.user.userName}`);
-		let editLineupQuery = new EditLineupQuery(this.player.playerId, this.user.userId);
-		this.userService.getListOfPlayersToSwapFor(editLineupQuery).subscribe(
-			data => { 
-				this.swappables = data;
-//				this.router.navigate(['/']); 
-			},
-			error => { this.alertService.error(error); }
-		);
-	}
-	
-	movePlayerToLineupAtPosition(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_POSITION");
+	movePlayerToLineupAtFlex(player: Player) {
+		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_FLEX");
 		this.userService.editLineup(editLineupRequest).subscribe(
 			data => { this.router.navigate(['/']); },
 			error => { this.alertService.error(error); }
 		);
 	}
 	
-	movePlayerToLineupAtFlex(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_FLEX");
+	dropPlayer(player: Player) {
+		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "DROP");
 		this.userService.editLineup(editLineupRequest).subscribe(
 			data => { this.router.navigate(['/']); },
 			error => { this.alertService.error(error); }

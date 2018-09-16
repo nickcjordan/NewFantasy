@@ -2,13 +2,17 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+.pos-badge {
+	font-size: 1.1em;
+}
+
 .badge-QB {
-	background-color: #c76d6b;
+	background-color: #c46f71;
 	color: white;
 }
 
 .badge-RB {
-	background-color: #3a87ad;
+	background-color: #5692eb;
 	color: white;
 }
 
@@ -23,17 +27,23 @@
 }
 
 .badge-FLEX {
-	background-color: #3c3c3c;
+	background-color: #63a09d;
 	color: white;
 }
 
 .badge-K {
-	background-color: #3a2de1;
+	background-color: #7a558a;
 	color: white;
 }
 
 .badge-DST {
 	background-color: #1c4f47;
+	color: white;
+}
+
+.badge-DROP {
+	background-color: #951a1a;
+	font-style: italic;
 	color: white;
 }
 

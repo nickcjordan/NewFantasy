@@ -18,11 +18,8 @@ export class WaiverWirePageComponent implements OnInit {
 	private user: User;
 	
 	players: Player[];
+	allPlayers: Player[];
 	
-//	RADIO BUTTON FLAGS
-	showAvailablePlayers: boolean;
-	showTakenPlayers: boolean;
-
 	constructor(
 		private userService: UserService,
 		private playerService: PlayerService
@@ -31,8 +28,6 @@ export class WaiverWirePageComponent implements OnInit {
 	ngOnInit() {
 		this.setUser();
 		this.setPlayers();
-		this.showAvailablePlayers = true;
-		this.showTakenPlayers = true;
 	}
 	
 	setUser(): void {
@@ -44,10 +39,4 @@ export class WaiverWirePageComponent implements OnInit {
 		this.playerService.getAllPlayers().subscribe(players => this.players = players);
 	}
 
-//	function show1(){
-//  document.getElementById('div1').style.display ='none';
-//}
-//function show2(){
-//  document.getElementById('div1').style.display = 'block';
-//}
 }

@@ -11,11 +11,11 @@
 		</thead>
 		<tbody>
 			<tr class="position-title-row">
-				<td class="no-border"><strong>Quarterbacks:</strong></td>
+				<td class="no-border"><span class="badge pos-badge badge-QB">Quarterbacks:</span> ({{user.team.roster.startingLineup.qb.players.length}}/{{user.team.roster.startingLineup.qb.max}})</td>
 			</tr>
-			<tr *ngFor="let player of user.team.roster.startingLineup.qb.players">
-				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
+			<tr class="lineup-row" *ngFor="let player of user.team.roster.startingLineup.qb.players">
+				<td><a href="/"><button type="button" class="btn edit-player-button" (click)="movePlayerToBench(player)">
+							<fa-icon [icon]="faReply" size="xs" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -23,11 +23,11 @@
 		</tbody>
 		<tbody>
 			<tr class="position-title-row">
-				<td class="no-border"><strong>Runningbacks:</strong></td>
+				<td class="no-border"><span class="badge pos-badge badge-RB">Runningbacks:</span> ({{user.team.roster.startingLineup.rb.players.length}}/{{user.team.roster.startingLineup.rb.max}})</td>
 			</tr>
-			<tr *ngFor="let player of user.team.roster.startingLineup.rb.players">
-				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
+			<tr class="lineup-row" *ngFor="let player of user.team.roster.startingLineup.rb.players">
+				<td><a href="/"><button type="button" class="btn edit-player-button" (click)="movePlayerToBench(player)">
+							<fa-icon [icon]="faReply" size="xs" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -35,11 +35,11 @@
 		</tbody>
 		<tbody>
 			<tr class="position-title-row">
-				<td class="no-border"><strong>Wide Receivers:</strong></td>
+				<td class="no-border"><span class="badge pos-badge badge-WR">Wide Receivers:</span> ({{user.team.roster.startingLineup.wr.players.length}}/{{user.team.roster.startingLineup.wr.max}})</td>
 			</tr>
-			<tr *ngFor="let player of user.team.roster.startingLineup.wr.players">
-				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
+			<tr class="lineup-row" *ngFor="let player of user.team.roster.startingLineup.wr.players">
+				<td><a href="/"><button type="button" class="btn edit-player-button" (click)="movePlayerToBench(player)">
+							<fa-icon [icon]="faReply" size="xs" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -47,11 +47,11 @@
 		</tbody>
 		<tbody>
 			<tr class="position-title-row">
-				<td class="no-border"><strong>Tight Ends:</strong></td>
+				<td class="no-border"><span class="badge pos-badge badge-TE">Tight Ends:</span> ({{user.team.roster.startingLineup.te.players.length}}/{{user.team.roster.startingLineup.te.max}})</td>
 			</tr>
-			<tr *ngFor="let player of user.team.roster.startingLineup.te.players">
-				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
+			<tr class="lineup-row" *ngFor="let player of user.team.roster.startingLineup.te.players">
+				<td><a href="/"><button type="button" class="btn edit-player-button" (click)="movePlayerToBench(player)">
+							<fa-icon [icon]="faReply" size="xs" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -59,11 +59,11 @@
 		</tbody>
 		<tbody>
 			<tr class="position-title-row">
-				<td class="no-border"><strong>Flex:</strong></td>
+				<td class="no-border"><span class="badge pos-badge badge-FLEX">Flex:</span> ({{user.team.roster.startingLineup.flex.players.length}}/{{user.team.roster.startingLineup.flex.max}})</td>
 			</tr>
-			<tr *ngFor="let player of user.team.roster.startingLineup.flex.players">
-				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
+			<tr class="lineup-row" *ngFor="let player of user.team.roster.startingLineup.flex.players">
+				<td><a href="/"><button type="button" class="btn edit-player-button" (click)="movePlayerToBench(player)">
+							<fa-icon [icon]="faReply" size="xs" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>
@@ -71,11 +71,11 @@
 		</tbody>
 		<tbody>
 			<tr class="position-title-row">
-				<td class="no-border"><strong>Kickers:</strong></td>
+				<td class="no-border"><span class="badge pos-badge badge-K">Kickers:</span> ({{user.team.roster.startingLineup.k.players.length}}/{{user.team.roster.startingLineup.k.max}})</td>
 			</tr>
-			<tr *ngFor="let player of user.team.roster.startingLineup.k.players">
-				<td><a href="/"><button type="button" class="btn btn-default" (click)="movePlayerToBench(player)">
-							<fa-icon [icon]="faReply" size="sm" flip="horizontal"></fa-icon>
+			<tr class="lineup-row" *ngFor="let player of user.team.roster.startingLineup.k.players">
+				<td><a href="/"><button type="button" class="btn edit-player-button" (click)="movePlayerToBench(player)">
+							<fa-icon [icon]="faReply" size="xs" flip="horizontal"></fa-icon>
 						</button></a></td>
 				<td>{{player.playerName}}</td>
 				<td>{{player.teamName}}</td>

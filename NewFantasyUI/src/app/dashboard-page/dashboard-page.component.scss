@@ -38,8 +38,7 @@ tr {
 }
 
 .player-table > tbody > tr > td {
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding: 3px;
 }
 
 .player-table-container {
@@ -53,4 +52,8 @@ tr {
 
 .user-details-container {
 	margin-top: 20px;
+}
+
+.table th, .table td {
+    vertical-align: middle;
 }

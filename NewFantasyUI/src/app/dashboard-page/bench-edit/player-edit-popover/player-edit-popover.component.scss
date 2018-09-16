@@ -1,4 +1,71 @@
+.edit-lineup-pos-badge {
+	margin-right: 5px;
+	padding: 0.6em 0.8em;
+	text-align: left;
+}
 
-.edit-lineup-btn {
+.edit-lineup-name-text {
+	text-align: center;
 	margin: 5px;
+	padding: 10px;
+	text-transform: none;
+	color: black;
+}
+
+.centered {
+	text-align: center;
+	padding: 0px;
+}
+
+.swap-options {
+	align-items: center;
+	line-height: 0;
+	background-color: white;
+}
+
+.swap-button {
+	background-color: #e4e4e4;
+	width: 100%;
+}
+
+.edit-player-button {
+	background: #494949;
+	padding-left: 0.6rem;
+	padding-right: 0.6rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.28rem;
+}
+
+.list-group a, .list-group button {
+	transition: unset !important;
+	margin: 0px;
+}
+
+.list-group a {
+	margin: 0px !important;
+}
+
+.swap-button-group {
+	width: 100%;
+	border: none;
+	padding: 5px;
+}
+
+.no-side-margin {
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
+
+.swap-pos-button {
+	padding-left: 4px !important;
+	padding-right: 4px !important;
+	width: 100%;
+}
+
+.action-button-spacing {
+	padding: 2px;
+}
+
+.options-card-body {
+	padding: 2px;
 }

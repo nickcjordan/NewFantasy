@@ -1,2 +1,18 @@
 @import url("../dashboard-page.component.scss");
 
+.edit-player-button {
+	background: #494949;
+	padding-left: 0.6rem;
+	padding-right: 0.6rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.28rem;
+}
+
+.centered {
+	text-align: center;
+}
+
+.lineup-row > td {
+	background-color: rgba(0, 0, 0, 0.05);
+	font-size: 1.1em;
+}

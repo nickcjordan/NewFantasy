@@ -1,68 +1,48 @@
-<div class="waiver-players-container">
 
-	<div class="row">
-      <div class="col-md-12">
-        <div class="md-form">
-          <input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
-          <label for="search">Filter Players</label>
-        </div>
-      </div>
-    </div>
-
-	<table class="table table-striped  player-table" cellspacing="0" width="100%">
-		<thead>
-			<tr>
-				<th class="dark-row" scope="col"></th>
-				<th class="dark-row" scope="col">Position 	<mdb-icon icon="sort" (click)="sortBy('position')"></mdb-icon></th>
-				<th class="dark-row" scope="col">Name 		<mdb-icon icon="sort" (click)="sortBy('playerName')"></mdb-icon></th>
-				<th class="dark-row" scope="col">Team 		<mdb-icon icon="sort" (click)="sortBy('teamName')"></mdb-icon></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let player of search()">
-				<td><a href="/players">
-						<button type="button" class="btn btn-default" (click)="addPlayerToBench(player)">
-							<fa-icon [icon]="faUserPlus" size="sm"></fa-icon>
-						</button>
-				</a></td>
-				<td><span class="badge badge-player-position badge-{{player.position}}">{{player.position}}</span></td>
-				<td>{{player.playerName}}</td>
-				<td>{{player.teamName}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div class="row">
+	<div class="col-lg-2">
+		<div class="waiver-buttons-container">
+			<h1>Show/Hide:</h1>
+			<mdb-checkbox (change)="toggleAvailable()" [checked]="true">Available</mdb-checkbox>
+			<mdb-checkbox (change)="toggleUnavailable()" [checked]="true">Unavailable</mdb-checkbox>
+		</div>
+	</div>
+	<div class="col-lg">
+		<div class="waiver-players-container">
+			<div class="row">
+				<div class="col">
+					<div class="md-form small-margins">
+						<input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
+						<label for="search"> <fa-icon class="search-icon" [icon]="faSearch" size="xl"></fa-icon> Filter Players</label>
+					</div>
+				</div>
+			</div>
+			<table class="table table-striped  player-table" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th class="dark-row" scope="col"></th>
+						<th class="dark-row" scope="col">Position <mdb-icon icon="sort" (click)="sortBy('position')"></mdb-icon></th>
+						<th class="dark-row" scope="col">Name <mdb-icon icon="sort" (click)="sortBy('playerName')"></mdb-icon></th>
+						<th class="dark-row" scope="col">Team <mdb-icon icon="sort" (click)="sortBy('teamName')"></mdb-icon></th>
+						<th class="dark-row" scope="col">Available <mdb-icon icon="sort" (click)="sortBy('onUserTeam')"></mdb-icon></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let player of search()">
+						<td><a href="/players">
+								<button type="button" class="btn btn-default" (click)="addPlayerToBench(player)">
+									<fa-icon [icon]="faUserPlus" size="sm"></fa-icon>
+								</button>
+						</a></td>
+						<td><span class="badge badge-player-position badge-{{player.position}}">{{player.position}}</span></td>
+						<td>{{player.playerName}}</td>
+						<td>{{player.teamName}}</td>
+						<td *ngIf="player.onUserTeam"><fa-icon class="check-icon" [icon]="faCheck"></fa-icon></td>
+						<td *ngIf="!player.onUserTeam"><fa-icon class="x-icon" [icon]="faTimesCircle"></fa-icon></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
 
-
-<!-- <div class="card">
-  <div class="card-body">
-  
-    <div class="row">
-      <div class="col-md-12">
-        <div class="md-form">
-          <input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
-          <label for="search">Search Player Data</label>
-        </div>
-      </div>
-    </div>
-
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let data of search()">
-          <th scope="row">{{data.id}}</th>
-          <td>{{data.firstName}}</td>
-          <td>{{data.lastName}}</td>
-          <td>{{data.username}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div> -->
