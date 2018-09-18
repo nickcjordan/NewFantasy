@@ -28,15 +28,24 @@ export class PlayerTableComponent implements OnInit {
 	faTimesCircle = faTimesCircle;
 	faCheck = faCheck;
 	faSearch = faSearch;
+	numberOfResults: number;
 	
 	@Input() players: Player[];
 	@Input() user: User;
 	
-	availablePlayers: Player[];
-	unavailablePlayers: Player[];
+//	availablePlayers: Player[];
+//	unavailablePlayers: Player[];
 	
 	showAvailablePlayers: boolean;
 	showTakenPlayers: boolean;
+	
+	showQb: boolean;
+	showRb: boolean;
+	showWr: boolean;
+	showTe: boolean;
+	showFlex: boolean;
+	showK: boolean;
+//	showDst: boolean;
 	
 	constructor(
 		private userService: UserService,
@@ -45,22 +54,29 @@ export class PlayerTableComponent implements OnInit {
 	
 	ngOnInit() {
 		this.showAvailablePlayers = true;
-		this.showTakenPlayers = true;
-		this.setPlayerStatus();
+		this.showTakenPlayers = false;
+		this.showQb = true;
+		this.showRb = true;
+		this.showWr = true;
+		this.showTe = true;
+		this.showFlex = true;
+		this.showK = true;
+//		this.setPlayerStatus();
+		this.numberOfResults = this.players.length;
 	}
 	
-	setPlayerStatus() {
-		this.availablePlayers = new Array();
-		this.unavailablePlayers = new Array();
-		for (let p of this.players) {
-			if (p.onUserTeam) {
-				this.unavailablePlayers.push(p);
-			}
-			if (!p.onUserTeam) {
-				this.availablePlayers.push(p);
-			}
-		}
-	}
+//	setPlayerStatus() {
+//		this.availablePlayers = new Array();
+//		this.unavailablePlayers = new Array();
+//		for (let p of this.players) {
+//			if (p.onUserTeam) {
+//				this.unavailablePlayers.push(p);
+//			}
+//			if (!p.onUserTeam) {
+//				this.availablePlayers.push(p);
+//			}
+//		}
+//	}
 	
 	addPlayerToBench(player: Player) {
 		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "ADD_TO_BENCH");
@@ -94,33 +110,54 @@ export class PlayerTableComponent implements OnInit {
 		});
 	}
 	
-	filterPlayersByFlags(arr: Player[]) {
+	filterPlayersByAvailabilityFlags(arr: Player[]) {
 		return arr.filter((p: Player) => {
 				if (p.onUserTeam) {
-					console.log(p.playerName + " is taken");
 					return this.showTakenPlayers;
 				}
 				if (!p.onUserTeam) {
-//					console.log(p.playerName + " is available");
 					return this.showAvailablePlayers;
 				}
 				return false;
 			});
 	}
 	
+	filterPlayersByPositionFlags(arr: Player[]) {
+		return arr.filter((p: Player) => {
+				let pos = p.position;
+				if (pos == "QB") { return this.showQb; }
+				if (pos == "RB") { return this.showRb; }
+				if (pos == "WR") { return this.showWr; }
+				if (pos == "TE") { return this.showTe; }
+				if (pos == "K") { return this.showK; }
+				return false;
+//				if (pos === "DST") { 
+			});
+	}
+	
 	search() {
-		if (!this.searchText) { return this.filterPlayersByFlags(this.players); }
-		if (this.searchText) { return this.filterPlayersBySearch(this.filterPlayersByFlags(this.players), this.searchText); }
+		let res = this.filterPlayersByAvailabilityFlags(this.players);
+		res = this.filterPlayersByPositionFlags(res);
+		if (this.searchText) { res = this.filterPlayersBySearch(res, this.searchText); }
+		this.numberOfResults = res.length;
+		return res;
 	}
 	
-	toggleAvailable() {
-		console.log("available: " + this.showAvailablePlayers + " --> " + !this.showAvailablePlayers);
-		this.showAvailablePlayers = !this.showAvailablePlayers;
-	}
+	toggleAvailable() { this.showAvailablePlayers = !this.showAvailablePlayers; }
+	toggleUnavailable() { this.showTakenPlayers = !this.showTakenPlayers; }
 	
-	toggleUnavailable() {
-		console.log("taken: " + this.showTakenPlayers + " --> " + !this.showTakenPlayers);
-		this.showTakenPlayers = !this.showTakenPlayers;
+	toggleShowQB() { this.showQb = !this.showQb; }
+	toggleShowRB() { this.showRb = !this.showRb; }
+	toggleShowWR() { this.showWr = !this.showWr; }
+	toggleShowTE() { this.showTe = !this.showTe; }
+	toggleShowK() { this.showK = !this.showK; }
+	toggleShowFLEX() { 
+			this.showFlex = !this.showFlex;
+			this.showRb = this.showFlex;
+			this.showWr = this.showFlex;
+			this.showTe = this.showFlex;
+		}
+//		if (pos === "DST") { this.showDst = !this.showDst; }
 	}
 
 }

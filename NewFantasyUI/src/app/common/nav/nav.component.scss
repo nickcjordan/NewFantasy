@@ -8,28 +8,28 @@
     color: #fff;
     font-style: italic;
     font-size: 18pt;
-    background-color: transparent;
 }
 
 .dark-nav .navbar-brand:hover, .dark-nav .navbar-brand:focus {
     color: #999999;
-    background-color: transparent;
 }
 
 .dark-nav .navbar-nav > li > a, .dark-nav .navbar-nav > li > a:focus {
     color: #9ddbbd;
-    background-color: transparent;
 }
 
 .dark-nav .navbar-nav > li > a:hover, .dark-nav .navbar-nav > li > a:focus {
     color: #fff;
-    background-color: transparent;
 }
 
 .nav-spaced {
 	padding-left: 20px;
 }
 
-.team-dropdown {
-	opacity: 1 !important;
+.dropdown-box {
+	background-color: #494949;
+}
+
+.button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: none;
 }

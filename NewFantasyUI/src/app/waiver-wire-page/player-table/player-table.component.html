@@ -2,9 +2,23 @@
 <div class="row">
 	<div class="col-lg-2">
 		<div class="waiver-buttons-container">
-			<h1>Show/Hide:</h1>
-			<mdb-checkbox (change)="toggleAvailable()" [checked]="true">Available</mdb-checkbox>
-			<mdb-checkbox (change)="toggleUnavailable()" [checked]="true">Unavailable</mdb-checkbox>
+			<h3>Availability:</h3>
+			<ul class="list-group position-checkboxes">
+				<li class="list-group-item"><mdb-checkbox (change)="toggleAvailable()" [checked]="true">Available</mdb-checkbox></li>
+				<li class="list-group-item"><mdb-checkbox (change)="toggleUnavailable()" [checked]="false">Unavailable</mdb-checkbox></li>
+			</ul>
+			
+			<h3>Position:</h3>
+			<ul class="list-group position-checkboxes">
+			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowQB()" [checked]="true"><span class="badge badge-player-position badge-QB">QB</span></mdb-checkbox></li>
+			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowRB()" [checked]="true"><span class="badge badge-player-position badge-RB">RB</span></mdb-checkbox></li>
+			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowWR()" [checked]="true"><span class="badge badge-player-position badge-WR">WR</span></mdb-checkbox></li>
+			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowTE()" [checked]="true"><span class="badge badge-player-position badge-TE">TE</span></mdb-checkbox></li>
+			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowFLEX()" [checked]="true"><span class="badge badge-player-position badge-FLEX">FLEX</span></mdb-checkbox></li>
+			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowK()" [checked]="true"><span class="badge badge-player-position badge-K">K</span></mdb-checkbox></li>
+			  <!-- <li class="list-group-item"><mdb-checkbox (change)="toggleShowPosition(DST)" [checked]="true"><span class="badge badge-player-position badge-DST">DST</span></mdb-checkbox></li> -->
+			</ul>
+				
 		</div>
 	</div>
 	<div class="col-lg">
@@ -13,14 +27,14 @@
 				<div class="col">
 					<div class="md-form small-margins">
 						<input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
-						<label for="search"> <fa-icon class="search-icon" [icon]="faSearch" size="xl"></fa-icon> Filter Players</label>
+						<label for="search"> <fa-icon class="search-icon" [icon]="faSearch" size="xl"></fa-icon> Filter Players <span class="badge player-count-badge">{{numberOfResults}}</span></label>
 					</div>
 				</div>
 			</div>
 			<table class="table table-striped  player-table" cellspacing="0" width="100%">
 				<thead>
 					<tr>
-						<th class="dark-row" scope="col"></th>
+						<th class="dark-row" scope="col">Add</th>
 						<th class="dark-row" scope="col">Position <mdb-icon icon="sort" (click)="sortBy('position')"></mdb-icon></th>
 						<th class="dark-row" scope="col">Name <mdb-icon icon="sort" (click)="sortBy('playerName')"></mdb-icon></th>
 						<th class="dark-row" scope="col">Team <mdb-icon icon="sort" (click)="sortBy('teamName')"></mdb-icon></th>
@@ -29,16 +43,14 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let player of search()">
-						<td><a href="/players">
-								<button type="button" class="btn btn-default" (click)="addPlayerToBench(player)">
-									<fa-icon [icon]="faUserPlus" size="sm"></fa-icon>
-								</button>
-						</a></td>
+						<td>
+							<a *ngIf="!player.onUserTeam" href="/players"><button type="button" class="btn add-player-button" (click)="addPlayerToBench(player)"> <fa-icon [icon]="faUserPlus"></fa-icon></button></a>
+						</td>
 						<td><span class="badge badge-player-position badge-{{player.position}}">{{player.position}}</span></td>
 						<td>{{player.playerName}}</td>
 						<td>{{player.teamName}}</td>
-						<td *ngIf="player.onUserTeam"><fa-icon class="check-icon" [icon]="faCheck"></fa-icon></td>
-						<td *ngIf="!player.onUserTeam"><fa-icon class="x-icon" [icon]="faTimesCircle"></fa-icon></td>
+						<td *ngIf="!player.onUserTeam"><fa-icon class="check-icon" [icon]="faCheck"></fa-icon></td>
+						<td *ngIf="player.onUserTeam"><fa-icon class="x-icon" [icon]="faTimesCircle"></fa-icon></td>
 					</tr>
 				</tbody>
 			</table>
