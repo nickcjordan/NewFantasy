@@ -44,6 +44,7 @@ export class PlayerTableComponent implements OnInit {
 	showAvailablePlayers: boolean;
 	showTakenPlayers: boolean;
 	
+	showAll: boolean;
 	showQb: boolean;
 	showRb: boolean;
 	showWr: boolean;
@@ -60,6 +61,7 @@ export class PlayerTableComponent implements OnInit {
 	ngOnInit() {
 		this.showAvailablePlayers = true;
 		this.showTakenPlayers = false;
+		this.showAll = true;
 		this.showQb = true;
 		this.showRb = true;
 		this.showWr = true;
@@ -147,6 +149,7 @@ export class PlayerTableComponent implements OnInit {
 	toggleAvailable() { this.showAvailablePlayers = !this.showAvailablePlayers; }
 	toggleUnavailable() { this.showTakenPlayers = !this.showTakenPlayers; }
 	
+
 	toggleShowQB() { this.showQb = !this.showQb; }
 	toggleShowRB() { this.showRb = !this.showRb; }
 	toggleShowWR() { this.showWr = !this.showWr; }
@@ -158,6 +161,15 @@ export class PlayerTableComponent implements OnInit {
 			this.showWr = this.showFlex;
 			this.showTe = this.showFlex;
 		}
+	toggleShowALL() {
+		this.showAll = !this.showAll;
+		this.showQb = this.showAll;
+		this.showFlex = this.showAll;
+		this.showRb = this.showAll;
+		this.showWr = this.showAll;
+		this.showTe = this.showAll;
+		this.showK = this.showAll;
+	}
 //		if (pos === "DST") { this.showDst = !this.showDst; }
 	}
 

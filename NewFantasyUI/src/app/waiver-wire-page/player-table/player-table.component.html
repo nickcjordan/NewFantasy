@@ -13,12 +13,13 @@
 			
 			<h3>Position:</h3>
 			<ul class="list-group position-checkboxes">
-			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowQB()" [checked]="true"><span class="badge badge-player-position badge-QB">QB</span></mdb-checkbox></li>
-			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowRB()" [checked]="true"><span class="badge badge-player-position badge-RB">RB</span></mdb-checkbox></li>
-			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowWR()" [checked]="true"><span class="badge badge-player-position badge-WR">WR</span></mdb-checkbox></li>
-			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowTE()" [checked]="true"><span class="badge badge-player-position badge-TE">TE</span></mdb-checkbox></li>
-			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowFLEX()" [checked]="true"><span class="badge badge-player-position badge-FLEX">FLEX</span></mdb-checkbox></li>
-			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowK()" [checked]="true"><span class="badge badge-player-position badge-K">K</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowALL()" [checked]="showAll"><span class="badge badge-player-position badge-WHITE">ALL</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowQB()" [checked]="showQb"><span class="badge badge-player-position badge-QB">QB</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowRB()" [checked]="showRb"><span class="badge badge-player-position badge-RB">RB</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowWR()" [checked]="showWr"><span class="badge badge-player-position badge-WR">WR</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowTE()" [checked]="showTe"><span class="badge badge-player-position badge-TE">TE</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowFLEX()" [checked]="showFlex"><span class="badge badge-player-position badge-FLEX">FLEX</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowK()" [checked]="showK"><span class="badge badge-player-position badge-K">K</span></mdb-checkbox></li>
 			  <!-- <li class="list-group-item"><mdb-checkbox (change)="toggleShowPosition(DST)" [checked]="true"><span class="badge badge-player-position badge-DST">DST</span></mdb-checkbox></li> -->
 			</ul>
 				
