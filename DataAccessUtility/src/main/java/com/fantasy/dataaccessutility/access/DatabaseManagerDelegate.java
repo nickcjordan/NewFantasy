@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,6 +16,8 @@ import com.fantasy.dataaccessutility.model.team.Team;
 
 @Component
 public class DatabaseManagerDelegate {
+	
+	private static final Logger log = LoggerFactory.getLogger(DatabaseManagerDelegate.class);
 	
 	private RestTemplate rest;
 	
@@ -38,6 +42,7 @@ public class DatabaseManagerDelegate {
 	}
 	
 	public boolean updatePlayer(Player player) {
+		log.info("Sending POST request to UPDATE player :: " + player.getPlayerId() + " :: " + player.getPlayerName() + "\n\tURL :: " + Urls.updatePlayer());
 		return rest.postForObject(Urls.updatePlayer(), player, boolean.class);
 	}
 

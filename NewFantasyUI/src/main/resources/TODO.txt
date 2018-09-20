@@ -1,4 +1,9 @@
+MDBOOTSTRAP ACCESS TOKEN:
+-u-kp2ZaKzzx_mHz3G6F
+
 * only show edit mode if user selects edit
 * only show logout if logged in, only show login if logged out
 * fix the pages so there is only one setUser() called per page
 * restrict size of bench, dont let person add player if bench is full
+* sort bench by position
+* find icons for nfl teams and use for tables

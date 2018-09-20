@@ -45,10 +45,12 @@ public class PlayerDataAccessManager {
 	}
 	
 	public void updatePlayer(Player player) {
-		log.info("Updating stats for player " + player.getPlayerId());
+		log.info("Updating stats for player " + player.getPlayerId() + " :: " + player.getPlayerName());
 		if (!delegate.updatePlayer(player)) {
-			log.error("Update player didnt work... trying put");
-			delegate.addPlayer(player);
+			log.error("Update player didnt work... trying put...");
+			if (delegate.addPlayer(player)) {
+				log.info("SUCCESS :: put player in database :: " + player.getPlayerId() + " :: " + player.getPlayerName());
+			}
 		}
 	}
 	public void updatePlayers(List<Player> players) {

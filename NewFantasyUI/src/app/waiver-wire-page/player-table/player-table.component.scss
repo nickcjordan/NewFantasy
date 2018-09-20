@@ -26,10 +26,38 @@
 	background: rgba(76, 175, 80, 0);
 }
 
+.position-checkboxes{
+}
+
 .position-checkboxes > li {
 	border: none;
 }
 
 .waiver-buttons-container {
 	overflow-y: auto;
+}
+
+.side-bar-nav {
+	margin-top: 50px;
+	position: fixed;
+    top: 100px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.spacer-panel {
+	padding-bottom: 50px;
+}
+
+.waiver-players-container {
+	margin-left: 15%;
+}
+
+.transparent-bg {
+	background-color: transparent;
+}
+
+.nfl-team-dropdown-wrapper {
+	
 }

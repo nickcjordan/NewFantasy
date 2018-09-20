@@ -34,6 +34,7 @@ import { fakeBackendProvider } from './_helpers'; // used to create fake backend
 import { BenchEditComponent } from './dashboard-page/bench-edit/bench-edit.component';
 import { WaiverWirePageComponent } from './waiver-wire-page/waiver-wire-page.component';
 import { PlayerTableComponent } from './waiver-wire-page/player-table/player-table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
@@ -78,7 +79,8 @@ export class XhrInterceptor implements HttpInterceptor {
 		NgbModule.forRoot(),
 		FontAwesomeModule,
 		MDBBootstrapModulesPro.forRoot(),
-		FormsModule
+		FormsModule,
+		BrowserAnimationsModule
 	],
 	schemas: [ NO_ERRORS_SCHEMA ],
 	providers: [

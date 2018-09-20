@@ -78,7 +78,7 @@ public class PlayerDatabaseController  {
     }
     
     @RequestMapping("/update")
-    public boolean update(Player p) {
+    public boolean update(@RequestBody Player p) {
     	log.info("DatabaseManager :: updating player: " + p.getPlayerName());
     	boolean success = playerManager.updatePlayer(p);
 		log.info("DatabaseManager :: updated: " + p.getPlayerName() + " :: result: " + success);

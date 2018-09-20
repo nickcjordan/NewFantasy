@@ -70,8 +70,7 @@ public class PlayerDatabaseManager {
 		int count = 0;
 		PlayerStatsAPIResponse response = statsDelegate.getUpdatedStats();
 		for (Player player : response.getPlayers().values()) {
-			Player res = playerDao.updatePlayer(player);
-			if (res == null) {
+			if (!updatePlayer(player)) {
 				log.info("Could not find player to replace... adding as new: " + player.getPlayerName());
 				playerDao.put(player);
 			}				

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
+import com.fantasy.dbmanager.manager.UserDatabaseManager;
 import com.fantasy.dbmanager.populator.DatabasePopulator;
 
 @RestController
@@ -23,21 +24,36 @@ public class UtilController  {
 	
 	private static Logger log = Logger.getLogger(UtilController.class);
 	
-//	@Autowired
-//	private UserDatabaseManager userManager;
-	
-//	@Autowired
-//	private TeamDatabaseManager teamManager;
+	@Autowired
+	private UserDatabaseManager userManager;
 	
 	@Autowired
 	private PlayerDatabaseManager playerManager;
+
+	//	@Autowired
+//	private TeamDatabaseManager teamManager;
 	
 	@Autowired
 	private DatabasePopulator populator;
 	
+	
 	@RequestMapping(value = "/populate", method = RequestMethod.GET)
 	public boolean populate() {
 		populator.populate();
+		return true;
+	}
+	
+	@RequestMapping(value = "/clearAndPopulate", method = RequestMethod.GET)
+	public boolean clearAndPopulate() {
+		log.info("Clearing Player Database...");
+		playerManager.removeAllPlayersFromDB();
+		log.info("Clearing User Database...");
+		userManager.clear();
+		log.info("Updating Player Database with updated stats...");
+		playerManager.updateAll();
+		log.info("Generating new User test data and populating User Database...");
+		populator.populate();
+		log.info("SUCCESS :: databases have been wiped and reset with test data");
 		return true;
 	}
 	

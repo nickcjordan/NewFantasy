@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import {Player} from '../../model/player';
+import {NflTeamData} from '../../model/nfl-team-data';
+import {NflTeamOptions} from '../../model/nfl-team-options';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
 import { EditLineupRequest } from "../../model/edit-lineup-request";
 import { Router } from "@angular/router";
-
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -19,10 +20,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 export class PlayerTableComponent implements OnInit {
 	
 //	keysToMatchOn:string[] = ["playerName", "position", "teamName"]
-	keysToMatchOn:string[] = new Array("playerName","position","teamName") 
+	keysToMatchOn:string[] = new Array("teamName")
 	
 	private sorted = false;
 	searchText: string;
+	
+	teams: Array<NflTeamOptions> = NflTeamData.teams;
+	public selectedValue: number;
+	public selectedTeam: NflTeamOptions;
 	
 	faUserPlus = faUserPlus;
 	faTimesCircle = faTimesCircle;
@@ -61,22 +66,8 @@ export class PlayerTableComponent implements OnInit {
 		this.showTe = true;
 		this.showFlex = true;
 		this.showK = true;
-//		this.setPlayerStatus();
 		this.numberOfResults = this.players.length;
 	}
-	
-//	setPlayerStatus() {
-//		this.availablePlayers = new Array();
-//		this.unavailablePlayers = new Array();
-//		for (let p of this.players) {
-//			if (p.onUserTeam) {
-//				this.unavailablePlayers.push(p);
-//			}
-//			if (!p.onUserTeam) {
-//				this.availablePlayers.push(p);
-//			}
-//		}
-//	}
 	
 	addPlayerToBench(player: Player) {
 		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "ADD_TO_BENCH");
@@ -97,14 +88,10 @@ export class PlayerTableComponent implements OnInit {
 	filterPlayersBySearch(arr: Player[], searchKey: string) {
 		return arr.filter((obj: Player) => {
 			return Object.keys(obj).some((key) => {
-//			return this.keysToMatchOn.some((key) => {
+//			return this.keysToMatchOn.some((key) => {  //  use this when you only want to sort by specific keys
 				let val = obj[key];
-				if (val == null) {
-					return false;
-				}
-				if (typeof val === 'string' || val instanceof String) {
-					return obj[key].includes(searchKey);
-				}
+				if (val == null) { return false; }
+				if (typeof val === 'string' || val instanceof String) { return obj[key].includes(searchKey); }
 				return false;
 			});
 		});
@@ -112,12 +99,8 @@ export class PlayerTableComponent implements OnInit {
 	
 	filterPlayersByAvailabilityFlags(arr: Player[]) {
 		return arr.filter((p: Player) => {
-				if (p.onUserTeam) {
-					return this.showTakenPlayers;
-				}
-				if (!p.onUserTeam) {
-					return this.showAvailablePlayers;
-				}
+				if (p.onUserTeam) { return this.showTakenPlayers; }
+				if (!p.onUserTeam) { return this.showAvailablePlayers; }
 				return false;
 			});
 	}
@@ -135,12 +118,30 @@ export class PlayerTableComponent implements OnInit {
 			});
 	}
 	
+	filterPlayersByTeamSelect(arr: Player[]) {
+		return arr.filter((obj: Player) => {
+			return this.keysToMatchOn.some((key) => { 
+				if (obj[key] == null) { return false; }
+				if (typeof obj[key] === 'string' || obj[key] instanceof String) { return obj[key].includes(this.selectedTeam.abbrev); }
+				return false;
+			});
+		});
+	}
+	
 	search() {
 		let res = this.filterPlayersByAvailabilityFlags(this.players);
 		res = this.filterPlayersByPositionFlags(res);
+		if (this.selectedValue != null && this.selectedTeam.abbrev != null) { res = this.filterPlayersByTeamSelect(res); }
 		if (this.searchText) { res = this.filterPlayersBySearch(res, this.searchText); }
 		this.numberOfResults = res.length;
 		return res;
+	}
+	
+	getSelectedValue(val: number) {
+		if (val == 1) {
+			this.selectedTeam = null;
+		}
+		this.selectedTeam = this.teams[val - 1];
 	}
 	
 	toggleAvailable() { this.showAvailablePlayers = !this.showAvailablePlayers; }
@@ -160,4 +161,4 @@ export class PlayerTableComponent implements OnInit {
 //		if (pos === "DST") { this.showDst = !this.showDst; }
 	}
 
-}
+

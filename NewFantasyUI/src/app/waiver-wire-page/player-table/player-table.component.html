@@ -1,33 +1,46 @@
 
 <div class="row">
-	<div class="col-lg-2">
+
+	<div class="col-lg-2 side-bar-nav ">
 		<div class="waiver-buttons-container">
 			<h3>Availability:</h3>
 			<ul class="list-group position-checkboxes">
-				<li class="list-group-item"><mdb-checkbox (change)="toggleAvailable()" [checked]="true">Available</mdb-checkbox></li>
-				<li class="list-group-item"><mdb-checkbox (change)="toggleUnavailable()" [checked]="false">Unavailable</mdb-checkbox></li>
+				<li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleAvailable()" [checked]="true">Available</mdb-checkbox></li>
+				<li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleUnavailable()" [checked]="false">Unavailable</mdb-checkbox></li>
 			</ul>
+			
+			<div class="spacer-panel"></div>
 			
 			<h3>Position:</h3>
 			<ul class="list-group position-checkboxes">
-			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowQB()" [checked]="true"><span class="badge badge-player-position badge-QB">QB</span></mdb-checkbox></li>
-			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowRB()" [checked]="true"><span class="badge badge-player-position badge-RB">RB</span></mdb-checkbox></li>
-			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowWR()" [checked]="true"><span class="badge badge-player-position badge-WR">WR</span></mdb-checkbox></li>
-			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowTE()" [checked]="true"><span class="badge badge-player-position badge-TE">TE</span></mdb-checkbox></li>
-			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowFLEX()" [checked]="true"><span class="badge badge-player-position badge-FLEX">FLEX</span></mdb-checkbox></li>
-			  <li class="list-group-item"><mdb-checkbox (change)="toggleShowK()" [checked]="true"><span class="badge badge-player-position badge-K">K</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowQB()" [checked]="true"><span class="badge badge-player-position badge-QB">QB</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowRB()" [checked]="true"><span class="badge badge-player-position badge-RB">RB</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowWR()" [checked]="true"><span class="badge badge-player-position badge-WR">WR</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowTE()" [checked]="true"><span class="badge badge-player-position badge-TE">TE</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowFLEX()" [checked]="true"><span class="badge badge-player-position badge-FLEX">FLEX</span></mdb-checkbox></li>
+			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowK()" [checked]="true"><span class="badge badge-player-position badge-K">K</span></mdb-checkbox></li>
 			  <!-- <li class="list-group-item"><mdb-checkbox (change)="toggleShowPosition(DST)" [checked]="true"><span class="badge badge-player-position badge-DST">DST</span></mdb-checkbox></li> -->
 			</ul>
 				
 		</div>
 	</div>
+	
 	<div class="col-lg">
 		<div class="waiver-players-container">
 			<div class="row">
-				<div class="col">
+				<div class="col-sm-6">
 					<div class="md-form small-margins">
-						<input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
-						<label for="search"> <fa-icon class="search-icon" [icon]="faSearch" size="xl"></fa-icon> Filter Players <span class="badge player-count-badge">{{numberOfResults}}</span></label>
+						<div>
+							<input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false"> <label for="search"> <fa-icon
+									class="search-icon" [icon]="faSearch" size="xl"></fa-icon> Filter Players <span class="badge player-count-badge">{{numberOfResults}}</span></label>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="md-form small-margins">
+						<div class="nfl-team-dropdown-wrapper">
+							<mdb-select (ngModelChange)="getSelectedValue($event)" [(ngModel)]="this.selectedValue" [options]="teams" placeholder="Select NFL Team"></mdb-select>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -43,9 +56,9 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let player of search()">
-						<td>
-							<a *ngIf="!player.onUserTeam" href="/players"><button type="button" class="btn add-player-button" (click)="addPlayerToBench(player)"> <fa-icon [icon]="faUserPlus"></fa-icon></button></a>
-						</td>
+						<td><a *ngIf="!player.onUserTeam" href="/players"><button type="button" class="btn add-player-button" (click)="addPlayerToBench(player)"> 
+							<fa-icon [icon]="faUserPlus"></fa-icon></button>
+						</a></td>
 						<td><span class="badge badge-player-position badge-{{player.position}}">{{player.position}}</span></td>
 						<td>{{player.playerName}}</td>
 						<td>{{player.teamName}}</td>
