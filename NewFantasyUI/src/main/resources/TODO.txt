@@ -1,9 +1,34 @@
-MDBOOTSTRAP ACCESS TOKEN:
--u-kp2ZaKzzx_mHz3G6F
+MDBOOTSTRAP ACCESS TOKEN: -u-kp2ZaKzzx_mHz3G6F
 
-* only show edit mode if user selects edit
+**********************************************************************************
+**									TODO 										**
+**********************************************************************************
+
+
+--------------------------------------------------
+|				  Edit/Fix Current  			 |
+--------------------------------------------------
 * only show logout if logged in, only show login if logged out
 * fix the pages so there is only one setUser() called per page
 * restrict size of bench, dont let person add player if bench is full
+
+
+
+--------------------------------------------------
+|				  Enhance Current				 |
+--------------------------------------------------
 * sort bench by position
+* sort waiver players on load
+
+
+
+--------------------------------------------------
+|				  New Functionality				 |
+--------------------------------------------------
+* perk tree system
+* modifier system
+
+**********************************************************************************
+**									COMPLETE									**
+**********************************************************************************
 * find icons for nfl teams and use for tables
