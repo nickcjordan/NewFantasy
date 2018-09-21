@@ -157,7 +157,6 @@ public class DatabasePopulator {
 	private Player getRandomPlayerByPosition(String position) {
 		List<Player> list = positionMap.get(position);
 		Collections.shuffle(list);
-		
 		int i =11;
 		Player p = null;
 		boolean goodPlayer = false;

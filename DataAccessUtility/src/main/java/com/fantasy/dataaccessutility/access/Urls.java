@@ -56,4 +56,20 @@ public class Urls {
 		return MANAGER + PLAYER + GET_ALL + position;
 	}
 
+	public static URI putModifer() {
+		return null; // TODO
+	}
+
+	public static URI putModifier() {
+		return null; // TODO
+	}
+
+	public static URI getModifier(String modifierId) {
+		return null; // TODO
+	}
+
+	public static URI putModifiers() {
+		return null; // TODO
+	}
+
 }

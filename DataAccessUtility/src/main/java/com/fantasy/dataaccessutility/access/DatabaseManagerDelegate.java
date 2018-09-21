@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.PlayerListResponse;
 import com.fantasy.dataaccessutility.model.User;
-import com.fantasy.dataaccessutility.model.team.Team;
+import com.fantasy.dataaccessutility.model.modifier.Modifier;
 
 @Component
 public class DatabaseManagerDelegate {
@@ -25,16 +25,12 @@ public class DatabaseManagerDelegate {
 		rest = new RestTemplate();
 	}
 	
-	public Player getUpdatedPlayer(String playerId) {
+	public Player getPlayer(String playerId) {
 		return rest.getForObject(Urls.getPlayer(playerId), Player.class);
 	}
 
-	public User getUpdatedUser(String userId) {
+	public User getUser(String userId) {
 		return rest.getForObject(Urls.getUser(userId), User.class);
-	}
-
-	public Team getUpdatedTeam(String teamId) {
-		return rest.getForObject(Urls.getTeam(teamId), Team.class);
 	}
 
 	public boolean addPlayer(Player player) {
@@ -55,13 +51,9 @@ public class DatabaseManagerDelegate {
 	public boolean updateUsers(List<User> users) {
 		return rest.postForObject(Urls.updateUsers(), users, boolean.class);
 	}
-
-	public boolean updateTeam(Team team) {
-		return rest.postForObject(Urls.putTeam(), Arrays.asList(team), boolean.class);
-	}
-
-	public List<Player> getUpdatedPositionGroup(String position) {
+	
+	public List<Player> getPositionGroup(String position) {
 		return rest.getForObject(Urls.getAllPosition(position), PlayerListResponse.class).getPlayers();
 	}
-	
+
 }

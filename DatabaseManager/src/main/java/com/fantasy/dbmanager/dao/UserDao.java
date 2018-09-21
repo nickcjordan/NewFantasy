@@ -61,7 +61,6 @@ public class UserDao {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace(); // TODO
 		}
-//		System.out.println(json);
 		
 		 UpdateResult result = userDBCollection.updateOne(eq("userId", userTO.getUserId()), new Document("$set", new Document("team", Document.parse(json))));
 		 return (result.getModifiedCount() == 1);

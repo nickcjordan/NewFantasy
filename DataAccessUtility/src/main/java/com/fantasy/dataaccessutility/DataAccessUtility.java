@@ -6,20 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.manager.PlayerDataAccessManager;
-import com.fantasy.dataaccessutility.manager.TeamDataAccessManager;
 import com.fantasy.dataaccessutility.manager.UserDataAccessManager;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.User;
-import com.fantasy.dataaccessutility.model.team.Team;
 
 @Component
 public class DataAccessUtility {
 
 	@Autowired
 	private PlayerDataAccessManager playerManager;
-
-	@Autowired
-	private TeamDataAccessManager teamManager;
 
 	@Autowired
 	private UserDataAccessManager userManager;
@@ -47,25 +42,6 @@ public class DataAccessUtility {
 		playerManager.updatePlayers(players);
 	}
 
-						// TEAMS
-	public Team getTeamById(String teamId) {
-		return teamManager.getTeamById(teamId);
-	}
-	public Team getTeamFromTeam(Team team) {
-		return teamManager.getTeamFromTeam(team);
-	}
-	public List<Team> getTeamsByIdList(List<String> teamIds) {
-		return teamManager.getTeamsByIdList(teamIds);
-	}
-	public List<Team> getTeamsFromTeamList(List<Team> teamsRequest) {
-		return teamManager.getTeamsFromTeamList(teamsRequest);
-	}
-	public void updateTeam(Team team) {
-		teamManager.updateTeam(team);
-	}
-	public void updateTeams(List<Team> teams) {
-		teamManager.updateTeams(teams);
-	}
 
 						// USERS
 	public User getUserById(String userId) {

@@ -30,9 +30,6 @@ public class UserDatabaseController  {
 	private UserDatabaseManager userManager;
 	
 	@Autowired
-	private DatabasePopulator populator;
-	
-	@Autowired
 	private EditLineupRequestProcessor processor;
 	
     @RequestMapping("/count")

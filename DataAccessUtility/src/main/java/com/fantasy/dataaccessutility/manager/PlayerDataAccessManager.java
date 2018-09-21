@@ -21,7 +21,7 @@ public class PlayerDataAccessManager {
 
 	public Player getPlayerById(String playerId) {
 		log.info("Getting updated stats for player " + playerId);
-		return delegate.getUpdatedPlayer(playerId);
+		return delegate.getPlayer(playerId);
 	}
 
 	public Player getPlayerFromPlayer(Player player) {
@@ -58,7 +58,7 @@ public class PlayerDataAccessManager {
 	}
 
 	public List<Player> getAllPlayersByPosition(String position) {
-		return delegate.getUpdatedPositionGroup(position);
+		return delegate.getPositionGroup(position);
 	}
 
 }

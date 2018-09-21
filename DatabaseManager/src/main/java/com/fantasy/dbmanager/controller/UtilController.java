@@ -17,6 +17,7 @@ import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
 import com.fantasy.dbmanager.populator.DatabasePopulator;
+import com.fantasy.dbmanager.populator.ModifierDatabasePopulator;
 
 @RestController
 @RequestMapping("/util")
@@ -30,16 +31,24 @@ public class UtilController  {
 	@Autowired
 	private PlayerDatabaseManager playerManager;
 
-	//	@Autowired
-//	private TeamDatabaseManager teamManager;
-	
 	@Autowired
 	private DatabasePopulator populator;
+	
+	@Autowired
+	private ModifierDatabasePopulator modifierPopulator;
 	
 	
 	@RequestMapping(value = "/populate", method = RequestMethod.GET)
 	public boolean populate() {
 		populator.populate();
+		return true;
+	}
+	
+	@RequestMapping(value = "/populate/modifiers", method = RequestMethod.GET)
+	public boolean populateModifiers() {
+		log.info("Populating modifiers...");
+		modifierPopulator.populate();
+		log.info("SUCCESS :: populating modifiers");
 		return true;
 	}
 	

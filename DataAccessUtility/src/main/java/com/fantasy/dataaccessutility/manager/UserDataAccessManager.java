@@ -21,7 +21,7 @@ public class UserDataAccessManager {
 	
 	public User getUserById(String userId) {
 		log.info("Getting updated stats for user " + userId);
-		return delegate.getUpdatedUser(userId);
+		return delegate.getUser(userId);
 	}
 	public User getUserFromUser(User user) {
 		return getUserById(user.getUserId());

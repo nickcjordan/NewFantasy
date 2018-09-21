@@ -65,7 +65,7 @@ public class UserDatabaseManager {
 		}
 	}
 	
-	public void updateAll(List<User> users) {
+	public void updateAll(List<User> users) { // TODO call batch
 		for (User user : users) {
 			try {
 				update(user);

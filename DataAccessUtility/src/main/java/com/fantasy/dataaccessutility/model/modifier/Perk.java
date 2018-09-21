@@ -2,18 +2,18 @@ package com.fantasy.dataaccessutility.model.modifier;
 
 public class Perk extends Modifier {
 
-	private int id;
+	private int perkId;
 	private String perkName;
 	private int tier;
 	
 	public Perk() {}
-
-	public int getId() {
-		return id;
+	
+	public int getPerkId() {
+		return perkId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setPerkId(int perkId) {
+		this.perkId = perkId;
 	}
 
 	public String getPerkName() {

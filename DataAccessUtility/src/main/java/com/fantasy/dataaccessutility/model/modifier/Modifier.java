@@ -4,12 +4,19 @@ import com.fantasy.dataaccessutility.model.Position;
 
 public class Modifier {
 	
+	private String modifierId;
 	private int price;
 	private double changePercentage;
 	private String targetId;
 	private TargetType targetType;
 	private Position targetPosition;
 	
+	public String getModifierId() {
+		return modifierId;
+	}
+	public void setModifierId(String modifierId) {
+		this.modifierId = modifierId;
+	}
 	public int getPrice() {
 		return price;
 	}
