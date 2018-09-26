@@ -13,7 +13,7 @@ public class UserTO {
 	private String userId;
 	private String userName;
 	private Map<String, Perk> perkTree;
-	private List<Modifier> modifiers;
+	private List<String> modifiers;
 	private TeamTO team;
 	private int coins;
 	private Map<String, MatchupUserResult> matchupResults;
@@ -36,10 +36,10 @@ public class UserTO {
 	public void setPerkTree(Map<String, Perk> perkTree) {
 		this.perkTree = perkTree;
 	}
-	public List<Modifier> getModifiers() {
+	public List<String> getModifiers() {
 		return modifiers;
 	}
-	public void setModifiers(List<Modifier> modifiers) {
+	public void setModifiers(List<String> modifiers) {
 		this.modifiers = modifiers;
 	}
 	public TeamTO getTeam() {

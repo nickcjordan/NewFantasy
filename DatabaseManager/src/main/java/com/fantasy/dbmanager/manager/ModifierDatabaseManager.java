@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
+import com.fantasy.dataaccessutility.model.ui.ModifierUpdateRequest;
 import com.fantasy.dbmanager.dao.ModifierDao;
+import com.fantasy.dbmanager.processor.ModifierUpdateRequestProcessor;
 
 @Component
 public class ModifierDatabaseManager {
@@ -37,6 +39,14 @@ public class ModifierDatabaseManager {
 			mods.add(mod);
 		}
 		return mods;
+	}
+
+	public Modifier get(String modifierId) {
+		return modifierDao.get(modifierId);
+	}
+
+	public void update(Modifier modifier) {
+		 modifierDao.update(modifier);
 	}
 
 }

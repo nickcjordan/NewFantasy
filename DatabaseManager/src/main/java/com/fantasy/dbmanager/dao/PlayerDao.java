@@ -61,11 +61,7 @@ public class PlayerDao {
 	}
 	
 	public Player updatePlayer(Player player) {
-//		return playerDBCollection.findOneAndReplace(eq("playerName", player.getPlayerName()), player);
-		Bson eq = eq("playerId", player.getPlayerId());
-		Player res = playerDBCollection.findOneAndReplace(eq, player);
-		return res;
-//		return playerDBCollection.findOneAndReplace(eq("playerId", player.getPlayerId()), player);
+		return playerDBCollection.findOneAndReplace(eq("playerId", player.getPlayerId()), player);
 	}
 
 	public FindIterable<Player> getAllPlayersByPosition(String position) {

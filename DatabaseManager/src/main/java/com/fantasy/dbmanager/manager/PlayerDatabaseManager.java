@@ -69,12 +69,16 @@ public class PlayerDatabaseManager {
 	public int updateAll() {
 		int count = 0;
 		PlayerStatsAPIResponse response = statsDelegate.getUpdatedStats();
-		for (Player player : response.getPlayers().values()) {
-			if (!updatePlayer(player)) {
-				log.info("Could not find player to replace... adding as new: " + player.getPlayerName());
-				playerDao.put(player);
-			}				
-			count++;
+		try {
+			for (Player player : response.getPlayers().values()) {
+				if (!updatePlayer(player)) {
+					log.info("Could not find player to replace... adding as new: " + player.getPlayerName());
+					playerDao.put(player);
+				}				
+				count++;
+			}
+		} catch (Exception e) {
+			log.error("ERROR calling PlayerStatsAPI :: Check that server is started", e);
 		}
 		return count;
 	}

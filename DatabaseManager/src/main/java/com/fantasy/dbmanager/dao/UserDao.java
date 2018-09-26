@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.fantasy.dbmanager.model.UserTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.UpdateResult;
@@ -53,17 +54,14 @@ public class UserDao {
 	public UserTO getUserById(String id) {
 		return userDBCollection.find(eq("userId", id)).first();
 	}
-
+	
 	public boolean update(UserTO userTO) {
-		String json = null;
 		try {
-			json = new ObjectMapper().writeValueAsString(userTO.getTeam());
-		} catch (JsonProcessingException e) {
+			return (userDBCollection.updateOne(eq("userId", userTO.getUserId()), new Document("$set", Document.parse(new ObjectMapper().writeValueAsString(userTO)))).getModifiedCount() > 0);
+		} catch (Exception e) {
 			e.printStackTrace(); // TODO
+			return false;
 		}
-		
-		 UpdateResult result = userDBCollection.updateOne(eq("userId", userTO.getUserId()), new Document("$set", new Document("team", Document.parse(json))));
-		 return (result.getModifiedCount() == 1);
 	}
 
 

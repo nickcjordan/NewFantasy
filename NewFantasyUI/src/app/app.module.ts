@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
+import { ModifierMarketplacePageComponent } from './modifier-marketplace-page/modifier-marketplace-page.component';
 
 
 
@@ -67,7 +68,8 @@ export class XhrInterceptor implements HttpInterceptor {
         PlayerEditPopoverComponent,
         BenchEditComponent,
         WaiverWirePageComponent,
-        PlayerTableComponent
+        PlayerTableComponent,
+        ModifierMarketplacePageComponent
 	],
 	imports: [
 		BrowserModule,

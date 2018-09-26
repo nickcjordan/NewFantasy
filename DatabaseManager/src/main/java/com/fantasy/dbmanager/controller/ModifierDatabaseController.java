@@ -1,7 +1,5 @@
 package com.fantasy.dbmanager.controller;
 
-
-
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -12,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
+import com.fantasy.dataaccessutility.model.ui.ModifierUpdateRequest;
 import com.fantasy.dbmanager.manager.ModifierDatabaseManager;
+import com.fantasy.dbmanager.processor.ModifierUpdateRequestProcessor;
 
 @RestController
 @RequestMapping("/modifier")
@@ -22,6 +22,17 @@ public class ModifierDatabaseController  {
 	
 	@Autowired
 	private ModifierDatabaseManager modifierManager;
+	
+	@Autowired
+	private ModifierUpdateRequestProcessor processor;
+	
+	@RequestMapping(value = "/updateList", method = RequestMethod.POST)
+    public boolean putModifier(@RequestBody List<Modifier> modifiers) {
+    	log.info("DatabaseManager :: putting " + modifiers.size() + " modifiers in database...");
+    	modifierManager.put(modifiers);
+    	log.info("DatabaseManager :: success :: put " + modifiers.size() + " modifiers in database");
+    	return true;
+    }
 
     @RequestMapping("/count")
     public long count() {
@@ -31,11 +42,11 @@ public class ModifierDatabaseController  {
     	return count;
     }
     
-    @RequestMapping(value = "/put", method = RequestMethod.POST)
-    public boolean putModifier(@RequestBody List<Modifier> modifiers) {
-    	log.info("DatabaseManager :: putting " + modifiers.size() + " modifiers in database...");
-    	modifierManager.put(modifiers);
-    	log.info("DatabaseManager :: success :: put " + modifiers.size() + " modifiers in database");
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public boolean updateModifier(@RequestBody ModifierUpdateRequest modifierUpdateRequest) {
+    	log.info("DatabaseManager :: updating modifier [userId:" + modifierUpdateRequest.getUserId() + ", modifierId:" + modifierUpdateRequest.getModifierId() + "] in database...");
+    	processor.processRequest(modifierUpdateRequest);
+    	log.info("DatabaseManager :: success :: updated modifier [userId:" + modifierUpdateRequest.getUserId() + ", modifierId:" + modifierUpdateRequest.getModifierId() + "] in database...");
     	return true;
     }
     

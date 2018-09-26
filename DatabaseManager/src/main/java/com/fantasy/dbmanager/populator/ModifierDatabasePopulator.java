@@ -29,27 +29,29 @@ public class ModifierDatabasePopulator {
 	}
 	
 	private List<Modifier> buildTestModifiers() {
+		int i = 1;
 		List<Modifier> mods = new ArrayList<Modifier>();
-		Modifier mod1 = new Modifier();
-		mod1.setChangePercentage(2.5);
-		mod1.setPrice(50);
-		mod1.setTargetType(TargetType.TEAM);
+		mods.add(initMod("Full Team Booster", i++, 2.5, 50));
+		mods.add(initMod("Starting QB Booster", i++, 5, 100));
+		mods.add(initMod("Steelers WR Booster", i++, 8, 150));
+		mods.add(initMod("Starting TE Booster", i++, 10, 200));
 		
-		Modifier mod2 = new Modifier();
-		mod2.setChangePercentage(5);
-		mod2.setPrice(100);
-		mod2.setTargetType(TargetType.TEAM);
-		
-		Modifier mod3 = new Modifier();
-		mod3.setChangePercentage(8);
-		mod3.setPrice(150);
-		mod3.setTargetType(TargetType.TEAM);
-		
-		mods.add(mod1);
-		mods.add(mod2);
-		mods.add(mod3);
-		
+		mods.add(initMod("Browns RB Negator", i++, -2.5, 50));
+		mods.add(initMod("Opponent Team Negator", i++, -5, 100));
+		mods.add(initMod("Jaguars QB Negator", i++, -8, 150));
+		mods.add(initMod("Opponent WR Negator", i++, -10, 200));
 		return mods;
+	}
+
+	private Modifier initMod(String name, int id, double changePercentage, int price) {
+		Modifier m = new Modifier();
+		m.setModifierId(String.valueOf(id));
+		m.setModifierName(name);
+		m.setChangePercentage(changePercentage);
+		m.setPrice(price);
+		m.setTargetType(TargetType.TEAM);
+		m.setModifierDescription("Description of what the modifier does");
+		return m;
 	}
 
 }

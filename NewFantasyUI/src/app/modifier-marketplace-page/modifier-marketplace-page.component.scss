@@ -1,0 +1,259 @@
+.modifier-card {
+    width: 280px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.modifier-card:hover, .modifier-card.hover {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(191, 191, 191, 1);
+}
+
+.modifier-container {
+	margin-top: 150px;
+	overflow-y: auto;
+	display: flex;
+	margin-left: 15%;
+}
+
+.adjusted-icon {
+	border-radius: 50%;
+	/* width: 120px; */
+	margin-top: -45px;
+	overflow: hidden;
+	border: 5px solid #fff;
+}
+
+.minus-circle-icon {
+	background-color: white;
+	padding-top: 60px;
+	padding-bottom: 50px;
+}
+
+.plus-circle-icon {
+	background-color: white;
+	padding-top: 60px;
+	padding-bottom: 50px;
+}
+
+.adjusted-card-colored {
+	height: 60px;
+}
+
+.modifier-card-body {
+	padding: 10px;
+	padding-top: 0px;
+}
+
+.colored-red {
+	background: linear-gradient(40deg, #ff0000, #960000) !important;
+}
+
+.colored-green {
+	background: linear-gradient(40deg, #00c800, #009600) !important;
+}
+
+.modifier-details {
+	font-size: 2em;
+	margin: 5px;
+	padding: 0x;
+}
+
+.modifier-details-container {
+	
+}
+
+.modifier-details-badge {
+	background-color: white;
+	padding-left: 0px;
+	padding-right: 0px;
+	box-shadow: none;
+}
+
+.modifier-details-percentage-badge {
+}
+
+.percent-icon {
+	color: #494949;
+	padding-left: 4px;
+	font-size: 80%;
+}
+
+.percent-text-red {
+	padding-left: 4px;
+	color: #960000;
+}
+
+.percent-text-green {
+	padding-left: 4px;
+	color: #009600;
+}
+
+.coin-icon {
+	padding-right: 4px;
+}
+
+.coin-text {
+	padding-right: 4px;
+	color: #494949;
+}
+
+.position-checkboxes > li {
+	border: none;
+}
+
+.waiver-buttons-container {
+	overflow-y: auto;
+}
+
+.side-bar-nav {
+	margin-top: 50px;
+	position: fixed;
+    top: 100px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.spacer-panel {
+	padding-bottom: 50px;
+}
+
+.transparent-bg {
+	background-color: transparent;
+}
+
+.modifier-name {
+	height: 60px;
+	vertical-align: middle;
+	display: flex;
+}
+
+.small-margins {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.small-margins > h4 {
+	margin: 0px;
+}
+
+.modifier-card-line-divider {
+	margin: 0px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.modifier-details-row {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+}
+
+
+/* MODAL */
+
+.modifier-modal {
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 10%;
+}
+
+.modifier-modal-panel {
+	/* width: 2% !important; */
+}
+
+.modifier-modal-header {
+	color: black !important;
+	padding: 10px !important;
+	font-size: 3rem;
+	margin: 0;
+}
+
+.modifier-modal-body {
+	padding: 10px !important;
+	font-size: 1.5rem;
+}
+
+.modifier-modal-footer {
+	justify-content: center;
+}
+
+.modal-row {
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+}
+
+.modifier-modal-description {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.modifier-modal-description-question {
+	font-size: .8em;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 10px
+}
+
+.modifier-modal-buy-button  {
+	background: linear-gradient(40deg, #00c800, #079607);
+	font-size: 1.5em;
+	font-weight: bolder;
+	padding: 10px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.modifier-modal-sell-button  {
+    background: linear-gradient(40deg, #ff0000, #b50707);
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: 10px;
+    padding-left: 100px;
+	padding-right: 100px;
+}
+
+.modifier-modal-unavailable-button {
+	background: linear-gradient(40deg, #f0f0f0, #d7d7d7);
+    font-size: 1.5em;
+    color: #7d7d7d;
+    font-weight: bolder;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.modifier-modal-close-button  {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 10px;
+	right: 0;
+	margin-right: 10px;
+}
+
+.coin-description {
+	font-size: 2em;
+}
+
+.disabled-status-true {
+    opacity: 0.4;
+}
+
+.owner-text {
+	border: solid 0px #939393;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	font-size: 1rem;
+	position: absolute;
+	width: 280px;
+	text-align: center;
+	margin-top: 10px;
+	z-index: 2;
+	font-weight: bolder;
+	background-color: white;
+}
