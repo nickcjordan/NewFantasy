@@ -94,13 +94,13 @@
 							
 							<div class="modal-footer flex-center modifier-modal-footer">
 								<div *ngIf="modifier.owningUserId == null" class="col">
-									<a href="/marketplace" mdbBtn class="modifier-modal-buy-button waves-effect" mdbWavesEffect (click)="buyModifier(modifier)">Buy</a>
+									<a  mdbBtn class="modifier-modal-buy-button waves-effect" mdbWavesEffect (click)="buyModifier(modifier)">Buy</a>
 								</div>
 								<div *ngIf="modifier.owningUserId === user.userId" class="col">
-									<a href="/marketplace" mdbBtn class="modifier-modal-sell-button waves-effect" mdbWavesEffect (click)="sellModifier(modifier)">Sell</a> 
+									<a  mdbBtn class="modifier-modal-sell-button waves-effect" mdbWavesEffect (click)="sellModifier(modifier)">Sell</a> 
 								</div>
 								<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId !== user.userId)" class="col">
-									<a href="/marketplace" mdbBtn class="modifier-modal-unavailable-button waves-effect" mdbWavesEffect (click)="sellModifier(modifier)">Unavailable</a> 
+									<a mdbBtn class="modifier-modal-unavailable-button waves-effect" mdbWavesEffect>Unavailable</a> 
 								</div>
 								<a data-dismiss="modal" mdbBtn class="modifier-modal-close-button waves-effect" mdbWavesEffect (click)="frame.hide()">Close</a>
 							</div>

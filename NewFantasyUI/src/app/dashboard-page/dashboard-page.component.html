@@ -1,13 +1,22 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-2">
-			<div class="user-details-container">
+			<div *ngIf="user!=null && currentUser!=null" class="user-details-container">
 				<h1>{{user.userName}}</h1>
 				<h2>Logged in as: {{currentUser.username}}</h2>
 				<div>
 					<h1><fa-icon class="coin-icon" [icon]="faCoins" size=""></fa-icon>{{user.coins}}</h1>
 				</div>
 			</div>
+			
+			<div class="modifier-list"> 
+				
+				<div class="modifier-badge" *ngFor="let mod of user.modifiers">
+					{{mod.modifierName}} :: {{mod.changePercentage}} % <!-- <fa-icon class="percent-icon" [icon]="faPercent" size=""></fa-icon> -->
+				</div>
+				
+			</div>
+			
 		</div>
 		
 		

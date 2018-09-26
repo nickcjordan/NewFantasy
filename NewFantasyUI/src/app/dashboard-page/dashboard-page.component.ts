@@ -5,6 +5,7 @@ import {User} from '../model/user';
 import {UserService} from '../service/user.service';
 import {AuthService} from '../service/auth.service';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
+import {faPercent} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { faCoins } from '@fortawesome/free-solid-svg-icons';
 export class DashboardPageComponent implements OnInit {
 	
 	faCoins = faCoins;
+	faPercent = faPercent;
 
 	currentUser: UserCredential;
 	userId: number;

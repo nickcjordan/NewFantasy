@@ -64,7 +64,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	
 	buyModifier(selectedModifier: Modifier): void {
 		let updateModifierRequest = new ModifierUpdateRequest(this.user.userId, selectedModifier.modifierId, "BUY");
-		this.modifierService.purchaseModifierForUser(updateModifierRequest).subscribe(
+		this.modifierService.sendModifierRequest(updateModifierRequest).subscribe(
 			data => { location.reload(); },
 			error => { console.log(error) }
 		);
@@ -72,7 +72,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	
 	sellModifier(selectedModifier: Modifier): void {
 		let updateModifierRequest = new ModifierUpdateRequest(this.user.userId, selectedModifier.modifierId, "SELL");
-		this.modifierService.purchaseModifierForUser(updateModifierRequest).subscribe(
+		this.modifierService.sendModifierRequest(updateModifierRequest).subscribe(
 			data => { location.reload(); },
 			error => { console.log(error) }
 		);

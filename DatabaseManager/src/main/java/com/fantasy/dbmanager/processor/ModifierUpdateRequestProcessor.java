@@ -1,5 +1,8 @@
 package com.fantasy.dbmanager.processor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,14 +46,20 @@ public class ModifierUpdateRequestProcessor {
 	private void purchaseModifierForUser(Modifier modifier, User user) {
 		log.info("Purchasing modifier [" + modifier.getModifierName() + "] for user: " + user.getUserName());
 		modifier.setOwningUserId(user.getUserId());
-		user.getModifiers().add(modifier);
+		
+		boolean matched = false;
+		for (Modifier m : user.getModifiers()) {
+			 if (m.getModifierId().equals(modifier.getModifierId())) { matched = true; }
+		}
+		if (!matched) { user.getModifiers().add(modifier); }
+		else { log.error("ERROR :: did not add modifier :: User " + user.getUserId() + " already owns modifier " + modifier.getModifierId()); }
+		
 		user.setCoins(user.getCoins() - modifier.getPrice());
 		switch(modifier.getTargetType()) {
 			case PLAYER: updateModifierTargetForPlayer(modifier, user); break;
 			case POSITION: updateModifierTargetForPosition(modifier, user); break;
 			case TEAM: updateModifierTargetForTeam(modifier, user); break;
 		}
-		
 	}
 	
 	private void updateModifierTargetForTeam(Modifier modifier, User user) {
@@ -79,8 +88,14 @@ public class ModifierUpdateRequestProcessor {
 
 	private void sellModifierForUser(Modifier modifier, User user) {
 		log.info("Selling modifier [" + modifier.getModifierName() + "] for user: " + user.getUserName());
+		List<Modifier> filtered = new ArrayList<Modifier>();
+		for (Modifier m : user.getModifiers()) {
+			if (!m.getModifierId().equals(modifier.getModifierId())) {
+				filtered.add(m);
+			}
+		}
+		user.setModifiers(filtered);
 		modifier.setOwningUserId(null);
-		user.getModifiers().remove(modifier);
 		user.setCoins(user.getCoins() + modifier.getPrice());
 		modifier.setTargetPosition(null);
 		modifier.setTargetId(null);
