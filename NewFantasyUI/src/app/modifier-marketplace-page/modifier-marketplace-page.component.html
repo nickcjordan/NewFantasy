@@ -31,7 +31,8 @@
 			
 			<div *ngFor="let modifier of getFilteredModifiers()" >
 				<div class="col-lg-2">
-					<div *ngIf="modifier.owningUserId != null" class="owner-text">Purchased by {{modifier.owningUserId}}</div>
+					<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId !== user.userId)" class="owner-text">Purchased by {{modifier.owningUserId}}</div>
+					<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId === user.userId)" class="owner-text">Purchased by You</div>
 					<mdb-card class="testimonial-card modifier-card disabled-status-{{modifier.owningUserId != null}}" data-toggle="modal" data-target="#basicExample" (click)="frame.show();">
 						<div *ngIf="modifier.changePercentage <= 0" class="card-up adjusted-card-colored colored-red"></div>
 						<div *ngIf="modifier.changePercentage > 0" class="card-up adjusted-card-colored colored-green"></div>
