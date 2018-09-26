@@ -16,8 +16,8 @@ import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.ui.EditLineupQuery;
 import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
+import com.fantasy.dataaccessutility.model.ui.UserName;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
-import com.fantasy.dbmanager.populator.DatabasePopulator;
 import com.fantasy.dbmanager.processor.EditLineupRequestProcessor;
 
 @RestController
@@ -67,7 +67,15 @@ public class UserDatabaseController  {
     @RequestMapping("/getAll")
     public List<User> getAll() {
     	log.info("DatabaseManager :: getting all users...");
-    	List<User> users = userManager.get();
+    	List<User> users = userManager.getAll();
+    	log.info("DatabaseManager :: SUCCESS :: got [" + users.size() + "] users");
+    	return users;
+    }
+    
+    @RequestMapping("/getAllUserNames")
+    public List<UserName> getAllUserNames() {
+    	log.info("DatabaseManager :: getting all users...");
+    	List<UserName> users = userManager.getAllUserNames();
     	log.info("DatabaseManager :: SUCCESS :: got [" + users.size() + "] users");
     	return users;
     }

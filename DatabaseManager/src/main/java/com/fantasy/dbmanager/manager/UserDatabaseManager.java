@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
+import com.fantasy.dataaccessutility.model.ui.UserName;
 import com.fantasy.dbmanager.dao.UserDao;
 import com.fantasy.dbmanager.model.UserTO;
 import com.fantasy.dbmanager.transformer.UserTransformer;
@@ -39,8 +40,9 @@ public class UserDatabaseManager {
 	public long count() {
 		return userDao.getUserCount();
 	}
+
 	
-	public List<User> get() {
+	public List<User> getAll() {
 		List<User> users = new ArrayList<User>();
 		for (UserTO userTo : userDao.getAll()) {
 			users.add(userTransformer.getUser(userTo));
@@ -74,6 +76,14 @@ public class UserDatabaseManager {
 				put(user);
 			}
 		}
+	}
+
+	public List<UserName> getAllUserNames() {
+		List<UserName> users = new ArrayList<UserName>();
+		for (UserTO userTo : userDao.getAll()) {
+			users.add(new UserName(userTo.getUserId(), userTo.getUserName()));
+		}
+		return users;
 	}
 
 }

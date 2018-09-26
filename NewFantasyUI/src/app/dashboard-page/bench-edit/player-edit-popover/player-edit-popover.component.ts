@@ -32,7 +32,7 @@ export class PlayerEditPopoverComponent implements OnInit {
 		private userService: UserService,
 		private alertService: AlertService,
 		private router: Router
-	) { }
+	) { this.router.onSameUrlNavigation = 'reload'; }
 
 	ngOnInit() {
 		this.setStartingPlayersToSwapFor();
@@ -56,34 +56,34 @@ export class PlayerEditPopoverComponent implements OnInit {
 	}
 
 	movePlayerToLineupAtPosition(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_POSITION");
+		let editLineupRequest = new EditLineupRequest(player.playerId, null, this.user.userId, "START_AT_POSITION");
 		this.userService.editLineup(editLineupRequest).subscribe(
-			data => { this.router.navigate(['/']); },
+			data => { location.reload(); }, 			
+
 			error => { this.alertService.error(error); }
 		);
 	}
 		
 	swapStarterAndBenchPlayer(toLineup: Player, toBench: Player) {
-		console.log(`swapping starter and bench player :: ${toLineup.playerName} :: ${toBench.playerName}`);
-		let editLineupRequest = new EditLineupRequest(toLineup.playerId, this.user.userId, toBench.playerId);
+		let editLineupRequest = new EditLineupRequest(toLineup.playerId, toBench.playerId, this.user.userId, "SWAP");
 		this.userService.editLineup(editLineupRequest).subscribe(
-			data => { this.router.navigate(['/']); },
+			data => { location.reload(); },
 			error => { this.alertService.error(error); }
 		);
 	}
 	
 	movePlayerToLineupAtFlex(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "START_AT_FLEX");
+		let editLineupRequest = new EditLineupRequest(player.playerId, null, this.user.userId, "START_AT_FLEX");
 		this.userService.editLineup(editLineupRequest).subscribe(
-			data => { this.router.navigate(['/']); },
+			data => { location.reload(); },
 			error => { this.alertService.error(error); }
 		);
 	}
 	
 	dropPlayer(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "DROP");
+		let editLineupRequest = new EditLineupRequest(player.playerId, null, this.user.userId, "DROP");
 		this.userService.editLineup(editLineupRequest).subscribe(
-			data => { this.router.navigate(['/']); },
+			data => { location.reload(); },
 			error => { this.alertService.error(error); }
 		);
 	}

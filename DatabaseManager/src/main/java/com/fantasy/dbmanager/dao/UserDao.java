@@ -52,7 +52,11 @@ public class UserDao {
 	}
 
 	public UserTO getUserById(String id) {
-		return userDBCollection.find(eq("userId", id)).first();
+		try {
+			return userDBCollection.find(eq("userId", id)).first();
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 	
 	public boolean update(UserTO userTO) {

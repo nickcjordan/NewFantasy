@@ -9,6 +9,6 @@ public class LineupProperties {
 	public static int FLEX_MAX_SIZE = 1;
 	public static int K_MAX_SIZE = 1;
 	public static int DST_MAX_SIZE = 1;
-	public static int BENCH_MAX_SIZE = 8;
+	public static int BENCH_MAX_SIZE = 10;
 	
 }

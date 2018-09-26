@@ -56,6 +56,14 @@ public class Roster {
 		}
 	}
 	
+	public void addPlayerToBenchFromLineup(Player player) {
+		if (benchPlayers.addPlayerToBench(player)) {
+			log.info("Added player " + player.getPlayerName() + " to bench from lineup :: Bench count = " + benchPlayers.getPlayers().size());
+		} else {
+			throw new RuntimeException("ERROR :: could not move player to bench ");
+		}
+	}
+	
 	public void removePlayerFromBench(Player player) {
 		if (benchPlayers.removePlayerFromBench(player)) {
 			log.info("Removed player " + player.getPlayerName() + " from bench");

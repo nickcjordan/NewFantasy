@@ -36,12 +36,12 @@ public class EditLineupRequestProcessor {
 		Player player = playerManager.get(request.getPlayerId());
 		EditLineupAction action = EditLineupAction.getActionFromText(request.getAction());
 		if (user != null && player != null && action != null) {
-			if (StringUtils.isNumeric(action.getActionText())) {
-				Player playerToSwapWith = playerManager.get(action.getActionText());
-				user.getTeam().getRoster().swapBenchAndLineupPlayers(player, playerToSwapWith);
-			} else {
-				executeActionFromRequest(user.getTeam().getRoster(), player, action);
-			}
+//			if (StringUtils.isNumeric(action.getActionText())) {
+//				Player playerToSwapWith = playerManager.get(action.getActionText());
+//				user.getTeam().getRoster().swapBenchAndLineupPlayers(player, playerToSwapWith);
+//			} else {
+				executeActionFromRequest(user.getTeam().getRoster(), player, action, request);
+//			}
 		} else {
 			log.error("EditLineupRequestProcessor :: ERROR trying to edit lineup :: could not find one or more elements from request :: user: " + request.getUserId() + ", player: " + request.getPlayerId() + ", action: " + request.getAction());
 		}
@@ -49,7 +49,7 @@ public class EditLineupRequestProcessor {
 		userManager.update(user);
 	}
 
-	private void executeActionFromRequest(Roster roster, Player player, EditLineupAction action) {
+	private void executeActionFromRequest(Roster roster, Player player, EditLineupAction action, EditLineupRequest request) {
 		switch(action) {
 			case START_PLAYER_AT_POSITION: movePlayerFromBenchToLineupAtPosition(player, roster);
 				break;
@@ -61,13 +61,19 @@ public class EditLineupRequestProcessor {
 				break;
 			case ADD_PLAYER_TO_BENCH: addPlayerToBenchFromWaivers(player, roster);
 				break;
-			case SWAP: log.info("ERROR :: got SWAP from edit lineup request -- should not have happened");
+			case SWAP: swapPlayers(action, player, roster, request);
 				break;
 		default:
 			break;
 		}
 	}
 	
+	private void swapPlayers(EditLineupAction action, Player player, Roster roster, EditLineupRequest request) {
+		Player p2 = playerManager.get(request.getPlayer2Id());
+		log.info("Swapping player: " + player.getPlayerName() + " with player: " + p2.getPlayerName());
+		roster.swapBenchAndLineupPlayers(player, p2);
+	}
+
 	private void movePlayerFromBenchToLineupAtPosition(Player player, Roster roster) {
 		log.info("Adding player " + player.getPlayerName() + " to lineup at position: " + player.getPosition() + "  :: and removing from bench");
 		roster.removePlayerFromBench(player);

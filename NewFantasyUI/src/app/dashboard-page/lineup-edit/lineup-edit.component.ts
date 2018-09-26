@@ -28,15 +28,16 @@ export class LineupEditComponent implements OnInit {
 		private auth: AuthService,
         private alertService: AlertService,
 		private router: Router
-	) {}
+	) { this.router.onSameUrlNavigation = "reload"; }
 
 	ngOnInit() {
 	}
 	
 	movePlayerToBench(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "MOVE_TO_BENCH");
+		console.log("router property onSameUrlNavigation in lineup edit component: " + this.router.onSameUrlNavigation);
+		let editLineupRequest = new EditLineupRequest(player.playerId, null, this.user.userId, "MOVE_TO_BENCH");
 		this.userService.editLineup(editLineupRequest).subscribe(
-			data => { this.router.navigate(['/']); },
+			data => { location.reload(); },
 			error => { this.alertService.error(error); }
 		);
 	}

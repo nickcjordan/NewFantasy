@@ -20,7 +20,7 @@ export class BenchEditComponent implements OnInit {
 		private userService: UserService,
         private alertService: AlertService,
 		private router: Router
-  ) { }
+	) { this.router.onSameUrlNavigation = 'reload'; }
 
 	ngOnInit() {
 	}

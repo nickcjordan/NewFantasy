@@ -16,13 +16,7 @@ export class AppComponent {
 		private http: HttpClient, 
 		private router: Router, 
 		private auth: AuthService
-	) { 
-//		this.auth.authenticateDefault();
-//		if (!this.auth.authenticated) { 
-//			this.router.navigateByUrl('/login'); 
-//			console.log('AppComponent: in constructor :: not authenticated');
-//		} //route to login if not authenticated
-	}
+	) { this.router.onSameUrlNavigation = 'reload'; }
 	
 	authenticated() {
 		if (!this.auth.authenticated) { 

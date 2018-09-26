@@ -72,9 +72,9 @@ export class PlayerTableComponent implements OnInit {
 	}
 	
 	addPlayerToBench(player: Player) {
-		let editLineupRequest = new EditLineupRequest(player.playerId, this.user.userId, "ADD_TO_BENCH");
+		let editLineupRequest = new EditLineupRequest(player.playerId, null, this.user.userId, "ADD_TO_BENCH");
 		this.userService.editLineup(editLineupRequest).subscribe(
-			data => { this.router.navigate(['/players']); },
+			data => { location.reload(); },
 		);
 	}
 

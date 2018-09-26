@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
+import {UserName} from '../../model/user-name';
 import {UserService} from '../../service/user.service';
 import { AuthService } from '../../service/auth.service';
 import { HttpClient } from '@angular/common/http';
@@ -12,16 +13,22 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  users: User[];
+  userNames: UserName[];
 
-	constructor(private userService: UserService, private auth: AuthService, private http: HttpClient, private router: Router) {}
+	constructor(
+		private userService: UserService, 
+		private auth: AuthService, 
+		private http: HttpClient, 
+		private router: Router
+	) { this.router.onSameUrlNavigation = 'reload'; }
 
 	ngOnInit() {
 		this.getUsers();
 	}
 	
 	getUsers(): void {
-		this.userService.getUsers().subscribe(users => this.users = users);
+		this.userService.getAllUserNames().subscribe(users => this.userNames = users);
+		console.log("router property onSameUrlNavigation: " + this.router.onSameUrlNavigation);
 	}
 	
     logout() {

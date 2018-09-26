@@ -1,6 +1,7 @@
 import { EditLineupRequest } from "../model/edit-lineup-request";
 import {Injectable} from '@angular/core';
 import {User} from '../model/user';
+import {UserName} from '../model/user-name';
 import {Player} from '../model/player';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
@@ -13,14 +14,15 @@ import { EditLineupQuery } from "../model/edit-lineup-query";
 })
 export class UserService {
 
-	private getAllUsersUrl = '/api/user/getAll';  // URL to web api
-	private getUserUrl = '/api/user/get';  // URL to web api
-	private updateUserUrl = '/api/user/update';  // URL to web api
-	private editUserLineupUrl = '/api/user/lineup/edit';  // URL to web api
-	private getEligibleSwapPlayersUrl = '/api/user/lineup/swappable';  // URL to web api
+	private getAllUserNamesUrl = '/api/user/getAllUserNames';
+	private getAllUsersUrl = '/api/user/getAll';
+	private getUserUrl = '/api/user/get';
+	private updateUserUrl = '/api/user/update';
+	private editUserLineupUrl = '/api/user/lineup/edit';
+	private getEligibleSwapPlayersUrl = '/api/user/lineup/swappable';
 	
 	
-//	private usersUrl = '/api';  // URL to web api
+//	private usersUrl = '/api';
 	private httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 	constructor(
@@ -40,13 +42,17 @@ export class UserService {
 			console.log("User: " + user.userId + ", " + user.userName);
 		});
 	}
+	
+		/** GET ALL users */
+	getAllUserNames(): Observable<UserName[]> {
+		return this.http.get<User[]>(this.getAllUserNamesUrl).pipe(
+			catchError(this.handleError('getUsers', []))
+		);
+	}
 
 	/** GET ALL users */
 	getUsers(): Observable<User[]> {
-		this.messageService.add('UserService: fetched users');
 		return this.http.get<User[]>(this.getAllUsersUrl).pipe(
-			tap(users => this.log(`fetched users ${users}`)),
-			tap(users => this.logUsers(users)),
 			catchError(this.handleError('getUsers', []))
 		);
 	}

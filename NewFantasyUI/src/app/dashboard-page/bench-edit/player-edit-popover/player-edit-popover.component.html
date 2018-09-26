@@ -5,14 +5,12 @@
 	<ul class="list-group swap-options">
 	
 		<li class="list-group-item swap-button-group" *ngFor="let p of this.swappables">
-			<a href="/dashboard">
 				<button type="button" class="btn swap-button" (click)="swapStarterAndBenchPlayer(player, p)">
 					<div class="row">
 						<div class="col-2 centered"><span class="badge-{{p.position}} badge edit-lineup-pos-badge">{{p.position}}</span></div>
 						<div class="col-10 centered"><span class="edit-lineup-name-text">{{p.playerName}}</span></div>
 					</div>
 				</button>
-			</a>
 		</li>
 		
 		</ul>
@@ -25,10 +23,10 @@
 		<li class="list-group-item swap-button-group">
 			<div class="row no-side-margin">
 				<div class="col centered action-button-spacing">
-					<a href="/dashboard"><button type="button" class="btn swap-pos-button badge-{{player.position}}" (click)="movePlayerToLineupAtPosition(player)">{{player.position}} Slot</button></a>
+					<button type="button" class="btn swap-pos-button badge-{{player.position}}" (click)="movePlayerToLineupAtPosition(player)">{{player.position}} Slot</button>
 				</div>
 				<div *ngIf='this.canBeFlex' class="col centered action-button-spacing">
-					<a href="/dashboard"><button type="button" class="btn swap-pos-button badge-FLEX" (click)="movePlayerToLineupAtFlex(player)">Flex Slot</button></a>
+					<button type="button" class="btn swap-pos-button badge-FLEX" (click)="movePlayerToLineupAtFlex(player)">Flex Slot</button>
 				</div>
 			</div>
 		</li>
@@ -36,7 +34,7 @@
 		<li class="list-group-item swap-button-group">
 			<div class="row no-side-margin">
 				<div class="col centered action-button-spacing">
-					<a href="/dashboard"><button type="button" class="btn swap-pos-button badge-DROP" (click)="dropPlayer(player)">Drop Player</button></a>
+					<button type="button" class="btn swap-pos-button badge-DROP" (click)="dropPlayer(player)">Drop Player</button>
 				</div>
 			</div>
 		</li>
