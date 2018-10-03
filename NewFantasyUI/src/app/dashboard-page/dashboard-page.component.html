@@ -2,16 +2,23 @@
 	<div class="row">
 		<div class="col-lg-2">
 			<div *ngIf="user!=null && currentUser!=null" class="user-details-container">
-				<h1>{{user.userName}}</h1>
-				<h2>Logged in as: {{currentUser.username}}</h2>
-				<div>
-					<h1><fa-icon class="coin-icon" [icon]="faCoins" size=""></fa-icon>{{user.coins}}</h1>
-				</div>
+			
+				<h1 class="user-name-text">{{user.userName}}</h1>
+				<h2 class="user-details-text">Logged in as: {{currentUser.username}}</h2>
+				
+				<hr class="modifier-card-line-divider">
+				<div class="section-title">Coins</div>
+				<div class="coins-text"><h1><fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{user.coins}}</h1></div>
 			</div>
 			
+			
+			<hr class="modifier-card-line-divider">
+			
+			
 			<div class="modifier-list"> 
-				
-				<div class="modifier-badge" *ngFor="let mod of user.modifiers">
+				<div class="section-title">Modifiers</div>
+				<div *ngIf="user.modifiers.length === 0" class="section-filler">0</div>
+				<div class=" badge modifier-badge" *ngFor="let mod of user.modifiers">
 					{{mod.modifierName}} :: {{mod.changePercentage}} % <!-- <fa-icon class="percent-icon" [icon]="faPercent" size=""></fa-icon> -->
 				</div>
 				

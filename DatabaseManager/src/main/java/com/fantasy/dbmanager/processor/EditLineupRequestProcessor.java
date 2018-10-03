@@ -36,12 +36,7 @@ public class EditLineupRequestProcessor {
 		Player player = playerManager.get(request.getPlayerId());
 		EditLineupAction action = EditLineupAction.getActionFromText(request.getAction());
 		if (user != null && player != null && action != null) {
-//			if (StringUtils.isNumeric(action.getActionText())) {
-//				Player playerToSwapWith = playerManager.get(action.getActionText());
-//				user.getTeam().getRoster().swapBenchAndLineupPlayers(player, playerToSwapWith);
-//			} else {
-				executeActionFromRequest(user.getTeam().getRoster(), player, action, request);
-//			}
+			executeActionFromRequest(user.getTeam().getRoster(), player, action, request);
 		} else {
 			log.error("EditLineupRequestProcessor :: ERROR trying to edit lineup :: could not find one or more elements from request :: user: " + request.getUserId() + ", player: " + request.getPlayerId() + ", action: " + request.getAction());
 		}
@@ -70,8 +65,12 @@ public class EditLineupRequestProcessor {
 	
 	private void swapPlayers(EditLineupAction action, Player player, Roster roster, EditLineupRequest request) {
 		Player p2 = playerManager.get(request.getPlayer2Id());
-		log.info("Swapping player: " + player.getPlayerName() + " with player: " + p2.getPlayerName());
-		roster.swapBenchAndLineupPlayers(player, p2);
+		if (p2 != null) {
+			log.info("Swapping player: " + player.getPlayerName() + " with player: " + p2.getPlayerName());
+			roster.swapBenchAndLineupPlayers(player, p2);
+		} else {
+			log.error("ERROR :: could not find second player in SWAP editLineupRequest: " + request.getPlayer2Id());
+		}
 	}
 
 	private void movePlayerFromBenchToLineupAtPosition(Player player, Roster roster) {

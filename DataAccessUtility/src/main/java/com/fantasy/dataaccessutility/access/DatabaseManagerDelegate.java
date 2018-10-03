@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.PlayerListResponse;
 import com.fantasy.dataaccessutility.model.User;
@@ -28,11 +29,7 @@ public class DatabaseManagerDelegate {
 	public Player getPlayer(String playerId) {
 		return rest.getForObject(Urls.getPlayer(playerId), Player.class);
 	}
-
-	public User getUser(String userId) {
-		return rest.getForObject(Urls.getUser(userId), User.class);
-	}
-
+	
 	public boolean addPlayer(Player player) {
 		return rest.postForObject(Urls.putPlayer(), Arrays.asList(player), boolean.class);
 	}
@@ -40,6 +37,10 @@ public class DatabaseManagerDelegate {
 	public boolean updatePlayer(Player player) {
 		log.info("Sending POST request to UPDATE player :: " + player.getPlayerId() + " :: " + player.getPlayerName() + "\n\tURL :: " + Urls.updatePlayer());
 		return rest.postForObject(Urls.updatePlayer(), player, boolean.class);
+	}
+	
+	public User getUser(String userId) {
+		return rest.getForObject(Urls.getUser(userId), User.class);
 	}
 
 	public boolean updateUser(User user) {
@@ -55,5 +56,22 @@ public class DatabaseManagerDelegate {
 	public List<Player> getPositionGroup(String position) {
 		return rest.getForObject(Urls.getAllPosition(position), PlayerListResponse.class).getPlayers();
 	}
+	
+	public Modifier getModifier(String modifierId) {
+		return rest.getForObject(Urls.getModifier(modifierId), Modifier.class);
+	}
+	
+	public List<Modifier> getAllModifiers() {
+		return rest.getForObject(Urls.getModifiers(), ArrayList.class);
+	}
+
+	public Metadata getMetadataById(String metadataId) {
+		return rest.getForObject(Urls.getMetadata(metadataId), Metadata.class);
+	}
+
+	public boolean updateMetadata(Metadata metadata) {
+		return rest.postForObject(Urls.updateMetadata(), metadata, boolean.class);
+	}
+	
 
 }

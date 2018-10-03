@@ -5,10 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.fantasy.dataaccessutility.manager.MetadataDataAccessManager;
+import com.fantasy.dataaccessutility.manager.ModifierDataAccessManager;
 import com.fantasy.dataaccessutility.manager.PlayerDataAccessManager;
 import com.fantasy.dataaccessutility.manager.UserDataAccessManager;
+import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.modifier.Modifier;
 
 @Component
 public class DataAccessUtility {
@@ -18,6 +22,13 @@ public class DataAccessUtility {
 
 	@Autowired
 	private UserDataAccessManager userManager;
+	
+	@Autowired
+	private ModifierDataAccessManager modifierManager;
+
+	@Autowired
+	private MetadataDataAccessManager metadataIdManager;
+	
 
 						// PLAYERS
 	public Player getPlayerById(String playerId) {
@@ -61,5 +72,27 @@ public class DataAccessUtility {
 	}
 	public void updateUsers(List<User> users) {
 		userManager.updateUsers(users);
+	}
+	
+	
+			//MODIFIERS
+	public Modifier getModifier(String modifierId) {
+		return modifierManager.getModifierById(modifierId);
+	}
+	
+	public List<Modifier> getAllModifiers() {
+		return modifierManager.getAllModifiers();
+	}
+	
+	//TODO make connection to Metadata database so it can be used in modife
+
+		
+		// METADATA
+	public Metadata getMetadata(String metadataId) {
+		return metadataIdManager.getMetadataById(metadataId);
+	}
+	
+	public boolean updateMetadata(Metadata metadata) {
+		return metadataIdManager.updateMetadata(metadata);
 	}
 }

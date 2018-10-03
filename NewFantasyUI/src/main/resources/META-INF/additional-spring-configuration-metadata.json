@@ -1,5 +1,22 @@
-{"properties": [{
-  "name": "encryption.key",
-  "type": "java.lang.String",
-  "description": "A description for 'encryption.key'"
-}]}
+{"properties": [
+  {
+    "name": "encryption.key",
+    "type": "java.lang.String",
+    "description": "A description for 'encryption.key'"
+  },
+  {
+    "name": "generator.modifier.maxWeeklyModifiers",
+    "type": "java.lang.String",
+    "description": "A description for 'generator.modifier.maxWeeklyModifiers'"
+  },
+  {
+    "name": "generator.modifier.maxWeeklyModifiers",
+    "type": "java.lang.String",
+    "description": "A description for 'generator.modifier.maxWeeklyModifiers'"
+  },
+  {
+    "name": "generator.modifier.maxTeamModifiers",
+    "type": "java.lang.String",
+    "description": "A description for 'generator.modifier.maxTeamModifiers'"
+  }
+]}

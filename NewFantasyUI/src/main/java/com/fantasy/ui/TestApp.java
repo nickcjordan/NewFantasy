@@ -10,48 +10,49 @@ import java.util.Scanner;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+import com.fantasy.dataaccessutility.model.team.NflTeam;
 import com.jaunt.Element;
 import com.jaunt.UserAgent;
 
 public class TestApp {
 	
-	static Map<String, String> mascotToTeamNameMapping;
+	static SortedMap<String, String> mascotToTeamNameMapping;
 	
 	static {
-			mascotToTeamNameMapping = new HashMap<String, String>();
-			mascotToTeamNameMapping .put("Dolphins", "MIA");
-			mascotToTeamNameMapping.put("Raiders", "OAK");
-			mascotToTeamNameMapping.put("Cowboys", "DAL");
-			mascotToTeamNameMapping.put("Packers", "GB");
-			mascotToTeamNameMapping.put("Texans", "HOU");
-			mascotToTeamNameMapping.put("Broncos", "DEN");
-			mascotToTeamNameMapping.put("Saints", "NO");
-			mascotToTeamNameMapping.put("Titans", "TEN");
-			mascotToTeamNameMapping.put("Lions", "DET");
-			mascotToTeamNameMapping.put("Steelers", "PIT");
-			mascotToTeamNameMapping.put("Bears", "CHI");
-			mascotToTeamNameMapping.put("Vikings", "MIN");
-			mascotToTeamNameMapping.put("Jaguars", "JAC");
-			mascotToTeamNameMapping.put("Panthers", "CAR");
-			mascotToTeamNameMapping.put("Buccaneers", "TB");
-			mascotToTeamNameMapping.put("Chiefs", "KC");
-			mascotToTeamNameMapping.put("Chargers", "LAC");
+			mascotToTeamNameMapping = new TreeMap<String, String>();
 			mascotToTeamNameMapping.put("49ers", "SF");
-			mascotToTeamNameMapping.put("Ravens", "BAL");
-			mascotToTeamNameMapping.put("Colts", "IND");
-			mascotToTeamNameMapping.put("Bills", "BUF");
-			mascotToTeamNameMapping.put("Cardinals", "ARI");
-			mascotToTeamNameMapping.put("Browns", "CLE");
-			mascotToTeamNameMapping.put("Redskins", "WAS");
-			mascotToTeamNameMapping.put("Falcons", "ATL");
-			mascotToTeamNameMapping.put("Giants", "NYG");
-			mascotToTeamNameMapping.put("Jets", "NYJ");
-			mascotToTeamNameMapping.put("Rams", "LAR");
-			mascotToTeamNameMapping.put("Seahawks", "SEA");
+			mascotToTeamNameMapping.put("Bears", "CHI");
 			mascotToTeamNameMapping.put("Bengals", "CIN");
+			mascotToTeamNameMapping.put("Bills", "BUF");
+			mascotToTeamNameMapping.put("Broncos", "DEN");
+			mascotToTeamNameMapping.put("Browns", "CLE");
+			mascotToTeamNameMapping.put("Buccaneers", "TB");
+			mascotToTeamNameMapping.put("Cardinals", "ARI");
+			mascotToTeamNameMapping.put("Chargers", "LAC");
+			mascotToTeamNameMapping.put("Chiefs", "KC");
+			mascotToTeamNameMapping.put("Colts", "IND");
+			mascotToTeamNameMapping.put("Cowboys", "DAL");
+			mascotToTeamNameMapping .put("Dolphins", "MIA");
 			mascotToTeamNameMapping.put("Eagles", "PHI");
+			mascotToTeamNameMapping.put("Falcons", "ATL");
+//			mascotToTeamNameMapping.put("Free Agent", "FA");
+			mascotToTeamNameMapping.put("Giants", "NYG");
+			mascotToTeamNameMapping.put("Jaguars", "JAC");
+			mascotToTeamNameMapping.put("Jets", "NYJ");
+			mascotToTeamNameMapping.put("Lions", "DET");
+			mascotToTeamNameMapping.put("Packers", "GB");
+			mascotToTeamNameMapping.put("Panthers", "CAR");
 			mascotToTeamNameMapping.put("Patriots", "NE");
-			mascotToTeamNameMapping.put("Free Agent", "FA");
+			mascotToTeamNameMapping.put("Raiders", "OAK");
+			mascotToTeamNameMapping.put("Rams", "LAR");
+			mascotToTeamNameMapping.put("Ravens", "BAL");
+			mascotToTeamNameMapping.put("Redskins", "WAS");
+			mascotToTeamNameMapping.put("Saints", "NO");
+			mascotToTeamNameMapping.put("Seahawks", "SEA");
+			mascotToTeamNameMapping.put("Steelers", "PIT");
+			mascotToTeamNameMapping.put("Texans", "HOU");
+			mascotToTeamNameMapping.put("Titans", "TEN");
+			mascotToTeamNameMapping.put("Vikings", "MIN");
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -89,9 +90,11 @@ public class TestApp {
 			e.printStackTrace();
 		}
 		
-		int count = 2;
-		for (Teamy team : map.values()) {
-			System.out.println("{ value: '" + count++ + "', label: '" + team.name + "', icon: '" + team.src + "', abbrev: '" + mascotToTeamNameMapping.get(team.mascot) + "' },");
+		int count = 1;
+		for (String teamMascot : mascotToTeamNameMapping.keySet()) {
+			Teamy t = map.get(teamMascot);
+			NflTeam team = new NflTeam(String.valueOf(count++), t.name, mascotToTeamNameMapping.get(t.mascot), t.city, t.mascot, t.src);
+			System.out.println("nflTeams.put(\"" + team.getNflTeamId() + "\", new NflTeam(\"" + team.getNflTeamId() + "\", \"" + team.getNflTeamName() + "\", \"" + team.getAbbreviation() + "\", \"" + team.getCity() + "\", \"" + team.getMascot() + "\", \"" + team.getLogoIconUrl() + "\"));");
 		}
 
 	}

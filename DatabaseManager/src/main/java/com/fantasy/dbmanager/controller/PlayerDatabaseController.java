@@ -50,7 +50,7 @@ public class PlayerDatabaseController  {
     }
     
     @RequestMapping("/getAll/{position}")
-    public PlayerListResponse getAll(@PathVariable String position) {
+    public PlayerListResponse getAllByPosition(@PathVariable String position) {
     	log.info("DatabaseManager :: getting all players of position [" + position + "]");
     	List<Player> players = playerManager.getAll(position);
     	log.info("DatabaseManager :: success :: got [" + players.size() + "] players of position [" + position + "]");

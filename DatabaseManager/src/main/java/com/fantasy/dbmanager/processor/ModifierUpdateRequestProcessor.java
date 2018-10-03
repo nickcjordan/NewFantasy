@@ -71,7 +71,7 @@ public class ModifierUpdateRequestProcessor {
 	}
 
 	private void updateModifierTargetForPosition(Modifier modifier, User user) {
-		log.info("Making updates for TEAM target :: user=" + user.getUserId());
+		log.info("Making updates for POSITION target :: user=" + user.getUserId());
 		
 		 // TODO
 		
@@ -79,7 +79,7 @@ public class ModifierUpdateRequestProcessor {
 	}
 
 	private void updateModifierTargetForPlayer(Modifier modifier, User user) {
-		log.info("Making updates for TEAM target :: user=" + user.getUserId());
+		log.info("Making updates for PLAYER target :: user=" + user.getUserId());
 		
 		 // TODO
 		

@@ -83,7 +83,7 @@ public class DatabasePopulator {
 		User user = new User(id, names[Integer.valueOf(id)]);
 		log.info("\n\nBUILDING NEW USER :: " + id + " : " + user.getUserName() + "\n");
 		user.setTeam(buildNewTeam(id));
-		user.setCoins(Integer.valueOf(id));
+		user.setCoins(Integer.valueOf(id) * 99);
 		return user;
 	}
 

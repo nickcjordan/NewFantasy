@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
+import com.fantasy.dataaccessutility.model.team.NflTeam;
 import com.fantasy.dbmanager.model.TeamTO;
 import com.fantasy.dbmanager.model.UserTO;
 import com.mongodb.MongoClient;
@@ -57,6 +59,17 @@ public class DatabaseConfig {
 		return CodecRegistries.fromCodecs(
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Modifier.class), 
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Document.class),
+				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(NflTeam.class),
+				new IntegerCodec(),
+				MongoClient.getDefaultCodecRegistry().get(String.class)
+		);
+	}
+	
+	@Bean(name="metadataCodecRegistry")
+	public CodecRegistry getMetadataCodecRegistry() {
+		return CodecRegistries.fromCodecs(
+				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Document.class),
+				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Metadata.class),
 				new IntegerCodec(),
 				MongoClient.getDefaultCodecRegistry().get(String.class)
 		);
@@ -77,4 +90,8 @@ public class DatabaseConfig {
 		return mongoClient.getCollection("users", UserTO.class).withCodecRegistry(codecRegistry);
 	}
 	
+	@Bean(name="metadataDBCollection")
+	public MongoCollection<Metadata> getMetadataDBConnection(MongoDatabase mongoClient, @Qualifier("metadataCodecRegistry") CodecRegistry codecRegistry) {
+		return mongoClient.getCollection("metadata", Metadata.class).withCodecRegistry(codecRegistry);
+	}
 }

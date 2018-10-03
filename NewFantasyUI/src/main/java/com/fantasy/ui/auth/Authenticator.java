@@ -18,7 +18,7 @@ public class Authenticator {
 	public Authenticator() {
 		 credentials = new HashMap<String, EncryptedUserCredential>();
 		 credentials.put("njo", new EncryptedUserCredential("4", "nick", "jordan", "njo", "njopass", "fake-jwt-token"));
-		 credentials.put("dmo", new EncryptedUserCredential("11", "dan", "moomau", "dmo", "dmopass", "fake-jwt-token"));
+		 credentials.put("dmo", new EncryptedUserCredential("10", "dan", "moomau", "dmo", "dmopass", "fake-jwt-token"));
 		 credentials.put("rwi", new EncryptedUserCredential("5", "ryan", "williams", "rwi", "rwipass", "fake-jwt-token"));
 		 credentials.put("wre", new EncryptedUserCredential("2", "will", "reeves", "wre", "wrepass", "fake-jwt-token"));
 	}
