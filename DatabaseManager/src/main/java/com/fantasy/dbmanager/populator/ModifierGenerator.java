@@ -50,7 +50,7 @@ public class ModifierGenerator {
 	
 	public ModifierGenerator() {
 		this.teamMap = NflTeams.nflTeams;
-		this.prices = Arrays.asList(100, 250, 500, 1000);
+		this.prices = Arrays.asList(100, 250, 500, 1000, 2000);
 		this.shuffledPrices = new ArrayList<Integer>(prices);
 	}
 	
@@ -100,6 +100,8 @@ public class ModifierGenerator {
 	private Modifier buildPositionModifier(Position position, Modifier mod) { //TODO do I want to implement any logic to self-correct selecting randomness of some positions more often than others?
 		mod.setTargetPosition(position);
 		mod.setTargetType(TargetType.POSITION);
+		mod.setModifierName(buildModifierName(mod));
+		mod.setModifierDescription(buildModifierDescription(mod));
 		return mod;
 	}
 
@@ -107,6 +109,8 @@ public class ModifierGenerator {
 //		nflTeam.incrementModifierGeneratorHitCount(); //TODO do I want to implement any logic to self-correct randomness of selecting some teams more often than others?
 		mod.setTargetType(TargetType.TEAM);
 		mod.setTargetNflTeam(nflTeam);
+		mod.setModifierName(buildModifierName(mod));
+		mod.setModifierDescription(buildModifierDescription(mod));
 		return mod;
 	}
 	
@@ -124,8 +128,6 @@ public class ModifierGenerator {
 		mod.setPrice(generatePseudoRandomPrice());
 		mod.setChangePercentage(calculatePercentFromPrice(mod.getPrice()));
 		if (!isBooster) { mod.setChangePercentage(0 - mod.getChangePercentage()); }
-		mod.setModifierName(buildModifierName(mod));
-		mod.setModifierDescription(buildModifierDescription(mod));
 		return mod;
 	}
 	
@@ -134,9 +136,9 @@ public class ModifierGenerator {
 		if (mod.getChangePercentage() > 0) { 	sb.append("This Modifier is a Booster, so it will increase the resulting score of the target player by ").append(mod.getChangePercentage()).append("%."); } 
 		else { 													sb.append("This Modifier is a Negator, so it will decrease the resulting score of the target player by ").append(mod.getChangePercentage()).append("%."); }
 													sb.append(" This modifier can only be applied to one ");
-		if (mod.getTargetPosition() != null) { 		sb.append(mod.getTargetPosition().getName().substring(0, mod.getTargetPosition().getName().length()-1)).append(" "); } // chops the s off
+		if (mod.getTargetPosition() != null) { 		sb.append(mod.getTargetPosition().getName()).append(" "); }
 		else { 													sb.append("player "); }
-		if (mod.getTargetNflTeam() != null) { 		sb.append("on The ").append(mod.getTargetNflTeam().getNflTeamName()); }
+		if (mod.getTargetNflTeam() != null) { 		sb.append("on the ").append(mod.getTargetNflTeam().getNflTeamName()); }
 		if (mod.getChangePercentage() > 0) { 	sb.append(" from your lineup."); } 
 		else { 													sb.append(" from your opponent's lineup."); }
 													sb.append(" Prior to use, you may sell this modifier back to the market at any time.");
@@ -145,10 +147,20 @@ public class ModifierGenerator {
 
 	private String buildModifierName(Modifier mod) {
 		StringBuilder sb = new StringBuilder();
-		if (mod.getTargetNflTeam() != null) { sb.append(mod.getTargetNflTeam().getMascot()).append("' "); } 
-		if (mod.getTargetPosition() != null) { sb.append(mod.getTargetPosition().getName()).append(" "); }
-		if (mod.getChangePercentage() > 0) { sb.append(BOOSTER); } 
-		else { sb.append(NEGATOR); }
+		if (mod.getTargetNflTeam() != null) { 
+			sb.append(mod.getTargetNflTeam().getMascot()).append(" "); 
+		} else {
+			sb.append("Any ");
+		}
+		if (mod.getTargetPosition() != null) { 
+			sb.append(mod.getTargetPosition().getName()).append(" "); 
+		} else {
+			sb.append("Player "); 
+		}
+		if (mod.getChangePercentage() > 0) { 
+			sb.append(BOOSTER); } 
+		else { 
+			sb.append(NEGATOR); }
 		return sb.toString();
 	}
 

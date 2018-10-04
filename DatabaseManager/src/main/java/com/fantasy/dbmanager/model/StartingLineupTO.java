@@ -44,7 +44,7 @@ public class StartingLineupTO {
 			case WIDERECEIVER: return this.wr;
 			case TIGHTEND: return this.te;
 			case KICKER: return this.k;
-			case DEFENSE: return this.dst;
+//			case DEFENSE: return this.dst;
 		}
 		return null;
 	}

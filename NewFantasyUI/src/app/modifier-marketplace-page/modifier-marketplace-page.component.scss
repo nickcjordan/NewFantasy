@@ -62,7 +62,7 @@
 }
 
 .modifier-details-container {
-	
+	padding: 0px;
 }
 
 .modifier-details-badge {
@@ -73,6 +73,7 @@
 }
 
 .modifier-details-percentage-badge {
+	/* font-size: 1.8em; */
 }
 
 .percent-icon {
@@ -82,13 +83,13 @@
 }
 
 .percent-text-red {
-	padding-left: 4px;
 	color: #960000;
+	font-size: 100%;
 }
 
 .percent-text-green {
-	padding-left: 4px;
 	color: #009600;
+	font-size: 100%;
 }
 
 .coin-icon {
@@ -111,14 +112,14 @@
 .side-bar-nav {
 	margin-top: 50px;
 	position: fixed;
-    top: 100px;
     right: 0;
     left: 0;
+    padding-left: 50px;
     z-index: 1030;
 }
 
 .spacer-panel {
-	padding-bottom: 50px;
+	padding-bottom: 25px;
 }
 
 .transparent-bg {
@@ -149,8 +150,6 @@
 }
 
 .modifier-details-row {
-	padding-left: 10px;
-	padding-right: 10px;
 	margin: 0px;
 }
 
@@ -192,6 +191,7 @@
 .modifier-modal-description {
 	padding-top: 20px;
 	padding-bottom: 20px;
+	vertical-align: middle;
 }
 
 .modifier-modal-description-question {
@@ -237,10 +237,6 @@
 	margin-right: 10px;
 }
 
-.coin-description {
-	font-size: 2em;
-}
-
 .disabled-status-true {
     opacity: 0.4;
 }
@@ -257,4 +253,36 @@
 	z-index: 2;
 	font-weight: bolder;
 	background-color: white;
+}
+
+.modal-side-panel {
+	font-size: 2em;
+}
+
+.modal-price-panel {
+	margin-top: 15%;
+	margin-bottom: 15%;
+}
+
+.modal-percent-panel {
+	margin-top: 15%;
+	margin-bottom: 15%;
+}
+
+.modal-details-badge {
+	font-size: 100%;
+}
+
+.red-filter-text {
+	color: #960000;
+	padding-left: 5px;
+}
+
+.green-filter-text {
+	color: #009600;
+	padding-left: 5px;
+}
+
+.side-panel-text {
+	font-size: 1.5em;
 }

@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum Position {
 	@JsonProperty("QB")
-	QUARTERBACK("QB", "Quarterbacks"),
+	QUARTERBACK("QB", "Quarterback"),
 	@JsonProperty("RB")
-	RUNNINGBACK("RB", "Running Backs"),
+	RUNNINGBACK("RB", "Running Back"),
 	@JsonProperty("WR")
-	WIDERECEIVER("WR", "Wide Receivers"),
+	WIDERECEIVER("WR", "Wide Receiver"),
 	@JsonProperty("TE")
-	TIGHTEND("TE", "Tight Ends"),
+	TIGHTEND("TE", "Tight End"),
 	@JsonProperty("K")
-	KICKER("K", "Kickers"),
-	@JsonProperty("DST")
-	DEFENSE("DST", "Defenses/Special Teams");
+	KICKER("K", "Kicker");
+//	@JsonProperty("DST")
+//	DEFENSE("DST", "Defenses/Special Teams");
 	
 	private String abbrev;
 	private String name;

@@ -116,7 +116,7 @@ public class EditLineupRequestProcessor {
 			case TIGHTEND: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
 				players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers()); break;
 			case KICKER: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); break;
-			case DEFENSE: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); break;
+//			case DEFENSE: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); break;
 		}
 		log.info("Got " + players.size() + " players for swappable call for: " + player.getPlayerName());
 		return players;
