@@ -76,6 +76,7 @@ public class ModifierGenerator {
 			if (count++ >= positions.size()) { Collections.shuffle(positions); count = 1; }
 			modifiers.add(buildPositionModifier(positions.get(i), initModifier(true)));
 		}
+		Collections.shuffle(positions);
 		for (int i = 0; i < Integer.valueOf(maxPositionModifiers)/2; i++) {
 			if (count++ >= positions.size()) { Collections.shuffle(positions); count = 1; }
 			modifiers.add(buildPositionModifier(positions.get(i), initModifier(false)));
@@ -91,6 +92,7 @@ public class ModifierGenerator {
 			if (count++ >= teams.size()) { Collections.shuffle(teams); count = 1; }
 			modifiers.add(buildTeamModifier(teams.get(i), initModifier(true)));
 		}
+		Collections.shuffle(teams);
 		for (int i = 0; i < Integer.valueOf(maxTeamModifiers)/2; i++) {
 			if (count++ >= teams.size()) { Collections.shuffle(teams); count = 1; }
 			modifiers.add(buildTeamModifier(teams.get(i), initModifier(false)));

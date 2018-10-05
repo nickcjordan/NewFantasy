@@ -1,3 +1,4 @@
+import { NflTeam } from "./nfl-team";
 export class Modifier {
 	
 	modifierId: string;
@@ -9,4 +10,6 @@ export class Modifier {
 	targetType: string;
 	targetPosition: string;
 	owningUserId: string;
+	targetNflTeam: NflTeam;
+	
 }
