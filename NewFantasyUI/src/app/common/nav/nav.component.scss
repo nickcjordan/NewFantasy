@@ -33,3 +33,11 @@
 .button, html [type="button"], [type="reset"], [type="submit"] {
     -webkit-appearance: none;
 }
+
+.team-dropdown-item {
+	background-color: white;
+	
+	display: block;
+    width: 100%;
+    z-index: auto;
+}

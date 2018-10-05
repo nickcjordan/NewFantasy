@@ -130,12 +130,14 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 	
 	filterByPriceSlider(arr: Modifier[]) {
+		if ((arr == null) || (arr.length === 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			return ((mod.price >= this.minRange) && (mod.price <= this.maxRange));
 		});
 	}
 
 	filterByAvailabilityFlags(arr: Modifier[]) {
+		if ((arr == null) || (arr.length === 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			if (mod.owningUserId != null) {return this.showPurchased;}
 			if (mod.owningUserId == null) {return this.showAvailable;}
@@ -144,6 +146,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 
 	filterByTargetFlags(arr: Modifier[]) {
+		if ((arr == null) || (arr.length === 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			if (mod.targetType === "TEAM") {return this.showByTeam;}
 			if (mod.targetType === "POSITION") {return this.showByPosition;}
@@ -152,6 +155,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 
 	filterByTypeFlags(arr: Modifier[]) {
+		if ((arr == null) || (arr.length === 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			if (mod.changePercentage > 0) {return this.showBoosters;}
 			if (mod.changePercentage <= 0) {return this.showNegators;}

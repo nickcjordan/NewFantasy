@@ -1,4 +1,9 @@
-MDBOOTSTRAP ACCESS TOKEN: -u-kp2ZaKzzx_mHz3G6F
+	MDBOOTSTRAP ACCESS TOKEN: 
+-u-kp2ZaKzzx_mHz3G6F
+
+	Angular Project Run Command:
+$ ng serve --port=4200 --live-reload=true --proxy-config proxy.conf.json
+
 
 **********************************************************************************
 **									TODO 										**

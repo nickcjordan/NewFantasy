@@ -115,7 +115,7 @@
     right: 0;
     left: 0;
     padding-left: 50px;
-    z-index: 1030;
+    z-index: 999;
 }
 
 .spacer-panel {
@@ -201,32 +201,28 @@
 	padding-bottom: 10px
 }
 
-.modifier-modal-buy-button  {
-	background: linear-gradient(40deg, #00c800, #079607);
+.modifier-modal-button {
 	font-size: 1.5em;
-	font-weight: bolder;
-	padding: 10px;
-	padding-left: 100px;
-	padding-right: 100px;
-}
-
-.modifier-modal-sell-button  {
-    background: linear-gradient(40deg, #ff0000, #b50707);
-    font-size: 1.5em;
-    font-weight: bolder;
-    padding: 10px;
-    padding-left: 100px;
-	padding-right: 100px;
-}
-
-.modifier-modal-unavailable-button {
-	background: linear-gradient(40deg, #f0f0f0, #d7d7d7);
-    font-size: 1.5em;
-    color: #7d7d7d;
     font-weight: bolder;
     padding: 10px;
     padding-left: 100px;
     padding-right: 100px;
+}
+
+.modifier-modal-buy-button  {
+	background: linear-gradient(40deg, #00c800, #079607);
+	color: white !important;
+}
+
+.modifier-modal-sell-button  {
+    background: linear-gradient(40deg, #ff0000, #b50707);
+    color: white !important;
+}
+
+.modifier-modal-unavailable-button {
+	background: linear-gradient(40deg, #f0f0f0, #d7d7d7);
+    color: #7d7d7d !important;
+
 }
 
 .modifier-modal-close-button  {
