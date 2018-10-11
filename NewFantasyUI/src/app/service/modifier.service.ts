@@ -29,7 +29,6 @@ export class ModifierService {
 	
 	/** POST ALL modifiers */
 	sendModifierRequest(req: ModifierUpdateRequest): Observable<ModifierUpdateRequest> {
-		console.log("adding modifier to team: action=" + req.action + ", user: " + req.userId + ", modifier: " + req.modifierId);
 		return this.http.post<ModifierUpdateRequest>(this.updateModifierUrl, req, this.httpOptions)
 	}
 	

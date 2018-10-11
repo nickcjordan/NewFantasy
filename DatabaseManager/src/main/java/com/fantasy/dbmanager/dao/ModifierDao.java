@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
-import com.fantasy.dbmanager.model.TeamTO;
-import com.fantasy.dbmanager.model.UserTO;
+import com.fantasy.dataaccessutility.model.to.TeamTO;
+import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;

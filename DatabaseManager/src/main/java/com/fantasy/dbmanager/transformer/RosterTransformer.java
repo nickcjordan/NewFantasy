@@ -8,11 +8,11 @@ import com.fantasy.dataaccessutility.model.team.BenchPlayers;
 import com.fantasy.dataaccessutility.model.team.PlayerList;
 import com.fantasy.dataaccessutility.model.team.Roster;
 import com.fantasy.dataaccessutility.model.team.StartingLineup;
+import com.fantasy.dataaccessutility.model.to.BenchPlayersTO;
+import com.fantasy.dataaccessutility.model.to.PlayerListTO;
+import com.fantasy.dataaccessutility.model.to.RosterTO;
+import com.fantasy.dataaccessutility.model.to.StartingLineupTO;
 import com.fantasy.dbmanager.dao.PlayerDao;
-import com.fantasy.dbmanager.model.BenchPlayersTO;
-import com.fantasy.dbmanager.model.PlayerListTO;
-import com.fantasy.dbmanager.model.RosterTO;
-import com.fantasy.dbmanager.model.StartingLineupTO;
 
 @Component
 public class RosterTransformer {

@@ -11,15 +11,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.PositionStatsDetails;
 import com.fantasy.dataaccessutility.model.User;
-import com.fantasy.dataaccessutility.model.team.BenchPlayers;
-import com.fantasy.dataaccessutility.model.team.PlayerList;
 import com.fantasy.dataaccessutility.model.team.Roster;
-import com.fantasy.dataaccessutility.model.team.StartingLineup;
 import com.fantasy.dataaccessutility.model.team.Team;
+import com.fantasy.dbmanager.controller.PlayerDatabaseController;
+import com.fantasy.dbmanager.controller.UserDatabaseController;
 
 @Component
 public class DatabasePopulator {
@@ -27,7 +25,10 @@ public class DatabasePopulator {
 	private static final Logger log = LoggerFactory.getLogger(DatabasePopulator.class);
 	
 	@Autowired
-	private DataAccessUtility data;
+	private PlayerDatabaseController playerData;
+	
+	@Autowired
+	private UserDatabaseController userData;
 	
 	private Map<String, List<Player>> positionMap;
 
@@ -49,11 +50,11 @@ public class DatabasePopulator {
 	public void populate() {
 		log.info("START :: Populating database...");
 		positionMap = new HashMap<String, List<Player>>();
-		positionMap.put("QB", data.getAllPlayersByPosition("QB"));
-		positionMap.put("RB", data.getAllPlayersByPosition("RB"));
-		positionMap.put("WR", data.getAllPlayersByPosition("WR"));
-		positionMap.put("TE", data.getAllPlayersByPosition("TE"));
-		positionMap.put("K", data.getAllPlayersByPosition("K"));
+		positionMap.put("QB", playerData.getAllByPosition("QB").getPlayers());
+		positionMap.put("RB", playerData.getAllByPosition("RB").getPlayers());
+		positionMap.put("WR", playerData.getAllByPosition("WR").getPlayers());
+		positionMap.put("TE", playerData.getAllByPosition("TE").getPlayers());
+		positionMap.put("K", playerData.getAllByPosition("K").getPlayers());
 		
 		for (List<Player> list : positionMap.values()) {
 			for (Player p : list) {
@@ -61,10 +62,12 @@ public class DatabasePopulator {
 			}
 		}
 		
-		data.updateUsers(buildLeagueList());
+		userData.updateUsers(buildLeagueList());
 		
 		for (List<Player> list : positionMap.values()) {
-			data.updatePlayers(list);
+			for (Player p : list) {
+				playerData.update(p);
+			}
 		}
 		
 		log.info("END :: SUCCESS :: Populated database");
@@ -171,7 +174,7 @@ public class DatabasePopulator {
 			p = list.get(0);
 		}
 		p.setOnUserTeam(true);
-		data.updatePlayer(p);
+		playerData.update(p);
 		list.remove(p);
 		positionMap.put(position, list);
 		return p;

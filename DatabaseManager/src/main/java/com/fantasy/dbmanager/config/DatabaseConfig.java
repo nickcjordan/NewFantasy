@@ -11,10 +11,11 @@ import org.springframework.context.annotation.Configuration;
 
 import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.matchup.MatchupSchedule;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.team.NflTeam;
-import com.fantasy.dbmanager.model.TeamTO;
-import com.fantasy.dbmanager.model.UserTO;
+import com.fantasy.dataaccessutility.model.to.TeamTO;
+import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -35,7 +36,7 @@ public class DatabaseConfig {
 	@Bean(name="userCodecRegistry")
 	public CodecRegistry getUserCodecRegistry() {
 		return CodecRegistries.fromCodecs(
-				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Player.class), 
+				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(MatchupSchedule.class),
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(TeamTO.class), 
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(UserTO.class),
 				CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())).get(Document.class),

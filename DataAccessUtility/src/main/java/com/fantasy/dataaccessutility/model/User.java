@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.fantasy.dataaccessutility.model.matchup.MatchupSchedule;
 import com.fantasy.dataaccessutility.model.matchup.MatchupUserResult;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.Perk;
@@ -18,11 +19,13 @@ public class User {
 	private List<Modifier> modifiers;
 	private Team team;
 	private int coins;
-	private Map<String, MatchupUserResult> matchupResults;
+//	private Map<String, MatchupUserResult> matchupResults;
+	private MatchupSchedule matchupSchedule;
 	
 	public User() {
 		this.modifiers = new ArrayList<Modifier>();
-		this.matchupResults = new HashMap<String, MatchupUserResult>();
+		this.matchupSchedule = new MatchupSchedule(userId);
+//		this.matchupResults = new HashMap<String, MatchupUserResult>();
 	}
 	
 	public User(String id, String userName, Map<String, Perk> perkTree, Team team, int coins) {
@@ -32,7 +35,8 @@ public class User {
 		this.team = team;
 		this.coins = coins;
 		this.modifiers = new ArrayList<Modifier>();
-		this.matchupResults = new HashMap<String, MatchupUserResult>();
+		this.matchupSchedule = new MatchupSchedule(userId);
+//		this.matchupResults = new HashMap<String, MatchupUserResult>();
 	}
 	
 	public User(String id, String userName) {
@@ -42,7 +46,8 @@ public class User {
 		this.team = new Team(id, userName);
 		this.coins = 0;
 		this.modifiers = new ArrayList<Modifier>();
-		this.matchupResults = new HashMap<String, MatchupUserResult>();
+		this.matchupSchedule = new MatchupSchedule(userId);
+//		this.matchupResults = new HashMap<String, MatchupUserResult>();
 	}
 	
 	public void addMod(Modifier mod) {
@@ -97,13 +102,13 @@ public class User {
 		this.coins = coins;
 	}
 
-	public Map<String, MatchupUserResult> getMatchupResults() {
-		return matchupResults;
-	}
-
-	public void setMatchupResults(Map<String, MatchupUserResult> matchupResults) {
-		this.matchupResults = matchupResults;
-	}
+//	public Map<String, MatchupUserResult> getMatchupResults() {
+//		return matchupResults;
+//	}
+//
+//	public void setMatchupResults(Map<String, MatchupUserResult> matchupResults) {
+//		this.matchupResults = matchupResults;
+//	}
 	
 	public void addCoins(int coins) {
 		this.coins += coins;
@@ -112,5 +117,12 @@ public class User {
 	public void subtractCoins(int coins) {
 		this.coins -= coins;
 	}
-	
+
+	public MatchupSchedule getMatchupSchedule() {
+		return matchupSchedule;
+	}
+
+	public void setMatchupSchedule(MatchupSchedule matchupSchedule) {
+		this.matchupSchedule = matchupSchedule;
+	}
 }

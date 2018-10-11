@@ -13,7 +13,6 @@ $ ng serve --port=4200 --live-reload=true --proxy-config proxy.conf.json
 --------------------------------------------------
 |				  Edit/Fix Current  			 |
 --------------------------------------------------
-* only show logout if logged in, only show login if logged out
 * fix the pages so there is only one setUser() called per page
 * restrict size of bench, dont let person add player if bench is full
 
@@ -24,6 +23,7 @@ $ ng serve --port=4200 --live-reload=true --proxy-config proxy.conf.json
 --------------------------------------------------
 * sort bench by position
 * sort waiver players on load
+* add algorithm for generating schedule with odd number of teams and a bye
 
 
 
@@ -33,7 +33,9 @@ $ ng serve --port=4200 --live-reload=true --proxy-config proxy.conf.json
 * perk tree system
 * modifier system
 
+
 **********************************************************************************
 **									COMPLETE									**
 **********************************************************************************
 * find icons for nfl teams and use for tables
+* only show logout if logged in, only show login if logged out

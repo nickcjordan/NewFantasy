@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.matchup.LeagueMatchupSchedule;
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
 import com.fantasy.dbmanager.populator.DatabasePopulator;
+import com.fantasy.dbmanager.populator.LeagueScheduleGenerator;
 import com.fantasy.dbmanager.populator.ModifierDatabasePopulator;
 
 @RestController
@@ -37,6 +39,8 @@ public class UtilController  {
 	@Autowired
 	private ModifierDatabasePopulator modifierPopulator;
 	
+	@Autowired
+	private LeagueScheduleGenerator scheduleGenerator;
 	
 	@RequestMapping(value = "/populate", method = RequestMethod.GET)
 	public boolean populate() {
@@ -88,6 +92,11 @@ public class UtilController  {
     		}
     	}
     	return true;
+    }
+    
+    @RequestMapping("/generateSchedule")
+    public LeagueMatchupSchedule generateSchedule() {
+    	return scheduleGenerator.generateLeagueSchedule();
     }
 
 }

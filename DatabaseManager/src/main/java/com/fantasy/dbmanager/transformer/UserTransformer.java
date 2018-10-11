@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
+import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fantasy.dbmanager.dao.ModifierDao;
-import com.fantasy.dbmanager.model.UserTO;
 
 @Component
 public class UserTransformer {
@@ -24,7 +24,8 @@ public class UserTransformer {
 		UserTO userTo = new UserTO();
 		userTo.setCoins(user.getCoins());
 		userTo.setUserId(user.getUserId());
-		userTo.setMatchupResults(user.getMatchupResults());
+//		userTo.setMatchupResults(user.getMatchupResults());
+		userTo.setMatchupSchedule(user.getMatchupSchedule());
 		userTo.setModifiers(buildModiferIdList(user.getModifiers()));
 		userTo.setPerkTree(user.getPerkTree());
 		userTo.setTeam(teamTransformer.getTO(user.getTeam()));
@@ -44,7 +45,8 @@ public class UserTransformer {
 		User user = new User();
 		user.setCoins(userTo.getCoins());
 		user.setUserId(userTo.getUserId());
-		user.setMatchupResults(userTo.getMatchupResults());
+//		user.setMatchupResults(userTo.getMatchupResults());
+		user.setMatchupSchedule(userTo.getMatchupSchedule());
 		user.setModifiers(buildModifiers(userTo.getModifiers()));
 		user.setPerkTree(userTo.getPerkTree());
 		user.setTeam(teamTransformer.getTeam(userTo.getTeam()));

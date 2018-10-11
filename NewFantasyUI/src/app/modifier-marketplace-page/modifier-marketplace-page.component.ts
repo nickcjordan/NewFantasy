@@ -48,6 +48,12 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	showByPosition: boolean;
 	showBoosters: boolean;
 	showNegators: boolean;
+	
+	sortOptions: Array<any>;
+	sortOptionsMapping: Array<any>;
+	selectedSortOption: string;
+	reverseSort: boolean;
+        
 
 	@ViewChild('minInput') minInput: ElementRef;
 	@ViewChild('maxInput') maxInput: ElementRef;
@@ -76,16 +82,14 @@ export class ModifierMarketplacePageComponent implements OnInit {
 		this.setUser();
 		this.setModifiers();
 		this.count = 0;
-	}
-
-	minCoverage() {
-//		let minCloudRange = (this.minRange / this.maxPrice) * 100;
-//		this.renderer.setStyle(this.minRangeCloud.nativeElement, 'left', minCloudRange + '%')
-	}
-	
-	maxCoverage() {
-//		let maxCloudRange = (this.maxRange / this.maxPrice) * 100;
-//		this.renderer.setStyle(this.maxRangeCloud.nativeElement, 'left', maxCloudRange + '%')
+		this.sortOptions = [ 
+			{ value: '0', label: 'Price (low to high)' }, 
+			{ value: '1', label: 'Price (high to low)' }, 
+			{ value: '2', label: 'Percentage (low to high)' }, 
+			{ value: '3', label: 'Percentage (high to low)' } 
+		];
+		this.sortOptionsMapping = ["price", "price", "changePercentage", "changePercentage"];
+		this.getSelectedValue(0);
 	}
 
 	setUser(): void {
@@ -119,6 +123,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 		document.getElementById("modal_" + mod.modifierId).hidden = false;
 	}
 
+	
 	//FILTERS
 	getFilteredModifiers(): Modifier[] {
 		let filtered = this.allModifiers;
@@ -126,6 +131,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 		filtered = this.filterByTargetFlags(filtered);
 		filtered = this.filterByTypeFlags(filtered);
 		filtered = this.filterByPriceSlider(filtered);
+		filtered = this.sortMods(filtered);
 		return filtered;
 	}
 	
@@ -163,6 +169,23 @@ export class ModifierMarketplacePageComponent implements OnInit {
 		});
 	}
 	
+	// SORT
+	sortMods(mods: Modifier[]): Modifier[] {
+		let by: string = this.selectedSortOption;
+		mods.sort((a: any, b: any) => {
+			if (a[by] < b[by]) { return this.reverseSort ? 1 : -1; }
+			if (a[by] > b[by]) { return this.reverseSort ? -1 : 1; }
+			return 0;
+		});
+		return mods;
+	}
+	
+	getSelectedValue(val: number) {
+		if ((val === 1) || (val == 3)) { this.reverseSort = true; }
+		else { this.reverseSort = false; }
+		this.selectedSortOption = this.sortOptionsMapping[val];
+	}
+	
 	//TOGGLES
 	toggleShowAll() {
 		this.showAll = !this.showAll;
@@ -180,4 +203,15 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	toggleShowByPosition() {this.showByPosition = !this.showByPosition;}
 	toggleShowBoosters() {this.showBoosters = !this.showBoosters;}
 	toggleShowNegators() {this.showNegators = !this.showNegators;}
+	
+	
+	minCoverage() {
+//		let minCloudRange = (this.minRange / this.maxPrice) * 100;
+//		this.renderer.setStyle(this.minRangeCloud.nativeElement, 'left', minCloudRange + '%')
+	}
+	
+	maxCoverage() {
+//		let maxCloudRange = (this.maxRange / this.maxPrice) * 100;
+//		this.renderer.setStyle(this.maxRangeCloud.nativeElement, 'left', maxCloudRange + '%')
+	}
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fantasy.dataaccessutility.model.ui.EditLineupQuery;
 import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
 import com.fantasy.dataaccessutility.model.ui.UserName;
@@ -72,6 +73,14 @@ public class UserDatabaseController  {
     	return users;
     }
     
+    @RequestMapping("/getAllTO")
+    public List<UserTO> getAllTO() {
+    	log.info("DatabaseManager :: getting all user TOs...");
+    	List<UserTO> users = userManager.getAllTO();
+    	log.info("DatabaseManager :: SUCCESS :: got [" + users.size() + "] users");
+    	return users;
+    }
+    
     @RequestMapping("/getAllUserNames")
     public List<UserName> getAllUserNames() {
     	log.info("DatabaseManager :: getting all users...");
@@ -89,6 +98,14 @@ public class UserDatabaseController  {
     	} else {
     		log.error("DatabaseManager :: ERROR :: could not find user \"" + val + "\"");
     	}
+    	return user;
+    }
+    
+    @RequestMapping("/getTO/{val}")
+    public UserTO getTO(@PathVariable String userId) {
+    	log.info("DatabaseManager :: getting user [" + userId + "]...");
+    	UserTO user = userManager.getTO(userId);
+		log.info("DatabaseManager :: SUCCESS :: got user [" + user.getUserName() + "]");
     	return user;
     }
     

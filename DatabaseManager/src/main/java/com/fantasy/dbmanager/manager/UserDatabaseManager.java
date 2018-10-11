@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
 import com.fantasy.dataaccessutility.model.ui.UserName;
 import com.fantasy.dbmanager.dao.UserDao;
-import com.fantasy.dbmanager.model.UserTO;
 import com.fantasy.dbmanager.transformer.UserTransformer;
 
 @Component
@@ -49,6 +49,14 @@ public class UserDatabaseManager {
 		}
 		return users;
 	}
+	
+	public List<UserTO> getAllTO() {
+		List<UserTO> users = new ArrayList<UserTO>();
+		for (UserTO userTo : userDao.getAll()) {
+			users.add(userTo);
+		}
+		return users;
+	}
 
 	public boolean clear() {
 		return userDao.removeAll();
@@ -56,6 +64,11 @@ public class UserDatabaseManager {
 
 	public User get(String id) {
 		return userTransformer.getUser(userDao.getUserById(id));
+	}
+	
+
+	public UserTO getTO(String userId) {
+		return userDao.getUserById(userId);
 	}
 
 	public void update(User user) {
@@ -85,5 +98,6 @@ public class UserDatabaseManager {
 		}
 		return users;
 	}
+
 
 }

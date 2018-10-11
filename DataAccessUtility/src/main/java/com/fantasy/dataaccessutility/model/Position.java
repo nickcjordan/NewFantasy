@@ -3,15 +3,10 @@ package com.fantasy.dataaccessutility.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum Position {
-	@JsonProperty("QB")
 	QUARTERBACK("QB", "Quarterback"),
-	@JsonProperty("RB")
 	RUNNINGBACK("RB", "Running Back"),
-	@JsonProperty("WR")
 	WIDERECEIVER("WR", "Wide Receiver"),
-	@JsonProperty("TE")
 	TIGHTEND("TE", "Tight End"),
-	@JsonProperty("K")
 	KICKER("K", "Kicker");
 //	@JsonProperty("DST")
 //	DEFENSE("DST", "Defenses/Special Teams");

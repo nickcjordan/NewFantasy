@@ -1,14 +1,8 @@
 package com.fantasy.dataaccessutility.model.team;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.fantasy.dataaccessutility.model.Player;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+@JsonInclude(Include.NON_NULL)
 public class Team {
 
 	private String teamId;

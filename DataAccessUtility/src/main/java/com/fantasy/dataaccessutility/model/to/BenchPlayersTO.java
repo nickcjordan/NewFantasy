@@ -1,4 +1,4 @@
-package com.fantasy.dbmanager.model;
+package com.fantasy.dataaccessutility.model.to;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.fantasy.dbmanager.model.PlayerStatsAPIResponse;
+import com.fantasy.dataaccessutility.model.to.PlayerStatsAPIResponse;
 
 @Component
 public class PlayerStatsAPIDelegate {

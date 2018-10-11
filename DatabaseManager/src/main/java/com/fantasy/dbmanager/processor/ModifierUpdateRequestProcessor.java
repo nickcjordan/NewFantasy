@@ -42,6 +42,22 @@ public class ModifierUpdateRequestProcessor {
 		 userManager.update(user);
 		 log.info("SUCCESS :: Proccessed modifier update request and updated database with changes");
 	}
+	
+	private void sellModifierForUser(Modifier modifier, User user) {
+		log.info("Selling modifier [" + modifier.getModifierName() + "] for user: " + user.getUserName());
+		List<Modifier> filtered = new ArrayList<Modifier>();
+		for (Modifier m : user.getModifiers()) {
+			if (!m.getModifierId().equals(modifier.getModifierId())) {
+				filtered.add(m);
+			}
+		}
+		user.setModifiers(filtered);
+		modifier.setOwningUserId(null);
+		user.setCoins(user.getCoins() + modifier.getPrice());
+		modifier.setTargetPosition(null);
+		modifier.setTargetId(null);
+		//update
+	}
 
 	private void purchaseModifierForUser(Modifier modifier, User user) {
 		log.info("Purchasing modifier [" + modifier.getModifierName() + "] for user: " + user.getUserName());
@@ -80,26 +96,8 @@ public class ModifierUpdateRequestProcessor {
 
 	private void updateModifierTargetForPlayer(Modifier modifier, User user) {
 		log.info("Making updates for PLAYER target :: user=" + user.getUserId());
-		
-		 // TODO
-		
+		 // TODO not sure what I want to do with this class since players arent a spec
 		 log.info("TODO this part is not complete");
-	}
-
-	private void sellModifierForUser(Modifier modifier, User user) {
-		log.info("Selling modifier [" + modifier.getModifierName() + "] for user: " + user.getUserName());
-		List<Modifier> filtered = new ArrayList<Modifier>();
-		for (Modifier m : user.getModifiers()) {
-			if (!m.getModifierId().equals(modifier.getModifierId())) {
-				filtered.add(m);
-			}
-		}
-		user.setModifiers(filtered);
-		modifier.setOwningUserId(null);
-		user.setCoins(user.getCoins() + modifier.getPrice());
-		modifier.setTargetPosition(null);
-		modifier.setTargetId(null);
-		//update
 	}
 	
 	

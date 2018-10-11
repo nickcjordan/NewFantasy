@@ -3,7 +3,25 @@
 
 	<div class="col-lg-2 side-bar-nav">
 		<div class="waiver-buttons-container">
-			<h3>Availability:</h3>
+			
+			<div class="md-form small-margins">
+				<div>
+					<input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false"> <label for="search"> <fa-icon
+							class="search-icon" [icon]="faSearch" size="xl"></fa-icon> Filter Players <span class="badge player-count-badge">{{numberOfResults}}</span></label>
+				</div>
+			</div>
+			
+			<div class="spacer-panel"></div>
+			
+			<div class="md-form small-margins">
+				<div class="nfl-team-dropdown-wrapper">
+					<mdb-select class="nfl-team-dropdown" (ngModelChange)="getSelectedValue($event)" [(ngModel)]="this.selectedValue" [options]="teams" placeholder="Select NFL Team"></mdb-select>
+				</div>
+			</div>
+			
+			<div class="spacer-panel"></div>
+		
+			<h4>Availability:</h4>
 			<ul class="list-group position-checkboxes">
 				<li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleAvailable()" [checked]="true">Available</mdb-checkbox></li>
 				<li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleUnavailable()" [checked]="false">Unavailable</mdb-checkbox></li>
@@ -11,7 +29,7 @@
 			
 			<div class="spacer-panel"></div>
 			
-			<h3>Position:</h3>
+			<h4>Position:</h4>
 			<ul class="list-group position-checkboxes">
 			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowALL()" [checked]="showAll"><span class="badge badge-player-position badge-WHITE">ALL</span></mdb-checkbox></li>
 			  <li class="list-group-item transparent-bg"><mdb-checkbox (change)="toggleShowQB()" [checked]="showQb"><span class="badge badge-player-position badge-QB">QB</span></mdb-checkbox></li>
@@ -28,7 +46,7 @@
 	
 	<div class="col-lg">
 		<div class="waiver-players-container">
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-sm-6">
 					<div class="md-form small-margins">
 						<div>
@@ -44,7 +62,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<table class="table table-striped  player-table" cellspacing="0" width="100%">
 				<thead>
 					<tr>

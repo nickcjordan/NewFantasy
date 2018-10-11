@@ -38,7 +38,7 @@ public class TargetDeterminator {
 			case RUNNINGBACK : return team.getRoster().getStartingLineup().getRb();
 			case WIDERECEIVER : return team.getRoster().getStartingLineup().getWr();
 			case TIGHTEND : return team.getRoster().getStartingLineup().getTe();
-			case DEFENSE : return team.getRoster().getStartingLineup().getDst();
+//			case DEFENSE : return team.getRoster().getStartingLineup().getDst();
 			case KICKER : return team.getRoster().getStartingLineup().getK();
 		}
 		return null;

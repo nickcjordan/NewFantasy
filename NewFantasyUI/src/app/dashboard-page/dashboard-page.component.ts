@@ -1,11 +1,13 @@
 import { UserCredential } from "../_models";
 import { UserCredentialService } from "../_services/user-credential.service";
+import { Modifier } from "../model/modifier";
+import { ModifierUpdateRequest } from "../model/modifier-update-request";
 import {Component, OnInit} from '@angular/core';
 import {User} from '../model/user';
 import {UserService} from '../service/user.service';
 import {AuthService} from '../service/auth.service';
-import { faCoins } from '@fortawesome/free-solid-svg-icons';
-import {faPercent} from '@fortawesome/free-solid-svg-icons';
+import { ModifierService } from "../service/modifier.service";
+import { faCoins, faPercent, faArrowAltCircleUp, faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -17,6 +19,8 @@ export class DashboardPageComponent implements OnInit {
 	
 	faCoins = faCoins;
 	faPercent = faPercent;
+	faArrowAltCircleUp = faArrowAltCircleUp;
+	faArrowAltCircleDown = faArrowAltCircleDown;
 
 	currentUser: UserCredential;
 	userId: number;
@@ -25,6 +29,7 @@ export class DashboardPageComponent implements OnInit {
 	constructor(
 		private userService: UserService,
 		private auth: AuthService,
+		private modifierService: ModifierService,
 		private credentialService: UserCredentialService
 	) {}
 
@@ -36,5 +41,18 @@ export class DashboardPageComponent implements OnInit {
 		this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		this.userService.getUser(this.currentUser.id).subscribe(user => this.user = user);
 	}
+	
+	sellModifier(selectedModifier: Modifier): void {
+		let updateModifierRequest = new ModifierUpdateRequest(this.user.userId, selectedModifier.modifierId, "SELL");
+		this.modifierService.sendModifierRequest(updateModifierRequest).subscribe(
+			data => {location.reload();},
+			error => {console.log(error)}
+		);
+	}
+	
+	getTargetPlayers(selectedModifier: Modifier): Modifier[] {
+		//TODO need to do all the schedule processing code so that this piece can know the targets that are on the opponents team
+		return null;
+	} 
 
 }

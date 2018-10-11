@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.team.Team;
-import com.fantasy.dbmanager.model.TeamTO;
+import com.fantasy.dataaccessutility.model.to.TeamTO;
 
 @Component
 public class TeamTransformer {

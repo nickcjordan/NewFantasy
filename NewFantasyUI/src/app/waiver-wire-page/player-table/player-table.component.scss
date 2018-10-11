@@ -38,16 +38,15 @@
 }
 
 .side-bar-nav {
-	margin-top: 50px;
+	margin-top: 30px;
 	position: fixed;
-    top: 100px;
     right: 0;
     left: 0;
     z-index: 999;
 }
 
 .spacer-panel {
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 
 .waiver-players-container {
@@ -58,6 +57,7 @@
 	background-color: transparent;
 }
 
-.nfl-team-dropdown-wrapper {
-	
+.nfl-team-dropdown img {
+	width: auto !important;
+	border-radius: 100% !important;
 }

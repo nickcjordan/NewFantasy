@@ -18,8 +18,110 @@
 			<div class="modifier-list"> 
 				<div class="section-title">Modifiers</div>
 				<div *ngIf="user.modifiers.length === 0" class="section-filler">0</div>
-				<div class=" badge modifier-badge" *ngFor="let mod of user.modifiers">
-					{{mod.modifierName}} :: {{mod.changePercentage}} % <!-- <fa-icon class="percent-icon" [icon]="faPercent" size=""></fa-icon> -->
+				<div *ngFor="let modifier of user.modifiers">
+					<!-- {{mod.modifierName}} :: {{mod.changePercentage}} % --> <!-- <fa-icon class="percent-icon" [icon]="faPercent" size=""></fa-icon> -->
+					
+					<div class="col-lg-2">
+						<mdb-card class="testimonial-card modifier-card modifier-card-mini" data-toggle="modal" data-target="#basicExample" (click)="frame.show();">
+<!-- 							<div class="">
+								<fa-icon *ngIf="modifier.changePercentage <= 0" class="minus-circle-icon" size="1x" [icon]="faArrowAltCircleDown"></fa-icon>
+								<fa-icon *ngIf="modifier.changePercentage > 0" class="plus-circle-icon" size="1x" [icon]="faArrowAltCircleUp"></fa-icon>
+							</div> -->
+							
+							<mdb-card-body class="modifier-card-body modifier-card-body-mini"> 
+								<mdb-card-title>
+									<div class="modifier-name modifier-name-card-mini">
+										<div class="col-sm-6 small-margins d-flex justify-content-center align-middle">
+											<h4 class="modifier-name modifier-name-mini">{{modifier.modifierName}}</h4>
+										</div>
+										<div class="col-sm-3 sm-margins">
+											<div class="badge modifier-details modifier-details-badge">
+												<fa-icon class="coin-icon" [icon]="faCoins"></fa-icon> <span class="coin-text">{{modifier.price}}</span>
+											</div>
+										</div>
+										<div class="col-sm-3 sm-margins">
+											<div class="badge modifier-details modifier-details-badge modifier-details-percentage-badge">
+												<span *ngIf="modifier.changePercentage <= 0" class="percent-text-red">{{modifier.changePercentage}}</span>
+												<span *ngIf="modifier.changePercentage > 0" class="percent-text-green">{{modifier.changePercentage}}</span> 
+												<fa-icon class="percent-icon" [icon]="faPercent"></fa-icon>
+											</div>
+										</div>
+									</div>
+								</mdb-card-title>
+							</mdb-card-body> 
+						</mdb-card>
+					</div>
+				
+					<!-- MODAL -->
+					<div  mdbModal #frame="mdbModal" class="modal fade top" id="modal_{{modifier.modifierId}}" tabindex="-1" role="dialog">
+						<div class="modifier-modal" role="document">
+							<div class="modal-content text-center modifier-modal-panel">
+							
+								<!-- MODAL HEADER -->
+								<div class="modal-header d-flex justify-content-center">
+									<p class="heading modifier-modal-header">{{modifier.modifierName}}</p>
+								</div>
+								
+								<!-- MODAL BODY -->
+								<div class="modal-body modifier-modal-body">
+									<div class="row modal-row">
+										<div class="col-8 modifier-modal-description">
+										
+											<div *ngFor="let player of getTargetPlayers(modifier)" class="">
+											
+											
+												<!-- TODO show list of target player options in the modal for the user to apply modifier to -->
+												
+												
+											</div>
+											
+										</div>
+										<div class="col-4 modifier-modal-description">
+											<div class="modal-side-panel modal-price-panel">
+												<fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{modifier.price}}
+											</div>
+											<div class="modal-side-panel modal-percent-panel">
+												<div class="badge modifier-details-badge modal-details-badge">
+													<span *ngIf="modifier.changePercentage <= 0" class="percent-text-red">{{modifier.changePercentage}}</span>
+													<span *ngIf="modifier.changePercentage > 0" class="percent-text-green">{{modifier.changePercentage}}</span> 
+													<fa-icon class="percent-icon" [icon]="faPercent"></fa-icon>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row modal-row">
+										<div *ngIf="modifier.owningUserId == null" class="col modifier-modal-description-question">
+											Would you like to buy for <fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{modifier.price}}?</div>
+										<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId !== user.userId)" class="col modifier-modal-description-question">Currently owned by {{modifier.owningUserId}}</div>
+										<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId === user.userId)" class="col modifier-modal-description-question">
+											Would you like to sell for <fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{modifier.price}}?</div>
+									</div>
+								</div>
+								
+								<!-- MODAL FOOTER -->
+								<div class="modal-footer flex-center modifier-modal-footer">
+									<div *ngIf="(modifier.owningUserId == null) && !(modifier.price > user.coins)" class="col">
+										<a  mdbBtn class="modifier-modal-button modifier-modal-buy-button waves-effect" mdbWavesEffect (click)="buyModifier(modifier)">Buy</a>
+									</div>
+									<div *ngIf="(modifier.owningUserId == null) && (modifier.price > user.coins)" class="col">
+										<a mdbBtn class="modifier-modal-unavailable-button waves-effect" mdbWavesEffect>Not Enough Coins</a> 
+									</div>
+									<div *ngIf="modifier.owningUserId === user.userId" class="col">
+										<a  mdbBtn class="modifier-modal-button modifier-modal-sell-button waves-effect" mdbWavesEffect (click)="sellModifier(modifier)">Sell</a> 
+									</div>
+									<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId !== user.userId)" class="col">
+										<a mdbBtn class="modifier-modal-unavailable-button waves-effect" mdbWavesEffect>Unavailable</a> 
+									</div>
+									<a data-dismiss="modal" mdbBtn class="modifier-modal-close-button waves-effect" mdbWavesEffect (click)="frame.hide()">Close</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					
+					
+					
+					
 				</div>
 				
 			</div>

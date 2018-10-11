@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.NumberUtils;
 
 import com.fantasy.dataaccessutility.model.Player;
+import com.fantasy.dataaccessutility.model.to.PlayerStatsAPIResponse;
 import com.fantasy.dbmanager.dao.PlayerDao;
 import com.fantasy.dbmanager.fetcher.PlayerStatsAPIDelegate;
-import com.fantasy.dbmanager.model.PlayerStatsAPIResponse;
 import com.mongodb.client.FindIterable;
 
 @Component

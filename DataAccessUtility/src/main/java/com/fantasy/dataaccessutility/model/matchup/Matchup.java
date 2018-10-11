@@ -3,7 +3,7 @@ package com.fantasy.dataaccessutility.model.matchup;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Matchup {
@@ -11,7 +11,7 @@ public class Matchup {
 	@JsonProperty
 	private String weekNumber;
 	@JsonProperty
-	private List<User> users;
+	private List<String> userIds;
 	@JsonProperty
 	private MatchupResults results;
 	
@@ -19,26 +19,25 @@ public class Matchup {
 	
 	public Matchup(String weekNumber) {
 		this.weekNumber = weekNumber;
-		this.users = new ArrayList<User>();
+		this.userIds = new ArrayList<String>();
 	}
 	
-	public Matchup(String weekNumber, List<User> users, MatchupResults results) {
+	public Matchup(String weekNumber, List<String> userIds) {
 		super();
 		this.weekNumber = weekNumber;
-		this.users = users;
+		this.userIds = userIds;
+		this.results = new MatchupResults(Integer.valueOf(weekNumber));
+	}
+	
+	public Matchup(String weekNumber, List<String> userIds, MatchupResults results) {
+		super();
+		this.weekNumber = weekNumber;
+		this.userIds = userIds;
 		this.results = results;
 	}
-
-	public void addUser(User u) {
-		users.add(u);
-	}
 	
-	public List<User> getUsers() {
-		return users;
-	}
-	
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void addUserTO(String u) {
+		userIds.add(u);
 	}
 	
 	public String getWeekNumber() {
@@ -57,4 +56,12 @@ public class Matchup {
 		this.results = results;
 	}
 
+	public List<String> getUserIds() {
+		return userIds;
+	}
+
+	public void setUserIds(List<String> userIds) {
+		this.userIds = userIds;
+	}
+	
 }

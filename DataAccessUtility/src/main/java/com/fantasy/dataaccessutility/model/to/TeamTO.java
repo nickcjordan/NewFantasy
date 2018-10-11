@@ -1,4 +1,4 @@
-package com.fantasy.dbmanager.model;
+package com.fantasy.dataaccessutility.model.to;
 
 import java.util.List;
 import java.util.Map;

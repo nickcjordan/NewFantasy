@@ -1,8 +1,9 @@
-package com.fantasy.dbmanager.model;
+package com.fantasy.dataaccessutility.model.to;
 
 import java.util.List;
 import java.util.Map;
 
+import com.fantasy.dataaccessutility.model.matchup.MatchupSchedule;
 import com.fantasy.dataaccessutility.model.matchup.MatchupUserResult;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.Perk;
@@ -17,6 +18,7 @@ public class UserTO {
 	private TeamTO team;
 	private int coins;
 	private Map<String, MatchupUserResult> matchupResults;
+	private MatchupSchedule matchupSchedule;
 	
 	public String getUserId() {
 		return userId;
@@ -59,6 +61,12 @@ public class UserTO {
 	}
 	public void setMatchupResults(Map<String, MatchupUserResult> matchupResults) {
 		this.matchupResults = matchupResults;
+	}
+	public MatchupSchedule getMatchupSchedule() {
+		return matchupSchedule;
+	}
+	public void setMatchupSchedule(MatchupSchedule matchupSchedule) {
+		this.matchupSchedule = matchupSchedule;
 	}
 	
 }

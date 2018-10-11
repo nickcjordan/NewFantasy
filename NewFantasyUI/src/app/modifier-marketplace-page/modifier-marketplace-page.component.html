@@ -6,14 +6,19 @@
 		<div class="col-lg-2 side-bar-nav">
 			<div class="waiver-buttons-container">
 			
-				<h3>Availability:</h3>
+				<h4>Availability:</h4>
 				<ul class="list-group position-checkboxes">
 					<li class="list-group-item transparent-bg side-panel-text"><mdb-checkbox (change)="toggleAvailable()" [checked]="true">Available</mdb-checkbox></li>
 					<li class="list-group-item transparent-bg side-panel-text"><mdb-checkbox (change)="togglePurchased()" [checked]="true">Purchased</mdb-checkbox></li>
 				</ul>
 				
 				<div class="spacer-panel"></div>
-				<hr class="modifier-card-line-divider">
+				
+				<div class="sort-dropdown">
+					<mdb-select (ngModelChange)="getSelectedValue($event)" [(ngModel)]="this.selectedValue" [options]="sortOptions" placeholder="Sort Modifiers"></mdb-select>
+				</div>
+				
+				<div class="spacer-panel"></div>
 				<div class="spacer-panel"></div>
 				
 				<h4>Min Price: <span class="price-title-text"><fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{minRange}}</span></h4>
@@ -48,9 +53,7 @@
 					</div>
 				</div>
 				
-				<div class="spacer-panel"></div>
 				<hr class="modifier-card-line-divider">
-				<div class="spacer-panel"></div>
 				
 				<ul class="list-group position-checkboxes">
 				  <li class="list-group-item transparent-bg side-panel-text"><mdb-checkbox (change)="toggleShowAll()" [checked]="showAll">All Modifiers</mdb-checkbox></li>
@@ -181,26 +184,6 @@
 			</div>
 		</div>
 	</div>
-	
-<!-- 	<button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample" (click)="frame.show()" mdbWavesEffect>Launch Modal</button>
-	
-	<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
-			<div class="modal-content text-center">
-				Header
-				<div class="modal-header d-flex justify-content-center"><p class="heading">Are you sure?</p></div>
-				
-				Body
-				<div class="modal-body">
-					<i class="fa fa-times fa-4x animated rotateIn"></i>
-				</div>
-				
-				Footer
-				<div class="modal-footer flex-center"><a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect data-dismiss="modal" (click)="frame.hide()">Ok</a></div>
-				
-			</div>
-		</div>
-	</div> -->
 	
 	
 </div>
