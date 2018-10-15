@@ -1,5 +1,6 @@
 import {Team} from './team';
 import {Modifier} from './modifier';
+import {MatchupSchedule} from './matchup-schedule';
 
 export class User {
 	userId: string;
@@ -7,6 +8,15 @@ export class User {
 	coins: number;
 	team: Team;
 	modifiers: Modifier[];
+	matchupSchedule: MatchupSchedule;
+	
+
+	
+	
+	
+	
+	
+	
 }
 
 //	private Map<String, Perk> perkTree;

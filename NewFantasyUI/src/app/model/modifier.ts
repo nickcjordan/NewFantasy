@@ -1,4 +1,5 @@
 import { NflTeam } from "./nfl-team";
+import { Player } from "./player";
 export class Modifier {
 	
 	modifierId: string;
@@ -6,10 +7,12 @@ export class Modifier {
 	modifierDescription: string;
 	price: number;
 	changePercentage: number;
-	targetId: string;
+	targetUserId: string;
+	targetPlayerId: string;
 	targetType: string;
 	targetPosition: string;
 	owningUserId: string;
 	targetNflTeam: NflTeam;
+	targetPlayers: Player[];
 	
 }

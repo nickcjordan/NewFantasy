@@ -8,38 +8,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Matchup {
 	
-	@JsonProperty
 	private String weekNumber;
-	@JsonProperty
-	private List<String> userIds;
-	@JsonProperty
+	private String userId;
+	private String opponentUserId;
 	private MatchupResults results;
 	
 	public Matchup() {}
-	
-	public Matchup(String weekNumber) {
+
+	public Matchup(String weekNumber, String userId, String opponentUserId) {
 		this.weekNumber = weekNumber;
-		this.userIds = new ArrayList<String>();
-	}
-	
-	public Matchup(String weekNumber, List<String> userIds) {
-		super();
-		this.weekNumber = weekNumber;
-		this.userIds = userIds;
+		this.userId = userId;
+		this.opponentUserId = opponentUserId;
 		this.results = new MatchupResults(Integer.valueOf(weekNumber));
 	}
-	
-	public Matchup(String weekNumber, List<String> userIds, MatchupResults results) {
-		super();
-		this.weekNumber = weekNumber;
-		this.userIds = userIds;
-		this.results = results;
-	}
-	
-	public void addUserTO(String u) {
-		userIds.add(u);
-	}
-	
+
 	public String getWeekNumber() {
 		return weekNumber;
 	}
@@ -48,20 +30,30 @@ public class Matchup {
 		this.weekNumber = weekNumber;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getOpponentUserId() {
+		return opponentUserId;
+	}
+
+	public void setOpponentUserId(String opponentUserId) {
+		this.opponentUserId = opponentUserId;
+	}
+
 	public MatchupResults getResults() {
 		return results;
 	}
-	
+
 	public void setResults(MatchupResults results) {
 		this.results = results;
 	}
-
-	public List<String> getUserIds() {
-		return userIds;
-	}
-
-	public void setUserIds(List<String> userIds) {
-		this.userIds = userIds;
-	}
+	
+	
 	
 }

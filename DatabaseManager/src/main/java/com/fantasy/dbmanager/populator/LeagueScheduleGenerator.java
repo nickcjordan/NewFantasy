@@ -42,9 +42,8 @@ public class LeagueScheduleGenerator {
 	}
 
 	private void populateUsersWithMatchup(MatchupTO matchup) {
-		Matchup m = new Matchup(matchup.getWeekNumber(), Arrays.asList(matchup.getUserIdA(), matchup.getUserIdB()));
-		populateUser(userData.get(matchup.getUserIdA()), m);
-		populateUser(userData.get(matchup.getUserIdB()), m);
+		populateUser(userData.get(matchup.getUserIdA()), new Matchup(matchup.getWeekNumber(), matchup.getUserIdA(), matchup.getUserIdB()));
+		populateUser(userData.get(matchup.getUserIdB()), new Matchup(matchup.getWeekNumber(), matchup.getUserIdB(), matchup.getUserIdA()));
 	}
 
 	private void populateUser(User user, Matchup m) {

@@ -14,15 +14,21 @@
 			
 			<hr class="modifier-card-line-divider">
 			
+				<div>
+					<p>Opponent: {{user.matchupSchedule.scheduleByWeek.get(5).opponentUserId}}</p>
+				</div>
+			
+			<hr class="modifier-card-line-divider">
+			
 			
 			<div class="modifier-list"> 
 				<div class="section-title">Modifiers</div>
-				<div *ngIf="user.modifiers.length === 0" class="section-filler">0</div>
-				<div *ngFor="let modifier of user.modifiers">
+				<div *ngIf="((user.modifiers == null) || (user.modifiers.length === 0))" class="section-filler">0</div>
+				<div  *ngFor="let modifier of user.modifiers">
 					<!-- {{mod.modifierName}} :: {{mod.changePercentage}} % --> <!-- <fa-icon class="percent-icon" [icon]="faPercent" size=""></fa-icon> -->
 					
 					<div class="col-lg-2">
-						<mdb-card class="testimonial-card modifier-card modifier-card-mini" data-toggle="modal" data-target="#basicExample" (click)="frame.show();">
+						<mdb-card class="testimonial-card modifier-card modifier-card-mini" data-toggle="modal" data-target="#basicExample" (click)="frame.show(); setModifierTargets();">
 <!-- 							<div class="">
 								<fa-icon *ngIf="modifier.changePercentage <= 0" class="minus-circle-icon" size="1x" [icon]="faArrowAltCircleDown"></fa-icon>
 								<fa-icon *ngIf="modifier.changePercentage > 0" class="plus-circle-icon" size="1x" [icon]="faArrowAltCircleUp"></fa-icon>
@@ -67,13 +73,16 @@
 									<div class="row modal-row">
 										<div class="col-8 modifier-modal-description">
 										
-											<div *ngFor="let player of getTargetPlayers(modifier)" class="">
-											
-											
+										<div *ngIf="modifier.targetPlayers != null">
+											<div *ngFor="let player of modifier.targetPlayers" class="">
+												<p>{{player.playerName}}</p>
 												<!-- TODO show list of target player options in the modal for the user to apply modifier to -->
-												
-												
 											</div>
+										</div>
+										<div *ngIf="modifier.targetPlayers == null">
+											<p *ngIf="modifier.changePercentage <= 0">There are no applicable players on your opponent's team right now.</p>
+											<p *ngIf="modifier.changePercentage > 0">There are no applicable players on your team right now.</p>
+										</div>
 											
 										</div>
 										<div class="col-4 modifier-modal-description">

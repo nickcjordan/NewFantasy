@@ -1,10 +1,11 @@
 package com.fantasy.dataaccessutility.model.modifier;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.fantasy.dataaccessutility.model.Position;
 import com.fantasy.dataaccessutility.model.team.NflTeam;
-import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fantasy.dataaccessutility.model.to.PlayerTO;
 
 public class Modifier {
 	
@@ -13,7 +14,8 @@ public class Modifier {
 	private String modifierDescription;
 	private int price;
 	private double changePercentage;
-	private String targetId;
+	private String targetUserId;
+	private String targetPlayerId;
 	private TargetType targetType;
 	private Position targetPosition;
 	private NflTeam targetNflTeam;
@@ -49,12 +51,6 @@ public class Modifier {
 	public void setChangePercentage(double changePercentage) {
 		this.changePercentage = changePercentage;
 	}
-	public String getTargetId() {
-		return targetId;
-	}
-	public void setTargetId(String targetId) {
-		this.targetId = targetId;
-	}
 	public TargetType getTargetType() {
 		return targetType;
 	}
@@ -83,6 +79,18 @@ public class Modifier {
 	private double truncate(double x) {
 		int property = (x > 0) ? BigDecimal.ROUND_FLOOR : BigDecimal.ROUND_CEILING;
 		return new BigDecimal(String.valueOf(x)).setScale(2, property).doubleValue();
+	}
+	public String getTargetUserId() {
+		return targetUserId;
+	}
+	public void setTargetUserId(String targetUserId) {
+		this.targetUserId = targetUserId;
+	}
+	public String getTargetPlayerId() {
+		return targetPlayerId;
+	}
+	public void setTargetPlayerId(String targetPlayerId) {
+		this.targetPlayerId = targetPlayerId;
 	}
 	
 }

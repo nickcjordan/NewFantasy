@@ -11,21 +11,23 @@ import org.springframework.stereotype.Component;
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.ui.ModifierUpdateRequest;
+import com.fantasy.dbmanager.manager.MetadataDatabaseManager;
 import com.fantasy.dbmanager.manager.ModifierDatabaseManager;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
 
 @Component
 public class ModifierUpdateRequestProcessor {
 	
-	
 	private static final Logger log = LoggerFactory.getLogger(ModifierUpdateRequestProcessor.class);
-
 	
 	@Autowired
 	private UserDatabaseManager userManager;
 	
 	@Autowired
 	private ModifierDatabaseManager modifierManager;
+	
+	@Autowired
+	private MetadataDatabaseManager metadataManager;
 
 	public void processRequest(ModifierUpdateRequest modifierUpdateRequest) {
 		 User user = userManager.get(modifierUpdateRequest.getUserId());
@@ -55,7 +57,8 @@ public class ModifierUpdateRequestProcessor {
 		modifier.setOwningUserId(null);
 		user.setCoins(user.getCoins() + modifier.getPrice());
 		modifier.setTargetPosition(null);
-		modifier.setTargetId(null);
+		modifier.setTargetUserId(null);
+		modifier.setTargetPlayerId(null);
 		//update
 	}
 
@@ -71,6 +74,16 @@ public class ModifierUpdateRequestProcessor {
 		else { log.error("ERROR :: did not add modifier :: User " + user.getUserId() + " already owns modifier " + modifier.getModifierId()); }
 		
 		user.setCoins(user.getCoins() - modifier.getPrice());
+		
+		if (modifier.getChangePercentage() > 0) {
+			modifier.setTargetUserId(user.getUserId());
+		} else {
+			modifier.setTargetUserId(user.getMatchupSchedule().getScheduleByWeek().get(metadataManager.get("currentWeekNumber").getValue()).getOpponentUserId());
+		}
+		
+		
+		
+		// TODO is this piece needed?
 		switch(modifier.getTargetType()) {
 			case PLAYER: updateModifierTargetForPlayer(modifier, user); break;
 			case POSITION: updateModifierTargetForPosition(modifier, user); break;

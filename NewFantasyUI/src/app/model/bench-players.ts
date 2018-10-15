@@ -4,4 +4,8 @@ export class BenchPlayers {
 	
 	players: Player[];
 	
+	getAllPlayers(): Player[] {
+		return this.players;
+	}
+	
 }

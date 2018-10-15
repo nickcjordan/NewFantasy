@@ -9,7 +9,8 @@ import {catchError, map, tap} from 'rxjs/operators';
 })
 export class PlayerService {
 
-	private getAllPlayersUrl = '/api/player/getAll';  // URL to web api
+	private getAllPlayersUrl = '/api/player/getAll';
+	private getPlayerUrl = '/api/player/get/';
 	
 	private httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
@@ -21,6 +22,14 @@ export class PlayerService {
 	getAllPlayers(): Observable<Player[]> {
 		return this.http.get<Player[]>(this.getAllPlayersUrl).pipe(
 			catchError(this.handleError('getAllPlayers', []))
+		);
+	}
+	
+	/** GET player by id */
+	getPlayer(playerId: number): Observable<Player> {
+		const url = `${this.getPlayerUrl}/${playerId}`;
+		return this.http.get<Player>(url).pipe(
+			catchError(this.handleError<Player>(`getPlayer playerId=${playerId}`))
 		);
 	}
 
