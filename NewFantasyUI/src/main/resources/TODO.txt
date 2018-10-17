@@ -24,6 +24,7 @@ $ ng serve --port=4200 --live-reload=true --proxy-config proxy.conf.json
 * sort bench by position
 * sort waiver players on load
 * add algorithm for generating schedule with odd number of teams and a bye
+* 
 
 
 

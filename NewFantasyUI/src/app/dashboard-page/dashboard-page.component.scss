@@ -8,6 +8,11 @@ tr {
 	text-align: left;
 }
 
+.modifier-modal {
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 10%;
+}
 
 .position-title-row {
 	border-bottom: 1px solid #ddd !important;
@@ -119,4 +124,43 @@ tr {
 .sm-margins {
 	padding-left: 5px;
 	padding-right: 5px;
+}
+
+.dashboard-modifier-modal-button {
+    color: white !important;
+    font-weight: bold;
+	width: 100px;
+	border: 0;
+}
+
+.apply-button  {
+    background: linear-gradient(40deg, #00552b, #626262);
+}
+
+.remove-button  {
+    background: linear-gradient(40deg, #601e1e, #626262);
+}
+
+.target-player-name {
+	display: inline-block;
+}
+
+.target-player-col {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.target-player-row {
+	margin: 0;
+}
+
+.target-players-title {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.target-player-col-name {
+	padding-left: 50px;
 }

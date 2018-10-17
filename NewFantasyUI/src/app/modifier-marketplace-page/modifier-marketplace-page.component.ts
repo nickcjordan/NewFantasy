@@ -102,7 +102,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 
 	buyModifier(selectedModifier: Modifier): void {
-		let updateModifierRequest = new ModifierUpdateRequest(this.user.userId, selectedModifier.modifierId, "BUY");
+		let updateModifierRequest = new ModifierUpdateRequest(this.user.userId, selectedModifier.modifierId, null, "BUY");
 		this.modifierService.sendModifierRequest(updateModifierRequest).subscribe(
 			data => {location.reload();},
 			error => {console.log(error)}
@@ -110,7 +110,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 
 	sellModifier(selectedModifier: Modifier): void {
-		let updateModifierRequest = new ModifierUpdateRequest(this.user.userId, selectedModifier.modifierId, "SELL");
+		let updateModifierRequest = new ModifierUpdateRequest(this.user.userId, selectedModifier.modifierId, null, "SELL");
 		this.modifierService.sendModifierRequest(updateModifierRequest).subscribe(
 			data => {location.reload();},
 			error => {console.log(error)}
@@ -136,14 +136,14 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 	
 	filterByPriceSlider(arr: Modifier[]) {
-		if ((arr == null) || (arr.length === 0)) {return arr;}
+		if ((arr == null) || (arr.length == 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			return ((mod.price >= this.minRange) && (mod.price <= this.maxRange));
 		});
 	}
 
 	filterByAvailabilityFlags(arr: Modifier[]) {
-		if ((arr == null) || (arr.length === 0)) {return arr;}
+		if ((arr == null) || (arr.length == 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			if (mod.owningUserId != null) {return this.showPurchased;}
 			if (mod.owningUserId == null) {return this.showAvailable;}
@@ -152,7 +152,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 
 	filterByTargetFlags(arr: Modifier[]) {
-		if ((arr == null) || (arr.length === 0)) {return arr;}
+		if ((arr == null) || (arr.length == 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			if (mod.targetType === "TEAM") {return this.showByTeam;}
 			if (mod.targetType === "POSITION") {return this.showByPosition;}
@@ -161,7 +161,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	}
 
 	filterByTypeFlags(arr: Modifier[]) {
-		if ((arr == null) || (arr.length === 0)) {return arr;}
+		if ((arr == null) || (arr.length == 0)) {return arr;}
 		return arr.filter((mod: Modifier) => {
 			if (mod.changePercentage > 0) {return this.showBoosters;}
 			if (mod.changePercentage <= 0) {return this.showNegators;}
@@ -173,16 +173,17 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	sortMods(mods: Modifier[]): Modifier[] {
 		let by: string = this.selectedSortOption;
 		mods.sort((a: any, b: any) => {
-			if (a[by] < b[by]) { return this.reverseSort ? 1 : -1; }
-			if (a[by] > b[by]) { return this.reverseSort ? -1 : 1; }
+			if (a[by] < b[by]) { return (this.reverseSort) ? 1 : -1; }
+			if (a[by] >= b[by]) { return (this.reverseSort) ? -1 : 1; }
 			return 0;
 		});
 		return mods;
 	}
 	
 	getSelectedValue(val: number) {
-		if ((val === 1) || (val == 3)) { this.reverseSort = true; }
-		else { this.reverseSort = false; }
+		console.log("val=" + val);
+		this.reverseSort = ((val == 1) || (val == 3));
+		console.log("reverseSort=" + this.reverseSort);
 		this.selectedSortOption = this.sortOptionsMapping[val];
 	}
 	

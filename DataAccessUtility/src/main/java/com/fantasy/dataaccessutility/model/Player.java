@@ -3,6 +3,8 @@ package com.fantasy.dataaccessutility.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fantasy.dataaccessutility.model.modifier.Modifier;
+
 public class Player {
 	
 	private String playerId;
@@ -16,6 +18,7 @@ public class Player {
 	private String nflTeamId;
 	private String imageUrl;
 	private String smallImageUrl;
+	private Modifier appliedModifier;
 	private Map<String, PositionStatsDetails> statsByWeek;
 	private Map<String, ModifiedStats> modifiedStats;
 	
@@ -132,6 +135,14 @@ public class Player {
 
 	public void setModifiedStats(Map<String, ModifiedStats> modifiedStats) {
 		this.modifiedStats = modifiedStats;
+	}
+
+	public Modifier getAppliedModifier() {
+		return appliedModifier;
+	}
+
+	public void setAppliedModifier(Modifier appliedModifier) {
+		this.appliedModifier = appliedModifier;
 	}
 	
 }

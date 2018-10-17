@@ -15,7 +15,7 @@
 			<hr class="modifier-card-line-divider">
 			
 				<div>
-					<p>Opponent: {{user.matchupSchedule.scheduleByWeek.get(5).opponentUserId}}</p>
+					<p>This Week's Opponent: {{opponent.userName}}</p>
 				</div>
 			
 			<hr class="modifier-card-line-divider">
@@ -24,8 +24,7 @@
 			<div class="modifier-list"> 
 				<div class="section-title">Modifiers</div>
 				<div *ngIf="((user.modifiers == null) || (user.modifiers.length === 0))" class="section-filler">0</div>
-				<div  *ngFor="let modifier of user.modifiers">
-					<!-- {{mod.modifierName}} :: {{mod.changePercentage}} % --> <!-- <fa-icon class="percent-icon" [icon]="faPercent" size=""></fa-icon> -->
+				<div *ngFor="let modifier of user.modifiers">
 					
 					<div class="col-lg-2">
 						<mdb-card class="testimonial-card modifier-card modifier-card-mini" data-toggle="modal" data-target="#basicExample" (click)="frame.show(); setModifierTargets();">
@@ -71,21 +70,34 @@
 								<!-- MODAL BODY -->
 								<div class="modal-body modifier-modal-body">
 									<div class="row modal-row">
-										<div class="col-8 modifier-modal-description">
+										<div class="col-6 modifier-modal-description">
 										
 										<div *ngIf="modifier.targetPlayers != null">
-											<div *ngFor="let player of modifier.targetPlayers" class="">
-												<p>{{player.playerName}}</p>
-												<!-- TODO show list of target player options in the modal for the user to apply modifier to -->
+											<h4 class="target-players-title" *ngIf="modifier.changePercentage <= 0">Qualifying Opponent Players:</h4>
+											<h4 class="target-players-title" *ngIf="modifier.changePercentage > 0">Your Qualifying Players:</h4>
+											<div *ngFor="let player of modifier.targetPlayers" class="row target-player-row">
+											
+												<!-- <div class="col-2 target-player-col">
+													<a mdbBtn class="modifier-modal-apply-button waves-effect" mdbWavesEffect (click)="applyModifierToPlayer(modifier, player)">Apply</a>
+												</div>
+												<div class="col-10 target-player-col target-player-col-name"><h4 class="target-player-name">{{player.playerName}}</h4></div> -->
+												
+												<div class="col-4 target-player-col">
+														<a *ngIf="((modifier.targetPlayerId == null) && (player.appliedModifier == null))" mdbBtn class="dashboard-modifier-modal-button apply-button waves-effect" mdbWavesEffect (click)="applyModifierToPlayer(modifier, player)">Apply</a>
+														<a *ngIf="(player.appliedModifier != null) && (player.appliedModifier.modifierId === modifier.modifierId)" mdbBtn class="dashboard-modifier-modal-button remove-button waves-effect" mdbWavesEffect (click)="removeModifierFromPlayer(modifier, player)">Remove</a>
+													</div>
+												<div class="col-8 target-player-col target-player-col-name"><h4 class="target-player-name">{{player.playerName}}</h4></div>
+												
+												
 											</div>
 										</div>
-										<div *ngIf="modifier.targetPlayers == null">
-											<p *ngIf="modifier.changePercentage <= 0">There are no applicable players on your opponent's team right now.</p>
-											<p *ngIf="modifier.changePercentage > 0">There are no applicable players on your team right now.</p>
+										<div *ngIf="((modifier.targetPlayers == null) || (modifier.targetPlayers.length === 0))">
+											<p *ngIf="modifier.changePercentage <= 0">There are currently no players on your opponent's team that qualify for this Modifier.</p>
+											<p *ngIf="modifier.changePercentage > 0">There are currently no players on your team that qualify for this Modifier.</p>
 										</div>
 											
 										</div>
-										<div class="col-4 modifier-modal-description">
+										<div class="col-6 modifier-modal-description">
 											<div class="modal-side-panel modal-price-panel">
 												<fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{modifier.price}}
 											</div>
@@ -99,28 +111,13 @@
 										</div>
 									</div>
 									<div class="row modal-row">
-										<div *ngIf="modifier.owningUserId == null" class="col modifier-modal-description-question">
-											Would you like to buy for <fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{modifier.price}}?</div>
-										<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId !== user.userId)" class="col modifier-modal-description-question">Currently owned by {{modifier.owningUserId}}</div>
-										<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId === user.userId)" class="col modifier-modal-description-question">
-											Would you like to sell for <fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{modifier.price}}?</div>
+										<div class="col modifier-modal-description-question">Would you like to sell for <fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{modifier.price}}?</div>
 									</div>
 								</div>
 								
 								<!-- MODAL FOOTER -->
 								<div class="modal-footer flex-center modifier-modal-footer">
-									<div *ngIf="(modifier.owningUserId == null) && !(modifier.price > user.coins)" class="col">
-										<a  mdbBtn class="modifier-modal-button modifier-modal-buy-button waves-effect" mdbWavesEffect (click)="buyModifier(modifier)">Buy</a>
-									</div>
-									<div *ngIf="(modifier.owningUserId == null) && (modifier.price > user.coins)" class="col">
-										<a mdbBtn class="modifier-modal-unavailable-button waves-effect" mdbWavesEffect>Not Enough Coins</a> 
-									</div>
-									<div *ngIf="modifier.owningUserId === user.userId" class="col">
-										<a  mdbBtn class="modifier-modal-button modifier-modal-sell-button waves-effect" mdbWavesEffect (click)="sellModifier(modifier)">Sell</a> 
-									</div>
-									<div *ngIf="(modifier.owningUserId != null) && (modifier.owningUserId !== user.userId)" class="col">
-										<a mdbBtn class="modifier-modal-unavailable-button waves-effect" mdbWavesEffect>Unavailable</a> 
-									</div>
+									<div class="col"><a  mdbBtn class="modifier-modal-button modifier-modal-sell-button waves-effect" mdbWavesEffect (click)="sellModifier(modifier)">Sell</a></div>
 									<a data-dismiss="modal" mdbBtn class="modifier-modal-close-button waves-effect" mdbWavesEffect (click)="frame.hide()">Close</a>
 								</div>
 							</div>

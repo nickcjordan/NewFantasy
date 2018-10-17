@@ -4,6 +4,7 @@ public class ModifierUpdateRequest {
 	
 	private String userId;
 	private String modifierId;
+	private String playerId;
 	private String action;
 	
 	public String getUserId() {
@@ -23,6 +24,12 @@ public class ModifierUpdateRequest {
 	}
 	public void setAction(String action) {
 		this.action = action;
+	}
+	public String getPlayerId() {
+		return playerId;
+	}
+	public void setPlayerId(String playerId) {
+		this.playerId = playerId;
 	}
 	
 	

@@ -8,11 +8,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.ui.ModifierUpdateRequest;
 import com.fantasy.dbmanager.manager.MetadataDatabaseManager;
 import com.fantasy.dbmanager.manager.ModifierDatabaseManager;
+import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
 
 @Component
@@ -22,6 +24,9 @@ public class ModifierUpdateRequestProcessor {
 	
 	@Autowired
 	private UserDatabaseManager userManager;
+	
+	@Autowired
+	private PlayerDatabaseManager playerManager;
 	
 	@Autowired
 	private ModifierDatabaseManager modifierManager;
@@ -36,15 +41,37 @@ public class ModifierUpdateRequestProcessor {
 			 switch(modifierUpdateRequest.getAction()) {
 			 	case "BUY": purchaseModifierForUser(modifier, user); break;
 			 	case "SELL": sellModifierForUser(modifier, user); break;
+			 	case "APPLY": applyModifierToPlayer(modifier, modifierUpdateRequest.getPlayerId()); break;
+			 	case "REMOVE": removeModifierFromPlayer(modifier, modifierUpdateRequest.getPlayerId()); break;
 			 	default:  log.error("ERROR :: no modifier action found for: " + modifierUpdateRequest.getAction()); break;
 			 }
+			 log.info("Modifier update request processed successfully :: updating database with changes...");
+			 modifierManager.update(modifier);
+			 userManager.update(user);
+			 log.info("SUCCESS :: Proccessed modifier update request and updated database with changes");
+		 } else {
+			 log.error("ERROR :: did not process modifier update request");
 		 }
-		 log.info("Modifier update request processed successfully :: updating database with changes...");
-		 modifierManager.update(modifier);
-		 userManager.update(user);
-		 log.info("SUCCESS :: Proccessed modifier update request and updated database with changes");
 	}
 	
+	private void removeModifierFromPlayer(Modifier modifier, String playerId) {
+		log.info("getting player with id=" + playerId);
+		 Player player = playerManager.get(playerId);
+		 log.info("Removing modifier " + modifier.getModifierName() + " from player " + player.getPlayerName());
+		 player.setAppliedModifier(null);
+		 modifier.setTargetPlayerId(null);
+		 playerManager.updatePlayer(player);
+	}
+
+	private void applyModifierToPlayer(Modifier modifier, String playerId) {
+		log.info("getting player with id=" + playerId);
+		 Player player = playerManager.get(playerId);
+		 log.info("Applying modifier " + modifier.getModifierName() + " to player " + player.getPlayerName());
+		 modifier.setTargetPlayerId(playerId);
+		 player.setAppliedModifier(modifier);
+		 playerManager.updatePlayer(player);
+	}
+
 	private void sellModifierForUser(Modifier modifier, User user) {
 		log.info("Selling modifier [" + modifier.getModifierName() + "] for user: " + user.getUserName());
 		List<Modifier> filtered = new ArrayList<Modifier>();
@@ -75,43 +102,15 @@ public class ModifierUpdateRequestProcessor {
 		
 		user.setCoins(user.getCoins() - modifier.getPrice());
 		
-		if (modifier.getChangePercentage() > 0) {
-			modifier.setTargetUserId(user.getUserId());
-		} else {
+		if (modifier.getChangePercentage() < 0) {
 			modifier.setTargetUserId(user.getMatchupSchedule().getScheduleByWeek().get(metadataManager.get("currentWeekNumber").getValue()).getOpponentUserId());
+		} else {
+			modifier.setTargetUserId(user.getUserId());
 		}
 		
-		
-		
-		// TODO is this piece needed?
-		switch(modifier.getTargetType()) {
-			case PLAYER: updateModifierTargetForPlayer(modifier, user); break;
-			case POSITION: updateModifierTargetForPosition(modifier, user); break;
-			case TEAM: updateModifierTargetForTeam(modifier, user); break;
-		}
 	}
 	
-	private void updateModifierTargetForTeam(Modifier modifier, User user) {
-		 log.info("Making updates for TEAM target :: user=" + user.getUserId());
-		 
-		 //TODO
-		 
-		 log.info("TODO this part is not complete");
-	}
-
-	private void updateModifierTargetForPosition(Modifier modifier, User user) {
-		log.info("Making updates for POSITION target :: user=" + user.getUserId());
-		
-		 // TODO
-		
-		 log.info("TODO this part is not complete");
-	}
-
-	private void updateModifierTargetForPlayer(Modifier modifier, User user) {
-		log.info("Making updates for PLAYER target :: user=" + user.getUserId());
-		 // TODO not sure what I want to do with this class since players arent a spec
-		 log.info("TODO this part is not complete");
-	}
+	
 	
 	
 
