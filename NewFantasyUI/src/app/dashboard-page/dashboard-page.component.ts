@@ -29,8 +29,8 @@ export class DashboardPageComponent implements OnInit {
 
 	currentUser: UserCredential;
 	userId: number;
-	private user: User;
-	private opponent: User;
+	user: User;
+	opponent: User;
 
 	constructor(
 		private userService: UserService,

@@ -15,7 +15,7 @@ export class WaiverWirePageComponent implements OnInit {
 	
 	currentUser: UserCredential;
 	userId: number;
-	private user: User;
+	user: User;
 	
 	players: Player[];
 	allPlayers: Player[];

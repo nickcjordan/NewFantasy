@@ -31,7 +31,7 @@
 									<span class="text-transform">{{minRange}}</span>
 								</div>
 							</div> -->
-							<input #minInput name="minRange" type="range" min="{{minPrice}}" max="{{maxRange}}" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="minRange" (change)="minCoverage()">
+							<input #minInput name="minRange" type="range" min="{{minPrice}}" max="{{maxRange}}" [(ngModel)]="minRange" (change)="minCoverage()">
 						</form>
 						<span class="max-price-slider-tag"><fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{maxRange}}</span>
 					</div>
@@ -47,7 +47,7 @@
 									<span class="text-transform">{{maxRange}}</span>
 								</div>
 							</div> -->
-							<input #maxInput name="maxRange" type="range" min="{{minRange}}" max="{{maxPrice}}" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="maxRange" (change)="maxCoverage()">
+							<input #maxInput name="maxRange" type="range" min="{{minRange}}" max="{{maxPrice}}" [(ngModel)]="maxRange" (change)="maxCoverage()">
 						</form>
 						<span class="max-price-slider-tag"><fa-icon class="coin-icon" [icon]="faCoins"></fa-icon>{{maxPrice}}</span>
 					</div>

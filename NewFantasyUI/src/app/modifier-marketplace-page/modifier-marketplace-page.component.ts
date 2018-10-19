@@ -52,6 +52,7 @@ export class ModifierMarketplacePageComponent implements OnInit {
 	sortOptions: Array<any>;
 	sortOptionsMapping: Array<any>;
 	selectedSortOption: string;
+	selectedValue: any;
 	reverseSort: boolean;
         
 
