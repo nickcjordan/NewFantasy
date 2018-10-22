@@ -17,8 +17,7 @@ public class PlayerStatsAPIDelegate {
 	@Autowired
 	private UrlBuilder urls;
 	
-	@Autowired
-	private RestTemplate restTemplate;
+	private RestTemplate restTemplate = new RestTemplate();
 	
 	public WeekStatsResponse retrieveAllWeekStats(int week) {
 		log.info("Calling weeklyStats for week " + week);
