@@ -1,27 +1,34 @@
 package com.fantasy.dbmanager.dao;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.amazonaws.services.dynamodbv2.document.AttributeUpdate;
+import com.amazonaws.services.dynamodbv2.document.BatchWriteItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.DeleteItemOutcome;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.ItemCollection;
 import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.ScanFilter;
 import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
-import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
+import com.amazonaws.services.dynamodbv2.document.TableWriteItems;
+import com.amazonaws.services.dynamodbv2.model.BatchWriteItemRequest;
+import com.amazonaws.services.dynamodbv2.model.PutRequest;
+import com.amazonaws.services.dynamodbv2.model.WriteRequest;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.client.FindIterable;
 
 @Component
 public class PlayerDao {
@@ -35,6 +42,10 @@ public class PlayerDao {
 	@Autowired
 	@Qualifier("playerTable")
 	private Table playerTable;
+	
+	@Autowired
+	@Qualifier("dynamoDb")
+	private DynamoDB dynamoDb;
 	
 	private Item item(Player p) {
 		try {
@@ -53,13 +64,50 @@ public class PlayerDao {
 			return null;
 		}
 	}
-	
-	public void putAll(List<Player> players) {
-//		playerDBCollection.insertMany(players);
+
+	public void putAll(Collection<Player> players) {
+
+//		Map<String, List<WriteRequest>> map = new HashMap<String, List<WriteRequest>>();
+		//		playerDBCollection.insertMany(players);
 		// TODO fix this for batch :: BatchWriteItem
-		for (Player p : players) {
-			playerTable.putItem(item(p));
-		}
+//		BatchWriteItemRequest request = new BatchWriteItemRequest(map);
+//		BatchWriteItemResult response = client.batchWriteItem(request);
+//		for (Player p : players) {
+//			PutRequest put = new PutRequest();
+////			put.setItem(item(p).asMap());
+////			WriteRequest w = new WriteRequest();
+//			playerTable.putItem(item(p));
+//		}
+		
+		
+		
+		try {
+			List<Item> items = new ArrayList<Item>();
+			for (Player p : players) {
+				items.add(item(p));
+			}
+            TableWriteItems writeItems = new TableWriteItems("player-table").withItemsToPut(items);
+            BatchWriteItemOutcome outcome = dynamoDb.batchWriteItem(writeItems);
+
+            do { // Check for unprocessed keys which could happen if you exceed provisioned throughput
+
+                Map<String, List<WriteRequest>> unprocessedItems = outcome.getUnprocessedItems();
+
+                if (outcome.getUnprocessedItems().size() == 0) {
+                    System.out.println("No unprocessed items found");
+                }
+                else {
+                    System.out.println("Retrieving the unprocessed items");
+                    outcome = dynamoDb.batchWriteItemUnprocessed(unprocessedItems);
+                }
+
+            } while (outcome.getUnprocessedItems().size() > 0);
+
+        }
+        catch (Exception e) {
+            System.err.println("Failed to retrieve items: ");
+            e.printStackTrace(System.err);
+        }
 	}
 	
 	public void put(Player player) {
