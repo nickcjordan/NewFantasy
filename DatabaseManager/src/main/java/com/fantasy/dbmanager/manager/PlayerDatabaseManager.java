@@ -11,7 +11,7 @@ import org.springframework.util.NumberUtils;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.to.PlayerStatsAPIResponse;
 import com.fantasy.dbmanager.dao.PlayerDao;
-import com.fantasy.dbmanager.fetcher.PlayerStatsAPIDelegate;
+import com.fantasy.dbmanager.playerstatsapi.api.PlayerStatsAPIAdapter;
 import com.mongodb.client.FindIterable;
 
 @Component
@@ -23,7 +23,7 @@ public class PlayerDatabaseManager {
 	private PlayerDao playerDao;
 	
 	@Autowired
-	private PlayerStatsAPIDelegate statsDelegate;
+	private PlayerStatsAPIAdapter stats;
 	
 	public void putPlayersInDB(List<Player> players) {
 		playerDao.putAll(players);
@@ -68,7 +68,7 @@ public class PlayerDatabaseManager {
 
 	public int updateAll() {
 		int count = 0;
-		PlayerStatsAPIResponse response = statsDelegate.getUpdatedStats();
+		PlayerStatsAPIResponse response = stats.getAllPlayerStats();
 		try {
 			for (Player player : response.getPlayers().values()) {
 				if (!updatePlayer(player)) {
@@ -85,7 +85,6 @@ public class PlayerDatabaseManager {
 
 	public boolean updatePlayer(Player player) {
 		 if (playerDao.updatePlayer(player) != null) {
-			 log.info("Successfully updates player " + player.getPlayerName());
 			 return true;
 		 } else {
 			 log.info("ERROR trying to update player " + player.getPlayerName());
