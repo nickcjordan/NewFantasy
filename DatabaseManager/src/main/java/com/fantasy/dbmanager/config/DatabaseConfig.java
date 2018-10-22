@@ -5,10 +5,17 @@ import org.bson.codecs.IntegerCodec;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
+import com.amazonaws.services.dynamodbv2.document.Table;
 import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.matchup.MatchupSchedule;
@@ -94,5 +101,23 @@ public class DatabaseConfig {
 	@Bean(name="metadataDBCollection")
 	public MongoCollection<Metadata> getMetadataDBConnection(MongoDatabase mongoClient, @Qualifier("metadataCodecRegistry") CodecRegistry codecRegistry) {
 		return mongoClient.getCollection("metadata", Metadata.class).withCodecRegistry(codecRegistry);
+	}
+	
+	
+	
+	@Autowired
+	  protected AWSCredentialsProvider credProvider;
+	
+	@Bean(name="dynamoDb")
+	public DynamoDB getDynamoDb() {
+		return new DynamoDB(AmazonDynamoDBClientBuilder.standard()
+                .withRegion(Regions.US_EAST_2)
+                .withCredentials(credProvider)
+                .build());
+	}
+	
+	@Bean(name="playerTable")
+	public Table getPlayerTable(DynamoDB db) {
+		return db.getTable("player-table");
 	}
 }

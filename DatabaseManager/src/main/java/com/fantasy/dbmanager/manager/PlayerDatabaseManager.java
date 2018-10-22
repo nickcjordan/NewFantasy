@@ -1,5 +1,6 @@
 package com.fantasy.dbmanager.manager;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,10 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.NumberUtils;
 
+import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.ItemCollection;
+import com.amazonaws.services.dynamodbv2.document.Page;
+import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.to.PlayerStatsAPIResponse;
 import com.fantasy.dbmanager.dao.PlayerDao;
 import com.fantasy.dbmanager.fetcher.PlayerStatsAPIDelegate;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.client.FindIterable;
 
 @Component
@@ -25,6 +31,17 @@ public class PlayerDatabaseManager {
 	@Autowired
 	private PlayerStatsAPIDelegate statsDelegate;
 	
+	private ObjectMapper mapper = new ObjectMapper();
+	
+	private Player player(Item item) {
+		try {
+			return mapper.readValue(item.toJSON(), Player.class);
+		} catch (IOException e) {
+			e.printStackTrace(); // TODO
+			return null;
+		}
+	}
+	
 	public void putPlayersInDB(List<Player> players) {
 		playerDao.putAll(players);
 	}
@@ -34,11 +51,22 @@ public class PlayerDatabaseManager {
 	}
 	
 	public List<Player> getAll() {
-		return convertIterableToList(playerDao.getAll());
+		return buildPlayerList(playerDao.getAll());
+//		return convertIterableToList();
+	}
+
+	private List<Player> buildPlayerList(ItemCollection<ScanOutcome> res) {
+		List<Player> players = new ArrayList<Player>();
+		for (Page<Item, ScanOutcome> page : res.pages()) {
+			for (Item i : page) {
+				players.add(player(i));
+			}
+		}
+		return players;
 	}
 
 	public List<Player> getAll(String position) {
-		return convertIterableToList(playerDao.getAllPlayersByPosition(position));
+		return buildPlayerList(playerDao.getAllPlayersByPosition(position));
 	}
 	
 	private List<Player> convertIterableToList(FindIterable<Player> results) {
@@ -85,7 +113,7 @@ public class PlayerDatabaseManager {
 
 	public boolean updatePlayer(Player player) {
 		 if (playerDao.updatePlayer(player) != null) {
-			 log.info("Successfully updates player " + player.getPlayerName());
+			 log.info("Successfully updated player " + player.getPlayerName());
 			 return true;
 		 } else {
 			 log.info("ERROR trying to update player " + player.getPlayerName());

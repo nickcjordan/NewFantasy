@@ -29,6 +29,18 @@
 		<!-- <jaunt.home>${project.basedir}\jars\jaunt1.3.3_nr\jaunt1.3.3_nr.jar</jaunt.home> -->
 	</properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.amazonaws</groupId>
+				<artifactId>aws-java-sdk-bom</artifactId>
+				<version>1.11.432</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 
 		<dependency>
@@ -76,15 +88,28 @@
 			<version>1.1.1</version>
 		</dependency>
 
-<!-- 		<dependency>
-			<groupId>com.jaunt</groupId>
-			<artifactId>jaunt-api</artifactId>
-			<version>1.3.3</version>
-			<scope>system</scope>
-			<systemPath>${jaunt.home}</systemPath>
-		</dependency> -->
+		<!-- <dependency> <groupId>com.jaunt</groupId> <artifactId>jaunt-api</artifactId> <version>1.3.3</version> <scope>system</scope> <systemPath>${jaunt.home}</systemPath> </dependency> -->
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-ec2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-dynamodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-elasticbeanstalk</artifactId>
+		</dependency>
+		
+		
 
 	</dependencies>
-	
+
 
 </project>
