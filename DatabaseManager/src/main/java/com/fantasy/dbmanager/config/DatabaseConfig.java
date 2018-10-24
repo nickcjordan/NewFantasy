@@ -11,11 +11,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
-import com.amazonaws.services.dynamodbv2.document.Table;
 import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.matchup.MatchupSchedule;
@@ -102,22 +102,22 @@ public class DatabaseConfig {
 	public MongoCollection<Metadata> getMetadataDBConnection(MongoDatabase mongoClient, @Qualifier("metadataCodecRegistry") CodecRegistry codecRegistry) {
 		return mongoClient.getCollection("metadata", Metadata.class).withCodecRegistry(codecRegistry);
 	}
-	
-	
-	
+
 	@Autowired
-	  protected AWSCredentialsProvider credProvider;
-	
-	@Bean(name="dynamoDb")
-	public DynamoDB getDynamoDb() {
-		return new DynamoDB(AmazonDynamoDBClientBuilder.standard()
-                .withRegion(Regions.US_EAST_2)
-                .withCredentials(credProvider)
-                .build());
+	protected AWSCredentialsProvider credProvider;
+
+	@Bean
+	public AmazonDynamoDB getAmazonDynamoDb() {
+		return AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_2).withCredentials(credProvider).build();
 	}
-	
-	@Bean(name="playerTable")
-	public Table getPlayerTable(DynamoDB db) {
-		return db.getTable("player-table");
+
+	@Bean(name = "dynamoDb")
+	public DynamoDB getDynamoDb(AmazonDynamoDB db) {
+		return new DynamoDB(db);
+	}
+
+	@Bean(name = "dynamoDbMapper")
+	public DynamoDBMapper getDynamoDbMapper(AmazonDynamoDB db) {
+		return new DynamoDBMapper(db);
 	}
 }

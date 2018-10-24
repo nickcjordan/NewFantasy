@@ -51,8 +51,9 @@ public class PlayerDatabaseManager {
 	}
 	
 	public List<Player> getAll() {
-		return buildPlayerList(playerDao.getAll());
 //		return convertIterableToList();
+//		return buildPlayerList(playerDao.getAll());
+		return playerDao.getAll();
 	}
 
 	private List<Player> buildPlayerList(ItemCollection<ScanOutcome> res) {
@@ -66,7 +67,8 @@ public class PlayerDatabaseManager {
 	}
 
 	public List<Player> getAll(String position) {
-		return buildPlayerList(playerDao.getAllPlayersByPosition(position));
+//		return buildPlayerList(playerDao.getAllPlayersByPosition(position));
+		return playerDao.getAllPlayersByPosition(position);
 	}
 	
 	private List<Player> convertIterableToList(FindIterable<Player> results) {
@@ -112,13 +114,15 @@ public class PlayerDatabaseManager {
 	}
 
 	public boolean updatePlayer(Player player) {
-		 if (playerDao.updatePlayer(player) != null) {
-			 log.info("Successfully updated player " + player.getPlayerName());
-			 return true;
-		 } else {
-			 log.info("ERROR trying to update player " + player.getPlayerName());
-			 return false;
-		 }
+//		 if (playerDao.updatePlayer(player) != null) {
+//			 log.info("Successfully updated player " + player.getPlayerName());
+//			 return true;
+//		 } else {
+//			 log.info("ERROR trying to update player " + player.getPlayerName());
+//			 return false;
+//		 }
+		playerDao.updatePlayer(player);
+		return true;
 	}	
 
 }

@@ -1,5 +1,8 @@
 package com.fantasy.dataaccessutility.model.team;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
+
+@DynamoDBDocument
 public class NflTeam {
 	
 	private String nflTeamId;

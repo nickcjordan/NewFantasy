@@ -1,12 +1,11 @@
 package com.fantasy.dataaccessutility.model.modifier;
 
 import java.math.BigDecimal;
-import java.util.List;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.Position;
 import com.fantasy.dataaccessutility.model.team.NflTeam;
-import com.fantasy.dataaccessutility.model.to.PlayerTO;
-
+@DynamoDBDocument
 public class Modifier {
 	
 	private String modifierId;
