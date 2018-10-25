@@ -24,10 +24,10 @@ public class Roster {
 	public void addPlayerToLineupAndMoveReplacedPlayerToBench(Player player) {
 		Player removedPlayer = startingLineup.addPlayerToPositionSlot(player);
 		if (removedPlayer != null) {
-			log.info("Position list " + player.getPosition() + " is full :: removing player " + removedPlayer.getPlayerName() + " from lineup and moving to bench");
+			log.info("Position list " + player.getPlayerPosition() + " is full :: removing player " + removedPlayer.getPlayerName() + " from lineup and moving to bench");
 			addPlayerToBench(removedPlayer);
 		} else {
-			log.info("Added player " + player.getPlayerName() + " to starting lineup :: Position [" + player.getPosition()+ "] was not full, no players moved to bench");
+			log.info("Added player " + player.getPlayerName() + " to starting lineup :: Position [" + player.getPlayerPosition()+ "] was not full, no players moved to bench");
 		}
 	}
 	

@@ -1,41 +1,31 @@
 package com.fantasy.dataaccessutility.model;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
+@DynamoDBTable(tableName = "metadata-table")
 public class Metadata {
 	
-//	@JsonProperty
 	private String metadataId;
-//	@JsonProperty
 	private String value;
 	
-//	public Metadata() {}
-//	
-//	public Metadata(String metadataId, String value) {
-//		this.metadataId = metadataId;
-//		this.value = value; 
-//	}
-//	
-//	public Metadata(String metadataId, Number value) {
-//		this.metadataId = metadataId;
-//		this.value = String.valueOf(value); 
-//	}
-	
-//	@JsonGetter
+	@DynamoDBHashKey(attributeName = "metadataId")
 	public String getMetadataId() {
 		return metadataId;
 	}
-//	@JsonSetter
+	@DynamoDBAttribute
 	public void setMetadataId(String metadataId) {
 		this.metadataId = metadataId;
 	}
-//	@JsonGetter
+	@DynamoDBAttribute
 	public String getValue() {
 		return value;
 	}
-//	@JsonSetter
+	@DynamoDBAttribute
 	public void setValue(String value) {
 		this.value = value;
 	}

@@ -39,7 +39,7 @@ export class PlayerEditPopoverComponent implements OnInit {
 	}
 	
 	setStartingPlayersToSwapFor() {
-		let pos = this.player.position;
+		let pos = this.player.playerPosition;
 		this.swappables= new Array();
 		this.canBeFlex=false;
 		if (pos == "QB") { this.addPlayersToSwappables(this.user.team.roster.startingLineup.qb.players); }

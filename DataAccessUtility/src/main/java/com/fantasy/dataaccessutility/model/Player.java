@@ -12,7 +12,7 @@ import com.fantasy.dataaccessutility.model.modifier.Modifier;
 public class Player {
 	
 	private String playerId;
-	private String position;
+	private String playerPosition;
 	private boolean isOnUserTeam;
 	private String playerName;
 	private String teamName;
@@ -40,13 +40,13 @@ public class Player {
 	public String getPlayerId() {
 		return playerId;
 	}
-	@DynamoDBHashKey(attributeName = "playerName")
+	@DynamoDBAttribute
 	public String getPlayerName() {
 		return playerName;
 	}
-	@DynamoDBAttribute
-	public String getPosition() {
-		return position;
+	@DynamoDBAttribute(attributeName="playerPosition")
+	public String getPlayerPosition() {
+		return playerPosition;
 	}
 	@DynamoDBAttribute
 	public boolean isOnUserTeam() {
@@ -97,8 +97,8 @@ public class Player {
 		this.playerId = playerId;
 	}
 
-	public void setPosition(String position) {
-		this.position = position;
+	public void setPlayerPosition(String position) {
+		this.playerPosition = position;
 	}
 
 	public void setOnUserTeam(boolean isOnUserTeam) {

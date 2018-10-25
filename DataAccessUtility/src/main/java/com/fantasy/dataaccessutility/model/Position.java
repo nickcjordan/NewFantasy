@@ -1,7 +1,9 @@
 package com.fantasy.dataaccessutility.model;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@DynamoDBDocument
 public enum Position {
 	QUARTERBACK("QB", "Quarterback"),
 	RUNNINGBACK("RB", "Running Back"),

@@ -5,58 +5,61 @@ import static com.mongodb.client.model.Filters.eq;
 import java.util.List;
 
 import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.model.Player;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
-import com.fantasy.dataaccessutility.model.to.TeamTO;
-import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.result.DeleteResult;
 
 @Component
-public class ModifierDao {
+public class ModifierDao extends CommonDao {
 	
-	@Autowired
-	@Qualifier("modifierDBCollection")
-	MongoCollection<Modifier> modifierDBCollection;
+//	@Autowired
+//	@Qualifier("modifierDBCollection")
+//	MongoCollection<Modifier> modifierDBCollection;
 	
+	private static final String TABLE_NAME = "modifier-table";
+
 	public void put(List<Modifier> modifiers) {
-		modifierDBCollection.insertMany(modifiers);
+//		modifierDBCollection.insertMany(modifiers);
+		dbMapper.batchSave(modifiers);
 	}
 
-	public long getTeamCount() {
-		return modifierDBCollection.count();
-	}
-	
-	public FindIterable<Modifier> getAll() {
-		return modifierDBCollection.find();
+	public List<Modifier> getAll() {
+//		return modifierDBCollection.find();
+		return dbMapper.scan(Modifier.class, new DynamoDBScanExpression());
 	}
 
 	public boolean removeAll() {
-		return modifierDBCollection.deleteMany(eq("id", null)).wasAcknowledged();
+//		return modifierDBCollection.deleteMany(eq("id", null)).wasAcknowledged();
+		createTable(deleteTable(TABLE_NAME));
+		return true;
 	}
 
 	public long getModifierCount() {
-		return modifierDBCollection.count();
+//		return modifierDBCollection.count();
+		return dbMapper.count(Modifier.class, new DynamoDBScanExpression());
 	}
 
 	public Modifier get(String modifierId) {
-		return modifierDBCollection.find(eq("modifierId", modifierId)).first();
+//		return modifierDBCollection.find(eq("modifierId", modifierId)).first();
+		return dbMapper.load(Modifier.class, modifierId);
 	}
 
 	public boolean update(Modifier modifier) {
-		try {
-			return (modifierDBCollection.updateOne(eq("modifierId", modifier.getModifierId()), new Document("$set", Document.parse(new ObjectMapper().writeValueAsString(modifier)))).getModifiedCount() > 0);
-		} catch (Exception e) {
-			e.printStackTrace(); // TODO
-			return false;
-		}
+//		try {
+//			return (modifierDBCollection.updateOne(eq("modifierId", modifier.getModifierId()), new Document("$set", Document.parse(new ObjectMapper().writeValueAsString(modifier)))).getModifiedCount() > 0);
+//		} catch (Exception e) {
+//			e.printStackTrace(); // TODO
+//			return false;
+//		}
+		dbMapper.save(modifier);
+		return true;
 	}
 
 }

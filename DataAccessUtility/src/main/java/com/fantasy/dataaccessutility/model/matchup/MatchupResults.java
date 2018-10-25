@@ -1,19 +1,16 @@
 package com.fantasy.dataaccessutility.model.matchup;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@DynamoDBDocument
 public class MatchupResults {
 	
-	@JsonProperty
 	private int weekNumber;
-	@JsonProperty
 	private String winnerUserId;
-	@JsonProperty
 	private MatchupUserResult winningTeamResults;
-	@JsonProperty
 	private String loserUserId;
-	@JsonProperty
 	private MatchupUserResult losingTeamResults;
 	
 	public MatchupResults() {}

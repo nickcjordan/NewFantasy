@@ -37,7 +37,7 @@ public class StartingLineup {
 
 	@JsonIgnore
 	public Player addPlayerToPositionSlot(Player player) {
-		return getListFromPlayerPosition(player.getPosition()).addPlayer(player);
+		return getListFromPlayerPosition(player.getPlayerPosition()).addPlayer(player);
 	}
 	
 	@JsonIgnore
@@ -55,7 +55,7 @@ public class StartingLineup {
 	}
 	
 	public boolean removePlayerFromFromPosition(Player player) {
-		return (getListFromPlayerPosition(player.getPosition()).removePlayer(player));
+		return (getListFromPlayerPosition(player.getPlayerPosition()).removePlayer(player));
 	}
 	
 	private PlayerList getListFromPlayerPosition(String position) {

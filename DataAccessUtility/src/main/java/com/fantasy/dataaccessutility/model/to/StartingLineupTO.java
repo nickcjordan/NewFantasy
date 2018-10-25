@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.Position;
 import com.fantasy.dataaccessutility.model.team.PlayerList;
 
+@DynamoDBDocument
 public class StartingLineupTO {
 	
 	private PlayerListTO qb;
@@ -30,7 +32,7 @@ public class StartingLineupTO {
 	}
 	
 	public void addPlayerIdToPositionSlotTO(Player player) {
-		getListFromPlayerPosition(player.getPosition()).addPlayerId(player.getPlayerId());
+		getListFromPlayerPosition(player.getPlayerPosition()).addPlayerId(player.getPlayerId());
 	}
 	
 	public void addPlayerIdToFlexSlotTO(Player player) {

@@ -40,7 +40,7 @@ public class MetadataDatabaseController  {
     		return metadata;
     	} catch (Exception e) {
     		log.error("ERROR :: error occured trying to get metadata: " + metadataId, e);
-    		throw e;
+    		return null;
     	}
     }
 	

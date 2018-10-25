@@ -3,25 +3,20 @@ package com.fantasy.dataaccessutility.model.matchup;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@DynamoDBDocument
 public class MatchupUserResult {
 	
-	@JsonProperty
-	private int week;
-	@JsonProperty
-	private int coinsEarned;
-	@JsonProperty
-	private boolean winner;
-	@JsonProperty
-	private double totalPointsScored;
-	@JsonProperty
-	private List<Modifier> modifiersApplied;
-	@JsonProperty
-	private String opponentId;
-	
 	private String matchupUserResultId;
+	private int week;
+	private int coinsEarned;
+	private boolean winner;
+	private double totalPointsScored;
+	private List<Modifier> modifiersApplied;
+	private String opponentId;
 	
 	public MatchupUserResult() {}
 	

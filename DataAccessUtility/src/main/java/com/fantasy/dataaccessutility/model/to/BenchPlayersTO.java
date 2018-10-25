@@ -9,9 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.Position;
 
+@DynamoDBDocument
 public class BenchPlayersTO {
 	
 	private List<String> playerIds;

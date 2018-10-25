@@ -27,7 +27,7 @@ public class UserTransformer {
 //		userTo.setMatchupResults(user.getMatchupResults());
 		userTo.setMatchupSchedule(user.getMatchupSchedule());
 		userTo.setModifiers(buildModiferIdList(user.getModifiers()));
-		userTo.setPerkTree(user.getPerkTree());
+//		userTo.setPerkTree(user.getPerkTree());
 		userTo.setTeam(teamTransformer.getTO(user.getTeam()));
 		userTo.setUserName(user.getUserName());
 		return userTo;
@@ -48,7 +48,7 @@ public class UserTransformer {
 //		user.setMatchupResults(userTo.getMatchupResults());
 		user.setMatchupSchedule(userTo.getMatchupSchedule());
 		user.setModifiers(buildModifiers(userTo.getModifiers()));
-		user.setPerkTree(userTo.getPerkTree());
+//		user.setPerkTree(userTo.getPerkTree());
 		user.setTeam(teamTransformer.getTeam(userTo.getTeam()));
 		user.setUserName(userTo.getUserName());
 		return user;

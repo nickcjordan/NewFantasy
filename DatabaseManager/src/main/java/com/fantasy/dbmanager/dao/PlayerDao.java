@@ -2,6 +2,8 @@ package com.fantasy.dbmanager.dao;
 
 import java.awt.print.Book;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Component;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.FailedBatch;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedScanList;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.ItemCollection;
@@ -29,33 +32,29 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
-public class PlayerDao {
+public class PlayerDao extends CommonDao {
 
 	private static final Logger log = LoggerFactory.getLogger(PlayerDao.class);
 
 	private ObjectMapper mapper = new ObjectMapper();
 	private static final String PLAYER_TABLE = "player-table";
 
-	// @Autowired
-	// @Qualifier("dynamoDb")
-	// private DynamoDB dynamoDb;
+//	@Autowired
+//	@Qualifier("dynamoDb")
+//	private DynamoDB db;
+//
+//	@Autowired
+//	@Qualifier("dynamoDbMapper")
+//	private DynamoDBMapper dbMapper;
 
-	@Autowired
-	@Qualifier("dynamoDb")
-	private DynamoDB db;
-
-	@Autowired
-	@Qualifier("dynamoDbMapper")
-	private DynamoDBMapper dbMapper;
-
-	private Item item(Player p) {
-		try {
-			return Item.fromJSON(mapper.writeValueAsString(p));
-		} catch (JsonProcessingException e) {
-			e.printStackTrace(); // TODO
-			return null;
-		}
-	}
+//	private Item item(Player p) {
+//		try {
+//			return Item.fromJSON(mapper.writeValueAsString(p));
+//		} catch (JsonProcessingException e) {
+//			e.printStackTrace(); // TODO
+//			return null;
+//		}
+//	}
 
 	private Player player(Item item) {
 		try {
@@ -196,31 +195,6 @@ public class PlayerDao {
 		return true;
 	}
 
-	private void createTable(TableDescription description) {
-		try {
-			log.info("Sending CreateTable request for " + description.getTableName());
-			Table res = db.createTable(new CreateTableRequest().withTableName(PLAYER_TABLE).withAttributeDefinitions(description.getAttributeDefinitions()));
-			log.info("Waiting for " + res.getTableName() + " to be created...");
-			res.waitForActive();
-		} catch (Exception e) {
-			log.error("CreateTable request failed for " + description.getTableName() + " :: " + e.getMessage());
-		}
-	}
-
-	private TableDescription deleteTable(String tableName) {
-		Table table = db.getTable(tableName);
-		try {
-			log.info("Sending DeleteTable request for " + table.getTableName());
-			table.delete();
-			log.info("Waiting for " + table.getTableName() + " to be deleted...");
-			table.waitForDelete();
-			return table.getDescription();
-		} catch (Exception e) {
-			log.error("DeleteTable request failed for " + table.getTableName() + " :: " + e.getMessage());
-		}
-		return null;
-	}
-
 	public Player getPlayerByName(String name) {
 		// return playerDBCollection.find(eq("playerName", name)).first();
 		return player(db.getTable(PLAYER_TABLE).getItem("playerName", name));
@@ -250,11 +224,13 @@ public class PlayerDao {
 		// return dbMapper.scan(Player.class, new DynamoDBScanExpression());
 
 		Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
-		eav.put(":val1", new AttributeValue().withN(position));
+		eav.put(":val1", new AttributeValue().withS(position));
 
-		DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("position = :val2").withExpressionAttributeValues(eav);
+		DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("playerPosition = :val1").withExpressionAttributeValues(eav);
 
-		return dbMapper.scan(Player.class, scanExpression);
+		PaginatedScanList<Player> res = dbMapper.scan(Player.class, scanExpression);
+		return new ArrayList<Player>(res);
+//		return Arrays.asList((Player[])res.toArray());
 	}
 
 }
