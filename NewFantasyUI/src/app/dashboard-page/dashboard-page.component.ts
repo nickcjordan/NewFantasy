@@ -110,7 +110,7 @@ export class DashboardPageComponent implements OnInit {
 	filterTargetPlayersByPosition(position: string, arr: Player[]): Player[] {
 		if ((arr == null) || (arr.length === 0)) {return arr;}
 		return arr.filter((player: Player) => {
-			return (position.startsWith(player.position.charAt(0)));
+			return (position.startsWith(player.playerPosition.charAt(0)));
 		});
 	}
 	

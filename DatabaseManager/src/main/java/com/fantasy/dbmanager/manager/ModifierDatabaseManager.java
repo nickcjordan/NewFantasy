@@ -27,18 +27,13 @@ public class ModifierDatabaseManager {
 	public long count() {
 		return modifierDao.getModifierCount();
 	}
-	
 
 	public boolean clear() {
 		return modifierDao.removeAll();
 	}
 
 	public List<Modifier> getAll() {
-		List<Modifier> mods = new ArrayList<Modifier>();
-		for (Modifier mod : modifierDao.getAll()) {
-			mods.add(mod);
-		}
-		return mods;
+		return modifierDao.getAll();
 	}
 
 	public Modifier get(String modifierId) {

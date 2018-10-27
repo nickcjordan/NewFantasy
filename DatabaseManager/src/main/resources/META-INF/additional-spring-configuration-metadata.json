@@ -18,5 +18,25 @@
     "name": "generator.modifier.maxPrice",
     "type": "java.lang.String",
     "description": "A description for 'generator.modifier.maxPrice'"
+  },
+  {
+    "name": "aws.accessKeyId",
+    "type": "java.lang.String",
+    "description": "A description for 'aws.accessKeyId'"
+  },
+  {
+    "name": "aws.secretKey",
+    "type": "java.lang.String",
+    "description": "A description for 'aws.secretKey'"
+  },
+  {
+    "name": "data.weeksInSeason",
+    "type": "java.lang.String",
+    "description": "A description for 'data.weeksInSeason'"
+  },
+  {
+    "name": "data.useCache",
+    "type": "java.lang.String",
+    "description": "A description for 'data.useCache'"
   }
 ]}

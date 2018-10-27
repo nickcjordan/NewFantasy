@@ -3,12 +3,16 @@ package com.fantasy.dataaccessutility.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 
+@DynamoDBTable(tableName = "player-table")
 public class Player {
 	
 	private String playerId;
-	private String position;
+	private String playerPosition;
 	private boolean isOnUserTeam;
 	private String playerName;
 	private String teamName;
@@ -32,117 +36,118 @@ public class Player {
 		this.modifiedStats = new HashMap<String, ModifiedStats>();
 		this.playerId = id;
 	}
-	
+	@DynamoDBHashKey(attributeName = "playerId")
+	public String getPlayerId() {
+		return playerId;
+	}
+	@DynamoDBAttribute
 	public String getPlayerName() {
 		return playerName;
 	}
-
-	public void setPlayerName(String playerName) {
-		this.playerName = playerName;
+	@DynamoDBAttribute(attributeName="playerPosition")
+	public String getPlayerPosition() {
+		return playerPosition;
 	}
-
-	public String getTeamName() {
-		return teamName;
-	}
-
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-
-	public String getPlayerRank() {
-		return playerRank;
-	}
-
-	public void setPlayerRank(String playerRank) {
-		this.playerRank = playerRank;
-	}
-
-	public String getPositionRank() {
-		return positionRank;
-	}
-
-	public void setPositionRank(String positionRank) {
-		this.positionRank = positionRank;
-	}
-
-	public String getByeWeek() {
-		return byeWeek;
-	}
-
-	public void setByeWeek(String byeWeek) {
-		this.byeWeek = byeWeek;
-	}
-
+	@DynamoDBAttribute
 	public boolean isOnUserTeam() {
 		return isOnUserTeam;
 	}
-
-	public void setOnUserTeam(boolean isOnUserTeam) {
-		this.isOnUserTeam = isOnUserTeam;
+	@DynamoDBAttribute
+	public String getTeamName() {
+		return teamName;
 	}
-
-	public String getPosition() {
-		return position;
+	@DynamoDBAttribute
+	public String getPlayerRank() {
+		return playerRank;
 	}
-
-	public void setPosition(String position) {
-		this.position = position;
+	@DynamoDBAttribute
+	public String getPositionRank() {
+		return positionRank;
 	}
-
-	public Map<String, PositionStatsDetails> getStatsByWeek() {
-		return statsByWeek;
+	@DynamoDBAttribute
+	public String getByeWeek() {
+		return byeWeek;
 	}
-
-	public void setStatsByWeek(Map<String, PositionStatsDetails> statsByWeek) {
-		this.statsByWeek = statsByWeek;
-	}
-
+	@DynamoDBAttribute
 	public String getNflTeamId() {
 		return nflTeamId;
 	}
-
-	public void setNflTeamId(String nflTeamId) {
-		this.nflTeamId = nflTeamId;
-	}
-
+	@DynamoDBAttribute
 	public String getImageUrl() {
 		return imageUrl;
 	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
-
+	@DynamoDBAttribute
 	public String getSmallImageUrl() {
 		return smallImageUrl;
 	}
-
-	public void setSmallImageUrl(String smallImageUrl) {
-		this.smallImageUrl = smallImageUrl;
+	@DynamoDBAttribute
+	public Modifier getAppliedModifier() {
+		return appliedModifier;
 	}
-
-	public String getPlayerId() {
-		return playerId;
+	@DynamoDBAttribute
+	public Map<String, PositionStatsDetails> getStatsByWeek() {
+		return statsByWeek;
+	}
+	@DynamoDBAttribute
+	public Map<String, ModifiedStats> getModifiedStats() {
+		return modifiedStats;
 	}
 
 	public void setPlayerId(String playerId) {
 		this.playerId = playerId;
 	}
 
-	public Map<String, ModifiedStats> getModifiedStats() {
-		return modifiedStats;
+	public void setPlayerPosition(String position) {
+		this.playerPosition = position;
 	}
 
-	public void setModifiedStats(Map<String, ModifiedStats> modifiedStats) {
-		this.modifiedStats = modifiedStats;
+	public void setOnUserTeam(boolean isOnUserTeam) {
+		this.isOnUserTeam = isOnUserTeam;
 	}
 
-	public Modifier getAppliedModifier() {
-		return appliedModifier;
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
+
+	public void setPlayerRank(String playerRank) {
+		this.playerRank = playerRank;
+	}
+
+	public void setPositionRank(String positionRank) {
+		this.positionRank = positionRank;
+	}
+
+	public void setByeWeek(String byeWeek) {
+		this.byeWeek = byeWeek;
+	}
+
+	public void setNflTeamId(String nflTeamId) {
+		this.nflTeamId = nflTeamId;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public void setSmallImageUrl(String smallImageUrl) {
+		this.smallImageUrl = smallImageUrl;
 	}
 
 	public void setAppliedModifier(Modifier appliedModifier) {
 		this.appliedModifier = appliedModifier;
 	}
+
+	public void setStatsByWeek(Map<String, PositionStatsDetails> statsByWeek) {
+		this.statsByWeek = statsByWeek;
+	}
+
+	public void setModifiedStats(Map<String, ModifiedStats> modifiedStats) {
+		this.modifiedStats = modifiedStats;
+	}
+	
 	
 }

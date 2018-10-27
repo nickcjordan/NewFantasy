@@ -36,7 +36,7 @@ public class ThreadRunner implements Runnable {
 		player.setImageUrl(data.getImageUrl());
 		player.setNflTeamId(data.getNflTeamId());
 		player.setPlayerName(data.getName());
-		player.setPosition(data.getPosition());
+		player.setPlayerPosition(data.getPosition());
 		player.setSmallImageUrl(data.getSmallImageUrl());
 		player.setTeamName(data.getNflTeamAbbr());
 	}

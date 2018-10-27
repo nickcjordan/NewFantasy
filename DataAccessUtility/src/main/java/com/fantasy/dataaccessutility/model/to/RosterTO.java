@@ -1,13 +1,8 @@
 package com.fantasy.dataaccessutility.model.to;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.fantasy.dataaccessutility.model.Player;
-
+@DynamoDBDocument
 public class RosterTO {
 	
 	private StartingLineupTO startingLineup;

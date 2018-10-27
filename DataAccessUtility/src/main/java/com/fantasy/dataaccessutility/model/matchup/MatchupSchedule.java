@@ -5,6 +5,9 @@ import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
+
+@DynamoDBDocument
 public class MatchupSchedule {
 	
 	private String userId;

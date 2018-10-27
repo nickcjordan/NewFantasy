@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  uiServer: 'http://localhost:5000'
+  uiServer: 'http://localhost:8085'
 };

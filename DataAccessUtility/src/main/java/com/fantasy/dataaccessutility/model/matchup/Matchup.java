@@ -3,9 +3,11 @@ package com.fantasy.dataaccessutility.model.matchup;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.to.UserTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@DynamoDBDocument
 public class Matchup {
 	
 	private String weekNumber;

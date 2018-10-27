@@ -3,9 +3,11 @@ package com.fantasy.dataaccessutility.model.to;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.team.Roster;
 
+@DynamoDBDocument
 public class TeamTO {
 	
 	private String teamId;

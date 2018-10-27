@@ -64,11 +64,17 @@ public class DatabasePopulator {
 		
 		userData.updateUsers(buildLeagueList());
 		
+		
+		List<Player> updates = new ArrayList<Player>();
 		for (List<Player> list : positionMap.values()) {
 			for (Player p : list) {
-				playerData.update(p);
+				if (p.isOnUserTeam()) {
+					log.info("Player " + p.getPlayerName() + " added to team :: updating player in database...");
+					updates.add(p);
+				}
 			}
 		}
+		playerData.putPlayers(updates);
 		
 		log.info("END :: SUCCESS :: Populated database");
 	}
@@ -174,7 +180,7 @@ public class DatabasePopulator {
 			p = list.get(0);
 		}
 		p.setOnUserTeam(true);
-		playerData.update(p);
+//		playerData.update(p);
 		list.remove(p);
 		positionMap.put(position, list);
 		return p;

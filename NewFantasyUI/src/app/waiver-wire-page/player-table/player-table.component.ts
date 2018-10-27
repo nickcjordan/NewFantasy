@@ -19,7 +19,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class PlayerTableComponent implements OnInit {
 	
-//	keysToMatchOn:string[] = ["playerName", "position", "teamName"]
+//	keysToMatchOn:string[] = ["playerName", "playerPosition", "teamName"]
 	keysToMatchOn:string[] = new Array("teamName")
 	
 	private sorted = false;
@@ -109,7 +109,7 @@ export class PlayerTableComponent implements OnInit {
 	
 	filterPlayersByPositionFlags(arr: Player[]) {
 		return arr.filter((p: Player) => {
-				let pos = p.position;
+				let pos = p.playerPosition;
 				if (pos == "QB") { return this.showQb; }
 				if (pos == "RB") { return this.showRb; }
 				if (pos == "WR") { return this.showWr; }

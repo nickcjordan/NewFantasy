@@ -74,7 +74,7 @@ public class EditLineupRequestProcessor {
 	}
 
 	private void movePlayerFromBenchToLineupAtPosition(Player player, Roster roster) {
-		log.info("Adding player " + player.getPlayerName() + " to lineup at position: " + player.getPosition() + "  :: and removing from bench");
+		log.info("Adding player " + player.getPlayerName() + " to lineup at position: " + player.getPlayerPosition() + "  :: and removing from bench");
 		roster.removePlayerFromBench(player);
 		roster.addPlayerToLineupAndMoveReplacedPlayerToBench(player);
 	}
@@ -107,7 +107,7 @@ public class EditLineupRequestProcessor {
 		List<Player> players = new ArrayList<Player>();
 		User user = userManager.get(query.getUserId());
 		Player player = playerManager.get(query.getPlayerId());
-		switch (Position.get(player.getPosition())) {
+		switch (Position.get(player.getPlayerPosition())) {
 			case QUARTERBACK: players.addAll(user.getTeam().getRoster().getStartingLineup().getQb().getPlayers()); break;
 			case RUNNINGBACK: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
 				players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers()); break;
