@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
@@ -106,9 +107,16 @@ public class DatabaseConfig {
 	@Autowired
 	protected AWSCredentialsProvider credProvider;
 
+	// use for connecting to web client 
+//	@Bean
+//	public AmazonDynamoDB getAmazonDynamoDb() {
+//		return AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_2).withCredentials(credProvider).build();
+//	}
+	
+	// use for local
 	@Bean
 	public AmazonDynamoDB getAmazonDynamoDb() {
-		return AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_2).withCredentials(credProvider).build();
+		return AmazonDynamoDBClientBuilder.standard().withCredentials(credProvider).withEndpointConfiguration(new EndpointConfiguration("http://localhost:8000", Regions.US_EAST_2.getName())).build();
 	}
 
 	@Bean(name = "dynamoDb")

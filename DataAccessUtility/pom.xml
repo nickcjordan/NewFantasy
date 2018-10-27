@@ -7,8 +7,6 @@
 	<groupId>com.fantasy.dataaccessutility</groupId>
 	<artifactId>DataAccessUtility</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-
 	<name>DataAccessUtility</name>
 	<description>Jar used for easy access of fresh data</description>
 
