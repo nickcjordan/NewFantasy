@@ -11,7 +11,6 @@ import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.to.PlayerStatsAPIResponse;
 import com.fantasy.dbmanager.dao.PlayerDao;
 import com.fantasy.dbmanager.playerstatsapi.api.PlayerStatsAPIAdapter;
-import com.mongodb.client.FindIterable;
 
 @Component
 public class PlayerDatabaseManager {

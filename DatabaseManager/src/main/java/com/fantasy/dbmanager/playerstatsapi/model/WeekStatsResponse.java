@@ -3,7 +3,6 @@ package com.fantasy.dbmanager.playerstatsapi.model;
 import java.util.Map;
 
 import com.fantasy.dbmanager.playerstatsapi.deserializer.WeekStatsResponseDeserializer;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 

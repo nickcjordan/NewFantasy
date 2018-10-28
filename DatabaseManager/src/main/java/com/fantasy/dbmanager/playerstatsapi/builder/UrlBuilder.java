@@ -1,7 +1,5 @@
 package com.fantasy.dbmanager.playerstatsapi.builder;
 
-import java.net.URI;
-
 import org.springframework.stereotype.Component;
 
 @Component

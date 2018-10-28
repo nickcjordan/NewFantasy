@@ -1,20 +1,11 @@
 package com.fantasy.dbmanager.dao;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import java.util.List;
 
-import org.bson.Document;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
-import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
 
 @Component
 public class ModifierDao extends CommonDao {

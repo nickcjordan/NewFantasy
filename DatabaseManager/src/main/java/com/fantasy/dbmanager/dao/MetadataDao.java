@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.fantasy.dataaccessutility.model.Metadata;
-import com.fantasy.dataaccessutility.model.Player;
 
 @Component
 public class MetadataDao extends CommonDao {

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.User;
 import com.fantasy.dataaccessutility.model.to.UserTO;
-import com.fantasy.dataaccessutility.model.ui.EditLineupRequest;
 import com.fantasy.dataaccessutility.model.ui.UserName;
 import com.fantasy.dbmanager.dao.UserDao;
 import com.fantasy.dbmanager.transformer.UserTransformer;

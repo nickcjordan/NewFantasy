@@ -1,23 +1,11 @@
 package com.fantasy.dbmanager.dao;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import java.util.List;
 
-import org.bson.Document;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
-import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.to.UserTO;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.BasicDBObject;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.result.UpdateResult;
 
 @Component
 public class UserDao extends CommonDao {

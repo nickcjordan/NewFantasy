@@ -1,40 +1,25 @@
 package com.fantasy.dbmanager.dao;
 
-import java.awt.print.Book;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.FailedBatch;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedScanList;
-import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
-import com.amazonaws.services.dynamodbv2.document.ItemCollection;
-import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
-import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
-import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import com.fantasy.dataaccessutility.model.Player;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
 public class PlayerDao extends CommonDao {
 
-	private static final Logger log = LoggerFactory.getLogger(PlayerDao.class);
+//	private static final Logger log = LoggerFactory.getLogger(PlayerDao.class);
 
 	private ObjectMapper mapper = new ObjectMapper();
 	private static final String PLAYER_TABLE = "player-table";
@@ -111,7 +96,7 @@ public class PlayerDao extends CommonDao {
 		// e.printStackTrace(System.err);
 		// }
 
-		List<FailedBatch> response = dbMapper.batchSave(players);
+		dbMapper.batchSave(players);
 		// List<>
 		// for (FailedBatch fail : response) {
 		//

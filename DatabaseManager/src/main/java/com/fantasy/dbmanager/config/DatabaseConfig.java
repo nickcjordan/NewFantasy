@@ -1,12 +1,6 @@
 package com.fantasy.dbmanager.config;
 
-import org.bson.Document;
-import org.bson.codecs.IntegerCodec;
-import org.bson.codecs.configuration.CodecRegistries;
-import org.bson.codecs.configuration.CodecRegistry;
-import org.bson.codecs.pojo.PojoCodecProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,16 +11,6 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
-import com.fantasy.dataaccessutility.model.Metadata;
-import com.fantasy.dataaccessutility.model.Player;
-import com.fantasy.dataaccessutility.model.matchup.MatchupSchedule;
-import com.fantasy.dataaccessutility.model.modifier.Modifier;
-import com.fantasy.dataaccessutility.model.team.NflTeam;
-import com.fantasy.dataaccessutility.model.to.TeamTO;
-import com.fantasy.dataaccessutility.model.to.UserTO;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 
 @Configuration
 public class DatabaseConfig {

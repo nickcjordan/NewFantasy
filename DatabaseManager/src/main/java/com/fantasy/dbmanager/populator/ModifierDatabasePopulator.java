@@ -1,15 +1,10 @@
 package com.fantasy.dbmanager.populator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.model.modifier.Modifier;
-import com.fantasy.dataaccessutility.model.modifier.TargetType;
 import com.fantasy.dbmanager.manager.ModifierDatabaseManager;
 
 @Component

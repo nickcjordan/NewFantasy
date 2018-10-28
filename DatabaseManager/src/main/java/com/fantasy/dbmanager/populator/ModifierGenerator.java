@@ -3,7 +3,6 @@ package com.fantasy.dbmanager.populator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
 import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.model.Metadata;
