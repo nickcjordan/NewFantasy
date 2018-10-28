@@ -4,7 +4,9 @@ target/
 ### General files ###
 *.log
 *.zip
+*.jar
 zip/*
+falifa-fantasy-bundle/*
 
 ### STS ###
 .apt_generated
