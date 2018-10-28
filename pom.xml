@@ -19,7 +19,7 @@
 		<module>ModSimulator</module>
 		<module>DatabaseManager</module>
 		<module>ModApplicator</module>
-		<module>DataAccessUtility</module>
+		<!-- <module>DataAccessUtility</module> -->
 		<module>NewFantasyUI</module>
 	</modules>
 

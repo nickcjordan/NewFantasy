@@ -4,6 +4,7 @@ target/
 ### General files ###
 *.log
 *.zip
+zip/*
 
 ### STS ###
 .apt_generated

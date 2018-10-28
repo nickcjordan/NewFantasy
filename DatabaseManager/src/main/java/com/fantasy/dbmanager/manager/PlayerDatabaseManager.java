@@ -11,10 +11,7 @@ import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.to.PlayerStatsAPIResponse;
 import com.fantasy.dbmanager.dao.PlayerDao;
 import com.fantasy.dbmanager.playerstatsapi.api.PlayerStatsAPIAdapter;
-<<<<<<< HEAD
 import com.mongodb.client.FindIterable;
-=======
->>>>>>> dynamo
 
 @Component
 public class PlayerDatabaseManager {
@@ -26,8 +23,6 @@ public class PlayerDatabaseManager {
 	
 	@Autowired
 	private PlayerStatsAPIAdapter stats;
-<<<<<<< HEAD
-=======
 	
 //	private ObjectMapper mapper = new ObjectMapper();
 	
@@ -39,7 +34,6 @@ public class PlayerDatabaseManager {
 //			return null;
 //		}
 //	}
->>>>>>> dynamo
 	
 	public void putPlayersInDB(List<Player> players) {
 		playerDao.putAll(players);
@@ -115,14 +109,12 @@ public class PlayerDatabaseManager {
 	}
 
 	public boolean updatePlayer(Player player) {
-<<<<<<< HEAD
-		 if (playerDao.updatePlayer(player) != null) {
-			 return true;
-		 } else {
-			 log.info("ERROR trying to update player " + player.getPlayerName());
-			 return false;
-		 }
-=======
+//		 if (playerDao.updatePlayer(player) != null) {
+//			 return true;
+//		 } else {
+//			 log.info("ERROR trying to update player " + player.getPlayerName());
+//			 return false;
+//		 }
 //		 if (playerDao.updatePlayer(player) != null) {
 //			 log.info("Successfully updated player " + player.getPlayerName());
 //			 return true;
@@ -132,7 +124,6 @@ public class PlayerDatabaseManager {
 //		 }
 		playerDao.updatePlayer(player);
 		return true;
->>>>>>> dynamo
 	}	
 
 }
