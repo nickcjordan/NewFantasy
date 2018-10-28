@@ -28,7 +28,7 @@
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 		
-		<dependency>
+<!-- 		<dependency>
 	        <groupId>org.mongodb</groupId>
 	        <artifactId>mongodb-driver-sync</artifactId>
 	        <version>3.7.0-rc0</version>
@@ -38,7 +38,7 @@
 		    <groupId>org.mongodb</groupId>
 		    <artifactId>mongo-java-driver</artifactId>
 		    <version>3.7.1</version>
-		</dependency>
+		</dependency> -->
 	    
 	</dependencies>
 	
@@ -49,7 +49,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<addResources>true</addResources>
-					<outputDirectory>../build/</outputDirectory>
+					<outputDirectory>../falifa-fantasy-bundle/</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
