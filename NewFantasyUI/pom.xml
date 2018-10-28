@@ -66,6 +66,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<addResources>true</addResources>
+					<outputDirectory>../build/</outputDirectory>
 				</configuration>
 			</plugin>
 			
