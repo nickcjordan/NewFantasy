@@ -142,7 +142,7 @@
 							<outputDirectory>../falifa-fantasy-app</outputDirectory>
 							<resources>
 								<resource>
-									<directory>dist</directory>
+									<directory>target/classes/static</directory>
 									<filtering>true</filtering>
 								</resource>
 							</resources>

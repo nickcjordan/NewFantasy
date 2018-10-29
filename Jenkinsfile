@@ -26,6 +26,7 @@ node {
    }
    stage('Archive Artifacts') {
        archiveArtifacts 'falifa-fantasy-bundle/*'
+       archiveArtifacts 'falifa-fantasy-app/*'
     //   archiveArtifacts '**/target/*.jar'
     //   archiveArtifacts 'Procfile'
    }
