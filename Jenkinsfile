@@ -15,6 +15,10 @@ node {
         if (file.exists()) {
             FileUtils.cleanDirectory(file)
         }
+        def fileStatic = new File("falifa-fantasy-app/")
+        if (fileStatic.exists()) {
+            FileUtils.cleanDirectory(fileStatic)
+        }
    }
    stage('Build') {
       // Run the maven build
@@ -30,25 +34,5 @@ node {
     //   archiveArtifacts '**/target/*.jar'
     //   archiveArtifacts 'Procfile'
    }
-    // stage('Copy Archive') {
-    //      script {
-    //          step ([$class: 'CopyArtifact',
-    //          projectName: 'Falifa-Fantasy_Deploy-AWS',
-    //          filter: "NewFantasyUI/target/NewFantasyUI-0.0.1-SNAPSHOT.jar",
-    //          target: 'deploy/NewFantasyUI-0.0.1-SNAPSHOT.jar']);
-    //      }
-    //      script {
-    //          step ([$class: 'CopyArtifact',
-    //          projectName: 'Falifa-Fantasy_Deploy-AWS',
-    //          filter: "DatabaseManager/target/DatabaseManager-0.0.1-SNAPSHOT.jar",
-    //          target: 'deploy/DatabaseManager-0.0.1-SNAPSHOT.jar']);
-    //      }
-    //      script {
-    //          step ([$class: 'CopyArtifact',
-    //          projectName: 'Falifa-Fantasy_Deploy-AWS',
-    //          filter: "Procfile",
-    //          target: 'deploy/Procfile']);
-    //      }
-    // }
      
 }
