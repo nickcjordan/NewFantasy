@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  uiServer: 'http://falifa-fantasy.us-east-2.elasticbeanstalk.com:5000/'
+  uiServer: 'http://falifa-fantasy.us-east-2.elasticbeanstalk.com:5000'
 };
 
 /*
