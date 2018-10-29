@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  uiServer: 'http://localhost:8085'
+  uiServer: 'http://falifa-fantasy.us-east-2.elasticbeanstalk.com:5000/'
 };
