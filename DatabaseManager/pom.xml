@@ -5,7 +5,7 @@
 
 	<groupId>com.fantasy.dbmanager</groupId>
 	<artifactId>DatabaseManager</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>DatabaseManager</name>
 
 	<parent>

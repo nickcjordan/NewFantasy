@@ -7,6 +7,9 @@ target/
 *.jar
 zip/*
 falifa-fantasy-bundle/*
+falifa-fantasy-app/*
+jars/
+**/node_modules/
 
 ### STS ###
 .apt_generated

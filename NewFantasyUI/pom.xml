@@ -6,7 +6,7 @@
 
 	<groupId>com.fantasy.ui</groupId>
 	<artifactId>NewFantasyUI</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>NewFantasyUI</name>
 	<description>UI component to NewFantasy</description>
