@@ -9,8 +9,8 @@ import {catchError, map, tap} from 'rxjs/operators';
 })
 export class PlayerService {
 
-	private getAllPlayersUrl = '/api/player/getAll';
-	private getPlayerUrl = '/api/player/get/';
+	private getAllPlayersUrl = `${environment.apiServer}/player/getAll`;
+	private getPlayerUrl = `${environment.apiServer}/player/get/`;
 	
 	private httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 

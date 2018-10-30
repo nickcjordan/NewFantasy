@@ -12,7 +12,7 @@ import {catchError, map, tap} from 'rxjs/operators';
 export class ModifierService {
 
 	private getAllModifiersUrl = '/api/modifier/getAll';  // URL to web api
-	private updateModifierUrl = '/api/modifier/update';
+	private updateModifierUrl = `${environment.apiServer}/modifier/update`;
 	
 	private httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 

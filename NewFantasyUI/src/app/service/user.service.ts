@@ -14,12 +14,12 @@ import { EditLineupQuery } from "../model/edit-lineup-query";
 })
 export class UserService {
 
-	private getAllUserNamesUrl = '/api/user/getAllUserNames';
-	private getAllUsersUrl = '/api/user/getAll';
-	private getUserUrl = '/api/user/get';
-	private updateUserUrl = '/api/user/update';
-	private editUserLineupUrl = '/api/user/lineup/edit';
-	private getEligibleSwapPlayersUrl = '/api/user/lineup/swappable';
+	private getAllUserNamesUrl = `${environment.apiServer}/user/getAllUserNames`;
+	private getAllUsersUrl = `${environment.apiServer}/user/getAll`;
+	private getUserUrl = `${environment.apiServer}/user/get`;
+	private updateUserUrl = `${environment.apiServer}/user/update`;
+	private editUserLineupUrl = `${environment.apiServer}/user/lineup/edit`;
+	private getEligibleSwapPlayersUrl = `${environment.apiServer}/user/lineup/swappable`;
 	
 	
 //	private usersUrl = '/api';

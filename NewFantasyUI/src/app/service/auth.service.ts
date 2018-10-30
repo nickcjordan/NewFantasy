@@ -34,7 +34,7 @@ export class AuthService {
 	    } : {});
 		console.log('AuthService :: headers:' + headers.getAll);
 	
-	    this.http.get('/ui/auth', {headers: headers}).subscribe(response => {
+	    this.http.get(`${environment.uiServer}/auth`, {headers: headers}).subscribe(response => {
 			this.authentication = response['authentication'];
 			this.username = response['username'];
 			this.authenticated = response['authenticated'];

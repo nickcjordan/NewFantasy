@@ -3,12 +3,14 @@
 		"target": "ec2-18-224-192-255.us-east-2.compute.amazonaws.com",
 		"secure": false,
 		"logLevel": "debug",
-		"pathRewrite": {"^/ui/" : ""}
+		"pathRewrite": {"^/ui/" : ""},
+    	"changeOrigin": true
 	},
 	"/api/": {
 		"target": "ec2-18-224-192-255.us-east-2.compute.amazonaws.com",
 		"secure": false,
 		"logLevel": "debug",
-		"pathRewrite": {"^/api/" : ""}
+		"pathRewrite": {"^/api/" : ""},
+    	"changeOrigin": true
 	}
 }
