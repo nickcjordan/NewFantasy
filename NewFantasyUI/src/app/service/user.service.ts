@@ -8,6 +8,8 @@ import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
 import {catchError, map, tap} from 'rxjs/operators';
 import { EditLineupQuery } from "../model/edit-lineup-query";
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
 	providedIn: 'root'
