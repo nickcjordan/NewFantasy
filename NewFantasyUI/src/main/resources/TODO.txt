@@ -3,6 +3,8 @@
 
 	Angular Project Run Command:
 ng serve --port=4200 --live-reload=true --proxy-config proxy.conf.json
+	url:
+http://d3hhhzmqwuhnzz.cloudfront.net
 
 
 

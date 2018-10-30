@@ -1,12 +1,12 @@
 {
 	"/ui/": {
-		"target": "http://falifa-fantasy.us-east-2.elasticbeanstalk.com:5000/",
+		"target": "ec2-18-224-192-255.us-east-2.compute.amazonaws.com",
 		"secure": false,
 		"logLevel": "debug",
 		"pathRewrite": {"^/ui/" : ""}
 	},
 	"/api/": {
-		"target": "http://falifa-fantasy.us-east-2.elasticbeanstalk.com:5100/",
+		"target": "ec2-18-224-192-255.us-east-2.compute.amazonaws.com",
 		"secure": false,
 		"logLevel": "debug",
 		"pathRewrite": {"^/api/" : ""}
