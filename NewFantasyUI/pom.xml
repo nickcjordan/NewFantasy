@@ -139,7 +139,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>../falifa-fantasy-app</outputDirectory>
+							<outputDirectory>../falifa-fantasy-bundle</outputDirectory>
 							<resources>
 								<resource>
 									<directory>target/classes/static</directory>
