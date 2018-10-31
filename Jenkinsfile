@@ -15,10 +15,6 @@ node {
         if (file.exists()) {
             FileUtils.cleanDirectory(file)
         }
-        def fileStatic = new File("falifa-fantasy-app/")
-        if (fileStatic.exists()) {
-            FileUtils.cleanDirectory(fileStatic)
-        }
    }
    stage('Build') {
       // Run the maven build
@@ -30,9 +26,6 @@ node {
    }
    stage('Archive Artifacts') {
        archiveArtifacts 'falifa-fantasy-bundle/*'
-       archiveArtifacts 'falifa-fantasy-app/*'
-    //   archiveArtifacts '**/target/*.jar'
-    //   archiveArtifacts 'Procfile'
    }
      
 }

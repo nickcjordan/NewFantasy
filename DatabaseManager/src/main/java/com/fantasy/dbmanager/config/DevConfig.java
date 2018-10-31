@@ -8,7 +8,7 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 
 @Configuration
-@Profile("dev")
+@Profile("dev, default")
 public class DevConfig {
 	
 	  @Bean
