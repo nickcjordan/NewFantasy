@@ -66,11 +66,11 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<addResources>true</addResources>
-					<outputDirectory>../falifa-fantasy-bundle/</outputDirectory>
+					<outputDirectory>../falifa-fantasy-ui/</outputDirectory>
 				</configuration>
 			</plugin>
 
-		<plugin>
+<!-- 		<plugin> for procfile
 			<artifactId>maven-resources-plugin</artifactId>
 			<version>3.1.0</version>
 			<executions>
@@ -81,7 +81,7 @@
 						<goal>copy-resources</goal>
 					</goals>
 					<configuration>
-						<outputDirectory>../falifa-fantasy-bundle</outputDirectory>
+						<outputDirectory>../falifa-fantasy-ui</outputDirectory>
 						<resources>
 							<resource>
 								<directory>../build</directory>
@@ -91,7 +91,7 @@
 					</configuration>
 				</execution>
 			</executions>
-		</plugin>
+		</plugin> -->
 			
 
 			<plugin>
@@ -124,29 +124,6 @@
 							<arguments>run-script build</arguments>
 						</configuration>
 						<phase>generate-resources</phase>
-					</execution>
-				</executions>
-			</plugin>
-			
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>install</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>../falifa-fantasy-bundle</outputDirectory>
-							<resources>
-								<resource>
-									<directory>target/classes/static</directory>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>

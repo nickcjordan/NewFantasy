@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  uiServer: 'http://localhost:5100',
-  apiServer: 'http://localhost:5200'
+  uiServer: 'falifa-ui.us-east-2.elasticbeanstalk.com',
+  apiServer: 'falifa-db.us-east-2.elasticbeanstalk.com'
 };
