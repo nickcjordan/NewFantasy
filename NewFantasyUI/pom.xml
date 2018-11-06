@@ -70,28 +70,6 @@
 				</configuration>
 			</plugin>
 
-<!-- 		<plugin> for procfile
-			<artifactId>maven-resources-plugin</artifactId>
-			<version>3.1.0</version>
-			<executions>
-				<execution>
-					<id>copy-resources</id>
-					<phase>install</phase>
-					<goals>
-						<goal>copy-resources</goal>
-					</goals>
-					<configuration>
-						<outputDirectory>../falifa-fantasy-ui</outputDirectory>
-						<resources>
-							<resource>
-								<directory>../build</directory>
-								<filtering>true</filtering>
-							</resource>
-						</resources>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin> -->
 			
 
 			<plugin>
@@ -133,7 +111,39 @@
 				<version>3.1.0</version>
 				<executions>
 					<execution>
-						<id>copy-resources</id>
+						<id>copy-ui-resources</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>../falifa-fantasy-ui</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../build/ui</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-db-resources</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>../falifa-fantasy-db</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../build/db</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-app-resources</id>
 						<phase>install</phase>
 						<goals>
 							<goal>copy-resources</goal>
@@ -150,7 +160,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 
 		</plugins>
 	</build>
