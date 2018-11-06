@@ -3,10 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  uiServer: 'falifa-ui.us-east-2.elasticbeanstalk.com',
-  apiServer: 'falifa-db.us-east-2.elasticbeanstalk.com'
+  production: true,
+  uiServer: 'http://www.falifa-ui.us-east-2.elasticbeanstalk.com',
+  apiServer: 'http://www.falifa-db.us-east-2.elasticbeanstalk.com'
 };
+
 
 
 /*
