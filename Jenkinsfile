@@ -24,6 +24,9 @@ node {
 		if (angularFile.exists()) {
 			FileUtils.cleanDirectory(angularFile)
 		}
+		
+		FileUtils.copyFile("build/db/Procfile", "falifa-fantasy-db/Procfile");
+		FileUtils.copyFile("build/ui/Procfile", "falifa-fantasy-ui/Procfile");
 	}
 	
 	stage('Build') {
