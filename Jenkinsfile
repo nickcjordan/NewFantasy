@@ -25,8 +25,8 @@ node {
 			FileUtils.cleanDirectory(angularFile)
 		}
 		
-		FileUtils.copyFile("build/db/Procfile", "falifa-fantasy-db/Procfile");
-		FileUtils.copyFile("build/ui/Procfile", "falifa-fantasy-ui/Procfile");
+		FileUtils.copyFile(new File("build/db/Procfile"), new File("falifa-fantasy-db/Procfile"));
+		FileUtils.copyFile(new File("build/ui/Procfile"), new File("falifa-fantasy-ui/Procfile"));
 	}
 	
 	stage('Build') {
