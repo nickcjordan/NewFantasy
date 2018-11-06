@@ -11,23 +11,23 @@ node {
 		mvnHome = tool 'M3'
 	}
 	
-	stage('Workspace Cleanup') {
-		def dbFile = new File("falifa-fantasy-db/")
-		if (dbFile.exists()) {
-			FileUtils.cleanDirectory(dbFile)
-		}
-		def uiFile = new File("falifa-fantasy-ui/")
-		if (uiFile.exists()) {
-			FileUtils.cleanDirectory(uiFile)
-		}
-		def angularFile = new File("falifa-fantasy-app/")
-		if (angularFile.exists()) {
-			FileUtils.cleanDirectory(angularFile)
-		}
-		
-		FileUtils.copyFile(new File("build/db/Procfile"), new File("falifa-fantasy-db/Procfile"));
-		FileUtils.copyFile(new File("build/ui/Procfile"), new File("falifa-fantasy-ui/Procfile"));
-	}
+//	stage('Workspace Cleanup') {
+//		def dbFile = new File("falifa-fantasy-db/")
+//		if (dbFile.exists()) {
+//			FileUtils.cleanDirectory(dbFile)
+//		}
+//		def uiFile = new File("falifa-fantasy-ui/")
+//		if (uiFile.exists()) {
+//			FileUtils.cleanDirectory(uiFile)
+//		}
+//		def angularFile = new File("falifa-fantasy-app/")
+//		if (angularFile.exists()) {
+//			FileUtils.cleanDirectory(angularFile)
+//		}
+//		
+//		FileUtils.copyFile(new File("build/db/Procfile"), new File("falifa-fantasy-db/Procfile"));
+//		FileUtils.copyFile(new File("build/ui/Procfile"), new File("falifa-fantasy-ui/Procfile"));
+//	}
 	
 	stage('Build') {
 		// Run the maven build
