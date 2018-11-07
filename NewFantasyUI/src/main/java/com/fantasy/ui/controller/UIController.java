@@ -1,12 +1,20 @@
 package com.fantasy.ui.controller;
 
 import org.apache.log4j.Logger;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UIController {
 
 	private static Logger log = Logger.getLogger(UIController.class);
+	
+	
+	@RequestMapping("/test")
+	public String test() {
+		return "test passed";
+	}
+	
 	
 //	@Autowired
 //	@Qualifier("authStatus")
