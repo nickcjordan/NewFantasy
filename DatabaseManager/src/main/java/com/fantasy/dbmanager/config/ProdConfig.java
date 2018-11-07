@@ -6,14 +6,35 @@ import org.springframework.context.annotation.Profile;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.InstanceProfileCredentialsProvider;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 
 @Configuration
 @Profile("prod")
 public class ProdConfig {
-	
+
+	// use for connecting to web client
 	@Bean
-	  AWSCredentialsProvider credProvider() {
-	    return InstanceProfileCredentialsProvider.getInstance();
-	  }
+	public AmazonDynamoDB getAmazonDynamoDb() {
+		return AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_2).withCredentials(InstanceProfileCredentialsProvider.getInstance()).build();
+	}
+
+	@Bean(name = "dynamoDb")
+	public DynamoDB getDynamoDb(AmazonDynamoDB db) {
+		return new DynamoDB(db);
+	}
+
+	@Bean(name = "dynamoDbMapper")
+	public DynamoDBMapper getDynamoDbMapper(AmazonDynamoDB db) {
+		return new DynamoDBMapper(db);
+	}
+
+	@Bean(name = "testString")
+	public String testString() {
+		return "prod";
+	}
 
 }

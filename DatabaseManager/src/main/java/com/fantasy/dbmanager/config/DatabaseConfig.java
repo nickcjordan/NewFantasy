@@ -88,8 +88,8 @@ public class DatabaseConfig {
 //		return mongoClient.getCollection("metadata", Metadata.class).withCodecRegistry(codecRegistry);
 //	}
 
-	@Autowired
-	protected AWSCredentialsProvider credProvider;
+//	@Autowired
+//	protected AWSCredentialsProvider credProvider;
 
 	// use for connecting to web client 
 //	@Bean
@@ -98,18 +98,18 @@ public class DatabaseConfig {
 //	}
 	
 	// use for local
-	@Bean
-	public AmazonDynamoDB getAmazonDynamoDb() {
-		return AmazonDynamoDBClientBuilder.standard().withCredentials(credProvider).withEndpointConfiguration(new EndpointConfiguration("http://localhost:8000", Regions.US_EAST_2.getName())).build();
-	}
-
-	@Bean(name = "dynamoDb")
-	public DynamoDB getDynamoDb(AmazonDynamoDB db) {
-		return new DynamoDB(db);
-	}
-
-	@Bean(name = "dynamoDbMapper")
-	public DynamoDBMapper getDynamoDbMapper(AmazonDynamoDB db) {
-		return new DynamoDBMapper(db);
-	}
+//	@Bean
+//	public AmazonDynamoDB getAmazonDynamoDb() {
+//		return AmazonDynamoDBClientBuilder.standard().withCredentials(credProvider).withEndpointConfiguration(new EndpointConfiguration("http://localhost:8000", Regions.US_EAST_2.getName())).build();
+//	}
+//
+//	@Bean(name = "dynamoDb")
+//	public DynamoDB getDynamoDb(AmazonDynamoDB db) {
+//		return new DynamoDB(db);
+//	}
+//
+//	@Bean(name = "dynamoDbMapper")
+//	public DynamoDBMapper getDynamoDbMapper(AmazonDynamoDB db) {
+//		return new DynamoDBMapper(db);
+//	}
 }

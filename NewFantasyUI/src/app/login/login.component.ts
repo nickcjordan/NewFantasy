@@ -2,6 +2,8 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import {environment} from '../../environments/environment';
+
 
 import { AlertService, AuthenticationService } from '../_services';
 
@@ -14,6 +16,7 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    testString: string = `${environment.uiServer}`;
 
     constructor(
         private formBuilder: FormBuilder,
