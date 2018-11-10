@@ -14,6 +14,8 @@ import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 
 @Configuration
 public class DatabaseConfig {
+	
+	
 
 //	@Bean
 //	public MongoClient getMongoClient() {
