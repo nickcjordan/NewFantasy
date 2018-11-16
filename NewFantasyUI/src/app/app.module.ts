@@ -43,12 +43,12 @@ import { ModifierMarketplacePageComponent } from './modifier-marketplace-page/mo
 
 
 
-@Injectable()
-export class XhrInterceptor implements HttpInterceptor {
-	intercept(req: HttpRequest<any>, next: HttpHandler) {
-		return next.handle(req.clone({ headers: req.headers.set('X-Requested-With', 'XMLHttpRequest') }));
-	}
-}
+//@Injectable()
+//export class XhrInterceptor implements HttpInterceptor {
+//	intercept(req: HttpRequest<any>, next: HttpHandler) {
+//		return next.handle(req.clone({ headers: req.headers.set('X-Requested-With', 'XMLHttpRequest') }));
+//	}
+//}
 
 @NgModule({
 	declarations: [
