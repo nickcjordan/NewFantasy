@@ -31,8 +31,7 @@ export class AuthService {
 		this.password = credentials.password;
 		console.log('AuthService :: enter : authenticated?:' + this.authenticated + ', username:' + this.username + ', password:' + this.password);
 	    const headers = new HttpHeaders(credentials ? {
-	        authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password),
-			'X-Requested-With': 'XMLHttpRequest'
+	        authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
 	    } : {});
 		console.log('AuthService :: headers:' + headers.getAll);
 	
