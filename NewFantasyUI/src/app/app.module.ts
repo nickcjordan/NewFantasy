@@ -87,7 +87,7 @@ import { ModifierMarketplacePageComponent } from './modifier-marketplace-page/mo
 	schemas: [ NO_ERRORS_SCHEMA ],
 	providers: [
 //		AuthService 
-		{ provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
+//		{ provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
 		AuthGuard,
         AlertService,
         AuthenticationService,
