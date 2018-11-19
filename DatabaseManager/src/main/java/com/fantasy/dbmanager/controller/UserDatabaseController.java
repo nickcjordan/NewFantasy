@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,11 +37,14 @@ public class UserDatabaseController  {
 	private EditLineupRequestProcessor processor;
 	
     @RequestMapping("/count")
-    public long count() {
+    public ResponseEntity<Integer> count() {
     	log.info("DatabaseManager :: getting user count...");
     	long count = userManager.count();
     	log.info("DatabaseManager :: SUCCESS :: count was [" + count + "]");
-    	return count;
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("Access-Control-Allow-Origin", "*");
+    	return new ResponseEntity<Integer>(new Integer("1"), headers, HttpStatus.OK);
+//    	return count;
     }
     
     @RequestMapping(value = "/put", method = RequestMethod.POST)
@@ -82,11 +88,14 @@ public class UserDatabaseController  {
     }
     
     @RequestMapping("/getAllUserNames")
-    public List<UserName> getAllUserNames() {
+    public ResponseEntity<List<UserName>> getAllUserNames() {
     	log.info("DatabaseManager :: getting all users...");
     	List<UserName> users = userManager.getAllUserNames();
     	log.info("DatabaseManager :: SUCCESS :: got [" + users.size() + "] users");
-    	return users;
+//    	return users;
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("Access-Control-Allow-Origin", "*");
+    	return new ResponseEntity<List<UserName>>(users, headers, HttpStatus.OK);
     }
     
     @RequestMapping("/get/{val}")
