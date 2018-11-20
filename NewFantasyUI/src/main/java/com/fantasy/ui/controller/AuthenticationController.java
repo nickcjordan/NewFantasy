@@ -30,13 +30,10 @@ public class AuthenticationController {
 	
 	private HttpHeaders headers;
 
-	public AuthenticationController() {
-		headers = new HttpHeaders();
-		headers.add("Access-Control-Allow-Origin", "*");
-	}
-	
 	@RequestMapping(value="/authenticate", method=RequestMethod.POST, produces= {"application/json"}, consumes= {"text/plain", "application/json", "application/json;charset=UTF-8"})
 	public ResponseEntity<UserCredential> authenticateUser(@RequestBody UserCredential user) {
+		headers = new HttpHeaders();
+		headers.add("Access-Control-Allow-Origin", "*");
 		log.info("START /auth/authenticate :: POST :: authenticating user: " + user.getUsername());
 		if (auth.isAuthorizedUser(user)) {
 			log.info("END /auth/authenticate :: SUCCESS :: user has been authenticated: " + user.getUsername());
