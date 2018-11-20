@@ -2,9 +2,14 @@ package com.fantasy.dbmanager.dao;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 
 @Component
@@ -14,7 +19,16 @@ public class ModifierDao extends CommonDao {
 //	@Qualifier("modifierDBCollection")
 //	MongoCollection<Modifier> modifierDBCollection;
 	
-	private static final String TABLE_NAME = "modifier-table";
+	@Resource(name="modifierTableName")
+	private String TABLE_NAME;
+	
+	@Autowired
+	@Qualifier("modifierCreateTableRequest")
+	private CreateTableRequest createTableRequest;
+	
+	public void initDefault() {
+		createTable(createTableRequest);
+	}
 
 	public void put(List<Modifier> modifiers) {
 //		modifierDBCollection.insertMany(modifiers);

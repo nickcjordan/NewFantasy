@@ -42,7 +42,7 @@ public class UserDatabaseController  {
     	long count = userManager.count();
     	log.info("DatabaseManager :: SUCCESS :: count was [" + count + "]");
     	HttpHeaders headers = new HttpHeaders();
-    	headers.add("Access-Control-Allow-Origin", "*");
+//    	headers.add("Access-Control-Allow-Origin", "*");
     	return new ResponseEntity<Integer>(new Integer("1"), headers, HttpStatus.OK);
 //    	return count;
     }
@@ -94,7 +94,7 @@ public class UserDatabaseController  {
     	log.info("DatabaseManager :: SUCCESS :: got [" + users.size() + "] users");
 //    	return users;
     	HttpHeaders headers = new HttpHeaders();
-    	headers.add("Access-Control-Allow-Origin", "*");
+//    	headers.add("Access-Control-Allow-Origin", "*");
     	return new ResponseEntity<List<UserName>>(users, headers, HttpStatus.OK);
     }
     

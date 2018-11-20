@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.matchup.LeagueMatchupSchedule;
+import com.fantasy.dbmanager.manager.MetadataDatabaseManager;
+import com.fantasy.dbmanager.manager.ModifierDatabaseManager;
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
 import com.fantasy.dbmanager.manager.UserDatabaseManager;
 import com.fantasy.dbmanager.populator.DatabasePopulator;
@@ -32,6 +34,12 @@ public class UtilController  {
 	
 	@Autowired
 	private PlayerDatabaseManager playerManager;
+	
+	@Autowired
+	private MetadataDatabaseManager metadataManager;
+	
+	@Autowired
+	private ModifierDatabaseManager modifierManager;
 
 	@Autowired
 	private DatabasePopulator populator;
@@ -97,6 +105,16 @@ public class UtilController  {
     @RequestMapping("/generateSchedule")
     public LeagueMatchupSchedule generateSchedule() {
     	return scheduleGenerator.generateLeagueSchedule();
+    }
+    
+    @RequestMapping("/initDB")
+    public void initDefaultDatabases() {
+    	log.info("Initializing databases with default values...");
+    	metadataManager.init();
+    	modifierManager.init();
+    	playerManager.init();
+    	userManager.init();
+    	log.info("All databases have been initialized");
     }
 
 }

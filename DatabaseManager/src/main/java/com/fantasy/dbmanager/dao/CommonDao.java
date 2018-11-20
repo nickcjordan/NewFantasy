@@ -25,7 +25,6 @@ public class CommonDao {
 	private static final Logger log = LoggerFactory.getLogger(CommonDao.class);
 	
 	protected void createTable(TableDescription description) {
-		try {
 			log.info("Sending CreateTable request for " + description.getTableName());
 			CreateTableRequest req = new CreateTableRequest()
 					.withTableName(description.getTableName())
@@ -36,11 +35,17 @@ public class CommonDao {
 							.withReadCapacityUnits(description.getProvisionedThroughput().getReadCapacityUnits())
 							.withWriteCapacityUnits(description.getProvisionedThroughput().getWriteCapacityUnits())
 					);
-			Table res = db.createTable(req);
+			createTable(req);
+	}
+	
+	protected void createTable(CreateTableRequest request) {
+		try {
+			log.info("Sending CreateTable request for " + request.getTableName());
+			Table res = db.createTable(request);
 			log.info("Waiting for " + res.getTableName() + " to be created...");
 			res.waitForActive();
 		} catch (Exception e) {
-			log.error("CreateTable request failed for " + description.getTableName() + " :: " + e.getMessage());
+			log.error("CreateTable request failed for " + request.getTableName() + " :: " + e.getMessage());
 		}
 	}
 

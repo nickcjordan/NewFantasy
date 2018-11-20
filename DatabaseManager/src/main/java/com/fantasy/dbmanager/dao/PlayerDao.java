@@ -7,12 +7,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedScanList;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.fantasy.dataaccessutility.model.Player;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -22,7 +27,17 @@ public class PlayerDao extends CommonDao {
 //	private static final Logger log = LoggerFactory.getLogger(PlayerDao.class);
 
 	private ObjectMapper mapper = new ObjectMapper();
-	private static final String PLAYER_TABLE = "player-table";
+
+	@Resource(name="playerTableName")
+	private String TABLE_NAME;
+	
+	@Autowired
+	@Qualifier("playerCreateTableRequest")
+	private CreateTableRequest createTableRequest;
+	
+	public void initDefault() {
+		createTable(createTableRequest);
+	}
 
 //	@Autowired
 //	@Qualifier("dynamoDb")
@@ -158,7 +173,7 @@ public class PlayerDao extends CommonDao {
 		// System.out.println(entry.getValue());
 		// }
 
-		// List<Object> res = batchResults.get(PLAYER_TABLE);
+		// List<Object> res = batchResults.get(TABLE_NAME);
 		return dbMapper.scan(Player.class, new DynamoDBScanExpression());
 	}
 
@@ -176,13 +191,13 @@ public class PlayerDao extends CommonDao {
 	public boolean removeAll() {
 		// playerDBCollection.deleteMany(eq("blank", null));
 		// TODO fix this
-		createTable(deleteTable(PLAYER_TABLE));
+		createTable(deleteTable(TABLE_NAME));
 		return true;
 	}
 
 	public Player getPlayerByName(String name) {
 		// return playerDBCollection.find(eq("playerName", name)).first();
-		return player(db.getTable(PLAYER_TABLE).getItem("playerName", name));
+		return player(db.getTable(TABLE_NAME).getItem("playerName", name));
 	}
 
 	public Player getPlayerByID(String id) {

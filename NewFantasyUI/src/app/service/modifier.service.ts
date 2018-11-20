@@ -13,7 +13,7 @@ import { environment } from '../../environments/environment';
 })
 export class ModifierService {
 
-	private getAllModifiersUrl = '/api/modifier/getAll';  // URL to web api
+	private getAllModifiersUrl = `${environment.apiServer}/modifier/getAll`;
 	private updateModifierUrl = `${environment.apiServer}/modifier/update`;
 	
 	private httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};

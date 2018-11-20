@@ -39,5 +39,9 @@ public class ModifierDatabaseManager {
 	public void update(Modifier modifier) {
 		 modifierDao.update(modifier);
 	}
+	
+	public void init() {
+		modifierDao.initDefault();
+	}
 
 }

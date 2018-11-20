@@ -2,19 +2,34 @@ package com.fantasy.dbmanager.dao;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.fantasy.dataaccessutility.model.Metadata;
+import com.amazonaws.services.dynamodbv2.model.ResourceInUseException;
 
 @Component
 public class MetadataDao extends CommonDao {
 
-	private static final String TABLE_NAME = "metadata-table";
-
 	// @Autowired
 	// @Qualifier("metadataDBCollection")
 	// MongoCollection<Metadata> metadataDBCollection;
+	
+	@Resource(name="metadataTableName")
+	private String TABLE_NAME;
+	
+	@Autowired
+	@Qualifier("metadataCreateTableRequest")
+	private CreateTableRequest createTableRequest;
+	
+	public void initDefault() {
+		createTable(createTableRequest);
+	}
 
 	public boolean removeAll() {
 		// return metadataDBCollection.deleteMany(eq("id", null)).wasAcknowledged();

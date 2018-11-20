@@ -2,7 +2,7 @@
 -u-kp2ZaKzzx_mHz3G6F
 
 	Angular Project Run Command:
-ng serve --port=4200 --live-reload=true --proxy-config proxy.conf.json
+ng serve --port=4200 --live-reload=true --proxy-config dev.proxy.conf.json
 	
 	Cloudfront URL:
 http://d3hhhzmqwuhnzz.cloudfront.net
@@ -10,6 +10,17 @@ http://d3hhhzmqwuhnzz.cloudfront.net
 	Jenkins creds:
 user: admin, pass: M********
 
+	Invalidate S3 cache:
+aws cloudfront create-invalidation --distribution-id EP70JZN4QPZGF --paths /*
+
+	Start Local DynamboDB
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+	
+	Delete Local DynamboDB table
+aws dynamodb delete-table --table-name metadata-table --endpoint-url http://localhost:8000
+
+	List Local DynamoDB tables
+aws dynamodb list-tables --endpoint-url http://localhost:8000
 
 
 **********************************************************************************

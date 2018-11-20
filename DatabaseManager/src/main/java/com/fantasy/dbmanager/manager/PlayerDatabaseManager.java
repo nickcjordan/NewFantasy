@@ -124,5 +124,9 @@ public class PlayerDatabaseManager {
 		playerDao.updatePlayer(player);
 		return true;
 	}	
+	
+	public void init() {
+		playerDao.initDefault();
+	}
 
 }

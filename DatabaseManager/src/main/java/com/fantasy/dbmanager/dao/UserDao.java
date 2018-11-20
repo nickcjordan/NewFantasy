@@ -2,9 +2,14 @@ package com.fantasy.dbmanager.dao;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.fantasy.dataaccessutility.model.to.UserTO;
 
 @Component
@@ -14,7 +19,16 @@ public class UserDao extends CommonDao {
 //	@Qualifier("userDBCollection")
 //	MongoCollection<UserTO> userDBCollection;
 	
-	private static final String TABLE_NAME = "user-table";
+	@Resource(name="userTableName")
+	private String TABLE_NAME;
+	
+	@Autowired
+	@Qualifier("userCreateTableRequest")
+	private CreateTableRequest createTableRequest;
+	
+	public void initDefault() {
+		createTable(createTableRequest);
+	}
 
 	public void putAll(List<UserTO> users) {
 //		userDBCollection.insertMany(users);

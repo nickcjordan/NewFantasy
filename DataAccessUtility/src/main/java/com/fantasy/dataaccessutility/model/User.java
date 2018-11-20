@@ -5,12 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.fantasy.dataaccessutility.model.matchup.MatchupSchedule;
 import com.fantasy.dataaccessutility.model.matchup.MatchupUserResult;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.Perk;
 import com.fantasy.dataaccessutility.model.team.Team;
 
+@DynamoDBTable(tableName = "user-table")
 public class User {
 
 	private String userId;
@@ -53,7 +57,7 @@ public class User {
 	public void addMod(Modifier mod) {
 		modifiers.add(mod);
 	}
-	
+	@DynamoDBAttribute
 	public List<Modifier> getModifiers() {
 		return modifiers;
 	}
@@ -62,6 +66,7 @@ public class User {
 		this.modifiers = modifiers;
 	}
 
+	@DynamoDBHashKey(attributeName = "userId")
 	public String getUserId() {
 		return userId;
 	}
@@ -69,7 +74,7 @@ public class User {
 	public void setUserId(String id) {
 		this.userId = id;
 	}
-
+	@DynamoDBAttribute
 	public String getUserName() {
 		return userName;
 	}
@@ -77,7 +82,7 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
+	@DynamoDBAttribute
 	public Map<String, Perk> getPerkTree() {
 		return perkTree;
 	}
@@ -85,7 +90,7 @@ public class User {
 	public void setPerkTree(Map<String, Perk> perkTree) {
 		this.perkTree = perkTree;
 	}
-
+	@DynamoDBAttribute
 	public Team getTeam() {
 		return team;
 	}
@@ -93,7 +98,7 @@ public class User {
 	public void setTeam(Team team) {
 		this.team = team;
 	}
-
+	@DynamoDBAttribute
 	public int getCoins() {
 		return coins;
 	}
@@ -117,7 +122,7 @@ public class User {
 	public void subtractCoins(int coins) {
 		this.coins -= coins;
 	}
-
+	@DynamoDBAttribute
 	public MatchupSchedule getMatchupSchedule() {
 		return matchupSchedule;
 	}

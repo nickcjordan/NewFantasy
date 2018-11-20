@@ -79,15 +79,19 @@ public class UserDatabaseManager {
 		}
 	}
 	
+//	public void updateAll(List<User> users) { // TODO call batch
+//		for (User user : users) {
+//			try {
+//				update(user);
+//			} catch (Exception e) {
+//				log.info("update did not work for " + user.getUserName() + ", trying put...");
+//				put(user);
+//			}
+//		}
+//	}
+	
 	public void updateAll(List<User> users) { // TODO call batch
-		for (User user : users) {
-			try {
-				update(user);
-			} catch (Exception e) {
-				log.info("update did not work for " + user.getUserName() + ", trying put...");
-				put(user);
-			}
-		}
+		putAll(users);
 	}
 
 	public List<UserName> getAllUserNames() {
@@ -98,5 +102,8 @@ public class UserDatabaseManager {
 		return users;
 	}
 
+	public void init() {
+		userDao.initDefault();
+	}
 
 }

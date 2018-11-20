@@ -39,7 +39,7 @@ public class ProdConfig {
 		return "prod";
 	}
 	
-/*    @SuppressWarnings("deprecation")
+    @SuppressWarnings("deprecation")
 	@Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
@@ -48,6 +48,6 @@ public class ProdConfig {
                 registry.addMapping("/**").allowedOrigins("*");
             }
         };
-    }*/
+    }
 
 }

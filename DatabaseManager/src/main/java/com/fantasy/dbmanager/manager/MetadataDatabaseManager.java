@@ -49,5 +49,9 @@ public class MetadataDatabaseManager {
 		m.setValue(val);
 		return m;
 	}
+	
+	public void init() {
+		metadataDao.initDefault();
+	}
 
 }

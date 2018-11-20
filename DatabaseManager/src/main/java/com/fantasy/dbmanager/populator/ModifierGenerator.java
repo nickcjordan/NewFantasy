@@ -12,13 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Position;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.TargetType;
 import com.fantasy.dataaccessutility.model.team.NflTeam;
 import com.fantasy.dataaccessutility.model.team.constants.NflTeams;
+import com.fantasy.dbmanager.manager.MetadataDatabaseManager;
 
 @Component
 public class ModifierGenerator {
@@ -44,7 +44,7 @@ public class ModifierGenerator {
 	private List<Integer> shuffledPrices;
 	
 	@Autowired
-	private DataAccessUtility data;
+	private MetadataDatabaseManager data;
 	
 	public ModifierGenerator() {
 		this.teamMap = NflTeams.nflTeams;
@@ -53,7 +53,7 @@ public class ModifierGenerator {
 	}
 	
 	public List<Modifier> generateWeeklyModifiers() {
-		this.currentIdToUse = Integer.valueOf(data.getMetadata("currentIdToUse").getValue());
+		this.currentIdToUse = Integer.valueOf(data.get("currentIdToUse").getValue());
 		List<Modifier> modifiers = new ArrayList<Modifier>();
 		addTeamModifiers(modifiers);
 		addPlayerModifiers(modifiers);
