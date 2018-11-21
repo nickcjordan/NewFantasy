@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.Player;
-import com.fantasy.dataaccessutility.model.Position;
+import com.fantasy.dataaccessutility.model.Positions;
 
 @DynamoDBDocument
 public class BenchPlayersTO {

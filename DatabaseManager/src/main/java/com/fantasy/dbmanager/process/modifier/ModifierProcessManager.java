@@ -1,4 +1,4 @@
-package com.fantasy.ui.process.modifier;
+package com.fantasy.dbmanager.process.modifier;
 
 import java.util.List;
 

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.fantasy.dataaccessutility.model.Player;
-import com.fantasy.dataaccessutility.model.Position;
+import com.fantasy.dataaccessutility.model.Positions;
 import com.fantasy.dataaccessutility.model.team.PlayerList;
 
 @DynamoDBDocument
@@ -40,15 +40,12 @@ public class StartingLineupTO {
 	}
 	
 	private PlayerListTO getListFromPlayerPosition(String position) {
-		switch (Position.get(position)) {
-			case QUARTERBACK: return this.qb;
-			case RUNNINGBACK: return this.rb;
-			case WIDERECEIVER: return this.wr;
-			case TIGHTEND: return this.te;
-			case KICKER: return this.k;
-//			case DEFENSE: return this.dst;
-		}
-		return null;
+		if (position.equals(Positions.QUARTERBACK.getAbbrev())) { return this.qb; } 
+		else if (position.equals(Positions.RUNNINGBACK.getAbbrev())) { return this.rb; }
+		else if (position.equals(Positions.WIDERECEIVER.getAbbrev())) { return this.wr; } 
+		else if (position.equals(Positions.TIGHTEND.getAbbrev())) { return this.te; } 
+		else if (position.equals(Positions.KICKER.getAbbrev())) { return this.k; } 
+		else { return null; }
 	}
 
 	public PlayerListTO getQb() {

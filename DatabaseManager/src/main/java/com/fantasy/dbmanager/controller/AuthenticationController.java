@@ -1,4 +1,4 @@
-package com.fantasy.ui.controller;
+package com.fantasy.dbmanager.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fantasy.ui.auth.Authenticator;
-import com.fantasy.ui.auth.model.UserCredential;
+import com.fantasy.dbmanager.auth.Authenticator;
+import com.fantasy.dbmanager.auth.model.UserCredential;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController

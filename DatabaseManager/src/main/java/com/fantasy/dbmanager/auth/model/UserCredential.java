@@ -1,6 +1,6 @@
-package com.fantasy.ui.auth.model;
+package com.fantasy.dbmanager.auth.model;
 
-import com.fantasy.ui.model.deserializer.UserCredentialDeserializer;
+import com.fantasy.dbmanager.auth.UserCredentialDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonDeserialize(using=UserCredentialDeserializer.class)

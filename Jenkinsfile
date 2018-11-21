@@ -3,34 +3,12 @@ node {
 
 	def mvnHome
 	
-	stage('Git Download') { // for display purposes
-		// Get some code from a GitHub repository
+	stage('Git Download') { 
 		git 'https://github.com/nickcjordan/NewFantasy'
-		// Get the Maven tool.
-		// ** NOTE: This 'M3' Maven tool must be configured in the global configuration.           
 		mvnHome = tool 'M3'
 	}
 	
-//	stage('Workspace Cleanup') {
-//		def dbFile = new File("falifa-fantasy-db/")
-//		if (dbFile.exists()) {
-//			FileUtils.cleanDirectory(dbFile)
-//		}
-//		def uiFile = new File("falifa-fantasy-ui/")
-//		if (uiFile.exists()) {
-//			FileUtils.cleanDirectory(uiFile)
-//		}
-//		def angularFile = new File("falifa-fantasy-app/")
-//		if (angularFile.exists()) {
-//			FileUtils.cleanDirectory(angularFile)
-//		}
-//		
-//		FileUtils.copyFile(new File("build/db/Procfile"), new File("falifa-fantasy-db/Procfile"));
-//		FileUtils.copyFile(new File("build/ui/Procfile"), new File("falifa-fantasy-ui/Procfile"));
-//	}
-	
 	stage('Build') {
-		// Run the maven build
 		if (isUnix()) {
 			sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
 		} else {
@@ -40,7 +18,6 @@ node {
 
 	stage('Archive Artifacts') {
 		archiveArtifacts 'falifa-fantasy-db/*'
-		archiveArtifacts 'falifa-fantasy-ui/*'
 		archiveArtifacts 'falifa-fantasy-app/*'
 	}
      

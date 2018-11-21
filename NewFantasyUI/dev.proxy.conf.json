@@ -1,11 +1,4 @@
 {
-	"/ui/": {
-		"target": "http://localhost:8002",
-		"secure": false,
-		"logLevel": "debug",
-		"pathRewrite": {"^/ui/" : ""},
-    	"changeOrigin": true
-	},
 	"/api/": {
 		"target": "http://localhost:8001",
 		"secure": false,

@@ -9,8 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.Player;
-import com.fantasy.dataaccessutility.model.Position;
+import com.fantasy.dataaccessutility.model.Positions;
 import com.fantasy.dataaccessutility.model.User;
+import com.fantasy.dataaccessutility.model.team.PlayerList;
 import com.fantasy.dataaccessutility.model.team.Roster;
 import com.fantasy.dataaccessutility.model.ui.EditLineupAction;
 import com.fantasy.dataaccessutility.model.ui.EditLineupQuery;
@@ -106,17 +107,27 @@ public class EditLineupRequestProcessor {
 		List<Player> players = new ArrayList<Player>();
 		User user = userManager.get(query.getUserId());
 		Player player = playerManager.get(query.getPlayerId());
-		switch (Position.get(player.getPlayerPosition())) {
-			case QUARTERBACK: players.addAll(user.getTeam().getRoster().getStartingLineup().getQb().getPlayers()); break;
-			case RUNNINGBACK: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
-				players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers()); break;
-			case WIDERECEIVER: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
-				players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers()); break;
-			case TIGHTEND: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
-				players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers()); break;
-			case KICKER: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); break;
-//			case DEFENSE: players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); break;
+		String position = player.getPlayerPosition();
+		
+		if (position.equals(Positions.QUARTERBACK.getAbbrev())) {
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getQb().getPlayers());
 		}
+		else if (position.equals(Positions.RUNNINGBACK.getAbbrev())) {
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers());
+		}
+		else if (position.equals(Positions.WIDERECEIVER.getAbbrev())) {
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers());
+		}
+		else if (position.equals(Positions.TIGHTEND.getAbbrev())) {
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers()); 
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getFlex().getPlayers());
+		}
+		else if (position.equals(Positions.KICKER.getAbbrev())) {
+			players.addAll(user.getTeam().getRoster().getStartingLineup().getRb().getPlayers());
+		}
+			
 		log.info("Got " + players.size() + " players for swappable call for: " + player.getPlayerName());
 		return players;
 	}

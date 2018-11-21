@@ -1,4 +1,4 @@
-package com.fantasy.ui.auth;
+package com.fantasy.dbmanager.auth;
 
 import java.security.MessageDigest;
 import java.security.SecureRandom;

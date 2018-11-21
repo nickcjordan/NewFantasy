@@ -20,7 +20,7 @@ public class Modifier {
 	private double changePercentage;
 	private String targetUserId;
 	private String targetPlayerId;
-	private TargetType targetType;
+	private String targetType;
 	private Position targetPosition;
 	private NflTeam targetNflTeam;
 	private String owningUserId;
@@ -61,10 +61,10 @@ public class Modifier {
 		this.changePercentage = changePercentage;
 	}
 	@DynamoDBAttribute
-	public TargetType getTargetType() {
+	public String getTargetType() {
 		return targetType;
 	}
-	public void setTargetType(TargetType targetType) {
+	public void setTargetType(String targetType) {
 		this.targetType = targetType;
 	}
 	@DynamoDBAttribute

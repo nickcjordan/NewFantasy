@@ -1,4 +1,4 @@
-package com.fantasy.ui.process;
+package com.fantasy.dbmanager.process;
 
 import org.springframework.stereotype.Component;
 

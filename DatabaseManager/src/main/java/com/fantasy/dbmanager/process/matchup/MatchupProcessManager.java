@@ -1,4 +1,4 @@
-package com.fantasy.ui.process.matchup;
+package com.fantasy.dbmanager.process.matchup;
 
 import org.springframework.stereotype.Component;
 

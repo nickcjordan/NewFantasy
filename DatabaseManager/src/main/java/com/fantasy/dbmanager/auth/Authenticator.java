@@ -1,4 +1,4 @@
-package com.fantasy.ui.auth;
+package com.fantasy.dbmanager.auth;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import com.fantasy.ui.auth.model.EncryptedUserCredential;
-import com.fantasy.ui.auth.model.UserCredential;
+import com.fantasy.dbmanager.auth.model.EncryptedUserCredential;
+import com.fantasy.dbmanager.auth.model.UserCredential;
 
 @Component
 public class Authenticator {

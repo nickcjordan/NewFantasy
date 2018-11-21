@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import com.fantasy.dataaccessutility.model.Metadata;
 import com.fantasy.dataaccessutility.model.Position;
+import com.fantasy.dataaccessutility.model.Positions;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 import com.fantasy.dataaccessutility.model.modifier.TargetType;
 import com.fantasy.dataaccessutility.model.team.NflTeam;
@@ -67,7 +68,7 @@ public class ModifierGenerator {
 
 	private void addPositionModifiers(List<Modifier> modifiers) {
 		log.info("Generating Position Modifiers");
-		List<Position> positions = new ArrayList<Position>(Arrays.asList(Position.values()));
+		List<Position> positions = Positions.getAll();
 		Collections.shuffle(positions);
 		int count = 1;
 		for (int i = 0; i < Integer.valueOf(maxPositionModifiers)/2; i++) {

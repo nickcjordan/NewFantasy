@@ -1,10 +1,10 @@
-package com.fantasy.ui.model.deserializer;
+package com.fantasy.dbmanager.auth;
 
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import com.fantasy.ui.auth.model.UserCredential;
+import com.fantasy.dbmanager.auth.model.UserCredential;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;

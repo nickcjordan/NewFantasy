@@ -30,11 +30,11 @@ export class AuthService {
 		this.username = credentials.username;
 		this.password = credentials.password;
 		console.log('AuthService :: enter : authenticated?:' + this.authenticated + ', username:' + this.username + ', password:' + this.password);
-	    const headers = new HttpHeaders(credentials ? {
+	    /*const headers = new HttpHeaders(credentials ? {
 	        authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password),
 			'X-Requested-With': 'XMLHttpRequest'
-	    } : {});
-		console.log('AuthService :: headers:' + headers.getAll);
+	    } : {});*/
+		const headers = new HttpHeaders(credentials ? { authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password) } : {});
 	
 	    this.http.get(`${environment.uiServer}/auth`, {headers: headers}).subscribe(response => {
 			this.authentication = response['authentication'];

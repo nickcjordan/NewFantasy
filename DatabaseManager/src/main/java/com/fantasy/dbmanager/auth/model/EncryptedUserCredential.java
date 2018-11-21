@@ -1,6 +1,6 @@
-package com.fantasy.ui.auth.model;
+package com.fantasy.dbmanager.auth.model;
 
-import com.fantasy.ui.auth.AES;
+import com.fantasy.dbmanager.auth.AES;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class EncryptedUserCredential extends UserCredential {
