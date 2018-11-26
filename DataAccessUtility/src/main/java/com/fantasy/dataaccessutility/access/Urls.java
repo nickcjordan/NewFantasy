@@ -1,7 +1,5 @@
 package com.fantasy.dataaccessutility.access;
 
-import java.net.URI;
-
 public class Urls {
 	
 	private static final String MANAGER = "http://localhost:8080";

@@ -17,11 +17,13 @@ public class PlayerStatsAPIDelegate {
 	@Autowired
 	private UrlBuilder urls;
 	
-	private RestTemplate restTemplate = new RestTemplate();
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	public WeekStatsResponse retrieveAllWeekStats(int week) {
-		log.info("Calling weeklyStats for week " + week);
-		WeekStatsResponse response = restTemplate.getForObject(urls.buildWeekStatsUrl(week), WeekStatsResponse.class);
+		String url = urls.buildWeekStatsUrl(week);
+		log.info("Calling weeklyStats for week " + week + " :: " + url);
+		WeekStatsResponse response = restTemplate.getForObject(url, WeekStatsResponse.class);
 		response.setWeekNumber(week);
 		return response;
 	}

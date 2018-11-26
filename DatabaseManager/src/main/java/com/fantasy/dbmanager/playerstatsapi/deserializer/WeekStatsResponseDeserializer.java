@@ -26,11 +26,15 @@ public class WeekStatsResponseDeserializer extends JsonDeserializer<WeekStatsRes
 	private WeekStatsResponse buildPlayerStats(Iterator<Entry<String, JsonNode>> playerIterator) {
 		Map<String, RawPlayerStats> stats = new HashMap<String, RawPlayerStats>();
 		while(playerIterator.hasNext()) {
-			Entry<String, JsonNode> playerEntry = playerIterator.next();
-			JsonNode weekNumberNode = playerEntry.getValue().get("stats").get("week").get(year);
-			String weekNumber = weekNumberNode.fieldNames().next();
-			RawPlayerStats stat = buildIndividualPlayerStats(playerEntry.getKey(), weekNumber, weekNumberNode.get(weekNumber).fields());
-			stats.put(playerEntry.getKey(), stat);
+			try {
+				Entry<String, JsonNode> playerEntry = playerIterator.next();
+				JsonNode weekNumberNode = playerEntry.getValue().get("stats").get("week").get(year);
+				String weekNumber = weekNumberNode.fieldNames().next();
+				RawPlayerStats stat = buildIndividualPlayerStats(playerEntry.getKey(), weekNumber, weekNumberNode.get(weekNumber).fields());
+				stats.put(playerEntry.getKey(), stat);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		return new WeekStatsResponse(stats);
 	}

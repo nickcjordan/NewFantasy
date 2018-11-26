@@ -1,13 +1,11 @@
 package com.fantasy.dataaccessutility.manager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.access.DatabaseManagerDelegate;
 import com.fantasy.dataaccessutility.model.modifier.Modifier;
 

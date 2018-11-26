@@ -61,6 +61,7 @@ public class DatabaseManagerDelegate {
 		return rest.getForObject(Urls.getModifier(modifierId), Modifier.class);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Modifier> getAllModifiers() {
 		return rest.getForObject(Urls.getModifiers(), ArrayList.class);
 	}

@@ -1,13 +1,9 @@
 package com.fantasy.dataaccessutility.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-
-import org.assertj.core.util.Lists;
-import org.springframework.util.CollectionUtils;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 

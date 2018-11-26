@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.fantasy.dataaccessutility.DataAccessUtility;
 import com.fantasy.dataaccessutility.access.DatabaseManagerDelegate;
 import com.fantasy.dataaccessutility.model.User;
 
