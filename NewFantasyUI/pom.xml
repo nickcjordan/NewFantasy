@@ -61,16 +61,15 @@
 
 	<build>
 		<plugins>
-			<plugin>
+			<!-- ONLY NEEDED WITH JAVA CODE -->
+			<!-- <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<addResources>true</addResources>
 					<outputDirectory>../falifa-fantasy-ui/</outputDirectory>
 				</configuration>
-			</plugin>
-
-			
+			</plugin> -->
 
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
