@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import com.fantasy.dataaccessutility.model.Player;
 import com.fantasy.dataaccessutility.model.PlayerListResponse;
 import com.fantasy.dbmanager.manager.PlayerDatabaseManager;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/player")
 public class PlayerDatabaseController  {

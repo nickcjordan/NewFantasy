@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,6 +19,7 @@ import com.fantasy.dbmanager.auth.Authenticator;
 import com.fantasy.dbmanager.auth.model.UserCredential;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value="/auth")
 public class AuthenticationController {
@@ -30,12 +32,14 @@ public class AuthenticationController {
 	@RequestMapping(value="/authenticate", method=RequestMethod.POST, produces= {"application/json"}, consumes= {"text/plain", "application/json", "application/json;charset=UTF-8"})
 	public ResponseEntity<UserCredential> authenticateUser(@RequestBody UserCredential user) {
 		log.info("START /auth/authenticate :: POST :: authenticating user: " + user.getUsername());
+		HttpHeaders headers = new HttpHeaders();
+    	headers.add("Access-Control-Allow-Origin", "*");
 		if (auth.isAuthorizedUser(user)) {
 			log.info("END /auth/authenticate :: SUCCESS :: user has been authenticated: " + user.getUsername());
-			return new ResponseEntity<UserCredential>(auth.getRegisteredUser(user.getUsername()), HttpStatus.OK);
+			return new ResponseEntity<UserCredential>(auth.getRegisteredUser(user.getUsername()), headers, HttpStatus.OK);
 		} else {
 			log.info("END /auth/authenticate :: FAILURE :: user could not be authenticated: " + user.getUsername());
-			return new ResponseEntity<UserCredential>(user, HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<UserCredential>(user, headers, HttpStatus.UNAUTHORIZED);
 		}
 	}
 	

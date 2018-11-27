@@ -49,17 +49,13 @@ public class DevConfig {
 	
 	@SuppressWarnings("deprecation")
 	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurerAdapter() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
-					.allowedOrigins("*")
-					.allowCredentials(true)
-					.allowedHeaders("*")
-					.allowedMethods("*");
-				}
-		};
-	}
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedOrigins("*").allowedHeaders("*");
+            }
+        };
+    }
 
 }
