@@ -57,9 +57,8 @@ public class DevConfig {
 					.allowedOrigins("*")
 					.allowCredentials(true)
 					.allowedHeaders("*")
-					.allowedMethods("*")
-					.exposedHeaders("*");
-			}
+					.allowedMethods("*");
+				}
 		};
 	}
 

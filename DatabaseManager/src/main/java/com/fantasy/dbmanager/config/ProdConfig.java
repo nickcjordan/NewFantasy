@@ -57,8 +57,7 @@ public class ProdConfig {
 					.allowedOrigins("*")
 					.allowCredentials(true)
 					.allowedHeaders("*")
-					.allowedMethods("*")
-					.exposedHeaders("*");
+					.allowedMethods("*");
 			}
 		};
 	}
